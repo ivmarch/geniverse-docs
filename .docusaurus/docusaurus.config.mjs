@@ -97,7 +97,7 @@ export default {
     },
     "footer": {
       "style": "dark",
-      "copyright": "Авторське право © 2024 FuturumXR. Створено з Docusaurus.",
+      "copyright": "Copyright © 2024 FuturumXR. Built with Docusaurus.",
       "links": []
     },
     "prism": {
