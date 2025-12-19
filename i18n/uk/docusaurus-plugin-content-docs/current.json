@@ -16,7 +16,7 @@
     "description": "The label for the doc item 'Product Principles' in sidebar 'tutorialSidebar', linking to the doc product-principles"
   },
   "sidebar.tutorialSidebar.doc.Pedagogical Framework": {
-    "message": "Педагогічна Рамка",
+    "message": "Педагогічна Модель",
     "description": "The label for the doc item 'Pedagogical Framework' in sidebar 'tutorialSidebar', linking to the doc pedagogical-framework"
   },
   "sidebar.tutorialSidebar.doc.Roles & Permissions": {
