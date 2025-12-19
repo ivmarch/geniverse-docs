@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Mermaid from '@theme/Mermaid';
 
-export default function Diagrams(): JSX.Element {
+export default function Diagrams(): React.JSX.Element {
 
   const exportDiagram = (event: React.MouseEvent<HTMLButtonElement>, title: string) => {
     const button = event.currentTarget;
@@ -136,7 +136,7 @@ export default function Diagrams(): JSX.Element {
                 <Mermaid value={`graph TD
     A[Супер Адмін] --> B[Адмін Установи]
     B --> C[Освітянин]
-    B --> D[Створювач Контенту]
+    B --> D[Автор навчального контенту]
     C --> E[Учень]
     C --> F[Асистент Викладача]
     D --> E

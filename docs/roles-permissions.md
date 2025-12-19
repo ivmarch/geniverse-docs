@@ -8,7 +8,7 @@ GeniVerse implements a comprehensive Role-Based Access Control (RBAC) system tha
 graph TD
     A[Super Admin] --> B[Institution Admin]
     B --> C[Educator]
-    B --> D[Content Creator]
+    B --> D[Educational Content Author]
     C --> E[Learner]
     C --> F[Teaching Assistant]
     D --> E
@@ -73,7 +73,7 @@ graph TD
 - Providing personalized feedback
 - Facilitating discussions and collaboration
 
-### Content Creator
+### Educational Content Author
 
 **Content development and curation**
 
