@@ -45,7 +45,11 @@
   }
 
   .heroLogo {
-    height: 3rem;
+    height: 4rem;
+  }
+
+  .heroBanner .hero__title {
+    font-size: 3rem;
   }
 }
 
