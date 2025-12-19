@@ -203,36 +203,69 @@ h3 {
 .mermaid svg,
 .docusaurus-mermaid-container svg {
   background-color: #0B0D0C !important;
+  background: #0B0D0C !important;
 }
 
-/* Mermaid text elements - light color */
+/* Mermaid text elements - light color - override all text */
 .mermaid svg text,
+.mermaid svg text tspan,
 .mermaid svg .nodeLabel,
 .mermaid svg .edgeLabel,
 .mermaid svg .cluster-label,
 .mermaid svg .label text,
 .mermaid svg .label,
+.mermaid svg .node-label,
+.mermaid svg .edge-label,
 .docusaurus-mermaid-container svg text,
+.docusaurus-mermaid-container svg text tspan,
 .docusaurus-mermaid-container svg .nodeLabel,
 .docusaurus-mermaid-container svg .edgeLabel,
 .docusaurus-mermaid-container svg .cluster-label,
 .docusaurus-mermaid-container svg .label text,
-.docusaurus-mermaid-container svg .label {
+.docusaurus-mermaid-container svg .label,
+.docusaurus-mermaid-container svg .node-label,
+.docusaurus-mermaid-container svg .edge-label {
   fill: #E8F9F0 !important;
   color: #E8F9F0 !important;
+  stroke: none !important;
 }
 
-/* Mermaid node backgrounds - dark */
+/* Mermaid node backgrounds - dark - override inline styles */
 .mermaid svg .node rect,
 .mermaid svg .node circle,
 .mermaid svg .node ellipse,
 .mermaid svg .node polygon,
+.mermaid svg .node path,
 .mermaid svg .cluster rect,
+.mermaid svg .cluster path,
 .docusaurus-mermaid-container svg .node rect,
 .docusaurus-mermaid-container svg .node circle,
 .docusaurus-mermaid-container svg .node ellipse,
 .docusaurus-mermaid-container svg .node polygon,
-.docusaurus-mermaid-container svg .cluster rect {
+.docusaurus-mermaid-container svg .node path,
+.docusaurus-mermaid-container svg .cluster rect,
+.docusaurus-mermaid-container svg .cluster path {
+  fill: #141716 !important;
+  stroke: #58E6B2 !important;
+}
+
+/* Override specific node styles that might have inline colors */
+.mermaid svg .node[class*="AI"],
+.mermaid svg .node[class*="XR"],
+.mermaid svg .node[class*="Core"],
+.mermaid svg .node[class*="Auth"],
+.mermaid svg .node[class*="Data"],
+.mermaid svg .node[class*="Web"],
+.mermaid svg .node[class*="Mobile"],
+.mermaid svg .node[class*="VR"],
+.mermaid svg .node[class*="AR"],
+.mermaid svg .node[class*="LMS"],
+.mermaid svg .node[class*="Cloud"],
+.mermaid svg .node[class*="Edge"],
+.mermaid svg .node[class*="User"],
+.docusaurus-mermaid-container svg .node[class*="AI"],
+.docusaurus-mermaid-container svg .node[class*="XR"],
+.docusaurus-mermaid-container svg .node[class*="Core"] {
   fill: #141716 !important;
   stroke: #58E6B2 !important;
 }
@@ -241,28 +274,38 @@ h3 {
 .mermaid svg .edgePath path,
 .mermaid svg .edgePath .path,
 .mermaid svg .arrowheadPath,
+.mermaid svg .arrowheadPath path,
+.mermaid svg path[marker-end],
 .docusaurus-mermaid-container svg .edgePath path,
 .docusaurus-mermaid-container svg .edgePath .path,
-.docusaurus-mermaid-container svg .arrowheadPath {
+.docusaurus-mermaid-container svg .arrowheadPath,
+.docusaurus-mermaid-container svg .arrowheadPath path,
+.docusaurus-mermaid-container svg path[marker-end] {
   stroke: #7CECBF !important;
   fill: #7CECBF !important;
 }
 
 /* Mermaid subgraph/cluster backgrounds */
 .mermaid svg .cluster rect,
-.docusaurus-mermaid-container svg .cluster rect {
+.mermaid svg .cluster path,
+.docusaurus-mermaid-container svg .cluster rect,
+.docusaurus-mermaid-container svg .cluster path {
   fill: #141716 !important;
   stroke: #34E1A1 !important;
 }
 
 .mermaid svg .cluster-label text,
-.docusaurus-mermaid-container svg .cluster-label text {
+.mermaid svg .cluster-label,
+.docusaurus-mermaid-container svg .cluster-label text,
+.docusaurus-mermaid-container svg .cluster-label {
   fill: #E8F9F0 !important;
 }
 
 /* Mermaid subgraph labels */
 .mermaid svg .subgraph-label text,
-.docusaurus-mermaid-container svg .subgraph-label text {
+.mermaid svg .subgraph-label,
+.docusaurus-mermaid-container svg .subgraph-label text,
+.docusaurus-mermaid-container svg .subgraph-label {
   fill: #E8F9F0 !important;
 }
 
@@ -270,6 +313,30 @@ h3 {
 .mermaid svg,
 .docusaurus-mermaid-container svg {
   background: #0B0D0C !important;
+  background-color: #0B0D0C !important;
+}
+
+/* Force dark theme for all Mermaid elements */
+.mermaid svg *[fill],
+.docusaurus-mermaid-container svg *[fill] {
+  fill: #141716 !important;
+}
+
+.mermaid svg *[fill="#7CECBF"],
+.mermaid svg *[fill="#58E6B2"],
+.mermaid svg *[fill="#A0A0A0"],
+.docusaurus-mermaid-container svg *[fill="#7CECBF"],
+.docusaurus-mermaid-container svg *[fill="#58E6B2"],
+.docusaurus-mermaid-container svg *[fill="#A0A0A0"] {
+  fill: #141716 !important;
+}
+
+/* But keep text elements light */
+.mermaid svg text[fill],
+.mermaid svg text tspan[fill],
+.docusaurus-mermaid-container svg text[fill],
+.docusaurus-mermaid-container svg text tspan[fill] {
+  fill: #E8F9F0 !important;
 }
 
 /* Tables */
