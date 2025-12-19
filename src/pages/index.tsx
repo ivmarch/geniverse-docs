@@ -40,8 +40,7 @@ function HomepageFeatures(): JSX.Element {
             <div className="text--center padding-horiz--md">
               <h3>Immersive XR</h3>
               <p>
-                Virtual and augmented reality experiences create hands-on learning
-                opportunities that transcend traditional educational boundaries.
+                Learning happens through action — interaction with objects, space, and scenarios in XR environments.
               </p>
             </div>
           </div>
