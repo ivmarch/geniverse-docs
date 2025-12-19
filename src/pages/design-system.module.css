@@ -95,11 +95,15 @@
   box-shadow: var(--ds-shadow, 0 4px 8px rgba(0, 0, 0, 0.15));
   width: 100%;
   height: 680px;
+  min-height: 680px;
+  max-height: 680px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
+  /* Prevent content from changing panel size */
+  contain: layout style;
 }
 
 .playgroundTitle {
@@ -107,13 +111,16 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0 0 1.5rem 0;
+  padding: 0;
   color: var(--ds-text, #E8F9F0);
   flex-shrink: 0;
+  line-height: 1.5;
 }
 
 .controlGroup {
   margin-bottom: 1.5rem;
   flex-shrink: 0;
+  min-height: fit-content;
 }
 
 .controlLabel {
@@ -157,6 +164,9 @@
   padding: 0.25rem;
   transition: none !important;
   box-sizing: border-box;
+  /* Prevent layout shift */
+  min-height: 52px;
+  height: fit-content;
 }
 
 /* 2-column grid for Mode, Motion, Show tokens as */
@@ -171,14 +181,16 @@
 
 .toggleButton {
   background: transparent;
-  border: 1px solid transparent;
+  border: 1px solid var(--ds-border, #1F2321);
   padding: 0 12px;
   height: 44px;
+  min-height: 44px;
+  max-height: 44px;
   color: var(--ds-text-secondary, #B8D4C5);
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: none !important;
   white-space: nowrap;
   overflow: hidden;
@@ -188,20 +200,28 @@
   justify-content: center;
   box-sizing: border-box;
   min-width: 0;
+  /* Prevent layout shift - keep same dimensions in all states */
+  width: 100%;
+  margin: 0;
 }
 
-.toggleButton:hover {
+.toggleButton:hover:not(.toggleButtonActive) {
   background: var(--ds-hover, rgba(52, 225, 161, 0.1));
   color: var(--ds-text, #E8F9F0);
-  border-color: transparent;
+  border-color: var(--ds-border, #1F2321);
   transition: none !important;
 }
 
 .toggleButtonActive {
   background: var(--ds-accent, #34E1A1);
   color: var(--ds-bg, #0B0D0C);
-  border-color: transparent;
+  border-color: var(--ds-accent, #34E1A1);
   transition: none !important;
+  /* Keep same dimensions */
+  padding: 0 12px;
+  height: 44px;
+  min-height: 44px;
+  max-height: 44px;
 }
 
 .controlRange {
@@ -209,6 +229,9 @@
   align-items: center;
   gap: 0.75rem;
   height: 44px;
+  min-height: 44px;
+  max-height: 44px;
+  flex-shrink: 0;
 }
 
 .rangeInput {
@@ -242,8 +265,10 @@
   font-size: 0.875rem;
   color: var(--ds-text, #E8F9F0);
   min-width: 45px;
+  width: 45px;
   text-align: right;
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
 /* Main Content */
