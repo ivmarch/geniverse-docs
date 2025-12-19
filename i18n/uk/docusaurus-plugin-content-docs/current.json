@@ -36,7 +36,7 @@
     "description": "The label for the doc item 'XR & Immersive' in sidebar 'tutorialSidebar', linking to the doc xr-immersive"
   },
   "sidebar.tutorialSidebar.doc.Design System": {
-    "message": "дизайн система",
+    "message": "Дизайн система",
     "description": "The label for the doc item 'Design System' in sidebar 'tutorialSidebar', linking to the doc design-system"
   },
   "sidebar.tutorialSidebar.doc.Safety, Ethics & Compliance": {
