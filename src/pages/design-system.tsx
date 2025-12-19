@@ -280,6 +280,16 @@ export default function DesignSystem(): React.JSX.Element {
   const { i18n } = useDocusaurusContext();
   const isUkrainian = i18n.currentLocale === 'uk';
   
+  // Add class to body/html when on design-system page
+  useEffect(() => {
+    document.body.classList.add('on-design-system-page');
+    document.documentElement.classList.add('on-design-system-page');
+    return () => {
+      document.body.classList.remove('on-design-system-page');
+      document.documentElement.classList.remove('on-design-system-page');
+    };
+  }, []);
+  
   const [themePreset, setThemePreset] = useState<ThemePreset>('Core');
   const [mode, setMode] = useState<Mode>('dark');
   const [density, setDensity] = useState<Density>('default');
