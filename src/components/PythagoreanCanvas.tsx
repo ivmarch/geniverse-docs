@@ -1,4 +1,9 @@
-import React, {useRef, useEffect, useState, useCallback} from 'react';
+import React, {useRef, useEffect, useState, useCallback, useMemo} from 'react';
+
+// Константи канваса
+const CANVAS_WIDTH = 800;
+const CANVAS_HEIGHT = 600;
+const CANVAS_CENTER = {x: CANVAS_WIDTH / 2, y: CANVAS_HEIGHT / 2};
 
 const PythagoreanCanvas = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -24,11 +29,11 @@ const PythagoreanCanvas = () => {
   const [leg1Size, setLeg1Size] = useState(200);
   const [leg2Size, setLeg2Size] = useState(200);
 
-  // Точки трикутника (обчислюються на основі розмірів катетів)
+  // Точки трикутника (обчислюються на основі розмірів катетів, центровані)
   const [points, setPoints] = useState({
-    A: {x: 200, y: 400}, // Прямий кут
-    B: {x: 200, y: 200}, // Верхня точка
-    C: {x: 400, y: 400}, // Права точка
+    A: {x: CANVAS_CENTER.x, y: CANVAS_CENTER.y}, // Прямий кут (центр)
+    B: {x: CANVAS_CENTER.x, y: CANVAS_CENTER.y - 200}, // Верхня точка
+    C: {x: CANVAS_CENTER.x + 200, y: CANVAS_CENTER.y}, // Права точка
   });
 
   const [particles, setParticles] = useState<Array<{
@@ -53,12 +58,12 @@ const PythagoreanCanvas = () => {
     );
   };
 
-  // Оновлення точок при зміні розмірів катетів
+  // Оновлення точок при зміні розмірів катетів (центровані)
   useEffect(() => {
     setPoints({
-      A: {x: 200, y: 400},
-      B: {x: 200, y: 400 - leg1Size},
-      C: {x: 200 + leg2Size, y: 400},
+      A: {x: CANVAS_CENTER.x, y: CANVAS_CENTER.y},
+      B: {x: CANVAS_CENTER.x, y: CANVAS_CENTER.y - leg1Size},
+      C: {x: CANVAS_CENTER.x + leg2Size, y: CANVAS_CENTER.y},
     });
   }, [leg1Size, leg2Size]);
 
@@ -135,10 +140,10 @@ const PythagoreanCanvas = () => {
 
       // Очищення з ефектом trails
       if (showTrail) {
-        ctx.fillStyle = 'rgba(10, 10, 20, 0.1)';
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
         ctx.fillRect(0, 0, width, height);
       } else {
-        ctx.fillStyle = '#0a0a14';
+        ctx.fillStyle = '#000000'; // Чорний фон
         ctx.fillRect(0, 0, width, height);
       }
 
@@ -499,6 +504,10 @@ const PythagoreanCanvas = () => {
         ...prev,
         B: {x: prev.A.x, y: newY},
       }));
+      // Оновлюємо базовий розмір для анімації
+      if (!sizeAnimation) {
+        baseLeg1Size.current = newLeg1;
+      }
     } else if (dragPoint === 'C') {
       // Точка C рухається тільки по X (y залишається як у точки A)
       const newX = Math.max(250, Math.min(750, x));
@@ -508,11 +517,18 @@ const PythagoreanCanvas = () => {
         ...prev,
         C: {x: newX, y: prev.A.y},
       }));
+      // Оновлюємо базовий розмір для анімації
+      if (!sizeAnimation) {
+        baseLeg2Size.current = newLeg2;
+      }
     } else if (dragPoint === 'A') {
-      // Точка A може рухатися вільно
+      // Точка A може рухатися вільно, але зберігаємо центрування
+      const newX = Math.max(100, Math.min(700, x));
+      const newY = Math.max(100, Math.min(500, y));
       setPoints((prev) => ({
-        ...prev,
-        A: {x, y},
+        A: {x: newX, y: newY},
+        B: {x: newX, y: newY - leg1Size},
+        C: {x: newX + leg2Size, y: newY},
       }));
     }
   };
@@ -528,6 +544,12 @@ const PythagoreanCanvas = () => {
     setLeg2Size(resetSize);
     baseLeg1Size.current = resetSize;
     baseLeg2Size.current = resetSize;
+    // Повертаємо трикутник в центр
+    setPoints({
+      A: {x: CANVAS_CENTER.x, y: CANVAS_CENTER.y},
+      B: {x: CANVAS_CENTER.x, y: CANVAS_CENTER.y - resetSize},
+      C: {x: CANVAS_CENTER.x + resetSize, y: CANVAS_CENTER.y},
+    });
   };
 
   return (
@@ -754,11 +776,11 @@ const PythagoreanCanvas = () => {
         </div>
 
         {/* Canvas */}
-        <div style={{backgroundColor: '#000', borderRadius: '8px', padding: '1rem', overflow: 'hidden'}}>
+        <div style={{backgroundColor: '#000000', borderRadius: '8px', padding: '1rem', overflow: 'hidden'}}>
           <canvas
             ref={canvasRef}
-            width={800}
-            height={600}
+            width={CANVAS_WIDTH}
+            height={CANVAS_HEIGHT}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
