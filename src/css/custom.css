@@ -536,3 +536,51 @@ a:hover {
   background: var(--ifm-color-primary);
 }
 
+/* Design System Color Swatches */
+.design-color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.design-color-card {
+  background: #141716;
+  border: 1px solid #1F2321;
+  border-radius: 8px;
+  padding: 16px;
+  color: #E8F9F0;
+}
+
+.design-color-swatch {
+  width: 100%;
+  height: 80px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.design-color-swatch-border {
+  border: 1px solid #1F2321;
+}
+
+.design-color-bg-0B0D0C { background: #0B0D0C; }
+.design-color-bg-141716 { background: #141716; }
+.design-color-bg-34E1A1 { background: #34E1A1; }
+.design-color-bg-E8F9F0 { background: #E8F9F0; }
+.design-color-bg-B8D4C5 { background: #B8D4C5; }
+.design-color-bg-1F2321 { background: #1F2321; }
+.design-color-bg-FFB84D { background: #FFB84D; }
+.design-color-bg-FF6B6B { background: #FF6B6B; }
+.design-color-bg-4DABF7 { background: #4DABF7; }
+.design-color-bg-rgba-hover { background: rgba(52, 225, 161, 0.1); }
+.design-color-bg-rgba-active { background: rgba(52, 225, 161, 0.15); }
+.design-color-bg-rgba-overlay { background: rgba(11, 13, 12, 0.9); }
+
+.design-example-box {
+  background: #141716;
+  border: 1px solid #1F2321;
+  border-radius: 8px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
