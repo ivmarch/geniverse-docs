@@ -7,6 +7,8 @@ interface ColorSwatchProps {
 }
 
 export function ColorSwatch({ name, color, description }: ColorSwatchProps): React.JSX.Element {
+  const needsBorder = color === '#0B0D0C' || color === '#141716' || color === '#1F2321' || color === '#E8F9F0' || color === '#B8D4C5';
+  
   return (
     <div style={{
       background: '#141716',
@@ -21,7 +23,7 @@ export function ColorSwatch({ name, color, description }: ColorSwatchProps): Rea
         background: color,
         borderRadius: '4px',
         marginBottom: '8px',
-        border: color === '#0B0D0C' || color === '#141716' ? '1px solid #1F2321' : 'none'
+        border: needsBorder ? '1px solid #1F2321' : 'none'
       }}></div>
       <strong>{name}</strong><br/>
       <code>{color}</code><br/>
@@ -46,4 +48,5 @@ export function ColorGrid({ children }: ColorGridProps): React.JSX.Element {
     </div>
   );
 }
+
 
