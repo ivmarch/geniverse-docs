@@ -366,112 +366,118 @@ export default function DesignSystem(): React.JSX.Element {
           {/* Playground Controls Sidebar */}
           <aside className={styles.playgroundSidebar}>
             <div className={styles.playgroundPanel}>
-              <h3 className={styles.playgroundTitle}>{t.playground}</h3>
+              <div className={styles.playgroundTitleWrapper}>
+                <h3 className={styles.playgroundTitle}>{t.playground}</h3>
+              </div>
               
-              <div className={styles.controlGroup}>
-                <label className={styles.controlLabel}>{t.themePreset}</label>
-                <select
-                  className={styles.controlSelect}
-                  value={themePreset}
-                  onChange={(e) => setThemePreset(e.target.value as ThemePreset)}
-                >
-                  {Object.keys(themes).map((preset) => (
-                    <option key={preset} value={preset}>{preset}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div className={styles.controlGroup}>
-                <label className={styles.controlLabel}>{t.mode}</label>
-                <div className={clsx(styles.controlToggle, styles.controlToggle2)}>
-                  <button
-                    className={clsx(styles.toggleButton, mode === 'light' && styles.toggleButtonActive)}
-                    onClick={() => setMode('light')}
+              <div className={styles.controlsContainer}>
+                <div className={styles.controlGroup}>
+                  <label className={styles.controlLabel}>{t.themePreset}</label>
+                  <select
+                    className={styles.controlSelect}
+                    value={themePreset}
+                    onChange={(e) => setThemePreset(e.target.value as ThemePreset)}
                   >
-                    {t.light}
-                  </button>
-                  <button
-                    className={clsx(styles.toggleButton, mode === 'dark' && styles.toggleButtonActive)}
-                    onClick={() => setMode('dark')}
-                  >
-                    {t.dark}
-                  </button>
+                    {Object.keys(themes).map((preset) => (
+                      <option key={preset} value={preset}>{preset}</option>
+                    ))}
+                  </select>
                 </div>
-              </div>
 
-              <div className={styles.controlGroup}>
-                <label className={styles.controlLabel}>{t.density}</label>
-                <div className={clsx(styles.controlToggle, styles.controlToggle3)}>
-                  <button
-                    className={clsx(styles.toggleButton, density === 'roomy' && styles.toggleButtonActive)}
-                    onClick={() => setDensity('roomy')}
-                  >
-                    {t.roomy}
-                  </button>
-                  <button
-                    className={clsx(styles.toggleButton, density === 'default' && styles.toggleButtonActive)}
-                    onClick={() => setDensity('default')}
-                  >
-                    {t.default}
-                  </button>
-                  <button
-                    className={clsx(styles.toggleButton, density === 'compact' && styles.toggleButtonActive)}
-                    onClick={() => setDensity('compact')}
-                  >
-                    {t.compact}
-                  </button>
+                <div className={styles.controlGroup}>
+                  <label className={styles.controlLabel}>{t.mode}</label>
+                  <div className={clsx(styles.controlToggle, styles.controlToggle2)}>
+                    <button
+                      className={clsx(styles.toggleButton, mode === 'light' && styles.toggleButtonActive)}
+                      onClick={() => setMode('light')}
+                    >
+                      {t.light}
+                    </button>
+                    <button
+                      className={clsx(styles.toggleButton, mode === 'dark' && styles.toggleButtonActive)}
+                      onClick={() => setMode('dark')}
+                    >
+                      {t.dark}
+                    </button>
+                  </div>
                 </div>
-              </div>
 
-              <div className={styles.controlGroup}>
-                <label className={styles.controlLabel}>{t.motion}</label>
-                <div className={clsx(styles.controlToggle, styles.controlToggle2)}>
-                  <button
-                    className={clsx(styles.toggleButton, motion && styles.toggleButtonActive)}
-                    onClick={() => setMotion(true)}
-                  >
-                    {t.full}
-                  </button>
-                  <button
-                    className={clsx(styles.toggleButton, !motion && styles.toggleButtonActive)}
-                    onClick={() => setMotion(false)}
-                  >
-                    {t.reduced}
-                  </button>
+                <div className={styles.controlGroup}>
+                  <label className={styles.controlLabel}>{t.density}</label>
+                  <div className={clsx(styles.controlToggle, styles.controlToggle3)}>
+                    <button
+                      className={clsx(styles.toggleButton, density === 'roomy' && styles.toggleButtonActive)}
+                      onClick={() => setDensity('roomy')}
+                    >
+                      {t.roomy}
+                    </button>
+                    <button
+                      className={clsx(styles.toggleButton, density === 'default' && styles.toggleButtonActive)}
+                      onClick={() => setDensity('default')}
+                    >
+                      {t.default}
+                    </button>
+                    <button
+                      className={clsx(styles.toggleButton, density === 'compact' && styles.toggleButtonActive)}
+                      onClick={() => setDensity('compact')}
+                    >
+                      {t.compact}
+                    </button>
+                  </div>
                 </div>
-              </div>
 
-              <div className={styles.controlGroup}>
-                <label className={styles.controlLabel}>{t.fontScale}</label>
-                <div className={styles.controlRange}>
-                  <input
-                    type="range"
-                    min="100"
-                    max="125"
-                    step="5"
-                    value={fontScale}
-                    onChange={(e) => setFontScale(Number(e.target.value))}
-                    className={styles.rangeInput}
-                  />
-                  <span className={styles.rangeValue}>{fontScale}%</span>
+                <div className={styles.controlGroupRow}>
+                  <div className={styles.controlGroupHalf}>
+                    <label className={styles.controlLabel}>{t.motion}</label>
+                    <div className={clsx(styles.controlToggle, styles.controlToggle2)}>
+                      <button
+                        className={clsx(styles.toggleButton, motion && styles.toggleButtonActive)}
+                        onClick={() => setMotion(true)}
+                      >
+                        {t.full}
+                      </button>
+                      <button
+                        className={clsx(styles.toggleButton, !motion && styles.toggleButtonActive)}
+                        onClick={() => setMotion(false)}
+                      >
+                        {t.reduced}
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className={styles.controlGroupHalf}>
+                    <label className={styles.controlLabel}>{t.fontScale}</label>
+                    <div className={styles.controlRange}>
+                      <input
+                        type="range"
+                        min="100"
+                        max="125"
+                        step="5"
+                        value={fontScale}
+                        onChange={(e) => setFontScale(Number(e.target.value))}
+                        className={styles.rangeInput}
+                      />
+                      <span className={styles.rangeValue}>{fontScale}%</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-              <div className={styles.controlGroup}>
-                <label className={styles.controlLabel}>{t.showTokensAs}</label>
-                <div className={clsx(styles.controlToggle, styles.controlToggle2)}>
-                  <button
-                    className={clsx(styles.toggleButton, tokenFormat === 'hex' && styles.toggleButtonActive)}
-                    onClick={() => setTokenFormat('hex')}
-                  >
-                    {t.hex}
-                  </button>
-                  <button
-                    className={clsx(styles.toggleButton, tokenFormat === 'css' && styles.toggleButtonActive)}
-                    onClick={() => setTokenFormat('css')}
-                  >
-                    {t.cssVars}
-                  </button>
+                <div className={styles.controlGroup}>
+                  <label className={styles.controlLabel}>{t.showTokensAs}</label>
+                  <div className={clsx(styles.controlToggle, styles.controlToggle2)}>
+                    <button
+                      className={clsx(styles.toggleButton, tokenFormat === 'hex' && styles.toggleButtonActive)}
+                      onClick={() => setTokenFormat('hex')}
+                    >
+                      {t.hex}
+                    </button>
+                    <button
+                      className={clsx(styles.toggleButton, tokenFormat === 'css' && styles.toggleButtonActive)}
+                      onClick={() => setTokenFormat('css')}
+                    >
+                      {t.cssVars}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

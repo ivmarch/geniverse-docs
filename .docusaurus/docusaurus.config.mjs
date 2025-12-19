@@ -111,7 +111,7 @@ export default {
           "sidebarId": "tutorialSidebar",
           "position": "left",
           "label": "Документація",
-          "activeBaseRegex": "^/(design-system|docs|overview|ai-layer|core-capabilities|modularity-deployment|pedagogical-framework|product-principles|roles-permissions|safety-ethics-compliance|vision-purpose|xr-immersive)"
+          "activeBaseRegex": "/design-system"
         },
         {
           "to": "/design-system",
