@@ -18,7 +18,9 @@ const config: Config = {
 
   // Enable Mermaid diagrams
   markdown: {
-    mermaid: true,
+    mermaid: {
+      theme: 'dark',
+    },
     hooks: {
       onBrokenLinks: 'throw',
       onBrokenMarkdownLinks: 'warn',
