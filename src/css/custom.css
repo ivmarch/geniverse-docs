@@ -36,7 +36,7 @@
   --ifm-navbar-shadow: none;
   --ifm-navbar-height: 64px;
   
-  --ifm-footer-background-color: #0B0D0C;
+  --ifm-footer-background-color: #000000;
   --ifm-footer-color: #B8D4C5;
   
   --ifm-menu-color: #E8F9F0;
@@ -490,7 +490,7 @@ a:hover {
 
 /* Footer */
 .footer {
-  background-color: var(--ifm-footer-background-color);
+  background-color: #000000 !important;
   border-top: 1px solid #1F2321;
 }
 
