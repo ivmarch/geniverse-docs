@@ -1,7 +1,7 @@
 {
   "id": "vision-purpose",
   "title": "Vision & Purpose",
-  "description": "Mission Statement",
+  "description": "Mission",
   "source": "@site/docs/vision-purpose.md",
   "sourceDirName": ".",
   "slug": "/vision-purpose",

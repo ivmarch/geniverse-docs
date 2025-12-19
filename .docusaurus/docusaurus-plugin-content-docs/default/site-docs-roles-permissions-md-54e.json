@@ -1,7 +1,7 @@
 {
   "id": "roles-permissions",
-  "title": "Roles & Permissions",
-  "description": "GeniVerse implements a comprehensive Role-Based Access Control (RBAC) system that ensures appropriate access levels for all user types while maintaining security and compliance requirements.",
+  "title": "Roles and Permissions",
+  "description": "GeniVerse uses a multi-level access management model that combines role-based, attribute-based, and contextual approaches. This ensures security, flexibility, and compliance with educational and regulatory requirements.",
   "source": "@site/docs/roles-permissions.md",
   "sourceDirName": ".",
   "slug": "/roles-permissions",

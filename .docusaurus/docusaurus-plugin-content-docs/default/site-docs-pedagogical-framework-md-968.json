@@ -1,7 +1,7 @@
 {
   "id": "pedagogical-framework",
-  "title": "Pedagogical Framework",
-  "description": "GeniVerse's pedagogical framework integrates multiple learning theories and methodologies to create effective, engaging educational experiences. The framework guides content creation, AI personalization, and learning path design.",
+  "title": "Pedagogical Model",
+  "description": "The GeniVerse pedagogical model is based on a combination of several learning theories, including behaviorist, cognitive, constructivist, and social approaches, as well as activity theory, experiential and self-regulated learning. This approach allows adapting the learning process to different educational contexts and student needs.",
   "source": "@site/docs/pedagogical-framework.md",
   "sourceDirName": ".",
   "slug": "/pedagogical-framework",

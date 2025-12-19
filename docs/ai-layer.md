@@ -1,46 +1,54 @@
 # AI Layer
 
-The AI Layer is the intelligent core of GeniVerse, powering personalization, adaptation, and intelligent assistance throughout the learning experience. Built on modern machine learning and AI technologies, it enables the platform to understand learners, adapt content, and provide intelligent support.
+The AI layer is the intelligent level of GeniVerse that supports learning personalization, content adaptation, and intelligent assistance to students and educators throughout the learning process. It is built on modern machine learning and data processing approaches and operates as a set of specialized services integrated into the platform.
+
+*AI does not replace the teacher and does not make autonomous pedagogical decisions. All critical decisions remain under human control (the "human-in-the-loop" principle).*
+
+---
 
 ## Architecture Overview
 
-The AI Layer consists of multiple specialized AI components working together:
+The AI layer consists of interconnected components:
 
-- **Learner Modeling**: Understanding individual learners
-- **Content Recommendation**: Suggesting relevant content
-- **Adaptive Assessment**: Personalizing assessments
-- **Natural Language Processing**: Understanding and generating text
-- **Computer Vision**: Analyzing visual content and XR interactions
-- **Predictive Analytics**: Forecasting outcomes and identifying needs
+- **learner model** — forming an understanding of knowledge level, progress, and needs
+- **content recommendations** — selection of relevant materials and resources
+- **adaptive assessment** — support for personalized knowledge checks
+- **natural language processing** — text analysis and generation, support for dialog scenarios
+- **computer vision** — analysis of visual content and interactions in XR (when needed)
+- **predictive analytics** — prediction of risks and learning outcomes
 
-## Learner Modeling
+---
 
-### Knowledge Tracing
+## Learner Model
 
-The system continuously tracks what each learner knows:
+### Knowledge and Skill Tracking
 
-- **Knowledge State**: Current understanding of concepts
-- **Skill Mastery**: Proficiency levels across skills
-- **Learning Velocity**: Rate of knowledge acquisition
-- **Forgetting Curves**: Modeling knowledge retention over time
+The system maintains an up-to-date model of what the student has mastered and where support is needed:
 
-### Learning Style Detection
+- **knowledge state** — current level of understanding of key concepts
+- **skill formation level** — progress in practical competencies
+- **learning pace** — speed of material acquisition
+- **forgetting effect** — assessment of need for review considering time
 
-AI identifies and adapts to learning preferences:
+### Learning Preferences and Context
 
-- **Visual vs. Auditory vs. Kinesthetic**: Preferred learning modalities
-- **Pacing Preferences**: Fast vs. methodical learners
-- **Collaboration Style**: Independent vs. social learners
-- **Challenge Tolerance**: Comfort with difficulty levels
+The platform considers preferences and learning conditions without rigid "student classification" by types:
 
-### Behavioral Analysis
+- **delivery format preferences** — text, visualizations, audio, interactive practices
+- **pace preferences** — faster or more sequential topic processing
+- **interaction format** — individual work or group learning
+- **acceptable complexity level** — comfortable level of challenge and support
 
-Understanding learner behavior patterns:
+### Behavioral Signals
 
-- **Engagement Patterns**: When and how learners engage
-- **Attention Tracking**: Focus and distraction indicators
-- **Interaction Patterns**: How learners interact with content
-- **Social Dynamics**: Collaboration and communication patterns
+AI analyzes patterns of interaction with content:
+
+- **engagement indicators** — activity, regularity, task completion
+- **attention indicators** — indirect signals of focus and distraction
+- **interaction patterns** — how the student works with materials and tasks
+- **social interactions** — participation in group work and communication
+
+---
 
 ## Personalization Engine
 
@@ -48,200 +56,219 @@ Understanding learner behavior patterns:
 
 ```mermaid
 graph LR
-    A[Learner State] --> B[Content Analysis]
+    A[Current Student State] --> B[Content Analysis]
     B --> C[Recommendation Engine]
     C --> D[Adapted Content]
-    
-    E[Performance Data] --> C
-    F[Learning Goals] --> C
-    G[Context] --> C
+
+    E[Result Data] --> C
+    F[Learning Objectives] --> C
+    G[Learning Context] --> C
 ```
 
-The personalization engine adapts content in real-time:
+The personalization engine supports adaptation within the learning program:
 
-- **Difficulty Adjustment**: Scaling content difficulty to optimal challenge level
-- **Content Selection**: Choosing most relevant content from library
-- **Sequence Optimization**: Ordering content for maximum learning efficiency
-- **Modality Selection**: Choosing best delivery format (text, video, XR, etc.)
+- **complexity adjustment** — selection of materials according to optimal challenge level
+- **content selection** — choosing relevant materials from the library
+- **sequence optimization** — determining the order of topics and tasks
+- **format selection** — recommending delivery format (text, video, interactive, XR, etc.)
 
-### Adaptive Pacing
+### Pace Adaptation
 
-- **Accelerated Paths**: Fast learners progress quickly with enrichment
-- **Remediation Paths**: Struggling learners receive additional support
-- **Mastery-Based**: Progression only after demonstrating understanding
-- **Flexible Deadlines**: Adapting to individual schedules and needs
+- **accelerated progression** — access to advanced materials when ready
+- **support in difficulties** — additional explanations, review, practices
+- **mastery-based progression** — moving forward after demonstrating understanding
+- **flexible deadlines** — consideration of different learning and life circumstances
 
-### Remediation & Enrichment
+### Support, Review, and Enrichment
 
-- **Automatic Remediation**: Detecting gaps and providing support
-- **Enrichment Content**: Advanced materials for fast learners
-- **Prerequisite Handling**: Ensuring foundational knowledge before advanced topics
-- **Just-in-Time Support**: Providing help exactly when needed
+- **gap identification** — determining topics that need review
+- **review materials** — targeted explanations and practice exercises
+- **enrichment** — additional resources for students ahead of the program
+- **just-in-time hints** — help at the moment when it's most needed
+
+---
 
 ## Natural Language Processing
 
-### Content Understanding
+### Educational Content Analysis
 
-- **Semantic Analysis**: Understanding content meaning and concepts
-- **Topic Modeling**: Identifying topics and themes
-- **Difficulty Estimation**: Assessing content complexity
-- **Prerequisite Detection**: Identifying required prior knowledge
+- **semantic analysis** — identifying key concepts and connections
+- **topic extraction** — grouping materials by topics and subtopics
+- **complexity assessment** — approximate text and requirement complexity
+- **prerequisite detection** — determining necessary prior knowledge
 
-### Learner Communication
+### Student Communication Support
 
-- **Question Answering**: Responding to learner questions
-- **Conversational AI**: Natural dialogue with learners
-- **Feedback Generation**: Creating personalized feedback
-- **Explanation Generation**: Explaining concepts in learner-appropriate language
+- **question-answer** — help with clarifications and explanations
+- **dialog scenarios** — support for learning dialogue within the course
+- **feedback** — generating explanatory hints based on work results
+- **reformulation** — explaining complex concepts in accessible language
 
-### Assessment Processing
+### Assessment Support
 
-- **Open-Ended Response Analysis**: Evaluating written responses
-- **Essay Grading**: Automated essay evaluation with rubric alignment
-- **Question Generation**: Creating assessment questions
-- **Answer Explanation**: Explaining correct answers and misconceptions
+- **open response analysis** — preliminary assessment and summary by criteria
+- **essay assessment** — support for checking based on rubrics
+- **task generation** — preparing question variants and practices
+- **error explanation** — identifying typical misunderstandings and corrective explanations
 
-## Computer Vision & XR AI
+*Automated assessment is used as an auxiliary tool and requires criterion configuration and control by the educator.*
+
+---
+
+## Computer Vision and XR Components (Optional)
 
 ### XR Interaction Analysis
 
-- **Gesture Recognition**: Understanding hand and body gestures
-- **Spatial Understanding**: Analyzing 3D interactions
-- **Object Manipulation**: Tracking how learners interact with virtual objects
-- **Presence Metrics**: Measuring immersion and engagement
+- **gesture recognition** — analysis of basic gestures and actions
+- **spatial analysis** — tracking interactions in 3D space
+- **object manipulation** — control of actions with virtual objects
+- **presence indicators** — indirect engagement metrics in XR scenarios
 
 ### Visual Content Analysis
 
-- **Image Understanding**: Analyzing images and diagrams
-- **Video Analysis**: Understanding video content and learner attention
-- **3D Model Analysis**: Understanding 3D content structure
-- **Visual Feedback**: Providing visual guidance and corrections
+- **image analysis** — working with diagrams, illustrations, schemas
+- **video analysis** — fragment indexing and search support
+- **3D model analysis** — interpretation of educational 3D object structure
+- **visual hints** — support for learning actions in simulations
+
+---
 
 ## Predictive Analytics
 
-### Outcome Prediction
+### Outcome and Risk Prediction
 
-- **Performance Forecasting**: Predicting future performance
-- **Completion Probability**: Estimating likelihood of course completion
-- **Skill Development**: Forecasting skill acquisition timelines
-- **Risk Identification**: Identifying learners at risk of failure
+- **learning outcome prediction** — assessment of probable achievement level
+- **completion probability** — prediction of course non-completion risk
+- **skill development dynamics** — approximate timelines for competency mastery
+- **risk identification** — early signals of difficulties or engagement loss
 
 ### Early Intervention
 
-- **At-Risk Detection**: Identifying struggling learners early
-- **Engagement Alerts**: Notifying when engagement drops
-- **Intervention Recommendations**: Suggesting support strategies
-- **Resource Allocation**: Optimizing educator time and resources
+- **risk signals** — identifying students needing additional support
+- **engagement change alerts** — activity drops, absences, delays
+- **support recommendations** — hints on forms of help and corrective materials
+- **resource allocation support** — prioritizing educator attention
+
+---
 
 ## Recommendation Systems
 
 ### Content Recommendations
 
-- **Collaborative Filtering**: "Learners like you also viewed..."
-- **Content-Based Filtering**: Recommendations based on content similarity
-- **Hybrid Approaches**: Combining multiple recommendation strategies
-- **Contextual Recommendations**: Adapting to current learning context
+- **collaborative approaches** — recommendations based on similar learning trajectories
+- **content-oriented approaches** — recommendations by content similarity of materials
+- **hybrid strategies** — combination of multiple approaches
+- **contextual recommendations** — consideration of current topic, goal, and progress
 
-### Learning Path Recommendations
+### Learning Trajectory Recommendations
 
-- **Optimal Path Finding**: Suggesting best learning sequences
-- **Alternative Paths**: Offering multiple routes to learning goals
-- **Prerequisite-Aware**: Ensuring proper learning progression
-- **Goal-Oriented**: Aligning paths with learning objectives
+- **sequence selection** — suggesting optimal order of topic progression
+- **alternative options** — multiple routes to learning goal
+- **prerequisite consideration** — ensuring correct knowledge progression
+- **goal orientation** — aligning trajectory with learning outcomes
 
-## Ethical AI & Bias Mitigation
+---
+
+## Ethics, Fairness, and Control
 
 ### Fairness
 
-- **Bias Detection**: Identifying and measuring algorithmic bias
-- **Fairness Metrics**: Monitoring fairness across demographic groups
-- **Bias Mitigation**: Techniques to reduce bias in recommendations
-- **Equity Monitoring**: Ensuring equitable outcomes
+- detection of possible biases in data and results
+- monitoring fairness metrics
+- reducing bias influence in recommendations
+- control of equal access to platform opportunities
 
-### Transparency
+### Transparency and Explainability
 
-- **Explainable AI**: Providing explanations for AI decisions
-- **Recommendation Rationale**: Explaining why content is recommended
-- **Model Interpretability**: Making AI models understandable
-- **Decision Logging**: Recording AI decisions for review
+- explainable recommendations and adaptations
+- brief justifications for "why this is suggested"
+- model interpretability at the level of rules and signals
+- logging key AI decisions for verification
 
 ### Privacy
 
-- **Differential Privacy**: Protecting individual privacy in aggregate data
-- **Federated Learning**: Training models without centralizing data
-- **Data Minimization**: Using only necessary data for AI
-- **Consent Management**: Respecting learner privacy preferences
+- minimization of data necessary for algorithm operation
+- data isolation mechanisms between institutions
+- consent and privacy settings management
+- possible application of techniques like federated learning and differential privacy (when needed)
 
-## Model Training & Updates
+---
 
-### Continuous Learning
+## Model Training and Updates
 
-- **Online Learning**: Updating models with new data
-- **A/B Testing**: Testing model improvements
-- **Performance Monitoring**: Tracking model accuracy and effectiveness
-- **Model Versioning**: Managing model versions and rollbacks
+### Model Improvement Cycle
+
+- model updates based on new data and feedback (per selected policy)
+- controlled experiments and comparative testing of changes
+- monitoring model quality and stability
+- model versioning and rollback capability
 
 ### Data Management
 
-- **Training Data Curation**: Ensuring high-quality training data
-- **Data Labeling**: Creating accurate labels for supervised learning
-- **Data Augmentation**: Expanding training datasets
-- **Bias Auditing**: Regular audits for bias in training data
+- preparation and quality control of training data
+- label formation for training (with expert participation)
+- data balancing to reduce biases
+- regular quality and risk checks
+
+---
 
 ## AI Capabilities by Use Case
 
-### For Learners
+### For Students
 
-- Personalized learning paths
-- Adaptive content difficulty
-- Intelligent tutoring assistance
-- Progress insights and recommendations
-- Natural language Q&A
+- personalized learning trajectories
+- complexity and pace adaptation
+- intelligent support during learning
+- hints on progress and next steps
+- question-answer within educational content
 
 ### For Educators
 
-- Learner performance predictions
-- At-risk learner identification
-- Content effectiveness analysis
-- Automated grading assistance
-- Teaching recommendations
+- early risk signals and support needs
+- content and assessment effectiveness analytics
+- assistance in preparing assignments and rubrics
+- support for checking open responses
+- recommendations for learning process correction
 
-### For Administrators
+### For Administration
 
-- Institution-wide analytics
-- Predictive insights
-- Resource optimization
-- Trend analysis
-- Strategic planning support
+- institution-level analytics
+- predictive indicators and trends
+- resource planning support
+- identification of systemic problems in learning programs
+- support for data-driven strategic decisions
+
+---
 
 ## Technical Implementation
 
-### Machine Learning Stack
+### Machine Learning Approaches
 
-- **Deep Learning**: Neural networks for complex pattern recognition
-- **Reinforcement Learning**: Optimizing learning paths through trial and improvement
-- **Transfer Learning**: Leveraging pre-trained models
-- **Ensemble Methods**: Combining multiple models for robustness
+- **deep learning** — for complex patterns in text, images, and interactions
+- **transfer learning** — use of pre-trained models
+- **ensemble approaches** — combining multiple models for increased stability
+- **reinforcement and optimization** — for trajectory planning tasks (when needed)
 
 ### Infrastructure
 
-- **Model Serving**: Efficient model deployment and inference
-- **Scalability**: Handling millions of learners simultaneously
-- **Latency Optimization**: Real-time personalization with low latency
-- **Resource Management**: Efficient use of computational resources
+- model deployment and maintenance service
+- computation scaling according to load
+- latency optimization for real-time personalization
+- control of computational resource usage
 
-### APIs & Integration
+### API and Integration
 
-- **AI API**: Programmatic access to AI capabilities
-- **Webhooks**: Event-driven AI processing
-- **SDK Integration**: Easy integration for developers
-- **Custom Models**: Support for institution-specific models
+- API for accessing AI functions
+- webhooks for "event-based" scenarios
+- SDK for extensions and integrations
+- possibility of institution-specific models or configurations
 
-## Future AI Enhancements
+---
 
-- **Multimodal AI**: Combining text, audio, visual, and XR data
-- **Advanced NLP**: More sophisticated language understanding
-- **Generative AI**: Creating personalized content dynamically
-- **Meta-Learning**: Learning how to learn more effectively
-- **Explainable AI**: Enhanced transparency and interpretability
+## Future Development Directions
 
+- multimodal models for combining text, audio, visual data, and XR interactions
+- development of language capabilities for explanation and dialogue
+- generative tools for creating interactive educational content
+- development of model explainability and interpretability
+- improving personalization quality considering pedagogical constraints and regulatory requirements

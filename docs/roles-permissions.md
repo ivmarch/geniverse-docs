@@ -1,309 +1,261 @@
-# Roles & Permissions
+# Roles and Permissions
 
-GeniVerse implements a comprehensive Role-Based Access Control (RBAC) system that ensures appropriate access levels for all user types while maintaining security and compliance requirements.
+GeniVerse uses a multi-level access management model that combines role-based, attribute-based, and contextual approaches. This ensures security, flexibility, and compliance with educational and regulatory requirements.
 
 ## Role Hierarchy
 
 ```mermaid
 graph TD
-    A[Super Admin] --> B[Institution Admin]
+    A[Super Administrator] --> B[Institution Administrator]
     B --> C[Educator]
     B --> D[Educational Content Author]
-    C --> E[Learner]
+    C --> E[Student]
     C --> F[Teaching Assistant]
     D --> E
-    G[Parent/Guardian] --> E
+    G[Parent or Guardian] --> E
     H[Guest] --> E
+    
+    classDef adminClass fill:#141716,stroke:#7CECBF,stroke-width:2px
+    classDef educatorClass fill:#141716,stroke:#58E6B2,stroke-width:2px
+    classDef studentClass fill:#141716,stroke:#58E6B2,stroke-width:2px
+    classDef guestClass fill:#141716,stroke:#58E6B2,stroke-width:2px
+    
+    class A,B adminClass
+    class C,D,F educatorClass
+    class E studentClass
+    class G,H guestClass
 ```
 
-## Core Roles
+## Main User Roles
 
-### Super Admin
+### Super Administrator
 
-**System-wide administrative access**
-
-**Permissions:**
-- Manage all institutions and organizations
-- Configure system-wide settings
-- Access all data and analytics
-- Manage platform updates and deployments
-- Override any permission restrictions
-- Audit logs and security monitoring
-
-**Use Cases:**
-- Platform maintenance and updates
-- System configuration
-- Security incident response
-- Compliance audits
-
-### Institution Admin
-
-**Administrative access within an institution**
+Administrative access at the system-wide level.
 
 **Permissions:**
-- Manage users within their institution
-- Configure institution-level settings
-- Access institution-wide analytics
-- Manage billing and subscriptions
-- Assign roles to users
-- Create and manage organizational units (departments, courses)
 
-**Use Cases:**
-- Onboarding new educators and learners
-- Configuring institution policies
-- Monitoring institution-wide performance
-- Managing institutional subscriptions
+- management of all institutions and organizations
+- configuration of global platform parameters
+- access to full analytics and system data
+- management of updates, versions, and deployments
+- overriding access restrictions
+- audit of access logs and security monitoring
 
-### Educator
+---
 
-**Teaching and course management**
+### Institution Administrator
+
+Administrative access within a specific institution.
 
 **Permissions:**
-- Create and manage courses
-- Assign content to learners
-- View learner progress and analytics
-- Provide feedback and grades
-- Manage course enrollments
-- Access teaching resources and tools
-- Create assessments and assignments
 
-**Use Cases:**
-- Course creation and management
-- Learner progress monitoring
-- Providing personalized feedback
-- Facilitating discussions and collaboration
+- user management within the institution
+- institution parameter configuration
+- access to institution-level analytics
+- payment and subscription management
+- role assignment to users
+- creation and management of organizational structures (departments, courses, groups)
+
+---
+
+### Educator (Teacher)
+
+Teaching and management of learning courses.
+
+**Permissions:**
+
+- creation and management of courses
+- assignment of educational content to students
+- viewing student progress and analytics
+- providing feedback and assessment
+- course enrollment management
+- access to educational resources and tools
+- creation of assignments and assessment systems
+
+---
 
 ### Educational Content Author
 
-**Content development and curation**
+Development and curation of educational materials.
 
 **Permissions:**
-- Create and edit learning content
-- Upload media and resources
-- Organize content libraries
-- Preview content in various formats
-- Collaborate with other creators
-- Submit content for review
-- Access content analytics
 
-**Use Cases:**
-- Developing course materials
-- Creating XR experiences
-- Curating content libraries
-- Collaborating on content projects
+- creation and editing of educational content
+- uploading media and resources
+- organization of content libraries
+- content preview in various formats
+- collaboration with other authors
+- submission of materials for review
+- access to content usage analytics
+
+---
 
 ### Teaching Assistant
 
-**Support for educators**
+Support of the educational process under teacher guidance.
 
 **Permissions:**
-- View assigned learner progress
-- Provide feedback (with educator approval)
-- Facilitate discussions
-- Grade assignments (with educator review)
-- Access limited course materials
-- Communicate with learners
 
-**Use Cases:**
-- Supporting large courses
-- Providing additional learner support
-- Facilitating group activities
-- Assisting with grading
+- viewing student progress in assigned courses
+- providing feedback (within permissions)
+- facilitating discussions
+- checking and assessing assignments with teacher confirmation
+- access to limited course materials
+- communication with students
 
-### Learner
+---
 
-**Primary user role for students**
+### Student
+
+Primary role for individuals who are learning.
 
 **Permissions:**
-- Access assigned courses and content
-- Submit assignments and assessments
-- View personal progress and analytics
-- Participate in discussions and collaborations
-- Access learning resources
-- Customize learning preferences
-- Request help and support
 
-**Use Cases:**
-- Completing coursework
-- Engaging with learning materials
-- Tracking personal progress
-- Collaborating with peers
+- access to assigned courses and materials
+- completion and submission of assignments
+- viewing personal progress and analytics
+- participation in discussions and collaborative activities
+- access to educational resources
+- configuration of learning preferences
+- requesting support and help
 
-### Parent/Guardian
+---
 
-**Oversight for minor learners**
+### Parent or Guardian
+
+Oversight of learning for minor students.
 
 **Permissions:**
-- View learner progress (with privacy restrictions)
-- Receive progress reports
-- Communicate with educators
-- Access limited learner information
-- Set learning goals and preferences (with learner consent)
 
-**Use Cases:**
-- Monitoring child's educational progress
-- Supporting learning at home
-- Communicating with educators
-- Understanding learning activities
+- viewing student progress with consideration of privacy restrictions
+- receiving reports on learning results
+- communication with educators
+- access to limited information about the student
+- participation in setting learning goals with student consent
+
+---
 
 ### Guest
 
-**Limited access for visitors**
+Limited access for platform familiarization.
 
 **Permissions:**
-- View public content and demos
-- Access limited platform features
-- Create account to become learner
-- Browse public course catalogs
 
-**Use Cases:**
-- Exploring platform capabilities
-- Previewing content before enrollment
-- Public demonstrations
+- viewing public content and demonstrations
+- access to limited functionality
+- viewing open course catalogs
+- creating an account for further learning
+
+**Typical usage scenarios:**
+
+- familiarization with platform capabilities
+- course preview
+- public demonstrations
+
+---
 
 ## Permission Model
 
-### Granular Permissions
+### Permission Types
 
-Permissions are defined at a granular level:
+Access to resources is defined at a detailed level:
 
-- **Read**: View content or data
-- **Write**: Create or modify content or data
-- **Delete**: Remove content or data
-- **Execute**: Run actions or processes
-- **Admin**: Full administrative control
+- **read** — viewing data or content
+- **write** — creating or modifying data
+- **delete** — deleting data or content
+- **execute** — launching actions or processes
+- **administer** — full control over the resource
 
-### Resource-Based Permissions
+### Resource-Based Access
 
-Permissions apply to specific resources:
+Permissions are applied to specific resource types:
 
-- **Courses**: Access, create, modify, delete courses
-- **Content**: Access, create, modify, delete content
-- **Users**: View, create, modify user accounts
-- **Analytics**: Access various analytics and reports
-- **Settings**: Modify configuration settings
-- **Assessments**: Create, grade, view assessments
+- courses
+- educational content
+- users
+- analytics and reports
+- platform settings
+- assessments and results
 
-### Context-Aware Permissions
+### Contextual Access Control
 
-Permissions may vary based on context:
+Access rights can change depending on context:
 
-- **Ownership**: Creators have elevated permissions on their content
-- **Enrollment**: Learners have access to enrolled courses
-- **Institution**: Permissions scoped to institution membership
-- **Time-based**: Some permissions may be time-limited
+- institution membership
+- role within a course
+- content ownership
+- time-based access restrictions
+- course enrollment status
 
-## Access Control Implementation
+---
+
+## Authentication and Authorization
 
 ### Authentication
 
-- Multi-factor authentication (MFA) support
-- Single Sign-On (SSO) integration
+- multi-factor authentication (MFA)
+- SSO integration
 - OAuth 2.0 and SAML support
-- Password policies and management
+- password management policies
 
 ### Authorization
 
-- Role-based access control (RBAC)
-- Attribute-based access control (ABAC) for fine-grained control
-- Policy-based access control for complex scenarios
-- Just-in-time (JIT) access provisioning
+- role-based access control (RBAC)
+- attribute-based access control (ABAC)
+- policy-based control for complex scenarios
+- just-in-time (JIT) access provisioning
 
 ### Session Management
 
-- Secure session handling
-- Session timeout and renewal
-- Concurrent session limits
-- Activity-based session extension
+- secure session handling
+- timeouts and session updates
+- limiting number of concurrent sessions
+- adaptive session extension based on activity
 
-## Privacy & Data Access
+---
+
+## Data Privacy and Access
 
 ### Data Minimization
 
-Users only access data necessary for their role:
+Users have access only to information necessary for performing their roles:
 
-- Educators see learner data for their courses only
-- Learners see only their own data
-- Admins see institution-level aggregated data
-- Parents see limited, privacy-compliant information
+- educators — only to data of students in their courses
+- students — only to their own data
+- administrators — to aggregated institution data
+- parents — to limited information about the child
 
-### Privacy Controls
+### Privacy Control
 
-- Granular privacy settings
-- Data sharing preferences
-- Consent management
-- Right to access and deletion
+- detailed privacy settings
+- consent management
+- right to access and delete data
+- information sharing configuration
 
-### Compliance
+### Regulatory Compliance
 
-- FERPA compliance for educational records
-- COPPA compliance for children's data
-- GDPR compliance for EU users
-- HIPAA considerations for health-related data
+- FERPA — educational records
+- COPPA — children's data
+- GDPR — EU users
+- additional requirements for sensitive data as needed
 
-## Role Assignment
+---
 
-### Automatic Assignment
+## Audit and Monitoring
 
-- Roles assigned based on user type during registration
-- Institution membership determines default roles
-- Course enrollment grants learner access
+- logging of all access attempts
+- tracking changes in roles and permissions
+- data access audit
+- monitoring of failed login attempts
+- alerts about privilege escalation
+- detection of anomalous activity
 
-### Manual Assignment
-
-- Admins can assign and modify roles
-- Bulk role assignment tools
-- Temporary role elevation
-- Role delegation capabilities
-
-### Role Inheritance
-
-- Some roles inherit permissions from parent roles
-- Organizational hierarchy affects permissions
-- Course-level roles supplement institution roles
-
-## Audit & Compliance
-
-### Access Logging
-
-- All access attempts are logged
-- Permission changes are tracked
-- Data access is audited
-- Failed access attempts are monitored
-
-### Compliance Reporting
-
-- Role and permission reports
-- Access audit trails
-- Compliance status dashboards
-- Regular access reviews
-
-### Security Monitoring
-
-- Unusual access pattern detection
-- Privilege escalation alerts
-- Unauthorized access attempts
-- Security incident tracking
+---
 
 ## Best Practices
 
-### Principle of Least Privilege
-
-Users receive minimum permissions necessary for their role and tasks.
-
-### Regular Access Reviews
-
-Institution admins should regularly review user roles and permissions.
-
-### Separation of Duties
-
-Critical operations require multiple approvals or role separation.
-
-### Temporary Access
-
-Time-limited access for specific projects or tasks.
-
-### Role Standardization
-
-Consistent role definitions across institutions while allowing customization.
-
+- principle of least privilege
+- regular access reviews
+- separation of critical duties
+- temporary access for specific tasks
+- standardized roles with possibility of local configuration

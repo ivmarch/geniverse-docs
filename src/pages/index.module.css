@@ -19,9 +19,26 @@
   color: #FFFFFF !important;
 }
 
+.heroTitleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.heroLogo {
+  height: 4rem;
+  width: auto;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
+  }
+
+  .heroLogo {
+    height: 3rem;
   }
 }
 

@@ -11,10 +11,13 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
-          GeniVerse
-        </Heading>
-        <p className="hero__subtitle">Платформа для навчання з підтримкою ШІ та імерсивних технологій</p>
+        <div className={styles.heroTitleWrapper}>
+          <img src="/img/logo.svg" alt="GeniVerse Logo" className={styles.heroLogo} />
+          <Heading as="h1" className="hero__title">
+            GeniVerse
+          </Heading>
+        </div>
+        <p className="hero__subtitle">AI-Powered Immersive Learning Platform</p>
       </div>
     </header>
   );

@@ -1,7 +1,7 @@
 {
   "id": "product-principles",
   "title": "Product Principles",
-  "description": "GeniVerse is built on a foundation of core principles that guide every design decision, feature development, and user interaction. These principles ensure consistency, quality, and alignment with our educational mission.",
+  "description": "GeniVerse is developed based on a set of key principles that define the approach to interface design, feature development, and user interaction organization.",
   "source": "@site/docs/product-principles.md",
   "sourceDirName": ".",
   "slug": "/product-principles",
