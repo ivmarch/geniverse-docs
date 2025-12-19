@@ -18,5 +18,9 @@
   "item.label.Pythagorean": {
     "message": "Піфагор",
     "description": "Navbar item with label Pythagorean"
+  },
+  "item.label.Design System": {
+    "message": "Система дизайну",
+    "description": "Navbar item with label Design System"
   }
 }

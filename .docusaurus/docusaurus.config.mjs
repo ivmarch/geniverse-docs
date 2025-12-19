@@ -123,6 +123,11 @@ export default {
           "position": "left"
         },
         {
+          "to": "/design-system",
+          "label": "Система дизайну",
+          "position": "left"
+        },
+        {
           "type": "localeDropdown",
           "position": "right",
           "dropdownItemsAfter": [],

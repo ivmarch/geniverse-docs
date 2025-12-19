@@ -3,6 +3,11 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
+    path: '/uk/design-system',
+    component: ComponentCreator('/uk/design-system', '45c'),
+    exact: true
+  },
+  {
     path: '/uk/diagrams',
     component: ComponentCreator('/uk/diagrams', '20c'),
     exact: true

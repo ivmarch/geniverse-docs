@@ -126,6 +126,11 @@ const config: Config = {
           position: 'left',
         },
         {
+          to: '/design-system',
+          label: 'Design System',
+          position: 'left',
+        },
+        {
           type: 'localeDropdown',
           position: 'right',
           dropdownItemsAfter: [],
