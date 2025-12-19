@@ -128,7 +128,7 @@ export default {
     },
     "footer": {
       "style": "dark",
-      "copyright": "Copyright © 2024 FuturumXR. Built with Docusaurus.",
+      "copyright": "Copyright © 2025 FuturumXR. Built with Docusaurus.",
       "links": []
     },
     "prism": {

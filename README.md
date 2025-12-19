@@ -128,5 +128,5 @@ The site can be deployed to any static hosting service:
 
 ## License
 
-Copyright © GeniVerse. All rights reserved.
+Copyright © 2025 GeniVerse. All rights reserved.
 
