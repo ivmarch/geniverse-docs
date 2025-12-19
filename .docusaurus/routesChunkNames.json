@@ -1,73 +1,116 @@
 {
-  "/diagrams-04e": {
-    "__comp": "d53a7826",
+  "/__docusaurus/debug-5ff": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "a7456010"
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/config-5ba": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/content-a2b": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
     },
-    "config": "5e9f5e1a"
+    "__props": "__props---docusaurus-debug-content-3-c-0-be2"
+  },
+  "/__docusaurus/debug/globalData-c3c": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/metadata-156": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/registry-88c": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/routes-000": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/diagrams-04e": {
+    "__comp": "__comp---site-src-pages-diagrams-tsxd-53-aad",
+    "__context": {
+      "plugin": "plugin---diagramsa-74-9f5"
+    },
+    "config": "config---diagrams-5-e-9-d89"
   },
   "/-e5f": {
-    "__comp": "1df93b7f",
+    "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",
     "__context": {
-      "plugin": "a7456010"
+      "plugin": "plugin---diagramsa-74-9f5"
     },
-    "config": "5e9f5e1a"
+    "config": "config---diagrams-5-e-9-d89"
   },
   "/-c97": {
-    "__comp": "5e95c892",
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
-      "plugin": "aba21aa0"
+      "plugin": "plugin---aba-d70"
     }
   },
   "/-891": {
-    "__comp": "a7bd4aaa",
-    "__props": "22dd74f7"
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---22-d-307"
   },
   "/-056": {
-    "__comp": "a94703ab"
+    "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/ai-layer-a93": {
-    "__comp": "17896441",
-    "content": "c5c3b02b"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---ai-layerc-5-c-c9e"
   },
   "/core-capabilities-176": {
-    "__comp": "17896441",
-    "content": "91408260"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---core-capabilities-914-3e1"
   },
   "/design-system-e8e": {
-    "__comp": "17896441",
-    "content": "5e18d7e6"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---design-system-5-e-1-eea"
   },
   "/modularity-deployment-1f9": {
-    "__comp": "17896441",
-    "content": "c5722ad6"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---modularity-deploymentc-57-a33"
   },
   "/overview-7d0": {
-    "__comp": "17896441",
-    "content": "1db64337"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---overview-1-db-0f1"
   },
   "/pedagogical-framework-144": {
-    "__comp": "17896441",
-    "content": "968c109b"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---pedagogical-framework-968-7c9"
   },
   "/product-principles-23e": {
-    "__comp": "17896441",
-    "content": "ff4aebe7"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---product-principlesff-4-9f9"
   },
   "/roles-permissions-f54": {
-    "__comp": "17896441",
-    "content": "54ee187c"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---roles-permissions-54-e-1f7"
   },
   "/safety-ethics-compliance-51a": {
-    "__comp": "17896441",
-    "content": "b4fa2076"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---safety-ethics-complianceb-4-f-235"
   },
   "/vision-purpose-71b": {
-    "__comp": "17896441",
-    "content": "03aa4417"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---vision-purpose-03-a-d7e"
   },
   "/xr-immersive-772": {
-    "__comp": "17896441",
-    "content": "9bd4c11f"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---xr-immersive-9-bd-bc9"
   }
 }
