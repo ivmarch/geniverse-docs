@@ -59,15 +59,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '50e'),
+    component: ComponentCreator('/', '11a'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '7a9'),
+        component: ComponentCreator('/', 'd04'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', 'bdd'),
+            component: ComponentCreator('/', '029'),
             routes: [
               {
                 path: '/ai-layer',
@@ -124,8 +124,23 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/uk/ai-layer',
+                component: ComponentCreator('/uk/ai-layer', '35f'),
+                exact: true
+              },
+              {
                 path: '/uk/core-capabilities',
                 component: ComponentCreator('/uk/core-capabilities', 'abc'),
+                exact: true
+              },
+              {
+                path: '/uk/design-system',
+                component: ComponentCreator('/uk/design-system', '0f6'),
+                exact: true
+              },
+              {
+                path: '/uk/modularity-deployment',
+                component: ComponentCreator('/uk/modularity-deployment', '89d'),
                 exact: true
               },
               {
@@ -149,8 +164,18 @@ export default [
                 exact: true
               },
               {
+                path: '/uk/safety-ethics-compliance',
+                component: ComponentCreator('/uk/safety-ethics-compliance', '695'),
+                exact: true
+              },
+              {
                 path: '/uk/vision-purpose',
                 component: ComponentCreator('/uk/vision-purpose', '3b2'),
+                exact: true
+              },
+              {
+                path: '/uk/xr-immersive',
+                component: ComponentCreator('/uk/xr-immersive', 'bd5'),
                 exact: true
               },
               {

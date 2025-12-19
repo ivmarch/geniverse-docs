@@ -56,8 +56,20 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "uk/ai-layer",
+              "path": "/uk/ai-layer"
+            },
+            {
               "id": "uk/core-capabilities",
               "path": "/uk/core-capabilities"
+            },
+            {
+              "id": "uk/design-system",
+              "path": "/uk/design-system"
+            },
+            {
+              "id": "uk/modularity-deployment",
+              "path": "/uk/modularity-deployment"
             },
             {
               "id": "uk/overview",
@@ -76,8 +88,16 @@
               "path": "/uk/roles-permissions"
             },
             {
+              "id": "uk/safety-ethics-compliance",
+              "path": "/uk/safety-ethics-compliance"
+            },
+            {
               "id": "uk/vision-purpose",
               "path": "/uk/vision-purpose"
+            },
+            {
+              "id": "uk/xr-immersive",
+              "path": "/uk/xr-immersive"
             },
             {
               "id": "vision-purpose",

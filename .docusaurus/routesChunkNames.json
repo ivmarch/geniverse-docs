@@ -70,17 +70,17 @@
     },
     "config": "config---diagrams-5-e-9-d89"
   },
-  "/-50e": {
+  "/-11a": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---aba-d70"
     }
   },
-  "/-7a9": {
+  "/-d04": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---22-d-307"
   },
-  "/-bdd": {
+  "/-029": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/ai-layer-a93": {
@@ -119,9 +119,21 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---safety-ethics-complianceb-4-f-235"
   },
+  "/uk/ai-layer-35f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---uk-ai-layer-435-bb6"
+  },
   "/uk/core-capabilities-abc": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---uk-core-capabilities-83-c-200"
+  },
+  "/uk/design-system-0f6": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---uk-design-systemb-8-a-ac4"
+  },
+  "/uk/modularity-deployment-89d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---uk-modularity-deployment-5-a-2-479"
   },
   "/uk/overview-af2": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -139,9 +151,17 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---uk-roles-permissions-3-b-4-3ff"
   },
+  "/uk/safety-ethics-compliance-695": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---uk-safety-ethics-compliancef-58-b3d"
+  },
   "/uk/vision-purpose-3b2": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---uk-vision-purpose-2-da-306"
+  },
+  "/uk/xr-immersive-bd5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---uk-xr-immersive-029-ad4"
   },
   "/vision-purpose-71b": {
     "__comp": "__comp---theme-doc-item-178-a40",

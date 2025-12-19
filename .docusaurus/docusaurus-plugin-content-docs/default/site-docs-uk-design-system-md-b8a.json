@@ -1,0 +1,14 @@
+{
+  "id": "uk/design-system",
+  "title": "Система Дизайну",
+  "description": "Система дизайну GeniVerse надає згуртовану візуальну мову та бібліотеку компонентів, яка забезпечує послідовність, доступність та сучасний користувацький досвід на всіх платформах та інтерфейсах.",
+  "source": "@site/docs/uk/design-system.md",
+  "sourceDirName": "uk",
+  "slug": "/uk/design-system",
+  "permalink": "/uk/design-system",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}
