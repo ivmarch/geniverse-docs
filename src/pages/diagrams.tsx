@@ -6,67 +6,78 @@ export default function Diagrams(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
 
   useEffect(() => {
-    // Initialize Mermaid diagrams after component mounts
-    const initMermaid = async () => {
+    // Wait for Docusaurus to load Mermaid and render diagrams
+    const renderMermaid = async () => {
       if (typeof window === 'undefined') return;
       
-      // Wait for Mermaid to be available (Docusaurus loads it)
-      const checkMermaid = async (retries = 20): Promise<void> => {
-        if ((window as any).mermaid) {
+      const maxRetries = 30;
+      let retries = 0;
+      
+      const tryRender = async () => {
+        // Check if Mermaid is loaded by Docusaurus
+        const mermaidLib = (window as any).mermaid || (window as any).docusaurus?.mermaid;
+        
+        if (mermaidLib) {
           try {
-            // Initialize Mermaid with custom theme
-            (window as any).mermaid.initialize({
-              startOnLoad: false,
-              theme: 'dark',
-              themeVariables: {
-                primaryColor: '#7CECBF',
-                primaryTextColor: '#0B0D0C',
-                primaryBorderColor: '#58E6B2',
-                lineColor: '#A0A0A0',
-                secondaryColor: '#A0A0A0',
-                tertiaryColor: '#808080',
-                background: '#0B0D0C',
-                mainBkg: '#A0A0A0',
-                secondBkg: '#808080',
-                textColor: '#E8F9F0',
-              },
-            });
-            
-            // Wait a bit for initialization to complete
-            await new Promise(resolve => setTimeout(resolve, 100));
-            
-            // Render all Mermaid diagrams
+            // Get all mermaid elements that haven't been rendered
             const mermaidElements = document.querySelectorAll('.mermaid:not([data-processed])');
+            
             if (mermaidElements.length > 0) {
-              mermaidElements.forEach((element) => {
-                const elementWithId = element as HTMLElement;
-                if (!element.querySelector('svg')) {
+              // Initialize if not already done
+              if (!mermaidLib.initialized) {
+                mermaidLib.initialize({
+                  startOnLoad: false,
+                  theme: 'dark',
+                  themeVariables: {
+                    primaryColor: '#7CECBF',
+                    primaryTextColor: '#0B0D0C',
+                    primaryBorderColor: '#58E6B2',
+                    lineColor: '#A0A0A0',
+                    secondaryColor: '#A0A0A0',
+                    tertiaryColor: '#808080',
+                    background: '#0B0D0C',
+                    mainBkg: '#A0A0A0',
+                    secondBkg: '#808080',
+                    textColor: '#E8F9F0',
+                  },
+                });
+              }
+              
+              // Render each diagram
+              for (const element of Array.from(mermaidElements)) {
+                const htmlElement = element as HTMLElement;
+                if (!htmlElement.querySelector('svg')) {
                   try {
-                    (window as any).mermaid.run({ 
-                      nodes: [element],
-                      suppressErrors: true 
-                    });
-                    elementWithId.setAttribute('data-processed', 'true');
+                    const id = htmlElement.id || `mermaid-${Math.random().toString(36).substr(2, 9)}`;
+                    if (!htmlElement.id) {
+                      htmlElement.id = id;
+                    }
+                    
+                    const definition = htmlElement.textContent || '';
+                    if (definition.trim()) {
+                      await mermaidLib.render(id, definition);
+                      htmlElement.setAttribute('data-processed', 'true');
+                    }
                   } catch (error) {
-                    console.error('Error rendering Mermaid diagram:', error);
+                    console.error('Error rendering Mermaid:', error);
                   }
                 }
-              });
+              }
             }
           } catch (error) {
-            console.error('Error initializing Mermaid:', error);
+            console.error('Mermaid initialization error:', error);
           }
-        } else if (retries > 0) {
-          // Retry after a delay
-          setTimeout(() => checkMermaid(retries - 1), 200);
+        } else if (retries < maxRetries) {
+          retries++;
+          setTimeout(tryRender, 200);
         }
       };
       
-      // Start checking after a delay to ensure DOM is ready
-      setTimeout(() => checkMermaid(), 300);
+      // Start after a delay to ensure DOM is ready
+      setTimeout(tryRender, 500);
     };
 
-    initMermaid();
+    renderMermaid();
   }, []);
 
   const exportDiagram = (event: React.MouseEvent<HTMLButtonElement>, title: string) => {
