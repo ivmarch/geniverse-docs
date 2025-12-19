@@ -33,7 +33,7 @@ graph TB
     subgraph PlatformServices[" "]
         direction LR
         AI[AI Layer]
-        Auth[Auth & RBAC]
+        Auth["Auth &<br/>RBAC"]
         Data[Data Layer]
     end
     

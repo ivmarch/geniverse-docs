@@ -135,7 +135,7 @@ graph TB
     subgraph UI[" "]
         direction LR
         Web[Веб Клієнт]
-        Mobile[Мобільний Додаток]
+        Mobile["Мобільний<br/>Додаток"]
         VR[VR Шолом]
         AR[AR Пристрій]
     end
@@ -145,7 +145,7 @@ graph TB
     subgraph PlatformServices[" "]
         direction LR
         AI[Шар ШІ]
-        Auth[Авторизація та RBAC]
+        Auth["Авторизація<br/>та RBAC"]
         Data[Шар Даних]
     end
     
@@ -155,7 +155,7 @@ graph TB
         direction LR
         LMS[Інтеграція LMS]
         Cloud[Хмарні Сервіси]
-        Edge[Периферійні Обчислення]
+        Edge["Периферійні<br/>Обчислення"]
     end
     
     User --> Web

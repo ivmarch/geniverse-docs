@@ -97,6 +97,8 @@ const config: Config = {
           titleColor: '#ffffff',
           edgeLabelBackground: '#1a1a1a',
           nodeTextColor: '#ffffff',
+          fontSize: '18px',
+          fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
         },
       },
     },

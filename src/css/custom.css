@@ -224,12 +224,48 @@ h3 {
   max-height: none !important;
 }
 
-/* Increase node sizes for better readability */
+/* Increase node sizes for better readability and text wrapping */
 .mermaid svg .node rect,
 .docusaurus-mermaid-container svg .node rect {
-  min-width: 120px !important;
-  min-height: 50px !important;
-  padding: 12px !important;
+  min-width: 140px !important;
+  min-height: 60px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Allow text to wrap and be fully visible */
+.mermaid svg .nodeLabel text,
+.mermaid svg .label text,
+.docusaurus-mermaid-container svg .nodeLabel text,
+.docusaurus-mermaid-container svg .label text {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  max-width: 220px !important;
+}
+
+/* Support multi-line text in Mermaid nodes */
+.mermaid svg .nodeLabel tspan,
+.mermaid svg .label tspan,
+.docusaurus-mermaid-container svg .nodeLabel tspan,
+.docusaurus-mermaid-container svg .label tspan {
+  white-space: pre !important;
+  dominant-baseline: central !important;
+  text-anchor: middle !important;
+}
+
+/* Ensure node rectangles expand to fit multi-line text */
+.mermaid svg .node rect,
+.docusaurus-mermaid-container svg .node rect {
+  rx: 8px !important;
+  ry: 8px !important;
+}
+
+/* Increase spacing between nodes for better readability */
+.mermaid svg,
+.docusaurus-mermaid-container svg {
+  padding: 20px 0 !important;
 }
 
 /* Mermaid text elements - light color - override all text */

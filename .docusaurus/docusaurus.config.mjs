@@ -93,7 +93,9 @@ export default {
           "defaultLinkColor": "#7CECBF",
           "titleColor": "#ffffff",
           "edgeLabelBackground": "#1a1a1a",
-          "nodeTextColor": "#ffffff"
+          "nodeTextColor": "#ffffff",
+          "fontSize": "18px",
+          "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
         }
       }
     },
