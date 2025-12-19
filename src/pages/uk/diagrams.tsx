@@ -6,14 +6,13 @@ export default function Diagrams(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
 
   useEffect(() => {
-    // Wait for Docusaurus Mermaid theme to load and render diagrams
-    const renderMermaid = () => {
+    const renderMermaid = async () => {
       if (typeof window === 'undefined') return;
       
-      const tryRender = () => {
+      const tryRender = async () => {
         const mermaidLib = (window as any).mermaid;
         
-        if (mermaidLib && typeof mermaidLib.run === 'function') {
+        if (mermaidLib) {
           try {
             // Initialize Mermaid with custom theme
             mermaidLib.initialize({
@@ -33,19 +32,47 @@ export default function Diagrams(): JSX.Element {
               },
             });
             
-            // Use run() method which is the correct way for Docusaurus
-            mermaidLib.run();
+            // Render each diagram individually
+            const diagrams = document.querySelectorAll('.mermaid');
+            for (let index = 0; index < diagrams.length; index++) {
+              const element = diagrams[index] as HTMLElement;
+              if (!element.querySelector('svg')) {
+                const id = `mermaid-diagram-${index}-${Date.now()}`;
+                const graphDefinition = element.textContent?.trim() || '';
+                
+                if (graphDefinition) {
+                  try {
+                    // Use async render if available, otherwise use callback
+                    if (mermaidLib.renderAsync) {
+                      const {svg} = await mermaidLib.renderAsync(id, graphDefinition);
+                      element.innerHTML = svg;
+                    } else if (mermaidLib.render) {
+                      mermaidLib.render(id, graphDefinition, (svgCode: string) => {
+                        element.innerHTML = svgCode;
+                      });
+                    } else if (mermaidLib.run) {
+                      // Fallback to run() method
+                      mermaidLib.run();
+                    }
+                  } catch (err) {
+                    console.error(`Error rendering diagram ${index}:`, err);
+                  }
+                }
+              }
+            }
           } catch (error) {
-            console.error('Mermaid render error:', error);
+            console.error('Mermaid initialization error:', error);
+            // Retry if error
+            setTimeout(() => tryRender(), 500);
           }
         } else {
           // Retry if Mermaid not loaded yet
-          setTimeout(tryRender, 200);
+          setTimeout(() => tryRender(), 200);
         }
       };
       
       // Start after delay to ensure DOM and Mermaid are ready
-      setTimeout(tryRender, 1000);
+      setTimeout(() => tryRender(), 500);
     };
 
     renderMermaid();
