@@ -270,24 +270,38 @@ h3 {
   stroke: #58E6B2 !important;
 }
 
-/* Mermaid edges - light green */
+/* Mermaid edges - light green, no fill */
 .mermaid svg .edgePath path,
 .mermaid svg .edgePath .path,
+.mermaid svg .flowchart-link,
+.mermaid svg .edge-thickness-normal,
+.mermaid svg path[class*="flowchart"],
+.mermaid svg path[class*="edge"],
+.docusaurus-mermaid-container svg .edgePath path,
+.docusaurus-mermaid-container svg .edgePath .path,
+.docusaurus-mermaid-container svg .flowchart-link,
+.docusaurus-mermaid-container svg .edge-thickness-normal,
+.docusaurus-mermaid-container svg path[class*="flowchart"],
+.docusaurus-mermaid-container svg path[class*="edge"] {
+  stroke: #7CECBF !important;
+  fill: none !important;
+  stroke-width: 2px !important;
+}
+
+/* Mermaid arrowheads - light green fill */
 .mermaid svg .arrowheadPath,
 .mermaid svg .arrowheadPath path,
 .mermaid svg path[marker-end],
-.mermaid svg .flowchart-link,
-.mermaid svg .edge-thickness-normal,
-.docusaurus-mermaid-container svg .edgePath path,
-.docusaurus-mermaid-container svg .edgePath .path,
+.mermaid svg marker path,
+.mermaid svg marker polygon,
 .docusaurus-mermaid-container svg .arrowheadPath,
 .docusaurus-mermaid-container svg .arrowheadPath path,
 .docusaurus-mermaid-container svg path[marker-end],
-.docusaurus-mermaid-container svg .flowchart-link,
-.docusaurus-mermaid-container svg .edge-thickness-normal {
+.docusaurus-mermaid-container svg marker path,
+.docusaurus-mermaid-container svg marker polygon {
   stroke: #7CECBF !important;
   fill: #7CECBF !important;
-  stroke-width: 2px !important;
+  stroke-width: 1px !important;
 }
 
 /* Mermaid subgraph/cluster backgrounds */
