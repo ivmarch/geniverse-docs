@@ -321,6 +321,10 @@
   scroll-margin-top: calc(100px + 1rem);
 }
 
+.section:first-of-type {
+  margin-top: calc(2rem * var(--ds-spacing, 1));
+}
+
 .sectionTitle {
   font-family: 'Garet', sans-serif;
   font-size: calc(2rem * var(--ds-font-scale, 1));
