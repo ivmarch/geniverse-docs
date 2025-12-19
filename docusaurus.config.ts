@@ -61,10 +61,6 @@ const config: Config = {
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
           editUrl: undefined,
-          sidebarItemsGenerator: async ({defaultSidebarItemsGenerator, ...args}) => {
-            const sidebarItems = await defaultSidebarItemsGenerator(args);
-            return sidebarItems;
-          },
         },
         blog: false,
         pages: {},
@@ -99,6 +95,8 @@ const config: Config = {
         {
           type: 'localeDropdown',
           position: 'right',
+          dropdownItemsAfter: [],
+          dropdownItemsBefore: [],
         },
       ],
     },

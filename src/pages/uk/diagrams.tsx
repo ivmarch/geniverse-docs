@@ -1,10 +1,8 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Mermaid from '@theme/Mermaid';
 
 export default function Diagrams(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
 
   const exportDiagram = (event: React.MouseEvent<HTMLButtonElement>, title: string) => {
     const button = event.currentTarget;

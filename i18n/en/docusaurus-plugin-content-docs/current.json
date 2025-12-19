@@ -1,0 +1,50 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.doc.Overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Overview' in sidebar 'tutorialSidebar', linking to the doc overview"
+  },
+  "sidebar.tutorialSidebar.doc.Vision & Purpose": {
+    "message": "Vision & Purpose",
+    "description": "The label for the doc item 'Vision & Purpose' in sidebar 'tutorialSidebar', linking to the doc vision-purpose"
+  },
+  "sidebar.tutorialSidebar.doc.Product Principles": {
+    "message": "Product Principles",
+    "description": "The label for the doc item 'Product Principles' in sidebar 'tutorialSidebar', linking to the doc product-principles"
+  },
+  "sidebar.tutorialSidebar.doc.Pedagogical Framework": {
+    "message": "Pedagogical Framework",
+    "description": "The label for the doc item 'Pedagogical Framework' in sidebar 'tutorialSidebar', linking to the doc pedagogical-framework"
+  },
+  "sidebar.tutorialSidebar.doc.Roles & Permissions": {
+    "message": "Roles & Permissions",
+    "description": "The label for the doc item 'Roles & Permissions' in sidebar 'tutorialSidebar', linking to the doc roles-permissions"
+  },
+  "sidebar.tutorialSidebar.doc.Core Capabilities": {
+    "message": "Core Capabilities",
+    "description": "The label for the doc item 'Core Capabilities' in sidebar 'tutorialSidebar', linking to the doc core-capabilities"
+  },
+  "sidebar.tutorialSidebar.doc.AI Layer": {
+    "message": "AI Layer",
+    "description": "The label for the doc item 'AI Layer' in sidebar 'tutorialSidebar', linking to the doc ai-layer"
+  },
+  "sidebar.tutorialSidebar.doc.XR & Immersive": {
+    "message": "XR & Immersive",
+    "description": "The label for the doc item 'XR & Immersive' in sidebar 'tutorialSidebar', linking to the doc xr-immersive"
+  },
+  "sidebar.tutorialSidebar.doc.Design System": {
+    "message": "Design System",
+    "description": "The label for the doc item 'Design System' in sidebar 'tutorialSidebar', linking to the doc design-system"
+  },
+  "sidebar.tutorialSidebar.doc.Safety, Ethics & Compliance": {
+    "message": "Safety, Ethics & Compliance",
+    "description": "The label for the doc item 'Safety, Ethics & Compliance' in sidebar 'tutorialSidebar', linking to the doc safety-ethics-compliance"
+  },
+  "sidebar.tutorialSidebar.doc.Modularity & Deployment": {
+    "message": "Modularity & Deployment",
+    "description": "The label for the doc item 'Modularity & Deployment' in sidebar 'tutorialSidebar', linking to the doc modularity-deployment"
+  }
+}

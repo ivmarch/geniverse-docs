@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "GeniVerse",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "GeniVerse Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Documentation": {
+    "message": "Documentation",
+    "description": "Navbar item with label Documentation"
+  },
+  "item.label.Diagrams": {
+    "message": "Diagrams",
+    "description": "Navbar item with label Diagrams"
+  }
+}

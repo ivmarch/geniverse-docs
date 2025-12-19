@@ -13,7 +13,7 @@
       "htmlLang": "en",
       "calendar": "gregory",
       "path": "en",
-      "translate": false,
+      "translate": true,
       "url": "https://geniverse.ai",
       "baseUrl": "/"
     },
