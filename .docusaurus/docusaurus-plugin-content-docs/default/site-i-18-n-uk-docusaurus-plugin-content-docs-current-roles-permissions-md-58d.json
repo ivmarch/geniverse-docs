@@ -1,7 +1,7 @@
 {
   "id": "roles-permissions",
   "title": "Ролі та Дозволи",
-  "description": "Ролі та контроль доступу",
+  "description": "GeniVerse використовує багаторівневу модель керування доступом, що поєднує рольовий, атрибутивний та контекстний підходи. Це забезпечує безпеку, гнучкість і відповідність освітнім та нормативним вимогам.",
   "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/roles-permissions.md",
   "sourceDirName": ".",
   "slug": "/roles-permissions",

@@ -1,8 +1,30 @@
 # Ролі та Дозволи
-
-## Ролі та контроль доступу
-
+  
 GeniVerse використовує багаторівневу модель керування доступом, що поєднує рольовий, атрибутивний та контекстний підходи. Це забезпечує безпеку, гнучкість і відповідність освітнім та нормативним вимогам.
+
+## Ієрархія ролей
+
+```mermaid
+graph TD
+    A[Суперадміністратор] --> B[Адміністратор установи]
+    B --> C[Освітянин]
+    B --> D[Створювач контенту]
+    C --> E[Учень]
+    C --> F[Асистент викладача]
+    D --> E
+    G[Батько або опікун] --> E
+    H[Гість] --> E
+    
+    classDef adminClass fill:#141716,stroke:#7CECBF,stroke-width:2px
+    classDef educatorClass fill:#141716,stroke:#58E6B2,stroke-width:2px
+    classDef studentClass fill:#141716,stroke:#58E6B2,stroke-width:2px
+    classDef guestClass fill:#141716,stroke:#58E6B2,stroke-width:2px
+    
+    class A,B adminClass
+    class C,D,F educatorClass
+    class E studentClass
+    class G,H guestClass
+```
 
 ## Основні ролі користувачів
 
