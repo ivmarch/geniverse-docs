@@ -333,12 +333,12 @@ export default function DesignSystem(): React.JSX.Element {
   };
 
   return (
-    <Layout title="Система дизайну" description="Інтерактивна дизайн-система GeniVerse">
+    <Layout title={isUkrainian ? "Дизайн система" : "Design System"} description={isUkrainian ? "Інтерактивна дизайн-система GeniVerse" : "Interactive GeniVerse Design System"}>
       <div className={styles.designSystem} style={themeVars}>
         {/* Hero Section */}
         <div className={styles.hero}>
           <div className={styles.heroContent}>
-            <h1 className={styles.heroTitle}>Система дизайну GeniVerse</h1>
+            <h1 className={styles.heroTitle}>{isUkrainian ? 'Дизайн система' : 'Design System'}</h1>
             <p className={styles.heroDescription}>
               Адаптивна дизайн-система, створена для освітніх платформ K–12. 
               Система підтримує різні вікові групи через спеціалізовані теми та режими, 
