@@ -1,7 +1,7 @@
 {
   "id": "overview",
   "title": "Огляд",
-  "description": "Призначення документації",
+  "description": "Загальний опис системи",
   "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/overview.md",
   "sourceDirName": ".",
   "slug": "/overview",
