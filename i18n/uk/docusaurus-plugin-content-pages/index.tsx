@@ -66,38 +66,6 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
-        <section className="padding-vert--xl">
-          <div className="container">
-            <div className="row">
-              <div className="col col--12">
-                <div className="text--center margin-bottom--lg">
-                  <Heading as="h2">Дослідіть Документацію</Heading>
-                  <p className="margin-bottom--lg">
-                    Дізнайтеся про архітектуру, можливості та реалізацію GeniVerse.
-                  </p>
-                </div>
-                <div className="row">
-                  <div className="col col--6 margin-bottom--md">
-                    <div className="card">
-                      <div className="card__header">
-                        <Heading as="h3">Початок Роботи</Heading>
-                      </div>
-                      <div className="card__body">
-                        <p>
-                          Почніть з огляду, щоб зрозуміти основні концепції
-                          та архітектуру GeniVerse.
-                        </p>
-                        <Link to="/uk/overview" className="button button--primary">
-                          Читати Огляд
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
     </Layout>
   );

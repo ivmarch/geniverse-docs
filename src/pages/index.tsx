@@ -66,38 +66,6 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
-        <section className="padding-vert--xl">
-          <div className="container">
-            <div className="row">
-              <div className="col col--12">
-                <div className="text--center margin-bottom--lg">
-                  <Heading as="h2">Explore the Documentation</Heading>
-                  <p className="margin-bottom--lg">
-                    Learn about GeniVerse's architecture, capabilities, and implementation.
-                  </p>
-                </div>
-                <div className="row">
-                  <div className="col col--6 margin-bottom--md">
-                    <div className="card">
-                      <div className="card__header">
-                        <Heading as="h3">Getting Started</Heading>
-                      </div>
-                      <div className="card__body">
-                        <p>
-                          Start with the overview to understand GeniVerse's core concepts
-                          and architecture.
-                        </p>
-                        <Link to="/overview" className="button button--primary">
-                          Read Overview
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
     </Layout>
   );
