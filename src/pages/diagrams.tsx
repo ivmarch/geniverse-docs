@@ -12,24 +12,29 @@ export default function Diagrams(): JSX.Element {
         // Wait for Mermaid to be available
         const checkMermaid = () => {
           if ((window as any).mermaid) {
-        (window as any).mermaid.initialize({
-          startOnLoad: true,
-          theme: 'dark',
-          themeVariables: {
-            primaryColor: '#7CECBF',
-            primaryTextColor: '#0B0D0C',
-            primaryBorderColor: '#58E6B2',
-            lineColor: '#A0A0A0',
-            secondaryColor: '#A0A0A0',
-            tertiaryColor: '#808080',
-            background: '#0B0D0C',
-            mainBkg: '#A0A0A0',
-            secondBkg: '#808080',
-            textColor: '#E8F9F0',
-          },
-        });
+            (window as any).mermaid.initialize({
+              startOnLoad: false,
+              theme: 'dark',
+              themeVariables: {
+                primaryColor: '#7CECBF',
+                primaryTextColor: '#0B0D0C',
+                primaryBorderColor: '#58E6B2',
+                lineColor: '#A0A0A0',
+                secondaryColor: '#A0A0A0',
+                tertiaryColor: '#808080',
+                background: '#0B0D0C',
+                mainBkg: '#A0A0A0',
+                secondBkg: '#808080',
+                textColor: '#E8F9F0',
+              },
+            });
             // Run Mermaid on all .mermaid elements
-            (window as any).mermaid.run();
+            const mermaidElements = document.querySelectorAll('.mermaid');
+            mermaidElements.forEach((element) => {
+              if (!element.querySelector('svg')) {
+                (window as any).mermaid.run({ nodes: [element] });
+              }
+            });
           } else {
             // Retry after a short delay if Mermaid is not yet loaded
             setTimeout(checkMermaid, 100);
@@ -40,7 +45,8 @@ export default function Diagrams(): JSX.Element {
     };
 
     // Delay initialization to ensure DOM is ready
-    setTimeout(initMermaid, 100);
+    const timer = setTimeout(initMermaid, 500);
+    return () => clearTimeout(timer);
   }, []);
 
   const exportDiagram = (event: React.MouseEvent<HTMLButtonElement>, title: string) => {
@@ -87,7 +93,7 @@ export default function Diagrams(): JSX.Element {
               <div className="card__header">
                 <h2>System Architecture Map</h2>
                 <button
-                  className="button button--secondary button--sm"
+                  className="button button--primary button--sm"
                   onClick={(e) => exportDiagram(e, 'System Architecture Map')}>
                   Export SVG
                 </button>
