@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
-import styles from './design-system.module.css';
+import styles from '@site/src/pages/design-system.module.css';
 
 // Theme presets
 const themes = {
