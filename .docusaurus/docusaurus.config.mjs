@@ -110,7 +110,8 @@ export default {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "position": "left",
-          "label": "Документація"
+          "label": "Документація",
+          "activeBaseRegex": "^/(design-system|docs|overview|ai-layer|core-capabilities|modularity-deployment|pedagogical-framework|product-principles|roles-permissions|safety-ethics-compliance|vision-purpose|xr-immersive)"
         },
         {
           "to": "/design-system",
