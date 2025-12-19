@@ -1,5 +1,20 @@
 # Overview
 
+## Documentation Purpose
+
+This documentation is designed to provide comprehensive information about the **GeniVerse** platform—its architecture, functionality, working principles, and usage capabilities.
+
+**Primary goals of the documentation:**
+
+- **For developers and technical specialists**: provide detailed information about system architecture, technical components, APIs, and integrations
+- **For educators and instructional designers**: explain pedagogical principles, adaptive learning methodology, and tools for creating educational content
+- **For administrators and managers**: describe management capabilities, security, compliance requirements, and deployment processes
+- **For stakeholders**: provide a general understanding of the platform, its benefits, and potential for educational institutions
+
+The documentation is structured to provide both high-level system overview and detailed technical descriptions for deeper understanding.
+
+---
+
 GeniVerse is an AI-powered immersive learning platform that transforms education through personalized, adaptive experiences delivered via Extended Reality (XR) and traditional interfaces. Built on a modular architecture, GeniVerse enables institutions to deploy scalable, ethical, and pedagogically sound learning solutions.
 
 ## Core Vision
