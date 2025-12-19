@@ -472,9 +472,9 @@
     "1869": {
       "css": [
         {
-          "file": "assets/css/styles.e87d81d3.css",
-          "hash": "7e29bf63964a6719",
-          "publicPath": "/uk/assets/css/styles.e87d81d3.css"
+          "file": "assets/css/styles.32b45ce2.css",
+          "hash": "ea783eff3fcd5793",
+          "publicPath": "/uk/assets/css/styles.32b45ce2.css"
         }
       ]
     },
@@ -644,7 +644,7 @@
       "js": [
         {
           "file": "assets/js/runtime~main.97f49e45.js",
-          "hash": "78faf43ecc3200f8",
+          "hash": "70a1a3de7946d418",
           "publicPath": "/uk/assets/js/runtime~main.97f49e45.js"
         }
       ]

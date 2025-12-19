@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Mermaid from '@theme/Mermaid';
 
-export default function Diagrams(): JSX.Element {
+export default function Diagrams(): React.JSX.Element {
 
   const exportDiagram = (event: React.MouseEvent<HTMLButtonElement>, title: string) => {
     const button = event.currentTarget;
@@ -92,11 +92,7 @@ export default function Diagrams(): JSX.Element {
 
     Core --> LMS
     Core --> Cloud
-    Core --> Edge
-
-    style AI fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style XR fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style Core fill:#A0A0A0,stroke:#808080,stroke-width:2px`} />
+    Core --> Edge`} />
               </div>
             </div>
           </div>
@@ -119,13 +115,7 @@ export default function Diagrams(): JSX.Element {
     B --> C[Deliver]
     C --> D[Engage]
     D --> E[Measure]
-    E --> A
-
-    style A fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style B fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style D fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style E fill:#7CECBF,stroke:#58E6B2,stroke-width:2px`} />
+    E --> A`} />
               </div>
             </div>
           </div>
@@ -151,12 +141,7 @@ export default function Diagrams(): JSX.Element {
     C --> F[Teaching Assistant]
     D --> E
     G[Parent/Guardian] --> E
-    H[Guest] --> E
-
-    style A fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style B fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style E fill:#A0A0A0,stroke:#808080,stroke-width:2px`} />
+    H[Guest] --> E`} />
               </div>
             </div>
           </div>
@@ -181,9 +166,7 @@ export default function Diagrams(): JSX.Element {
 
     E[Performance Data] --> C
     F[Learning Goals] --> C
-    G[Context] --> C
-
-    style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px`} />
+    G[Context] --> C`} />
               </div>
             </div>
           </div>

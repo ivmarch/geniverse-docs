@@ -55,8 +55,6 @@ graph LR
     E[Performance Data] --> C
     F[Learning Goals] --> C
     G[Context] --> C
-    
-    style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
 ```
 
 The personalization engine adapts content in real-time:

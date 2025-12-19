@@ -57,10 +57,6 @@ graph TB
     Core --> LMS
     Core --> Cloud
     Core --> Edge
-    
-    style AI fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style XR fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style Core fill:#A0A0A0,stroke:#808080,stroke-width:2px
 ```
 
 ## Getting Started

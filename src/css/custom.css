@@ -276,13 +276,18 @@ h3 {
 .mermaid svg .arrowheadPath,
 .mermaid svg .arrowheadPath path,
 .mermaid svg path[marker-end],
+.mermaid svg .flowchart-link,
+.mermaid svg .edge-thickness-normal,
 .docusaurus-mermaid-container svg .edgePath path,
 .docusaurus-mermaid-container svg .edgePath .path,
 .docusaurus-mermaid-container svg .arrowheadPath,
 .docusaurus-mermaid-container svg .arrowheadPath path,
-.docusaurus-mermaid-container svg path[marker-end] {
+.docusaurus-mermaid-container svg path[marker-end],
+.docusaurus-mermaid-container svg .flowchart-link,
+.docusaurus-mermaid-container svg .edge-thickness-normal {
   stroke: #7CECBF !important;
   fill: #7CECBF !important;
+  stroke-width: 2px !important;
 }
 
 /* Mermaid subgraph/cluster backgrounds */
