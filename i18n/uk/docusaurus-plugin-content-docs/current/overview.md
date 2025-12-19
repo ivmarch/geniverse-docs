@@ -140,19 +140,16 @@ graph TB
         AR[AR Пристрій]
     end
     
-    subgraph Platform[" "]
-        direction TB
-        Core[Основні Сервіси]
-        
-        subgraph PlatformServices[" "]
-            direction LR
-            AI[Шар ШІ]
-            Auth[Авторизація та RBAC]
-            Data[Шар Даних]
-        end
-        
-        XR[XR Рушій]
+    Core[Основні Сервіси]
+    
+    subgraph PlatformServices[" "]
+        direction LR
+        AI[Шар ШІ]
+        Auth[Авторизація та RBAC]
+        Data[Шар Даних]
     end
+    
+    XR[XR Рушій]
     
     subgraph External[" "]
         direction LR

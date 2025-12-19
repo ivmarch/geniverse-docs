@@ -28,19 +28,16 @@ graph TB
         AR[AR Device]
     end
     
-    subgraph Platform[" "]
-        direction TB
-        Core[Core Services]
-        
-        subgraph PlatformServices[" "]
-            direction LR
-            AI[AI Layer]
-            Auth[Auth & RBAC]
-            Data[Data Layer]
-        end
-        
-        XR[XR Engine]
+    Core[Core Services]
+    
+    subgraph PlatformServices[" "]
+        direction LR
+        AI[AI Layer]
+        Auth[Auth & RBAC]
+        Data[Data Layer]
     end
+    
+    XR[XR Engine]
     
     subgraph External[" "]
         direction LR
