@@ -1,0 +1,23 @@
+{
+  "id": "core-capabilities",
+  "title": "Core Capabilities",
+  "description": "GeniVerse provides a comprehensive set of capabilities that enable institutions to deliver personalized, immersive learning experiences at scale. These capabilities work together to create a cohesive educational platform.",
+  "source": "@site/docs/core-capabilities.md",
+  "sourceDirName": ".",
+  "slug": "/core-capabilities",
+  "permalink": "/core-capabilities",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Roles & Permissions",
+    "permalink": "/roles-permissions"
+  },
+  "next": {
+    "title": "AI Layer",
+    "permalink": "/ai-layer"
+  }
+}

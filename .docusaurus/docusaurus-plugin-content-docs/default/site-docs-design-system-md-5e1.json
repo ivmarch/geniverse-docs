@@ -1,0 +1,23 @@
+{
+  "id": "design-system",
+  "title": "Design System",
+  "description": "GeniVerse's design system provides a cohesive visual language and component library that ensures consistency, accessibility, and a modern user experience across all platforms and interfaces.",
+  "source": "@site/docs/design-system.md",
+  "sourceDirName": ".",
+  "slug": "/design-system",
+  "permalink": "/design-system",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "XR & Immersive",
+    "permalink": "/xr-immersive"
+  },
+  "next": {
+    "title": "Safety, Ethics & Compliance",
+    "permalink": "/safety-ethics-compliance"
+  }
+}

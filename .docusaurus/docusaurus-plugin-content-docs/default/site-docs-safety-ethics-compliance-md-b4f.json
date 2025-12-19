@@ -1,0 +1,23 @@
+{
+  "id": "safety-ethics-compliance",
+  "title": "Safety, Ethics & Compliance",
+  "description": "GeniVerse is committed to the highest standards of safety, ethical AI use, and regulatory compliance. This section outlines our comprehensive approach to protecting learners, ensuring ethical AI practices, and meeting legal and regulatory requirements.",
+  "source": "@site/docs/safety-ethics-compliance.md",
+  "sourceDirName": ".",
+  "slug": "/safety-ethics-compliance",
+  "permalink": "/safety-ethics-compliance",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Design System",
+    "permalink": "/design-system"
+  },
+  "next": {
+    "title": "Modularity & Deployment",
+    "permalink": "/modularity-deployment"
+  }
+}

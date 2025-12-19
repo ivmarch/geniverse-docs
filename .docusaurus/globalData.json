@@ -1,0 +1,83 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/",
+          "mainDocId": "overview",
+          "docs": [
+            {
+              "id": "ai-layer",
+              "path": "/ai-layer",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "core-capabilities",
+              "path": "/core-capabilities",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "design-system",
+              "path": "/design-system",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "modularity-deployment",
+              "path": "/modularity-deployment",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "overview",
+              "path": "/overview",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pedagogical-framework",
+              "path": "/pedagogical-framework",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "product-principles",
+              "path": "/product-principles",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "roles-permissions",
+              "path": "/roles-permissions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "safety-ethics-compliance",
+              "path": "/safety-ethics-compliance",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "vision-purpose",
+              "path": "/vision-purpose",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "xr-immersive",
+              "path": "/xr-immersive",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/overview",
+                "label": "Overview"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

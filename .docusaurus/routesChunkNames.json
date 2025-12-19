@@ -1,0 +1,73 @@
+{
+  "/diagrams-04e": {
+    "__comp": "d53a7826",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
+  "/-e5f": {
+    "__comp": "1df93b7f",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
+  "/-c97": {
+    "__comp": "5e95c892",
+    "__context": {
+      "plugin": "aba21aa0"
+    }
+  },
+  "/-891": {
+    "__comp": "a7bd4aaa",
+    "__props": "22dd74f7"
+  },
+  "/-056": {
+    "__comp": "a94703ab"
+  },
+  "/ai-layer-a93": {
+    "__comp": "17896441",
+    "content": "c5c3b02b"
+  },
+  "/core-capabilities-176": {
+    "__comp": "17896441",
+    "content": "91408260"
+  },
+  "/design-system-e8e": {
+    "__comp": "17896441",
+    "content": "5e18d7e6"
+  },
+  "/modularity-deployment-1f9": {
+    "__comp": "17896441",
+    "content": "c5722ad6"
+  },
+  "/overview-7d0": {
+    "__comp": "17896441",
+    "content": "1db64337"
+  },
+  "/pedagogical-framework-144": {
+    "__comp": "17896441",
+    "content": "968c109b"
+  },
+  "/product-principles-23e": {
+    "__comp": "17896441",
+    "content": "ff4aebe7"
+  },
+  "/roles-permissions-f54": {
+    "__comp": "17896441",
+    "content": "54ee187c"
+  },
+  "/safety-ethics-compliance-51a": {
+    "__comp": "17896441",
+    "content": "b4fa2076"
+  },
+  "/vision-purpose-71b": {
+    "__comp": "17896441",
+    "content": "03aa4417"
+  },
+  "/xr-immersive-772": {
+    "__comp": "17896441",
+    "content": "9bd4c11f"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "pedagogical-framework",
+  "title": "Pedagogical Framework",
+  "description": "GeniVerse's pedagogical framework integrates multiple learning theories and methodologies to create effective, engaging educational experiences. The framework guides content creation, AI personalization, and learning path design.",
+  "source": "@site/docs/pedagogical-framework.md",
+  "sourceDirName": ".",
+  "slug": "/pedagogical-framework",
+  "permalink": "/pedagogical-framework",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Product Principles",
+    "permalink": "/product-principles"
+  },
+  "next": {
+    "title": "Roles & Permissions",
+    "permalink": "/roles-permissions"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "overview",
+  "title": "Overview",
+  "description": "GeniVerse is an AI-powered immersive learning platform that transforms education through personalized, adaptive experiences delivered via Extended Reality (XR) and traditional interfaces. Built on a modular architecture, GeniVerse enables institutions to deploy scalable, ethical, and pedagogically sound learning solutions.",
+  "source": "@site/docs/overview.md",
+  "sourceDirName": ".",
+  "slug": "/overview",
+  "permalink": "/overview",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Vision & Purpose",
+    "permalink": "/vision-purpose"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "version.label": {
+    "message": "Поточна",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.doc.Overview": {
+    "message": "Огляд",
+    "description": "The label for the doc item 'Overview' in sidebar 'tutorialSidebar', linking to the doc overview"
+  },
+  "sidebar.tutorialSidebar.doc.Vision & Purpose": {
+    "message": "Бачення та Мета",
+    "description": "The label for the doc item 'Vision & Purpose' in sidebar 'tutorialSidebar', linking to the doc vision-purpose"
+  },
+  "sidebar.tutorialSidebar.doc.Product Principles": {
+    "message": "Принципи Продукту",
+    "description": "The label for the doc item 'Product Principles' in sidebar 'tutorialSidebar', linking to the doc product-principles"
+  },
+  "sidebar.tutorialSidebar.doc.Pedagogical Framework": {
+    "message": "Педагогічна Рамка",
+    "description": "The label for the doc item 'Pedagogical Framework' in sidebar 'tutorialSidebar', linking to the doc pedagogical-framework"
+  },
+  "sidebar.tutorialSidebar.doc.Roles & Permissions": {
+    "message": "Ролі та Дозволи",
+    "description": "The label for the doc item 'Roles & Permissions' in sidebar 'tutorialSidebar', linking to the doc roles-permissions"
+  },
+  "sidebar.tutorialSidebar.doc.Core Capabilities": {
+    "message": "Основні Можливості",
+    "description": "The label for the doc item 'Core Capabilities' in sidebar 'tutorialSidebar', linking to the doc core-capabilities"
+  },
+  "sidebar.tutorialSidebar.doc.AI Layer": {
+    "message": "Шар ШІ",
+    "description": "The label for the doc item 'AI Layer' in sidebar 'tutorialSidebar', linking to the doc ai-layer"
+  },
+  "sidebar.tutorialSidebar.doc.XR & Immersive": {
+    "message": "XR та Імерсивність",
+    "description": "The label for the doc item 'XR & Immersive' in sidebar 'tutorialSidebar', linking to the doc xr-immersive"
+  },
+  "sidebar.tutorialSidebar.doc.Design System": {
+    "message": "Система Дизайну",
+    "description": "The label for the doc item 'Design System' in sidebar 'tutorialSidebar', linking to the doc design-system"
+  },
+  "sidebar.tutorialSidebar.doc.Safety, Ethics & Compliance": {
+    "message": "Безпека, Етика та Відповідність",
+    "description": "The label for the doc item 'Safety, Ethics & Compliance' in sidebar 'tutorialSidebar', linking to the doc safety-ethics-compliance"
+  },
+  "sidebar.tutorialSidebar.doc.Modularity & Deployment": {
+    "message": "Модульність та Розгортання",
+    "description": "The label for the doc item 'Modularity & Deployment' in sidebar 'tutorialSidebar', linking to the doc modularity-deployment"
+  }
+}

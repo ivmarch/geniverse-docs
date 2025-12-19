@@ -1,0 +1,19 @@
+{
+  "id": "modularity-deployment",
+  "title": "Modularity & Deployment",
+  "description": "GeniVerse is built on a modular architecture that enables flexible deployment options, from cloud-based SaaS to on-premises installations and hybrid configurations. This modularity allows institutions to choose the deployment model that best fits their needs, security requirements, and infrastructure capabilities.",
+  "source": "@site/docs/modularity-deployment.md",
+  "sourceDirName": ".",
+  "slug": "/modularity-deployment",
+  "permalink": "/modularity-deployment",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Safety, Ethics & Compliance",
+    "permalink": "/safety-ethics-compliance"
+  }
+}

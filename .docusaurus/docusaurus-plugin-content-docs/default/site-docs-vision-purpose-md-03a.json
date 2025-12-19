@@ -1,0 +1,23 @@
+{
+  "id": "vision-purpose",
+  "title": "Vision & Purpose",
+  "description": "Mission Statement",
+  "source": "@site/docs/vision-purpose.md",
+  "sourceDirName": ".",
+  "slug": "/vision-purpose",
+  "permalink": "/vision-purpose",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/overview"
+  },
+  "next": {
+    "title": "Product Principles",
+    "permalink": "/product-principles"
+  }
+}
