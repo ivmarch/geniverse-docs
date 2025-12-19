@@ -216,32 +216,69 @@ const PythagoreanCanvas = () => {
     ctx.lineWidth = 3;
     ctx.strokeRect(square2X, square2Y, square2Size, square2Size);
 
-    // Квадрат гіпотенузи (повернутий)
+    // Квадрат гіпотенузи (повернутий і зовні трикутника)
     const angle = Math.atan2(points.C.y - points.B.y, points.C.x - points.B.x);
+    
+    // Середина гіпотенузи
+    const midBC = {
+      x: (points.B.x + points.C.x) / 2,
+      y: (points.B.y + points.C.y) / 2,
+    };
+    
+    // Нормальний вектор до гіпотенузи (перпендикулярний, назовні від трикутника)
+    // Вектор від B до C
+    const dx = points.C.x - points.B.x;
+    const dy = points.C.y - points.B.y;
+    // Нормальний вектор (повернутий на 90 градусів проти годинникової стрілки)
+    const normalX = -dy;
+    const normalY = dx;
+    const normalLength = Math.sqrt(normalX * normalX + normalY * normalY);
+    const normalizedNormalX = normalX / normalLength;
+    const normalizedNormalY = normalY / normalLength;
+    
+    // Визначаємо, чи нормальний вектор спрямований назовні від трикутника
+    // Перевіряємо, чи точка A знаходиться з іншого боку від гіпотенузи
+    const toA = {
+      x: points.A.x - midBC.x,
+      y: points.A.y - midBC.y,
+    };
+    const dotProduct = toA.x * normalizedNormalX + toA.y * normalizedNormalY;
+    
+    // Якщо скалярний добуток позитивний, нормаль спрямована до A, потрібно інвертувати
+    const outwardNormalX = dotProduct > 0 ? -normalizedNormalX : normalizedNormalX;
+    const outwardNormalY = dotProduct > 0 ? -normalizedNormalY : normalizedNormalY;
+    
+    // Відстань від середини гіпотенузи до центру квадрата (половина діагоналі)
+    const square3Size = hypotenuse;
+    const diagonalHalf = (square3Size * Math.sqrt(2)) / 2;
+    
+    // Центр квадрата (назовні від трикутника)
+    const square3Center = {
+      x: midBC.x + outwardNormalX * diagonalHalf,
+      y: midBC.y + outwardNormalY * diagonalHalf,
+    };
 
     ctx.save();
-    ctx.translate(points.B.x, points.B.y);
+    ctx.translate(square3Center.x, square3Center.y);
 
     const rotationOffset = animationMode === 'rotate' ? time * 0.5 : 0;
-    ctx.rotate(angle + rotationOffset);
-
-    const square3Size = hypotenuse;
+    ctx.rotate(angle + Math.PI / 4 + rotationOffset); // + Math.PI / 4 для діагонального вирівнювання
 
     if (fillMode === 'gradient') {
-      const grad3 = ctx.createLinearGradient(0, 0, square3Size, square3Size);
+      const grad3 = ctx.createLinearGradient(-square3Size / 2, -square3Size / 2, square3Size / 2, square3Size / 2);
       grad3.addColorStop(0, 'rgba(251, 191, 36, 0.6)');
       grad3.addColorStop(1, 'rgba(245, 158, 11, 0.2)');
       ctx.fillStyle = grad3;
-      ctx.fillRect(0, 0, square3Size, square3Size);
+      ctx.fillRect(-square3Size / 2, -square3Size / 2, square3Size, square3Size);
     } else if (fillMode === 'pattern') {
       ctx.fillStyle = 'rgba(251, 191, 36, 0.1)';
-      ctx.fillRect(0, 0, square3Size, square3Size);
+      ctx.fillRect(-square3Size / 2, -square3Size / 2, square3Size, square3Size);
       // Патерн
       ctx.strokeStyle = 'rgba(251, 191, 36, 0.3)';
       for (let i = 0; i < square3Size; i += 10) {
         ctx.beginPath();
-        ctx.moveTo(i, 0);
-        ctx.lineTo(0, i);
+        ctx.moveTo(-square3Size / 2 + i, -square3Size / 2);
+        ctx.lineTo(-square3Size / 2, -square3Size / 2 + i);
         ctx.stroke();
       }
     }
@@ -249,9 +286,15 @@ const PythagoreanCanvas = () => {
     ctx.strokeStyle =
       animationMode === 'pulse' ? `rgba(251, 191, 36, ${0.5 + Math.sin(time * 2 + 2) * 0.5})` : '#fbbf24';
     ctx.lineWidth = 3;
-    ctx.strokeRect(0, 0, square3Size, square3Size);
+    ctx.strokeRect(-square3Size / 2, -square3Size / 2, square3Size, square3Size);
 
     ctx.restore();
+    
+    // Текст на квадраті гіпотенузи
+    ctx.fillStyle = '#fbbf24';
+    ctx.font = 'bold 16px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText(`c² = ${Math.round(hypotenuse * hypotenuse)}`, square3Center.x, square3Center.y);
 
     // Текст на квадратах
     ctx.fillStyle = '#4ade80';
@@ -261,6 +304,8 @@ const PythagoreanCanvas = () => {
 
     ctx.fillStyle = '#60a5fa';
     ctx.fillText(`b² = ${Math.round(leg2 * leg2)}`, square2X + square2Size / 2, square2Y + square2Size / 2);
+    
+    // Текст на квадраті гіпотенузи буде додано після малювання квадрата
   };
 
   const drawTriangle = (ctx: CanvasRenderingContext2D) => {
