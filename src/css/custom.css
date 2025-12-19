@@ -117,6 +117,12 @@ h3 {
   color: var(--ifm-color-primary) !important;
 }
 
+/* Ensure Documentation link is green when on design-system page */
+.navbar__item[href*="/design-system"].navbar__link--active,
+.navbar__item a[href*="/design-system"].navbar__link--active {
+  color: var(--ifm-color-primary) !important;
+}
+
 /* Sidebar */
 .theme-doc-sidebar-container {
   background-color: var(--ifm-background-surface-color);

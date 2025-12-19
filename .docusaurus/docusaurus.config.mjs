@@ -115,7 +115,7 @@ export default {
         },
         {
           "to": "/design-system",
-          "label": "Система дизайну",
+          "label": "Дизайн система",
           "position": "left"
         },
         {
