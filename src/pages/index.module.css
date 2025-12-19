@@ -34,6 +34,14 @@
   margin-bottom: 1rem;
 }
 
+.heroButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
 .heroLogo {
   height: 5rem;
   width: auto;

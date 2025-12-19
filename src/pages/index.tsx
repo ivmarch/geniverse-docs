@@ -2,12 +2,14 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
 
 function HomepageHeader() {
+  const docsUrl = useBaseUrl('overview');
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -18,12 +20,19 @@ function HomepageHeader() {
           </Heading>
         </div>
         <p className="hero__subtitle" style={{ color: '#FFFFFF' }}>AI-Powered Immersive Learning Platform</p>
+        <div className={styles.heroButtons}>
+          <Link
+            className="button button--primary button--lg"
+            to={docsUrl}>
+            Documentation
+          </Link>
+        </div>
       </div>
     </header>
   );
 }
 
-function HomepageFeatures(): JSX.Element {
+function HomepageFeatures(): React.JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
@@ -59,7 +68,7 @@ function HomepageFeatures(): JSX.Element {
   );
 }
 
-export default function Home(): JSX.Element {
+export default function Home(): React.JSX.Element {
   return (
     <Layout
       title="GeniVerse"
