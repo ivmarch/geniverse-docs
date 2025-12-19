@@ -281,6 +281,9 @@ export default function DesignSystem(): React.JSX.Element {
     : currentTheme.colors;
 
   // Apply theme via CSS variables
+  // Use base spacing for playground panel (not affected by density)
+  const baseSpacing = currentTheme.spacingMultiplier;
+  
   const themeVars = {
     '--ds-bg': modeAdjustedColors.bg,
     '--ds-surface': modeAdjustedColors.surface,
@@ -298,6 +301,7 @@ export default function DesignSystem(): React.JSX.Element {
     '--ds-radius': `${currentTheme.radius}px`,
     '--ds-shadow': currentTheme.shadow,
     '--ds-spacing': effectiveSpacing,
+    '--ds-spacing-base': baseSpacing, // Base spacing for playground panel
     '--ds-font-scale': effectiveFontScale,
     '--ds-motion': motion ? 'all 0.2s ease' : 'none',
     '--ds-mode': mode,

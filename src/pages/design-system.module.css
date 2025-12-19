@@ -91,7 +91,7 @@
   background: var(--ds-surface, #141716);
   border: 1px solid var(--ds-border, #1F2321);
   border-radius: var(--ds-radius, 12px);
-  padding: calc(1.5rem * var(--ds-spacing, 1));
+  padding: calc(1.5rem * var(--ds-spacing-base, 1));
   box-shadow: var(--ds-shadow, 0 4px 8px rgba(0, 0, 0, 0.15));
 }
 
@@ -99,12 +99,12 @@
   font-family: 'Garet', sans-serif;
   font-size: calc(1.25rem * var(--ds-font-scale, 1));
   font-weight: 600;
-  margin: 0 0 calc(1.5rem * var(--ds-spacing, 1)) 0;
+  margin: 0 0 calc(1.5rem * var(--ds-spacing-base, 1)) 0;
   color: var(--ds-text, #E8F9F0);
 }
 
 .controlGroup {
-  margin-bottom: calc(1.5rem * var(--ds-spacing, 1));
+  margin-bottom: calc(1.5rem * var(--ds-spacing-base, 1));
 }
 
 .controlLabel {
@@ -112,7 +112,7 @@
   font-size: calc(0.875rem * var(--ds-font-scale, 1));
   font-weight: 500;
   color: var(--ds-text-secondary, #B8D4C5);
-  margin-bottom: calc(0.5rem * var(--ds-spacing, 1));
+  margin-bottom: calc(0.5rem * var(--ds-spacing-base, 1));
 }
 
 .controlSelect {
@@ -120,7 +120,7 @@
   background: var(--ds-bg, #0B0D0C);
   border: 1px solid var(--ds-border, #1F2321);
   border-radius: calc(var(--ds-radius, 12px) * 0.75);
-  padding: calc(0.75rem * var(--ds-spacing, 1)) calc(1rem * var(--ds-spacing, 1));
+  padding: calc(0.75rem * var(--ds-spacing-base, 1)) calc(1rem * var(--ds-spacing-base, 1));
   color: var(--ds-text, #E8F9F0);
   font-size: calc(0.875rem * var(--ds-font-scale, 1));
   font-family: 'Inter', sans-serif;
@@ -136,11 +136,11 @@
 
 .controlToggle {
   display: flex;
-  gap: calc(0.5rem * var(--ds-spacing, 1));
+  gap: calc(0.5rem * var(--ds-spacing-base, 1));
   background: var(--ds-bg, #0B0D0C);
   border: 1px solid var(--ds-border, #1F2321);
   border-radius: calc(var(--ds-radius, 12px) * 0.75);
-  padding: calc(0.25rem * var(--ds-spacing, 1));
+  padding: calc(0.25rem * var(--ds-spacing-base, 1));
   transition: none !important;
 }
 
@@ -148,7 +148,7 @@
   flex: 1;
   background: transparent;
   border: none;
-  padding: calc(0.5rem * var(--ds-spacing, 1)) calc(0.75rem * var(--ds-spacing, 1));
+  padding: calc(0.5rem * var(--ds-spacing-base, 1)) calc(0.75rem * var(--ds-spacing-base, 1));
   color: var(--ds-text-secondary, #B8D4C5);
   font-size: calc(0.75rem * var(--ds-font-scale, 1));
   font-weight: 500;
@@ -172,7 +172,7 @@
 .controlRange {
   display: flex;
   align-items: center;
-  gap: calc(0.75rem * var(--ds-spacing, 1));
+  gap: calc(0.75rem * var(--ds-spacing-base, 1));
 }
 
 .rangeInput {
