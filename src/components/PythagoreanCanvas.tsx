@@ -216,7 +216,7 @@ const PythagoreanCanvas = () => {
     ctx.lineWidth = 3;
     ctx.strokeRect(square2X, square2Y, square2Size, square2Size);
 
-    // Квадрат гіпотенузи (повернутий і зовні трикутника)
+    // Квадрат гіпотенузи (побудований на гіпотенузі як на одній зі сторін)
     const angle = Math.atan2(points.C.y - points.B.y, points.C.x - points.B.x);
     
     // Середина гіпотенузи
@@ -248,37 +248,39 @@ const PythagoreanCanvas = () => {
     const outwardNormalX = dotProduct > 0 ? -normalizedNormalX : normalizedNormalX;
     const outwardNormalY = dotProduct > 0 ? -normalizedNormalY : normalizedNormalY;
     
-    // Відстань від середини гіпотенузи до центру квадрата (половина діагоналі)
+    // Розмір квадрата (сторона = гіпотенуза)
     const square3Size = hypotenuse;
-    const diagonalHalf = (square3Size * Math.sqrt(2)) / 2;
     
-    // Центр квадрата (назовні від трикутника)
+    // Відстань від середини гіпотенузи до центру квадрата (половина сторони квадрата)
+    const halfSize = square3Size / 2;
+    
+    // Центр квадрата (назовні від трикутника, на відстані половини сторони від середини гіпотенузи)
     const square3Center = {
-      x: midBC.x + outwardNormalX * diagonalHalf,
-      y: midBC.y + outwardNormalY * diagonalHalf,
+      x: midBC.x + outwardNormalX * halfSize,
+      y: midBC.y + outwardNormalY * halfSize,
     };
 
     ctx.save();
     ctx.translate(square3Center.x, square3Center.y);
 
     const rotationOffset = animationMode === 'rotate' ? time * 0.5 : 0;
-    ctx.rotate(angle + Math.PI / 4 + rotationOffset); // + Math.PI / 4 для діагонального вирівнювання
+    ctx.rotate(angle + rotationOffset); // Обертаємо на кут гіпотенузи (без додаткового повороту)
 
     if (fillMode === 'gradient') {
-      const grad3 = ctx.createLinearGradient(-square3Size / 2, -square3Size / 2, square3Size / 2, square3Size / 2);
+      const grad3 = ctx.createLinearGradient(-halfSize, -halfSize, halfSize, halfSize);
       grad3.addColorStop(0, 'rgba(251, 191, 36, 0.6)');
       grad3.addColorStop(1, 'rgba(245, 158, 11, 0.2)');
       ctx.fillStyle = grad3;
-      ctx.fillRect(-square3Size / 2, -square3Size / 2, square3Size, square3Size);
+      ctx.fillRect(-halfSize, -halfSize, square3Size, square3Size);
     } else if (fillMode === 'pattern') {
       ctx.fillStyle = 'rgba(251, 191, 36, 0.1)';
-      ctx.fillRect(-square3Size / 2, -square3Size / 2, square3Size, square3Size);
+      ctx.fillRect(-halfSize, -halfSize, square3Size, square3Size);
       // Патерн
       ctx.strokeStyle = 'rgba(251, 191, 36, 0.3)';
       for (let i = 0; i < square3Size; i += 10) {
         ctx.beginPath();
-        ctx.moveTo(-square3Size / 2 + i, -square3Size / 2);
-        ctx.lineTo(-square3Size / 2, -square3Size / 2 + i);
+        ctx.moveTo(-halfSize + i, -halfSize);
+        ctx.lineTo(-halfSize, -halfSize + i);
         ctx.stroke();
       }
     }
@@ -286,7 +288,7 @@ const PythagoreanCanvas = () => {
     ctx.strokeStyle =
       animationMode === 'pulse' ? `rgba(251, 191, 36, ${0.5 + Math.sin(time * 2 + 2) * 0.5})` : '#fbbf24';
     ctx.lineWidth = 3;
-    ctx.strokeRect(-square3Size / 2, -square3Size / 2, square3Size, square3Size);
+    ctx.strokeRect(-halfSize, -halfSize, square3Size, square3Size);
 
     ctx.restore();
     
