@@ -50,7 +50,7 @@
   
   --ifm-hr-border-color: #1F2321;
   
-  --ifm-button-border-radius: 6px;
+  --ifm-button-border-radius: 12px;
   --ifm-button-font-weight: 500;
   
   --ifm-card-background-color: #141716;
@@ -150,6 +150,7 @@ h3 {
   background-color: var(--ifm-color-primary);
   color: var(--ifm-font-color-base-inverse);
   border: none;
+  border-radius: 12px;
 }
 
 .button--primary:hover {
@@ -161,6 +162,7 @@ h3 {
   background-color: transparent;
   color: var(--ifm-color-primary);
   border: 1px solid var(--ifm-color-primary);
+  border-radius: 12px;
 }
 
 .button--secondary:hover {
