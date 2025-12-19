@@ -299,7 +299,7 @@ export default function DesignSystem(): React.JSX.Element {
     light: isUkrainian ? 'Світла' : 'Light',
     dark: isUkrainian ? 'Темна' : 'Dark',
     roomy: isUkrainian ? 'Простора' : 'Roomy',
-    default: isUkrainian ? 'За замовчуванням' : 'Default',
+    default: isUkrainian ? 'Звичайна' : 'Default',
     compact: isUkrainian ? 'Компактна' : 'Compact',
     full: isUkrainian ? 'Повна' : 'Full',
     reduced: isUkrainian ? 'Зменшена' : 'Reduced',
