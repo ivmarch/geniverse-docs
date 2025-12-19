@@ -167,6 +167,22 @@ h3 {
   color: var(--ifm-font-color-base-inverse);
   border: none;
   border-radius: 12px;
+  display: inline-block;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Ensure hero buttons are visible */
+.heroButtons {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.heroButtons .button {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .button--primary:hover {
