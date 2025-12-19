@@ -10,7 +10,19 @@ const PythagoreanCanvas = () => {
   const [animationMode, setAnimationMode] = useState<'none' | 'pulse' | 'rotate' | 'wave'>('none');
   const [showTrail, setShowTrail] = useState(false);
 
-  // Точки трикутника
+  // Кольори для квадратів та трикутника
+  const [colors, setColors] = useState({
+    square1: '#4ade80', // Квадрат катета 1
+    square2: '#60a5fa', // Квадрат катета 2
+    square3: '#fbbf24', // Квадрат гіпотенузи
+    triangle: '#14b8a6', // Трикутник
+  });
+
+  // Розміри катетів (в пікселях)
+  const [leg1Size, setLeg1Size] = useState(200);
+  const [leg2Size, setLeg2Size] = useState(200);
+
+  // Точки трикутника (обчислюються на основі розмірів катетів)
   const [points, setPoints] = useState({
     A: {x: 200, y: 400}, // Прямий кут
     B: {x: 200, y: 200}, // Верхня точка
@@ -27,6 +39,15 @@ const PythagoreanCanvas = () => {
   }>>([]);
   const animationFrameRef = useRef<number | undefined>(undefined);
   const timeRef = useRef(0);
+
+  // Оновлення точок при зміні розмірів катетів
+  useEffect(() => {
+    setPoints({
+      A: {x: 200, y: 400},
+      B: {x: 200, y: 400 - leg1Size},
+      C: {x: 200 + leg2Size, y: 400},
+    });
+  }, [leg1Size, leg2Size]);
 
   // Обчислення довжин сторін
   const calcDistance = (p1: {x: number; y: number}, p2: {x: number; y: number}) => {
@@ -96,9 +117,6 @@ const PythagoreanCanvas = () => {
       drawSquares(ctx);
       drawTriangle(ctx);
 
-      // Інформація
-      drawInfo(ctx);
-
       animationFrameRef.current = requestAnimationFrame(render);
     };
 
@@ -109,7 +127,7 @@ const PythagoreanCanvas = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [points, showParticles, showGrid, fillMode, animationMode, showTrail, particles]);
+  }, [points, showParticles, showGrid, fillMode, animationMode, showTrail, particles, colors]);
 
   const drawGrid = (ctx: CanvasRenderingContext2D, width: number, height: number) => {
     ctx.strokeStyle = 'rgba(100, 100, 150, 0.1)';
@@ -165,25 +183,28 @@ const PythagoreanCanvas = () => {
 
     if (fillMode === 'gradient') {
       const grad1 = ctx.createLinearGradient(square1X, square1Y, square1X + square1Size, square1Y + square1Size);
-      grad1.addColorStop(0, 'rgba(74, 222, 128, 0.6)');
-      grad1.addColorStop(1, 'rgba(34, 197, 94, 0.2)');
+      grad1.addColorStop(0, colors.square1 + '99');
+      grad1.addColorStop(1, colors.square1 + '33');
       ctx.fillStyle = grad1;
       ctx.fillRect(square1X, square1Y, square1Size, square1Size);
     } else if (fillMode === 'pattern') {
-      ctx.fillStyle = 'rgba(74, 222, 128, 0.1)';
+      ctx.fillStyle = colors.square1 + '1A';
       ctx.fillRect(square1X, square1Y, square1Size, square1Size);
       // Патерн
-      ctx.strokeStyle = 'rgba(74, 222, 128, 0.3)';
+      ctx.strokeStyle = colors.square1 + '4D';
       for (let i = 0; i < square1Size; i += 10) {
         ctx.beginPath();
         ctx.moveTo(square1X + i, square1Y);
         ctx.lineTo(square1X, square1Y + i);
         ctx.stroke();
       }
+    } else {
+      ctx.fillStyle = colors.square1 + '80';
+      ctx.fillRect(square1X, square1Y, square1Size, square1Size);
     }
 
     ctx.strokeStyle =
-      animationMode === 'pulse' ? `rgba(74, 222, 128, ${0.5 + Math.sin(time * 2) * 0.5})` : '#4ade80';
+      animationMode === 'pulse' ? `${colors.square1}${Math.floor(128 + Math.sin(time * 2) * 127).toString(16)}` : colors.square1;
     ctx.lineWidth = 3;
     ctx.strokeRect(square1X, square1Y, square1Size, square1Size);
 
@@ -194,67 +215,61 @@ const PythagoreanCanvas = () => {
 
     if (fillMode === 'gradient') {
       const grad2 = ctx.createLinearGradient(square2X, square2Y, square2X + square2Size, square2Y + square2Size);
-      grad2.addColorStop(0, 'rgba(96, 165, 250, 0.6)');
-      grad2.addColorStop(1, 'rgba(59, 130, 246, 0.2)');
+      grad2.addColorStop(0, colors.square2 + '99');
+      grad2.addColorStop(1, colors.square2 + '33');
       ctx.fillStyle = grad2;
       ctx.fillRect(square2X, square2Y, square2Size, square2Size);
     } else if (fillMode === 'pattern') {
-      ctx.fillStyle = 'rgba(96, 165, 250, 0.1)';
+      ctx.fillStyle = colors.square2 + '1A';
       ctx.fillRect(square2X, square2Y, square2Size, square2Size);
       // Патерн
-      ctx.strokeStyle = 'rgba(96, 165, 250, 0.3)';
+      ctx.strokeStyle = colors.square2 + '4D';
       for (let i = 0; i < square2Size; i += 10) {
         ctx.beginPath();
         ctx.moveTo(square2X + i, square2Y);
         ctx.lineTo(square2X, square2Y + i);
         ctx.stroke();
       }
+    } else {
+      ctx.fillStyle = colors.square2 + '80';
+      ctx.fillRect(square2X, square2Y, square2Size, square2Size);
     }
 
     ctx.strokeStyle =
-      animationMode === 'pulse' ? `rgba(96, 165, 250, ${0.5 + Math.sin(time * 2 + 1) * 0.5})` : '#60a5fa';
+      animationMode === 'pulse' ? `${colors.square2}${Math.floor(128 + Math.sin(time * 2 + 1) * 127).toString(16)}` : colors.square2;
     ctx.lineWidth = 3;
     ctx.strokeRect(square2X, square2Y, square2Size, square2Size);
 
     // Квадрат гіпотенузи (побудований на гіпотенузі як на одній зі сторін)
     const angle = Math.atan2(points.C.y - points.B.y, points.C.x - points.B.x);
-    
+
     // Середина гіпотенузи
     const midBC = {
       x: (points.B.x + points.C.x) / 2,
       y: (points.B.y + points.C.y) / 2,
     };
-    
+
     // Нормальний вектор до гіпотенузи (перпендикулярний, назовні від трикутника)
-    // Вектор від B до C
     const dx = points.C.x - points.B.x;
     const dy = points.C.y - points.B.y;
-    // Нормальний вектор (повернутий на 90 градусів проти годинникової стрілки)
     const normalX = -dy;
     const normalY = dx;
     const normalLength = Math.sqrt(normalX * normalX + normalY * normalY);
     const normalizedNormalX = normalX / normalLength;
     const normalizedNormalY = normalY / normalLength;
-    
-    // Визначаємо, чи нормальний вектор спрямований назовні від трикутника
-    // Перевіряємо, чи точка A знаходиться з іншого боку від гіпотенузи
+
     const toA = {
       x: points.A.x - midBC.x,
       y: points.A.y - midBC.y,
     };
     const dotProduct = toA.x * normalizedNormalX + toA.y * normalizedNormalY;
-    
-    // Якщо скалярний добуток позитивний, нормаль спрямована до A, потрібно інвертувати
+
     const outwardNormalX = dotProduct > 0 ? -normalizedNormalX : normalizedNormalX;
     const outwardNormalY = dotProduct > 0 ? -normalizedNormalY : normalizedNormalY;
-    
-    // Розмір квадрата (сторона = гіпотенуза)
+
     const square3Size = hypotenuse;
-    
-    // Відстань від середини гіпотенузи до центру квадрата (половина сторони квадрата)
     const halfSize = square3Size / 2;
-    
-    // Центр квадрата (назовні від трикутника, на відстані половини сторони від середини гіпотенузи)
+
     const square3Center = {
       x: midBC.x + outwardNormalX * halfSize,
       y: midBC.y + outwardNormalY * halfSize,
@@ -264,50 +279,35 @@ const PythagoreanCanvas = () => {
     ctx.translate(square3Center.x, square3Center.y);
 
     const rotationOffset = animationMode === 'rotate' ? time * 0.5 : 0;
-    ctx.rotate(angle + rotationOffset); // Обертаємо на кут гіпотенузи (без додаткового повороту)
+    ctx.rotate(angle + rotationOffset);
 
     if (fillMode === 'gradient') {
       const grad3 = ctx.createLinearGradient(-halfSize, -halfSize, halfSize, halfSize);
-      grad3.addColorStop(0, 'rgba(251, 191, 36, 0.6)');
-      grad3.addColorStop(1, 'rgba(245, 158, 11, 0.2)');
+      grad3.addColorStop(0, colors.square3 + '99');
+      grad3.addColorStop(1, colors.square3 + '33');
       ctx.fillStyle = grad3;
       ctx.fillRect(-halfSize, -halfSize, square3Size, square3Size);
     } else if (fillMode === 'pattern') {
-      ctx.fillStyle = 'rgba(251, 191, 36, 0.1)';
+      ctx.fillStyle = colors.square3 + '1A';
       ctx.fillRect(-halfSize, -halfSize, square3Size, square3Size);
-      // Патерн
-      ctx.strokeStyle = 'rgba(251, 191, 36, 0.3)';
+      ctx.strokeStyle = colors.square3 + '4D';
       for (let i = 0; i < square3Size; i += 10) {
         ctx.beginPath();
         ctx.moveTo(-halfSize + i, -halfSize);
         ctx.lineTo(-halfSize, -halfSize + i);
         ctx.stroke();
       }
+    } else {
+      ctx.fillStyle = colors.square3 + '80';
+      ctx.fillRect(-halfSize, -halfSize, square3Size, square3Size);
     }
 
     ctx.strokeStyle =
-      animationMode === 'pulse' ? `rgba(251, 191, 36, ${0.5 + Math.sin(time * 2 + 2) * 0.5})` : '#fbbf24';
+      animationMode === 'pulse' ? `${colors.square3}${Math.floor(128 + Math.sin(time * 2 + 2) * 127).toString(16)}` : colors.square3;
     ctx.lineWidth = 3;
     ctx.strokeRect(-halfSize, -halfSize, square3Size, square3Size);
 
     ctx.restore();
-    
-    // Текст на квадраті гіпотенузи
-    ctx.fillStyle = '#fbbf24';
-    ctx.font = 'bold 16px Arial';
-    ctx.textAlign = 'center';
-    ctx.fillText(`c² = ${Math.round(hypotenuse * hypotenuse)}`, square3Center.x, square3Center.y);
-
-    // Текст на квадратах
-    ctx.fillStyle = '#4ade80';
-    ctx.font = 'bold 16px Arial';
-    ctx.textAlign = 'center';
-    ctx.fillText(`a² = ${Math.round(leg1 * leg1)}`, square1X + square1Size / 2, square1Y + square1Size / 2);
-
-    ctx.fillStyle = '#60a5fa';
-    ctx.fillText(`b² = ${Math.round(leg2 * leg2)}`, square2X + square2Size / 2, square2Y + square2Size / 2);
-    
-    // Текст на квадраті гіпотенузи буде додано після малювання квадрата
   };
 
   const drawTriangle = (ctx: CanvasRenderingContext2D) => {
@@ -315,9 +315,10 @@ const PythagoreanCanvas = () => {
 
     // Заливка трикутника
     if (animationMode === 'wave') {
-      ctx.fillStyle = `rgba(20, 184, 166, ${0.3 + Math.sin(time * 2) * 0.2})`;
+      const alpha = Math.floor(128 + Math.sin(time * 2) * 64);
+      ctx.fillStyle = colors.triangle + alpha.toString(16).padStart(2, '0');
     } else {
-      ctx.fillStyle = 'rgba(20, 184, 166, 0.4)';
+      ctx.fillStyle = colors.triangle + '66';
     }
 
     ctx.beginPath();
@@ -328,34 +329,20 @@ const PythagoreanCanvas = () => {
     ctx.fill();
 
     // Обводка трикутника
-    ctx.strokeStyle = '#14b8a6';
+    ctx.strokeStyle = colors.triangle;
     ctx.lineWidth = 4;
     ctx.stroke();
 
-    // Сторони з підписами
+    // Сторони
     ctx.strokeStyle = 'white';
     ctx.lineWidth = 3;
 
-    // Лінії
     ctx.beginPath();
     ctx.moveTo(points.A.x, points.A.y);
     ctx.lineTo(points.B.x, points.B.y);
     ctx.lineTo(points.C.x, points.C.y);
     ctx.closePath();
     ctx.stroke();
-
-    // Підписи
-    ctx.fillStyle = 'white';
-    ctx.font = 'bold 14px Arial';
-
-    const midAB = {x: (points.A.x + points.B.x) / 2 - 30, y: (points.A.y + points.B.y) / 2};
-    ctx.fillText(`a = ${Math.round(leg1)}`, midAB.x, midAB.y);
-
-    const midAC = {x: (points.A.x + points.C.x) / 2, y: (points.A.y + points.C.y) / 2 + 25};
-    ctx.fillText(`b = ${Math.round(leg2)}`, midAC.x, midAC.y);
-
-    const midBC = {x: (points.B.x + points.C.x) / 2 + 25, y: (points.B.y + points.C.y) / 2 - 15};
-    ctx.fillText(`c = ${Math.round(hypotenuse)}`, midBC.x, midBC.y);
 
     // Точки (вершини трикутника)
     drawPoint(ctx, points.A, 'A', '#ff4444');
@@ -385,30 +372,111 @@ const PythagoreanCanvas = () => {
     ctx.fillText(label, point.x, point.y - 15);
   };
 
-  const drawInfo = (ctx: CanvasRenderingContext2D) => {
-    ctx.fillStyle = 'rgba(30, 30, 50, 0.8)';
-    ctx.fillRect(10, 10, 250, 120);
+  // Експорт SVG
+  const exportToSVG = () => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-    ctx.fillStyle = 'white';
-    ctx.font = '14px Arial';
-    ctx.textAlign = 'left';
-    ctx.fillText('Теорема Піфагора:', 20, 30);
-    ctx.font = 'bold 16px Arial';
-    ctx.fillStyle = '#4ade80';
-    ctx.fillText(`${Math.round(leg1 * leg1)}`, 20, 55);
-    ctx.fillStyle = 'white';
-    ctx.fillText('+', 90, 55);
-    ctx.fillStyle = '#60a5fa';
-    ctx.fillText(`${Math.round(leg2 * leg2)}`, 120, 55);
-    ctx.fillStyle = 'white';
-    ctx.fillText('=', 190, 55);
-    ctx.fillStyle = '#fbbf24';
-    ctx.fillText(`${Math.round(hypotenuse * hypotenuse)}`, 215, 55);
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', '800');
+    svg.setAttribute('height', '600');
+    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
 
-    ctx.font = '12px Arial';
-    ctx.fillStyle = 'lightgray';
-    ctx.fillText('🖱️ Перетягуйте точки A, B, C', 20, 85);
-    ctx.fillText(`Режим: ${animationMode}`, 20, 105);
+    // Фон прозорий (альфаканал)
+    const bg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    bg.setAttribute('width', '800');
+    bg.setAttribute('height', '600');
+    bg.setAttribute('fill', 'none');
+    svg.appendChild(bg);
+
+    // Квадрат катета 1
+    const square1Size = leg1;
+    const square1X = points.A.x - square1Size;
+    const square1Y = points.A.y - square1Size;
+    const square1 = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    square1.setAttribute('x', square1X.toString());
+    square1.setAttribute('y', square1Y.toString());
+    square1.setAttribute('width', square1Size.toString());
+    square1.setAttribute('height', square1Size.toString());
+    square1.setAttribute('fill', colors.square1);
+    square1.setAttribute('stroke', colors.square1);
+    square1.setAttribute('stroke-width', '3');
+    svg.appendChild(square1);
+
+    // Квадрат катета 2
+    const square2Size = leg2;
+    const square2X = points.A.x;
+    const square2Y = points.A.y;
+    const square2 = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    square2.setAttribute('x', square2X.toString());
+    square2.setAttribute('y', square2Y.toString());
+    square2.setAttribute('width', square2Size.toString());
+    square2.setAttribute('height', square2Size.toString());
+    square2.setAttribute('fill', colors.square2);
+    square2.setAttribute('stroke', colors.square2);
+    square2.setAttribute('stroke-width', '3');
+    svg.appendChild(square2);
+
+    // Квадрат гіпотенузи
+    const angle = Math.atan2(points.C.y - points.B.y, points.C.x - points.B.x);
+    const midBC = {
+      x: (points.B.x + points.C.x) / 2,
+      y: (points.B.y + points.C.y) / 2,
+    };
+    const dx = points.C.x - points.B.x;
+    const dy = points.C.y - points.B.y;
+    const normalX = -dy;
+    const normalY = dx;
+    const normalLength = Math.sqrt(normalX * normalX + normalY * normalY);
+    const normalizedNormalX = normalX / normalLength;
+    const normalizedNormalY = normalY / normalLength;
+    const toA = {
+      x: points.A.x - midBC.x,
+      y: points.A.y - midBC.y,
+    };
+    const dotProduct = toA.x * normalizedNormalX + toA.y * normalizedNormalY;
+    const outwardNormalX = dotProduct > 0 ? -normalizedNormalX : normalizedNormalX;
+    const outwardNormalY = dotProduct > 0 ? -normalizedNormalY : normalizedNormalY;
+    const square3Size = hypotenuse;
+    const halfSize = square3Size / 2;
+    const square3Center = {
+      x: midBC.x + outwardNormalX * halfSize,
+      y: midBC.y + outwardNormalY * halfSize,
+    };
+
+    const square3 = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    square3.setAttribute('x', (-halfSize).toString());
+    square3.setAttribute('y', (-halfSize).toString());
+    square3.setAttribute('width', square3Size.toString());
+    square3.setAttribute('height', square3Size.toString());
+    square3.setAttribute('fill', colors.square3);
+    square3.setAttribute('stroke', colors.square3);
+    square3.setAttribute('stroke-width', '3');
+    square3.setAttribute('transform', `translate(${square3Center.x}, ${square3Center.y}) rotate(${(angle * 180) / Math.PI})`);
+    svg.appendChild(square3);
+
+    // Трикутник
+    const triangle = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    triangle.setAttribute('points', `${points.A.x},${points.A.y} ${points.B.x},${points.B.y} ${points.C.x},${points.C.y}`);
+    triangle.setAttribute('fill', colors.triangle);
+    triangle.setAttribute('stroke', colors.triangle);
+    triangle.setAttribute('stroke-width', '4');
+    svg.appendChild(triangle);
+
+    // Конвертуємо SVG в рядок
+    const serializer = new XMLSerializer();
+    const svgString = serializer.serializeToString(svg);
+
+    // Створюємо blob та завантажуємо
+    const blob = new Blob([svgString], {type: 'image/svg+xml'});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'pythagorean-theorem.svg';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   };
 
   // Mouse events
@@ -419,7 +487,6 @@ const PythagoreanCanvas = () => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    // Перевірка чи клікнули на точку
     Object.keys(points).forEach((key) => {
       const point = points[key as keyof typeof points];
       const dist = Math.sqrt(Math.pow(x - point.x, 2) + Math.pow(y - point.y, 2));
@@ -443,6 +510,15 @@ const PythagoreanCanvas = () => {
       ...prev,
       [dragPoint]: {x, y},
     }));
+
+    // Оновлюємо розміри катетів при перетягуванні
+    if (dragPoint === 'B') {
+      const newLeg1 = Math.abs(y - points.A.y);
+      setLeg1Size(Math.max(50, Math.min(300, newLeg1)));
+    } else if (dragPoint === 'C') {
+      const newLeg2 = Math.abs(x - points.A.x);
+      setLeg2Size(Math.max(50, Math.min(300, newLeg2)));
+    }
   };
 
   const handleMouseUp = () => {
@@ -451,11 +527,8 @@ const PythagoreanCanvas = () => {
   };
 
   const resetTriangle = () => {
-    setPoints({
-      A: {x: 200, y: 400},
-      B: {x: 200, y: 200},
-      C: {x: 400, y: 400},
-    });
+    setLeg1Size(200);
+    setLeg2Size(200);
   };
 
   return (
@@ -467,6 +540,74 @@ const PythagoreanCanvas = () => {
 
         {/* Панель керування */}
         <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.5rem'}}>
+          {/* Слайдери для катетів */}
+          <div style={{backgroundColor: '#141716', borderRadius: '8px', padding: '1rem'}}>
+            <h3 style={{fontWeight: 'bold', marginBottom: '0.75rem'}}>Розміри катетів</h3>
+            <label style={{display: 'block', marginBottom: '0.5rem'}}>
+              <span style={{display: 'block', marginBottom: '0.25rem', fontSize: '0.875rem'}}>Катет 1: {leg1Size}px</span>
+              <input
+                type="range"
+                min="50"
+                max="300"
+                value={leg1Size}
+                onChange={(e) => setLeg1Size(Number(e.target.value))}
+                style={{width: '100%'}}
+              />
+            </label>
+            <label style={{display: 'block'}}>
+              <span style={{display: 'block', marginBottom: '0.25rem', fontSize: '0.875rem'}}>Катет 2: {leg2Size}px</span>
+              <input
+                type="range"
+                min="50"
+                max="300"
+                value={leg2Size}
+                onChange={(e) => setLeg2Size(Number(e.target.value))}
+                style={{width: '100%'}}
+              />
+            </label>
+          </div>
+
+          {/* Вибір кольорів */}
+          <div style={{backgroundColor: '#141716', borderRadius: '8px', padding: '1rem'}}>
+            <h3 style={{fontWeight: 'bold', marginBottom: '0.75rem'}}>Кольори</h3>
+            <label style={{display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem'}}>
+              <span style={{fontSize: '0.875rem', minWidth: '80px'}}>Квадрат 1:</span>
+              <input
+                type="color"
+                value={colors.square1}
+                onChange={(e) => setColors({...colors, square1: e.target.value})}
+                style={{width: '60px', height: '30px', border: '1px solid #34E1A1', borderRadius: '4px'}}
+              />
+            </label>
+            <label style={{display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem'}}>
+              <span style={{fontSize: '0.875rem', minWidth: '80px'}}>Квадрат 2:</span>
+              <input
+                type="color"
+                value={colors.square2}
+                onChange={(e) => setColors({...colors, square2: e.target.value})}
+                style={{width: '60px', height: '30px', border: '1px solid #34E1A1', borderRadius: '4px'}}
+              />
+            </label>
+            <label style={{display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem'}}>
+              <span style={{fontSize: '0.875rem', minWidth: '80px'}}>Квадрат 3:</span>
+              <input
+                type="color"
+                value={colors.square3}
+                onChange={(e) => setColors({...colors, square3: e.target.value})}
+                style={{width: '60px', height: '30px', border: '1px solid #34E1A1', borderRadius: '4px'}}
+              />
+            </label>
+            <label style={{display: 'flex', alignItems: 'center', gap: '0.5rem'}}>
+              <span style={{fontSize: '0.875rem', minWidth: '80px'}}>Трикутник:</span>
+              <input
+                type="color"
+                value={colors.triangle}
+                onChange={(e) => setColors({...colors, triangle: e.target.value})}
+                style={{width: '60px', height: '30px', border: '1px solid #34E1A1', borderRadius: '4px'}}
+              />
+            </label>
+          </div>
+
           <div style={{backgroundColor: '#141716', borderRadius: '8px', padding: '1rem'}}>
             <h3 style={{fontWeight: 'bold', marginBottom: '0.75rem'}}>Режим анімації</h3>
             <select
@@ -553,6 +694,7 @@ const PythagoreanCanvas = () => {
                 color: '#0B0D0C',
                 padding: '0.5rem',
                 borderRadius: '8px',
+                marginBottom: '0.5rem',
                 border: 'none',
                 cursor: 'pointer',
                 fontWeight: 'bold',
@@ -561,6 +703,23 @@ const PythagoreanCanvas = () => {
               onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#34E1A1')}
             >
               ✨ Нові частинки
+            </button>
+            <button
+              onClick={exportToSVG}
+              style={{
+                width: '100%',
+                backgroundColor: '#34E1A1',
+                color: '#0B0D0C',
+                padding: '0.5rem',
+                borderRadius: '8px',
+                border: 'none',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+              }}
+              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#2BC891')}
+              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#34E1A1')}
+            >
+              💾 Експорт SVG
             </button>
           </div>
         </div>
@@ -594,4 +753,3 @@ const PythagoreanCanvas = () => {
 };
 
 export default PythagoreanCanvas;
-
