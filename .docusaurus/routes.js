@@ -43,21 +43,31 @@ export default [
     exact: true
   },
   {
+    path: '/uk/',
+    component: ComponentCreator('/uk/', '128'),
+    exact: true
+  },
+  {
+    path: '/uk/diagrams',
+    component: ComponentCreator('/uk/diagrams', '91c'),
+    exact: true
+  },
+  {
     path: '/',
     component: ComponentCreator('/', 'e5f'),
     exact: true
   },
   {
     path: '/',
-    component: ComponentCreator('/', 'c97'),
+    component: ComponentCreator('/', '595'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '891'),
+        component: ComponentCreator('/', 'cfd'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '056'),
+            component: ComponentCreator('/', '19c'),
             routes: [
               {
                 path: '/ai-layer',
@@ -112,6 +122,16 @@ export default [
                 component: ComponentCreator('/safety-ethics-compliance', '51a'),
                 exact: true,
                 sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/uk/overview',
+                component: ComponentCreator('/uk/overview', 'af2'),
+                exact: true
+              },
+              {
+                path: '/uk/vision-purpose',
+                component: ComponentCreator('/uk/vision-purpose', '3b2'),
+                exact: true
               },
               {
                 path: '/vision-purpose',

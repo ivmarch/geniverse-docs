@@ -49,6 +49,20 @@
     },
     "config": "config---diagrams-5-e-9-d89"
   },
+  "/uk/-128": {
+    "__comp": "__comp---site-src-pages-uk-index-tsx-67-e-107",
+    "__context": {
+      "plugin": "plugin---diagramsa-74-9f5"
+    },
+    "config": "config---diagrams-5-e-9-d89"
+  },
+  "/uk/diagrams-91c": {
+    "__comp": "__comp---site-src-pages-uk-diagrams-tsx-751-10b",
+    "__context": {
+      "plugin": "plugin---diagramsa-74-9f5"
+    },
+    "config": "config---diagrams-5-e-9-d89"
+  },
   "/-e5f": {
     "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",
     "__context": {
@@ -56,17 +70,17 @@
     },
     "config": "config---diagrams-5-e-9-d89"
   },
-  "/-c97": {
+  "/-595": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---aba-d70"
     }
   },
-  "/-891": {
+  "/-cfd": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---22-d-307"
   },
-  "/-056": {
+  "/-19c": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/ai-layer-a93": {
@@ -104,6 +118,14 @@
   "/safety-ethics-compliance-51a": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---safety-ethics-complianceb-4-f-235"
+  },
+  "/uk/overview-af2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---uk-overview-5-c-3-9d6"
+  },
+  "/uk/vision-purpose-3b2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---uk-vision-purpose-2-da-306"
   },
   "/vision-purpose-71b": {
     "__comp": "__comp---theme-doc-item-178-a40",

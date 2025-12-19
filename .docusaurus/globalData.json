@@ -56,6 +56,14 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "uk/overview",
+              "path": "/uk/overview"
+            },
+            {
+              "id": "uk/vision-purpose",
+              "path": "/uk/vision-purpose"
+            },
+            {
               "id": "vision-purpose",
               "path": "/vision-purpose",
               "sidebar": "tutorialSidebar"
