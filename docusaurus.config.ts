@@ -116,16 +116,6 @@ const config: Config = {
           label: 'Documentation',
         },
         {
-          to: '/diagrams',
-          label: 'Diagrams',
-          position: 'left',
-        },
-        {
-          to: '/pythagorean',
-          label: 'Pythagorean',
-          position: 'left',
-        },
-        {
           to: '/design-system',
           label: 'Design System',
           position: 'left',

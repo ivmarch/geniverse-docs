@@ -113,16 +113,6 @@ export default {
           "label": "Документація"
         },
         {
-          "to": "/diagrams",
-          "label": "Діаграми",
-          "position": "left"
-        },
-        {
-          "to": "/pythagorean",
-          "label": "Піфагор",
-          "position": "left"
-        },
-        {
           "to": "/design-system",
           "label": "Система дизайну",
           "position": "left"
