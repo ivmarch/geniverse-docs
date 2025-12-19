@@ -12,22 +12,22 @@ export default function Diagrams(): JSX.Element {
         // Wait for Mermaid to be available
         const checkMermaid = () => {
           if ((window as any).mermaid) {
-            (window as any).mermaid.initialize({
-              startOnLoad: true,
-              theme: 'dark',
-              themeVariables: {
-                primaryColor: '#34E1A1',
-                primaryTextColor: '#E8F9F0',
-                primaryBorderColor: '#2BC891',
-                lineColor: '#B8D4C5',
-                secondaryColor: '#141716',
-                tertiaryColor: '#0B0D0C',
-                background: '#0B0D0C',
-                mainBkg: '#141716',
-                secondBkg: '#1F2321',
-                textColor: '#E8F9F0',
-              },
-            });
+        (window as any).mermaid.initialize({
+          startOnLoad: true,
+          theme: 'dark',
+          themeVariables: {
+            primaryColor: '#7CECBF',
+            primaryTextColor: '#0B0D0C',
+            primaryBorderColor: '#58E6B2',
+            lineColor: '#A0A0A0',
+            secondaryColor: '#A0A0A0',
+            tertiaryColor: '#808080',
+            background: '#0B0D0C',
+            mainBkg: '#A0A0A0',
+            secondBkg: '#808080',
+            textColor: '#E8F9F0',
+          },
+        });
             // Run Mermaid on all .mermaid elements
             (window as any).mermaid.run();
           } else {
