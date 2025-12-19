@@ -27,14 +27,15 @@ const config: Config = {
 
   themes: ['@docusaurus/theme-mermaid'],
 
-  plugins: [
-    [
-      '@easyops-cn/docusaurus-search-local',
-      {
-        hashed: true,
-      },
-    ],
-  ],
+  // Temporarily disabled search plugin to fix validation error
+  // plugins: [
+  //   [
+  //     '@easyops-cn/docusaurus-search-local',
+  //     {
+  //       hashed: true,
+  //     },
+  //   ],
+  // ],
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
