@@ -1,4 +1,4 @@
-import React, {useRef, useEffect, useState} from 'react';
+import React, {useRef, useEffect, useState, useCallback} from 'react';
 
 const PythagoreanCanvas = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -25,7 +25,7 @@ const PythagoreanCanvas = () => {
     size: number;
     color: string;
   }>>([]);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | undefined>(undefined);
   const timeRef = useRef(0);
 
   // Обчислення довжин сторін
@@ -38,7 +38,7 @@ const PythagoreanCanvas = () => {
   const hypotenuse = calcDistance(points.B, points.C);
 
   // Генерація частинок
-  const generateParticles = () => {
+  const generateParticles = useCallback(() => {
     const newParticles = [];
     for (let i = 0; i < 50; i++) {
       newParticles.push({
@@ -51,13 +51,13 @@ const PythagoreanCanvas = () => {
       });
     }
     setParticles(newParticles);
-  };
+  }, []);
 
   useEffect(() => {
     if (showParticles && particles.length === 0) {
       generateParticles();
     }
-  }, [showParticles]);
+  }, [showParticles, particles.length, generateParticles]);
 
   // Основний рендер
   useEffect(() => {
