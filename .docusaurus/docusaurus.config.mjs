@@ -110,8 +110,7 @@ export default {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "position": "left",
-          "label": "Документація",
-          "activeBaseRegex": "/(design-system|uk/design-system)"
+          "label": "Документація"
         },
         {
           "to": "/design-system",

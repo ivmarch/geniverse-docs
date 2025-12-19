@@ -114,7 +114,6 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Documentation',
-          activeBaseRegex: '/(design-system|uk/design-system)',
         },
         {
           to: '/design-system',
