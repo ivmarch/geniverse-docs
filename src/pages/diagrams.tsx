@@ -7,11 +7,14 @@ export default function Diagrams(): JSX.Element {
 
   useEffect(() => {
     // Initialize Mermaid diagrams after component mounts
-    const initMermaid = () => {
-      if (typeof window !== 'undefined') {
-        // Wait for Mermaid to be available
-        const checkMermaid = () => {
-          if ((window as any).mermaid) {
+    const initMermaid = async () => {
+      if (typeof window === 'undefined') return;
+      
+      // Wait for Mermaid to be available (Docusaurus loads it)
+      const checkMermaid = async (retries = 20): Promise<void> => {
+        if ((window as any).mermaid) {
+          try {
+            // Initialize Mermaid with custom theme
             (window as any).mermaid.initialize({
               startOnLoad: false,
               theme: 'dark',
@@ -28,25 +31,42 @@ export default function Diagrams(): JSX.Element {
                 textColor: '#E8F9F0',
               },
             });
-            // Run Mermaid on all .mermaid elements
-            const mermaidElements = document.querySelectorAll('.mermaid');
-            mermaidElements.forEach((element) => {
-              if (!element.querySelector('svg')) {
-                (window as any).mermaid.run({ nodes: [element] });
-              }
-            });
-          } else {
-            // Retry after a short delay if Mermaid is not yet loaded
-            setTimeout(checkMermaid, 100);
+            
+            // Wait a bit for initialization to complete
+            await new Promise(resolve => setTimeout(resolve, 100));
+            
+            // Render all Mermaid diagrams
+            const mermaidElements = document.querySelectorAll('.mermaid:not([data-processed])');
+            if (mermaidElements.length > 0) {
+              mermaidElements.forEach((element) => {
+                const elementWithId = element as HTMLElement;
+                if (!element.querySelector('svg')) {
+                  try {
+                    (window as any).mermaid.run({ 
+                      nodes: [element],
+                      suppressErrors: true 
+                    });
+                    elementWithId.setAttribute('data-processed', 'true');
+                  } catch (error) {
+                    console.error('Error rendering Mermaid diagram:', error);
+                  }
+                }
+              });
+            }
+          } catch (error) {
+            console.error('Error initializing Mermaid:', error);
           }
-        };
-        checkMermaid();
-      }
+        } else if (retries > 0) {
+          // Retry after a delay
+          setTimeout(() => checkMermaid(retries - 1), 200);
+        }
+      };
+      
+      // Start checking after a delay to ensure DOM is ready
+      setTimeout(() => checkMermaid(), 300);
     };
 
-    // Delay initialization to ensure DOM is ready
-    const timer = setTimeout(initMermaid, 500);
-    return () => clearTimeout(timer);
+    initMermaid();
   }, []);
 
   const exportDiagram = (event: React.MouseEvent<HTMLButtonElement>, title: string) => {
@@ -156,7 +176,7 @@ export default function Diagrams(): JSX.Element {
               <div className="card__header">
                 <h2>Learning Loop</h2>
                 <button
-                  className="button button--secondary button--sm"
+                  className="button button--primary button--sm"
                   onClick={(e) => exportDiagram(e, 'Learning Loop')}>
                   Export SVG
                 </button>
@@ -187,7 +207,7 @@ export default function Diagrams(): JSX.Element {
               <div className="card__header">
                 <h2>Roles & Permissions (RBAC)</h2>
                 <button
-                  className="button button--secondary button--sm"
+                  className="button button--primary button--sm"
                   onClick={(e) => exportDiagram(e, 'Roles RBAC')}>
                   Export SVG
                 </button>
@@ -220,7 +240,7 @@ export default function Diagrams(): JSX.Element {
               <div className="card__header">
                 <h2>Content Personalization Flow</h2>
                 <button
-                  className="button button--secondary button--sm"
+                  className="button button--primary button--sm"
                   onClick={(e) => exportDiagram(e, 'Content Personalization')}>
                   Export SVG
                 </button>
