@@ -1,9 +1,32 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function Diagrams(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
+
+  useEffect(() => {
+    // Initialize Mermaid diagrams after component mounts
+    if (typeof window !== 'undefined' && (window as any).mermaid) {
+      (window as any).mermaid.initialize({
+        startOnLoad: true,
+        theme: 'dark',
+        themeVariables: {
+          primaryColor: '#34E1A1',
+          primaryTextColor: '#E8F9F0',
+          primaryBorderColor: '#2BC891',
+          lineColor: '#B8D4C5',
+          secondaryColor: '#141716',
+          tertiaryColor: '#0B0D0C',
+          background: '#0B0D0C',
+          mainBkg: '#141716',
+          secondBkg: '#1F2321',
+          textColor: '#E8F9F0',
+        },
+      });
+      (window as any).mermaid.run();
+    }
+  }, []);
 
   const exportDiagram = (event: React.MouseEvent<HTMLButtonElement>, title: string) => {
     const button = event.currentTarget;
