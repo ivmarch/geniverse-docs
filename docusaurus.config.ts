@@ -54,7 +54,7 @@ const config: Config = {
           editUrl: undefined,
         },
         blog: false,
-        pages: true,
+        pages: {},
         theme: {
           customCss: './src/css/custom.css',
         },
