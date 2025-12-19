@@ -140,10 +140,18 @@ h3 {
   color: var(--ifm-font-color-base) !important;
 }
 
-/* Fallback: when on design-system page via body class */
+/* Fallback: when on design-system page via body/html class */
 body.on-design-system-page .navbar__item[class*="docSidebar"] .navbar__link:not(.navbar__link--active),
 body.on-design-system-page .navbar__link[href*="/overview"]:not(.navbar__link--active),
-body.on-design-system-page .navbar__link[href="/"]:not(.navbar__link--active) {
+body.on-design-system-page .navbar__link[href="/"]:not(.navbar__link--active),
+html.on-design-system-page .navbar__item[class*="docSidebar"] .navbar__link:not(.navbar__link--active),
+html.on-design-system-page .navbar__link[href*="/overview"]:not(.navbar__link--active),
+html.on-design-system-page .navbar__link[href="/"]:not(.navbar__link--active) {
+  color: var(--ifm-font-color-base) !important;
+}
+
+/* More specific: target Documentation navbar item directly when Design System is active */
+.on-design-system-page .navbar__item:first-child .navbar__link:not(.navbar__link--active) {
   color: var(--ifm-font-color-base) !important;
 }
 
