@@ -177,6 +177,19 @@ h3 {
   border-color: var(--ifm-color-primary-dark);
 }
 
+/* Hero subtitle - ensure white color */
+.hero__subtitle {
+  color: #FFFFFF !important;
+}
+
+.hero .hero__subtitle {
+  color: #FFFFFF !important;
+}
+
+.heroBanner .hero__subtitle {
+  color: #FFFFFF !important;
+}
+
 /* Cards */
 .card {
   background-color: var(--ifm-card-background-color);
