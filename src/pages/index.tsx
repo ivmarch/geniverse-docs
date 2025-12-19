@@ -32,8 +32,7 @@ function HomepageFeatures(): JSX.Element {
             <div className="text--center padding-horiz--md">
               <h3>AI-Powered</h3>
               <p>
-                Advanced AI personalization adapts content, pacing, and delivery methods
-                to each learner's unique needs and learning style.
+                Intelligent personalization adapts content, pacing, and learning format according to each learner's individual progress, context, and learning preferences.
               </p>
             </div>
           </div>
