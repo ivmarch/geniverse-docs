@@ -6,19 +6,24 @@ export default function Diagrams(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
 
   useEffect(() => {
-    const renderMermaid = async () => {
+    const renderMermaid = () => {
       if (typeof window === 'undefined') return;
       
-      const tryRender = async () => {
+      const tryRender = () => {
         const mermaidLib = (window as any).mermaid;
         
-        if (mermaidLib) {
+        if (mermaidLib && typeof mermaidLib.initialize === 'function') {
           try {
-            // Initialize Mermaid with custom theme
+            // Get existing config or use defaults
+            const existingConfig = mermaidLib.mermaidAPI?.getConfig() || {};
+            
+            // Initialize Mermaid with custom theme, preserving Docusaurus config
             mermaidLib.initialize({
+              ...existingConfig,
               startOnLoad: false,
               theme: 'dark',
               themeVariables: {
+                ...existingConfig.themeVariables,
                 primaryColor: '#7CECBF',
                 primaryTextColor: '#0B0D0C',
                 primaryBorderColor: '#58E6B2',
@@ -32,47 +37,49 @@ export default function Diagrams(): JSX.Element {
               },
             });
             
-            // Render each diagram individually
-            const diagrams = document.querySelectorAll('.mermaid');
-            for (let index = 0; index < diagrams.length; index++) {
-              const element = diagrams[index] as HTMLElement;
-              if (!element.querySelector('svg')) {
-                const id = `mermaid-diagram-${index}-${Date.now()}`;
-                const graphDefinition = element.textContent?.trim() || '';
-                
-                if (graphDefinition) {
-                  try {
-                    // Use async render if available, otherwise use callback
-                    if (mermaidLib.renderAsync) {
-                      const {svg} = await mermaidLib.renderAsync(id, graphDefinition);
-                      element.innerHTML = svg;
-                    } else if (mermaidLib.render) {
-                      mermaidLib.render(id, graphDefinition, (svgCode: string) => {
-                        element.innerHTML = svgCode;
-                      });
-                    } else if (mermaidLib.run) {
-                      // Fallback to run() method
-                      mermaidLib.run();
-                    }
-                  } catch (err) {
-                    console.error(`Error rendering diagram ${index}:`, err);
-                  }
-                }
+            // Wait a bit for initialization to complete
+            setTimeout(() => {
+              // Try contentLoaded first (Docusaurus way)
+              if (typeof mermaidLib.contentLoaded === 'function') {
+                mermaidLib.contentLoaded();
+              } 
+              // Then try run() method
+              else if (typeof mermaidLib.run === 'function') {
+                mermaidLib.run();
               }
-            }
+              // Fallback: manually render each diagram
+              else {
+                document.querySelectorAll('.mermaid').forEach((element, index) => {
+                  if (!element.querySelector('svg')) {
+                    const id = `mermaid-diagram-${index}`;
+                    const graphDefinition = element.textContent?.trim() || '';
+                    
+                    if (graphDefinition) {
+                      try {
+                        if (mermaidLib.render) {
+                          mermaidLib.render(id, graphDefinition, (svgCode: string) => {
+                            element.innerHTML = svgCode;
+                          });
+                        }
+                      } catch (err) {
+                        console.error(`Error rendering diagram ${index}:`, err);
+                      }
+                    }
+                  }
+                });
+              }
+            }, 100);
           } catch (error) {
             console.error('Mermaid initialization error:', error);
-            // Retry if error
             setTimeout(() => tryRender(), 500);
           }
         } else {
-          // Retry if Mermaid not loaded yet
           setTimeout(() => tryRender(), 200);
         }
       };
       
-      // Start after delay to ensure DOM and Mermaid are ready
-      setTimeout(() => tryRender(), 500);
+      // Wait for Docusaurus to load Mermaid theme
+      setTimeout(() => tryRender(), 1000);
     };
 
     renderMermaid();
