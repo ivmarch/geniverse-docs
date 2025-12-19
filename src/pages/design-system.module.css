@@ -141,6 +141,7 @@
   border: 1px solid var(--ds-border, #1F2321);
   border-radius: calc(var(--ds-radius, 12px) * 0.75);
   padding: calc(0.25rem * var(--ds-spacing, 1));
+  transition: none !important;
 }
 
 .toggleButton {
@@ -153,17 +154,19 @@
   font-weight: 500;
   cursor: pointer;
   border-radius: calc(var(--ds-radius, 12px) * 0.5);
-  transition: none;
+  transition: none !important;
 }
 
 .toggleButton:hover {
   background: var(--ds-hover, rgba(52, 225, 161, 0.1));
   color: var(--ds-text, #E8F9F0);
+  transition: none !important;
 }
 
 .toggleButtonActive {
   background: var(--ds-accent, #34E1A1);
   color: var(--ds-bg, #0B0D0C);
+  transition: none !important;
 }
 
 .controlRange {
