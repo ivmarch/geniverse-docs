@@ -492,6 +492,18 @@ a:hover {
 .footer {
   background-color: #000000 !important;
   border-top: 1px solid #1F2321;
+  margin-top: 2rem !important;
+  padding-top: 1.5rem !important;
+}
+
+/* Reduce spacing before footer */
+.main-wrapper {
+  padding-bottom: 0 !important;
+}
+
+.theme-doc-markdown,
+.markdown {
+  margin-bottom: 2rem !important;
 }
 
 /* Main content area */

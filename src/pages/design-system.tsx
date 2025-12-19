@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './design-system.module.css';
 
 // Theme presets
@@ -223,6 +224,9 @@ const Section: React.FC<{
 };
 
 export default function DesignSystem(): React.JSX.Element {
+  const { i18n } = useDocusaurusContext();
+  const isUkrainian = i18n.currentLocale === 'uk';
+  
   const [themePreset, setThemePreset] = useState<ThemePreset>('Core');
   const [mode, setMode] = useState<Mode>('dark');
   const [density, setDensity] = useState<Density>('default');
@@ -231,17 +235,59 @@ export default function DesignSystem(): React.JSX.Element {
   const [tokenFormat, setTokenFormat] = useState<TokenFormat>('hex');
   const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
 
+  // Translations
+  const t = {
+    themePreset: isUkrainian ? 'Тема' : 'Theme Preset',
+    mode: isUkrainian ? 'Режим' : 'Mode',
+    density: isUkrainian ? 'Щільність' : 'Density',
+    motion: isUkrainian ? 'Анімація' : 'Motion',
+    fontScale: isUkrainian ? 'Масштаб шрифту' : 'Font Scale',
+    showTokensAs: isUkrainian ? 'Показувати токени як' : 'Show tokens as',
+    light: isUkrainian ? 'Світла' : 'Light',
+    dark: isUkrainian ? 'Темна' : 'Dark',
+    roomy: isUkrainian ? 'Простора' : 'Roomy',
+    default: isUkrainian ? 'За замовчуванням' : 'Default',
+    compact: isUkrainian ? 'Компактна' : 'Compact',
+    full: isUkrainian ? 'Повна' : 'Full',
+    reduced: isUkrainian ? 'Зменшена' : 'Reduced',
+    hex: 'HEX',
+    cssVars: isUkrainian ? 'CSS Змінні' : 'CSS Vars',
+    playground: isUkrainian ? 'Ігровий майданчик' : 'Playground',
+  };
+
   const currentTheme = themes[themePreset];
   const effectiveFontScale = (fontScale / 100) * currentTheme.fontScale;
+  
+  // Calculate density multiplier
+  const densityMultiplier = density === 'roomy' ? 1.2 : density === 'compact' ? 0.8 : 1;
+  const effectiveSpacing = currentTheme.spacingMultiplier * densityMultiplier;
+  
+  // Apply mode adjustments (for light mode, adjust colors if theme supports it)
+  const modeAdjustedColors = mode === 'light' && themePreset === 'Core'
+    ? {
+        bg: '#FFFFFF',
+        surface: '#F5F5F5',
+        text: '#1A1A1A',
+        textSecondary: '#666666',
+        border: '#E0E0E0',
+        success: currentTheme.colors.success,
+        warning: currentTheme.colors.warning,
+        error: currentTheme.colors.error,
+        info: currentTheme.colors.info,
+        hover: currentTheme.colors.hover,
+        active: currentTheme.colors.active,
+        overlay: currentTheme.colors.overlay,
+      }
+    : currentTheme.colors;
 
   // Apply theme via CSS variables
   const themeVars = {
-    '--ds-bg': currentTheme.colors.bg,
-    '--ds-surface': currentTheme.colors.surface,
+    '--ds-bg': modeAdjustedColors.bg,
+    '--ds-surface': modeAdjustedColors.surface,
     '--ds-accent': currentTheme.colors.accent,
-    '--ds-text': currentTheme.colors.text,
-    '--ds-text-secondary': currentTheme.colors.textSecondary,
-    '--ds-border': currentTheme.colors.border,
+    '--ds-text': modeAdjustedColors.text,
+    '--ds-text-secondary': modeAdjustedColors.textSecondary,
+    '--ds-border': modeAdjustedColors.border,
     '--ds-success': currentTheme.colors.success,
     '--ds-warning': currentTheme.colors.warning,
     '--ds-error': currentTheme.colors.error,
@@ -251,17 +297,19 @@ export default function DesignSystem(): React.JSX.Element {
     '--ds-overlay': currentTheme.colors.overlay,
     '--ds-radius': `${currentTheme.radius}px`,
     '--ds-shadow': currentTheme.shadow,
-    '--ds-spacing': currentTheme.spacingMultiplier,
+    '--ds-spacing': effectiveSpacing,
     '--ds-font-scale': effectiveFontScale,
     '--ds-motion': motion ? 'all 0.2s ease' : 'none',
+    '--ds-mode': mode,
+    '--ds-density': density,
   } as React.CSSProperties;
 
   const sections = [
-    { id: 'architecture', title: 'Архітектура' },
-    { id: 'tokens', title: 'Токени' },
-    { id: 'typography', title: 'Типографіка' },
-    { id: 'components', title: 'Компоненти' },
-    { id: 'accessibility', title: 'Доступність' },
+    { id: 'architecture', title: isUkrainian ? 'Архітектура' : 'Architecture' },
+    { id: 'tokens', title: isUkrainian ? 'Токени' : 'Tokens' },
+    { id: 'typography', title: isUkrainian ? 'Типографіка' : 'Typography' },
+    { id: 'components', title: isUkrainian ? 'Компоненти' : 'Components' },
+    { id: 'accessibility', title: isUkrainian ? 'Доступність' : 'Accessibility' },
   ];
 
   useEffect(() => {
@@ -314,10 +362,10 @@ export default function DesignSystem(): React.JSX.Element {
           {/* Playground Controls Sidebar */}
           <aside className={styles.playgroundSidebar}>
             <div className={styles.playgroundPanel}>
-              <h3 className={styles.playgroundTitle}>Playground</h3>
+              <h3 className={styles.playgroundTitle}>{t.playground}</h3>
               
               <div className={styles.controlGroup}>
-                <label className={styles.controlLabel}>Theme Preset</label>
+                <label className={styles.controlLabel}>{t.themePreset}</label>
                 <select
                   className={styles.controlSelect}
                   value={themePreset}
@@ -330,67 +378,67 @@ export default function DesignSystem(): React.JSX.Element {
               </div>
 
               <div className={styles.controlGroup}>
-                <label className={styles.controlLabel}>Mode</label>
+                <label className={styles.controlLabel}>{t.mode}</label>
                 <div className={styles.controlToggle}>
                   <button
                     className={clsx(styles.toggleButton, mode === 'light' && styles.toggleButtonActive)}
                     onClick={() => setMode('light')}
                   >
-                    Light
+                    {t.light}
                   </button>
                   <button
                     className={clsx(styles.toggleButton, mode === 'dark' && styles.toggleButtonActive)}
                     onClick={() => setMode('dark')}
                   >
-                    Dark
+                    {t.dark}
                   </button>
                 </div>
               </div>
 
               <div className={styles.controlGroup}>
-                <label className={styles.controlLabel}>Density</label>
+                <label className={styles.controlLabel}>{t.density}</label>
                 <div className={styles.controlToggle}>
                   <button
                     className={clsx(styles.toggleButton, density === 'roomy' && styles.toggleButtonActive)}
                     onClick={() => setDensity('roomy')}
                   >
-                    Roomy
+                    {t.roomy}
                   </button>
                   <button
                     className={clsx(styles.toggleButton, density === 'default' && styles.toggleButtonActive)}
                     onClick={() => setDensity('default')}
                   >
-                    Default
+                    {t.default}
                   </button>
                   <button
                     className={clsx(styles.toggleButton, density === 'compact' && styles.toggleButtonActive)}
                     onClick={() => setDensity('compact')}
                   >
-                    Compact
+                    {t.compact}
                   </button>
                 </div>
               </div>
 
               <div className={styles.controlGroup}>
-                <label className={styles.controlLabel}>Motion</label>
+                <label className={styles.controlLabel}>{t.motion}</label>
                 <div className={styles.controlToggle}>
                   <button
                     className={clsx(styles.toggleButton, motion && styles.toggleButtonActive)}
                     onClick={() => setMotion(true)}
                   >
-                    Full
+                    {t.full}
                   </button>
                   <button
                     className={clsx(styles.toggleButton, !motion && styles.toggleButtonActive)}
                     onClick={() => setMotion(false)}
                   >
-                    Reduced
+                    {t.reduced}
                   </button>
                 </div>
               </div>
 
               <div className={styles.controlGroup}>
-                <label className={styles.controlLabel}>Font Scale</label>
+                <label className={styles.controlLabel}>{t.fontScale}</label>
                 <div className={styles.controlRange}>
                   <input
                     type="range"
@@ -406,19 +454,19 @@ export default function DesignSystem(): React.JSX.Element {
               </div>
 
               <div className={styles.controlGroup}>
-                <label className={styles.controlLabel}>Show tokens as</label>
+                <label className={styles.controlLabel}>{t.showTokensAs}</label>
                 <div className={styles.controlToggle}>
                   <button
                     className={clsx(styles.toggleButton, tokenFormat === 'hex' && styles.toggleButtonActive)}
                     onClick={() => setTokenFormat('hex')}
                   >
-                    HEX
+                    {t.hex}
                   </button>
                   <button
                     className={clsx(styles.toggleButton, tokenFormat === 'css' && styles.toggleButtonActive)}
                     onClick={() => setTokenFormat('css')}
                   >
-                    CSS Vars
+                    {t.cssVars}
                   </button>
                 </div>
               </div>
@@ -428,7 +476,7 @@ export default function DesignSystem(): React.JSX.Element {
           {/* Main Content */}
           <main className={styles.mainContent}>
             {/* Architecture Section */}
-            <Section id="architecture" title="Архітектура дизайн-системи">
+            <Section id="architecture" title={isUkrainian ? "Архітектура дизайн-системи" : "Design System Architecture"}>
               <div className={styles.architectureDiagram}>
                 <div className={styles.archFlow}>
                   <div className={clsx(styles.archNode, styles.archNodeActive)}>
@@ -448,7 +496,7 @@ export default function DesignSystem(): React.JSX.Element {
                   <div className={styles.archArrow}>→</div>
                   <div className={styles.archNode}>
                     <div className={styles.archNodeLabel}>Modes</div>
-                    <div className={styles.archNodeDesc}>{mode === 'dark' ? 'Dark' : 'Light'}</div>
+                    <div className={styles.archNodeDesc}>{mode === 'dark' ? t.dark : t.light}</div>
                   </div>
                   <div className={styles.archArrow}>→</div>
                   <div className={styles.archNode}>
@@ -460,7 +508,7 @@ export default function DesignSystem(): React.JSX.Element {
             </Section>
 
             {/* Tokens Section */}
-            <Section id="tokens" title="Токени дизайну">
+            <Section id="tokens" title={isUkrainian ? "Токени дизайну" : "Design Tokens"}>
               <div className={styles.subsection}>
                 <h3 className={styles.subsectionTitle}>Кольорова палітра</h3>
                 <div className={styles.colorGrid}>
@@ -479,7 +527,7 @@ export default function DesignSystem(): React.JSX.Element {
             </Section>
 
             {/* Typography Section */}
-            <Section id="typography" title="Типографіка">
+            <Section id="typography" title={isUkrainian ? "Типографіка" : "Typography"}>
               <div className={styles.subsection}>
                 <div className={styles.typographyPreview}>
                   <div className={styles.typographyItem}>
@@ -527,7 +575,7 @@ export default function DesignSystem(): React.JSX.Element {
             </Section>
 
             {/* Components Section */}
-            <Section id="components" title="Компоненти">
+            <Section id="components" title={isUkrainian ? "Компоненти" : "Components"}>
               <div className={styles.subsection}>
                 <h3 className={styles.subsectionTitle}>Кнопки</h3>
                 <div className={styles.componentPreview}>
@@ -627,7 +675,7 @@ export default function DesignSystem(): React.JSX.Element {
             </Section>
 
             {/* Accessibility Section */}
-            <Section id="accessibility" title="Доступність та K–12">
+            <Section id="accessibility" title={isUkrainian ? "Доступність та K–12" : "Accessibility & K–12"}>
               <div className={styles.subsection}>
                 <ul className={styles.accessibilityList}>
                   <li>Контраст тексту відповідає WCAG 2.1 AA (мінімум 4.5:1 для основного тексту)</li>
