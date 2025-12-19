@@ -1,6 +1,3 @@
 {
-  "copyright": {
-    "message": "Авторське право © 2024 FuturumXR. Створено з Docusaurus.",
-    "description": "The footer copyright"
-  }
+  "copyright": "Copyright © 2024 FuturumXR. Built with Docusaurus."
 }

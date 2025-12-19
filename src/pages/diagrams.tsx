@@ -1,109 +1,29 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Mermaid from '@theme/Mermaid';
 
 export default function Diagrams(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
-
-  useEffect(() => {
-    const renderMermaid = () => {
-      if (typeof window === 'undefined') return;
-      
-      const tryRender = () => {
-        const mermaidLib = (window as any).mermaid;
-        
-        if (mermaidLib && typeof mermaidLib.initialize === 'function') {
-          try {
-            // Get existing config or use defaults
-            const existingConfig = mermaidLib.mermaidAPI?.getConfig() || {};
-            
-            // Initialize Mermaid with custom theme, preserving Docusaurus config
-            mermaidLib.initialize({
-              ...existingConfig,
-              startOnLoad: false,
-              theme: 'dark',
-              themeVariables: {
-                ...existingConfig.themeVariables,
-                primaryColor: '#7CECBF',
-                primaryTextColor: '#0B0D0C',
-                primaryBorderColor: '#58E6B2',
-                lineColor: '#A0A0A0',
-                secondaryColor: '#A0A0A0',
-                tertiaryColor: '#808080',
-                background: '#0B0D0C',
-                mainBkg: '#A0A0A0',
-                secondBkg: '#808080',
-                textColor: '#E8F9F0',
-              },
-            });
-            
-            // Wait a bit for initialization to complete
-            setTimeout(() => {
-              // Try contentLoaded first (Docusaurus way)
-              if (typeof mermaidLib.contentLoaded === 'function') {
-                mermaidLib.contentLoaded();
-              } 
-              // Then try run() method
-              else if (typeof mermaidLib.run === 'function') {
-                mermaidLib.run();
-              }
-              // Fallback: manually render each diagram
-              else {
-                document.querySelectorAll('.mermaid').forEach((element, index) => {
-                  if (!element.querySelector('svg')) {
-                    const id = `mermaid-diagram-${index}`;
-                    const graphDefinition = element.textContent?.trim() || '';
-                    
-                    if (graphDefinition) {
-                      try {
-                        if (mermaidLib.render) {
-                          mermaidLib.render(id, graphDefinition, (svgCode: string) => {
-                            element.innerHTML = svgCode;
-                          });
-                        }
-                      } catch (err) {
-                        console.error(`Error rendering diagram ${index}:`, err);
-                      }
-                    }
-                  }
-                });
-              }
-            }, 100);
-          } catch (error) {
-            console.error('Mermaid initialization error:', error);
-            setTimeout(() => tryRender(), 500);
-          }
-        } else {
-          setTimeout(() => tryRender(), 200);
-        }
-      };
-      
-      // Wait for Docusaurus to load Mermaid theme
-      setTimeout(() => tryRender(), 1000);
-    };
-
-    renderMermaid();
-  }, []);
 
   const exportDiagram = (event: React.MouseEvent<HTMLButtonElement>, title: string) => {
     const button = event.currentTarget;
     const card = button.closest('.card');
     if (card) {
-      const mermaidDiv = card.querySelector('.mermaid');
-      if (mermaidDiv) {
-        const svg = mermaidDiv.querySelector('svg');
-        if (svg) {
-          const svgData = new XMLSerializer().serializeToString(svg);
-          const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
-          const svgUrl = URL.createObjectURL(svgBlob);
-          const downloadLink = document.createElement('a');
-          downloadLink.href = svgUrl;
-          downloadLink.download = `${title.replace(/\s+/g, '-').toLowerCase()}.svg`;
-          document.body.appendChild(downloadLink);
-          downloadLink.click();
-          document.body.removeChild(downloadLink);
-          URL.revokeObjectURL(svgUrl);
-        }
+      // Try to find SVG in Mermaid container or directly in card
+      const mermaidContainer = card.querySelector('.docusaurus-mermaid-container');
+      const svg = mermaidContainer?.querySelector('svg') || card.querySelector('svg');
+      if (svg) {
+        const svgData = new XMLSerializer().serializeToString(svg);
+        const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+        const svgUrl = URL.createObjectURL(svgBlob);
+        const downloadLink = document.createElement('a');
+        downloadLink.href = svgUrl;
+        downloadLink.download = `${title.replace(/\s+/g, '-').toLowerCase()}.svg`;
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+        URL.revokeObjectURL(svgUrl);
       }
     }
   };
@@ -135,8 +55,7 @@ export default function Diagrams(): JSX.Element {
                 </button>
               </div>
               <div className="card__body">
-                <div className="mermaid">
-                  {`graph TB
+                <Mermaid value={`graph TB
     subgraph "GeniVerse Platform"
         AI[AI Layer]
         XR[XR Engine]
@@ -144,43 +63,42 @@ export default function Diagrams(): JSX.Element {
         Auth[Auth & RBAC]
         Data[Data Layer]
     end
-    
+
     subgraph "User Interfaces"
         Web[Web Client]
         Mobile[Mobile App]
         VR[VR Headset]
         AR[AR Device]
     end
-    
+
     subgraph "External Services"
         LMS[LMS Integration]
         Cloud[Cloud Services]
         Edge[Edge Computing]
     end
-    
+
     User[Users] --> Web
     User --> Mobile
     User --> VR
     User --> AR
-    
+
     Web --> Core
     Mobile --> Core
     VR --> XR
     AR --> XR
-    
+
     XR --> Core
     Core --> AI
     Core --> Auth
     Core --> Data
-    
+
     Core --> LMS
     Core --> Cloud
     Core --> Edge
-    
+
     style AI fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
     style XR fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style Core fill:#A0A0A0,stroke:#808080,stroke-width:2px`}
-                </div>
+    style Core fill:#A0A0A0,stroke:#808080,stroke-width:2px`} />
               </div>
             </div>
           </div>
@@ -198,20 +116,18 @@ export default function Diagrams(): JSX.Element {
                 </button>
               </div>
               <div className="card__body">
-                <div className="mermaid">
-                  {`graph LR
+                <Mermaid value={`graph LR
     A[Assess] --> B[Adapt]
     B --> C[Deliver]
     C --> D[Engage]
     D --> E[Measure]
     E --> A
-    
+
     style A fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
     style B fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
     style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
     style D fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style E fill:#7CECBF,stroke:#58E6B2,stroke-width:2px`}
-                </div>
+    style E fill:#7CECBF,stroke:#58E6B2,stroke-width:2px`} />
               </div>
             </div>
           </div>
@@ -229,8 +145,7 @@ export default function Diagrams(): JSX.Element {
                 </button>
               </div>
               <div className="card__body">
-                <div className="mermaid">
-                  {`graph TD
+                <Mermaid value={`graph TD
     A[Super Admin] --> B[Institution Admin]
     B --> C[Educator]
     B --> D[Content Creator]
@@ -239,12 +154,11 @@ export default function Diagrams(): JSX.Element {
     D --> E
     G[Parent/Guardian] --> E
     H[Guest] --> E
-    
+
     style A fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
     style B fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
     style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style E fill:#A0A0A0,stroke:#808080,stroke-width:2px`}
-                </div>
+    style E fill:#A0A0A0,stroke:#808080,stroke-width:2px`} />
               </div>
             </div>
           </div>
@@ -262,18 +176,16 @@ export default function Diagrams(): JSX.Element {
                 </button>
               </div>
               <div className="card__body">
-                <div id="personalization" className="mermaid">
-                  {`graph LR
+                <Mermaid value={`graph LR
     A[Learner State] --> B[Content Analysis]
     B --> C[Recommendation Engine]
     C --> D[Adapted Content]
-    
+
     E[Performance Data] --> C
     F[Learning Goals] --> C
     G[Context] --> C
-    
-    style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px`}
-                </div>
+
+    style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px`} />
               </div>
             </div>
           </div>

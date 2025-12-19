@@ -15,7 +15,7 @@ function HomepageHeader() {
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">Платформа для навчання з підтримкою ШІ та імерсивних технологій</p>
         <div className={styles.buttons}>
           <Link
             className="button button--primary button--lg"
