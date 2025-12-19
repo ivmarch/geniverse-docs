@@ -16,15 +16,12 @@ const config: Config = {
   organizationName: 'geniverse',
   projectName: 'geniverse-docs',
 
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+
   // Enable Mermaid diagrams
   markdown: {
-    mermaid: {
-      theme: 'dark',
-    },
-    hooks: {
-      onBrokenLinks: 'throw',
-      onBrokenMarkdownLinks: 'warn',
-    },
+    mermaid: true,
   },
 
   themes: ['@docusaurus/theme-mermaid'],
