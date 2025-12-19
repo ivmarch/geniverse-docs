@@ -6,75 +6,46 @@ export default function Diagrams(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
 
   useEffect(() => {
-    // Wait for Docusaurus to load Mermaid and render diagrams
-    const renderMermaid = async () => {
+    // Wait for Docusaurus Mermaid theme to load and render diagrams
+    const renderMermaid = () => {
       if (typeof window === 'undefined') return;
       
-      const maxRetries = 30;
-      let retries = 0;
-      
-      const tryRender = async () => {
-        // Check if Mermaid is loaded by Docusaurus
-        const mermaidLib = (window as any).mermaid || (window as any).docusaurus?.mermaid;
+      const tryRender = () => {
+        const mermaidLib = (window as any).mermaid;
         
-        if (mermaidLib) {
+        if (mermaidLib && typeof mermaidLib.run === 'function') {
           try {
-            // Get all mermaid elements that haven't been rendered
-            const mermaidElements = document.querySelectorAll('.mermaid:not([data-processed])');
+            // Initialize Mermaid with custom theme
+            mermaidLib.initialize({
+              startOnLoad: false,
+              theme: 'dark',
+              themeVariables: {
+                primaryColor: '#7CECBF',
+                primaryTextColor: '#0B0D0C',
+                primaryBorderColor: '#58E6B2',
+                lineColor: '#A0A0A0',
+                secondaryColor: '#A0A0A0',
+                tertiaryColor: '#808080',
+                background: '#0B0D0C',
+                mainBkg: '#A0A0A0',
+                secondBkg: '#808080',
+                textColor: '#E8F9F0',
+              },
+            });
             
-            if (mermaidElements.length > 0) {
-              // Initialize if not already done
-              if (!mermaidLib.initialized) {
-                mermaidLib.initialize({
-                  startOnLoad: false,
-                  theme: 'dark',
-                  themeVariables: {
-                    primaryColor: '#7CECBF',
-                    primaryTextColor: '#0B0D0C',
-                    primaryBorderColor: '#58E6B2',
-                    lineColor: '#A0A0A0',
-                    secondaryColor: '#A0A0A0',
-                    tertiaryColor: '#808080',
-                    background: '#0B0D0C',
-                    mainBkg: '#A0A0A0',
-                    secondBkg: '#808080',
-                    textColor: '#E8F9F0',
-                  },
-                });
-              }
-              
-              // Render each diagram
-              for (const element of Array.from(mermaidElements)) {
-                const htmlElement = element as HTMLElement;
-                if (!htmlElement.querySelector('svg')) {
-                  try {
-                    const id = htmlElement.id || `mermaid-${Math.random().toString(36).substr(2, 9)}`;
-                    if (!htmlElement.id) {
-                      htmlElement.id = id;
-                    }
-                    
-                    const definition = htmlElement.textContent || '';
-                    if (definition.trim()) {
-                      await mermaidLib.render(id, definition);
-                      htmlElement.setAttribute('data-processed', 'true');
-                    }
-                  } catch (error) {
-                    console.error('Error rendering Mermaid:', error);
-                  }
-                }
-              }
-            }
+            // Use run() method which is the correct way for Docusaurus
+            mermaidLib.run();
           } catch (error) {
-            console.error('Mermaid initialization error:', error);
+            console.error('Mermaid render error:', error);
           }
-        } else if (retries < maxRetries) {
-          retries++;
+        } else {
+          // Retry if Mermaid not loaded yet
           setTimeout(tryRender, 200);
         }
       };
       
-      // Start after a delay to ensure DOM is ready
-      setTimeout(tryRender, 500);
+      // Start after delay to ensure DOM and Mermaid are ready
+      setTimeout(tryRender, 1000);
     };
 
     renderMermaid();
