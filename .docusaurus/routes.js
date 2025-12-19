@@ -8,6 +8,11 @@ export default [
     exact: true
   },
   {
+    path: '/uk/pythagorean',
+    component: ComponentCreator('/uk/pythagorean', 'e21'),
+    exact: true
+  },
+  {
     path: '/uk/uk/',
     component: ComponentCreator('/uk/uk/', '0dc'),
     exact: true
@@ -15,6 +20,11 @@ export default [
   {
     path: '/uk/uk/diagrams',
     component: ComponentCreator('/uk/uk/diagrams', '734'),
+    exact: true
+  },
+  {
+    path: '/uk/uk/pythagorean',
+    component: ComponentCreator('/uk/uk/pythagorean', 'bdc'),
     exact: true
   },
   {

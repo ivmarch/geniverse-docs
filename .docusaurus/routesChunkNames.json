@@ -6,6 +6,13 @@
     },
     "config": "5e9f5e1a"
   },
+  "/uk/pythagorean-e21": {
+    "__comp": "89d8210d",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
   "/uk/uk/-0dc": {
     "__comp": "67e31f7c",
     "__context": {
@@ -15,6 +22,13 @@
   },
   "/uk/uk/diagrams-734": {
     "__comp": "751e7026",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  },
+  "/uk/uk/pythagorean-bdc": {
+    "__comp": "24cc29d4",
     "__context": {
       "plugin": "a7456010"
     },

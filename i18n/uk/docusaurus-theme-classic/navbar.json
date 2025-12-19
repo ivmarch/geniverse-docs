@@ -14,5 +14,9 @@
   "item.label.Diagrams": {
     "message": "Діаграми",
     "description": "Navbar item with label Diagrams"
+  },
+  "item.label.Pythagorean": {
+    "message": "Піфагор",
+    "description": "Navbar item with label Pythagorean"
   }
 }

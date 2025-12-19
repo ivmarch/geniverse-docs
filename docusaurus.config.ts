@@ -93,6 +93,11 @@ const config: Config = {
           position: 'left',
         },
         {
+          to: '/pythagorean',
+          label: 'Pythagorean',
+          position: 'left',
+        },
+        {
           type: 'localeDropdown',
           position: 'right',
           dropdownItemsAfter: [],

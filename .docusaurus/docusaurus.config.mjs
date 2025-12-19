@@ -87,6 +87,11 @@ export default {
           "position": "left"
         },
         {
+          "to": "/pythagorean",
+          "label": "Піфагор",
+          "position": "left"
+        },
+        {
           "type": "localeDropdown",
           "position": "right",
           "dropdownItemsAfter": [],
