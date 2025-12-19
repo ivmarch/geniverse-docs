@@ -252,7 +252,7 @@ export default function DesignSystem(): React.JSX.Element {
     reduced: isUkrainian ? 'Зменшена' : 'Reduced',
     hex: 'HEX',
     cssVars: isUkrainian ? 'CSS Змінні' : 'CSS Vars',
-    playground: isUkrainian ? 'Ігровий майданчик' : 'Playground',
+    playground: isUkrainian ? 'Налаштування інтерфейсу' : 'Interface Settings',
   };
 
   const currentTheme = themes[themePreset];
