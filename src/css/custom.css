@@ -108,13 +108,29 @@ h3 {
   color: var(--ifm-font-color-base);
 }
 
-.navbar__link--active {
+.navbar__link {
+  color: var(--ifm-font-color-base);
+}
+
+.navbar__link:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* Only highlight active navbar links, not sidebar-related items */
+.navbar__item--active:not(.navbar__link--sidebar) {
   color: var(--ifm-color-primary) !important;
   font-weight: 500;
 }
 
-.navbar__item.navbar__link--active {
+.navbar__link--active:not(.menu__link--sublist-caret) {
   color: var(--ifm-color-primary) !important;
+  font-weight: 500;
+}
+
+/* Override sidebar navbar item active state */
+.navbar .navbar__link[aria-current="page"]:not([class*="sidebar"]) {
+  color: var(--ifm-color-primary) !important;
+  font-weight: 500;
 }
 
 /* Sidebar */
@@ -193,6 +209,15 @@ h3 {
 
 .heroBanner .hero__subtitle {
   color: #FFFFFF !important;
+}
+
+/* Ensure hero subtitle text is always white/light */
+.hero .hero__subtitle,
+.heroBanner .hero__subtitle,
+.hero__subtitle p,
+p.hero__subtitle {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
 }
 
 /* Cards */
