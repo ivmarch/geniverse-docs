@@ -59,15 +59,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '1fa'),
+    component: ComponentCreator('/', '50e'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '3cc'),
+        component: ComponentCreator('/', '7a9'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '7f2'),
+            component: ComponentCreator('/', 'bdd'),
             routes: [
               {
                 path: '/ai-layer',
@@ -124,6 +124,11 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
+                path: '/uk/core-capabilities',
+                component: ComponentCreator('/uk/core-capabilities', 'abc'),
+                exact: true
+              },
+              {
                 path: '/uk/overview',
                 component: ComponentCreator('/uk/overview', 'af2'),
                 exact: true
@@ -136,6 +141,11 @@ export default [
               {
                 path: '/uk/product-principles',
                 component: ComponentCreator('/uk/product-principles', 'be8'),
+                exact: true
+              },
+              {
+                path: '/uk/roles-permissions',
+                component: ComponentCreator('/uk/roles-permissions', 'dc9'),
                 exact: true
               },
               {

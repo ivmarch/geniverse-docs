@@ -70,17 +70,17 @@
     },
     "config": "config---diagrams-5-e-9-d89"
   },
-  "/-1fa": {
+  "/-50e": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---aba-d70"
     }
   },
-  "/-3cc": {
+  "/-7a9": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---22-d-307"
   },
-  "/-7f2": {
+  "/-bdd": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/ai-layer-a93": {
@@ -119,6 +119,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---safety-ethics-complianceb-4-f-235"
   },
+  "/uk/core-capabilities-abc": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---uk-core-capabilities-83-c-200"
+  },
   "/uk/overview-af2": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---uk-overview-5-c-3-9d6"
@@ -130,6 +134,10 @@
   "/uk/product-principles-be8": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---uk-product-principles-69-d-852"
+  },
+  "/uk/roles-permissions-dc9": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---uk-roles-permissions-3-b-4-3ff"
   },
   "/uk/vision-purpose-3b2": {
     "__comp": "__comp---theme-doc-item-178-a40",

@@ -56,6 +56,10 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "uk/core-capabilities",
+              "path": "/uk/core-capabilities"
+            },
+            {
               "id": "uk/overview",
               "path": "/uk/overview"
             },
@@ -66,6 +70,10 @@
             {
               "id": "uk/product-principles",
               "path": "/uk/product-principles"
+            },
+            {
+              "id": "uk/roles-permissions",
+              "path": "/uk/roles-permissions"
             },
             {
               "id": "uk/vision-purpose",
