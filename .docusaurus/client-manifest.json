@@ -665,7 +665,7 @@
       "js": [
         {
           "file": "assets/js/runtime~main.7ae735d3.js",
-          "hash": "3beb80485ebec898",
+          "hash": "9f578f0a000ff224",
           "publicPath": "/uk/assets/js/runtime~main.7ae735d3.js"
         }
       ]
@@ -934,9 +934,9 @@
     "8792": {
       "js": [
         {
-          "file": "assets/js/main.4bdf62f5.js",
-          "hash": "05983b6adf9a4670",
-          "publicPath": "/uk/assets/js/main.4bdf62f5.js"
+          "file": "assets/js/main.bab5238d.js",
+          "hash": "e17b7327298674e8",
+          "publicPath": "/uk/assets/js/main.bab5238d.js"
         }
       ]
     },
