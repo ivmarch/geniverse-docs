@@ -416,8 +416,8 @@ export default {
       ]
     },
     "colorMode": {
-      "defaultMode": "dark",
-      "disableSwitch": false,
+      "defaultMode": "light",
+      "disableSwitch": true,
       "respectPrefersColorScheme": false
     },
     "docs": {
