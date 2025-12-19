@@ -383,7 +383,7 @@ export default function DesignSystem(): React.JSX.Element {
 
               <div className={styles.controlGroup}>
                 <label className={styles.controlLabel}>{t.mode}</label>
-                <div className={styles.controlToggle}>
+                <div className={clsx(styles.controlToggle, styles.controlToggle2)}>
                   <button
                     className={clsx(styles.toggleButton, mode === 'light' && styles.toggleButtonActive)}
                     onClick={() => setMode('light')}
@@ -401,7 +401,7 @@ export default function DesignSystem(): React.JSX.Element {
 
               <div className={styles.controlGroup}>
                 <label className={styles.controlLabel}>{t.density}</label>
-                <div className={styles.controlToggle}>
+                <div className={clsx(styles.controlToggle, styles.controlToggle3)}>
                   <button
                     className={clsx(styles.toggleButton, density === 'roomy' && styles.toggleButtonActive)}
                     onClick={() => setDensity('roomy')}
@@ -425,7 +425,7 @@ export default function DesignSystem(): React.JSX.Element {
 
               <div className={styles.controlGroup}>
                 <label className={styles.controlLabel}>{t.motion}</label>
-                <div className={styles.controlToggle}>
+                <div className={clsx(styles.controlToggle, styles.controlToggle2)}>
                   <button
                     className={clsx(styles.toggleButton, motion && styles.toggleButtonActive)}
                     onClick={() => setMotion(true)}
@@ -459,7 +459,7 @@ export default function DesignSystem(): React.JSX.Element {
 
               <div className={styles.controlGroup}>
                 <label className={styles.controlLabel}>{t.showTokensAs}</label>
-                <div className={styles.controlToggle}>
+                <div className={clsx(styles.controlToggle, styles.controlToggle2)}>
                   <button
                     className={clsx(styles.toggleButton, tokenFormat === 'hex' && styles.toggleButtonActive)}
                     onClick={() => setTokenFormat('hex')}

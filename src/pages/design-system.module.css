@@ -78,54 +78,68 @@
 
 /* Playground Sidebar */
 .playgroundSidebar {
-  width: 280px;
+  width: clamp(280px, 22vw, 340px);
   flex-shrink: 0;
   position: sticky;
   top: calc(80px + 1.5rem);
   align-self: flex-start;
   max-height: calc(100vh - 120px);
-  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .playgroundPanel {
   background: var(--ds-surface, #141716);
   border: 1px solid var(--ds-border, #1F2321);
-  border-radius: var(--ds-radius, 12px);
-  padding: calc(1.5rem * var(--ds-spacing-base, 1));
+  border-radius: 12px;
+  padding: 1.5rem;
   box-shadow: var(--ds-shadow, 0 4px 8px rgba(0, 0, 0, 0.15));
+  width: 100%;
+  height: 680px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .playgroundTitle {
   font-family: 'Garet', sans-serif;
-  font-size: calc(1.25rem * var(--ds-font-scale, 1));
+  font-size: 1.25rem;
   font-weight: 600;
-  margin: 0 0 calc(1.5rem * var(--ds-spacing-base, 1)) 0;
+  margin: 0 0 1.5rem 0;
   color: var(--ds-text, #E8F9F0);
+  flex-shrink: 0;
 }
 
 .controlGroup {
-  margin-bottom: calc(1.5rem * var(--ds-spacing-base, 1));
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
 }
 
 .controlLabel {
   display: block;
-  font-size: calc(0.875rem * var(--ds-font-scale, 1));
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--ds-text-secondary, #B8D4C5);
-  margin-bottom: calc(0.5rem * var(--ds-spacing-base, 1));
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .controlSelect {
   width: 100%;
+  height: 44px;
   background: var(--ds-bg, #0B0D0C);
   border: 1px solid var(--ds-border, #1F2321);
-  border-radius: calc(var(--ds-radius, 12px) * 0.75);
-  padding: calc(0.75rem * var(--ds-spacing-base, 1)) calc(1rem * var(--ds-spacing-base, 1));
+  border-radius: 12px;
+  padding: 0 12px;
   color: var(--ds-text, #E8F9F0);
-  font-size: calc(0.875rem * var(--ds-font-scale, 1));
+  font-size: 14px;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
-  transition: var(--ds-motion, all 0.2s ease);
+  transition: none !important;
+  box-sizing: border-box;
 }
 
 .controlSelect:focus {
@@ -135,44 +149,66 @@
 }
 
 .controlToggle {
-  display: flex;
-  gap: calc(0.5rem * var(--ds-spacing-base, 1));
+  display: grid;
+  gap: 0.5rem;
   background: var(--ds-bg, #0B0D0C);
   border: 1px solid var(--ds-border, #1F2321);
-  border-radius: calc(var(--ds-radius, 12px) * 0.75);
-  padding: calc(0.25rem * var(--ds-spacing-base, 1));
+  border-radius: 12px;
+  padding: 0.25rem;
   transition: none !important;
+  box-sizing: border-box;
+}
+
+/* 2-column grid for Mode, Motion, Show tokens as */
+.controlToggle2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 3-column grid for Density */
+.controlToggle3 {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .toggleButton {
-  flex: 1;
   background: transparent;
-  border: none;
-  padding: calc(0.5rem * var(--ds-spacing-base, 1)) calc(0.75rem * var(--ds-spacing-base, 1));
+  border: 1px solid transparent;
+  padding: 0 12px;
+  height: 44px;
   color: var(--ds-text-secondary, #B8D4C5);
-  font-size: calc(0.75rem * var(--ds-font-scale, 1));
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  border-radius: calc(var(--ds-radius, 12px) * 0.5);
+  border-radius: 8px;
   transition: none !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .toggleButton:hover {
   background: var(--ds-hover, rgba(52, 225, 161, 0.1));
   color: var(--ds-text, #E8F9F0);
+  border-color: transparent;
   transition: none !important;
 }
 
 .toggleButtonActive {
   background: var(--ds-accent, #34E1A1);
   color: var(--ds-bg, #0B0D0C);
+  border-color: transparent;
   transition: none !important;
 }
 
 .controlRange {
   display: flex;
   align-items: center;
-  gap: calc(0.75rem * var(--ds-spacing-base, 1));
+  gap: 0.75rem;
+  height: 44px;
 }
 
 .rangeInput {
@@ -203,10 +239,11 @@
 }
 
 .rangeValue {
-  font-size: calc(0.875rem * var(--ds-font-scale, 1));
+  font-size: 0.875rem;
   color: var(--ds-text, #E8F9F0);
   min-width: 45px;
   text-align: right;
+  flex-shrink: 0;
 }
 
 /* Main Content */
