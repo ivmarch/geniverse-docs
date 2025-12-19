@@ -1,7 +1,7 @@
 {
   "id": "modularity-deployment",
-  "title": "Modularity & Deployment",
-  "description": "GeniVerse is built on a modular architecture that enables flexible deployment options, from cloud-based SaaS to on-premises installations and hybrid configurations. This modularity allows institutions to choose the deployment model that best fits their needs, security requirements, and infrastructure capabilities.",
+  "title": "Modularity and Deployment",
+  "description": "GeniVerse is built on a modular architecture. This allows deploying the platform differently: as cloud SaaS, as local installation (on-prem), in hybrid configuration, or with edge components for low-latency scenarios.",
   "source": "@site/docs/modularity-deployment.md",
   "sourceDirName": ".",
   "slug": "/modularity-deployment",

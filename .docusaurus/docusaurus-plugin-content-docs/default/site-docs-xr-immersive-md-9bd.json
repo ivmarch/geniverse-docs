@@ -1,7 +1,7 @@
 {
   "id": "xr-immersive",
-  "title": "XR & Immersive",
-  "description": "GeniVerse leverages Extended Reality (XR) technologies—including Virtual Reality (VR), Augmented Reality (AR), and Mixed Reality (MR)—to create immersive learning experiences that transcend traditional educational boundaries.",
+  "title": "XR and Immersiveness",
+  "description": "GeniVerse can use extended reality (XR) technologies — virtual reality (VR), augmented reality (AR), and mixed reality (MR) — as an additional tool for visualizing complex topics, practical simulations, and learning through interaction.",
   "source": "@site/docs/xr-immersive.md",
   "sourceDirName": ".",
   "slug": "/xr-immersive",

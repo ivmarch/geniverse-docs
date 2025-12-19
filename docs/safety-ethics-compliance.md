@@ -1,363 +1,375 @@
-# Safety, Ethics & Compliance
+# Safety, Ethics, and Compliance
 
-GeniVerse is committed to the highest standards of safety, ethical AI use, and regulatory compliance. This section outlines our comprehensive approach to protecting learners, ensuring ethical AI practices, and meeting legal and regulatory requirements.
+GeniVerse adheres to high standards of security, ethical AI use, and regulatory compliance. This section describes the platform's approach to protecting students, maintaining privacy, transparent AI application, and meeting legal and industry standard requirements.
 
-## Data Privacy & Protection
+Key principle: Each institution's data is isolated. Only authorized administration and users of a specific institution have access to data within their roles. The platform does not use one institution's data for other institutions without explicit consent and agreed procedures.
 
-### Data Collection Principles
+---
 
-**Minimal Data Collection**
-- Collect only data necessary for educational purposes
-- No collection of unnecessary personal information
-- Regular audits of data collection practices
-- Clear purpose limitation for all data uses
+## Privacy and Data Protection
 
-**Consent Management**
-- Explicit consent for data collection and use
-- Granular consent options for different data types
-- Easy consent withdrawal mechanisms
-- Age-appropriate consent for minors
+### Data Handling Principles
 
-### Data Storage & Security
+#### Data Collection Minimization
 
-**Encryption**
-- **At Rest**: AES-256 encryption for stored data
-- **In Transit**: TLS 1.3 for all data transmission
-- **End-to-End**: Encrypted communication channels
-- **Key Management**: Secure key storage and rotation
+- only data necessary for educational and operational purposes is collected
+- excessive personal information is not collected
+- regular audits of data collection and usage practices
+- clear purpose of use is defined for each data type
 
-**Access Controls**
-- Role-based access control (RBAC)
-- Principle of least privilege
-- Multi-factor authentication (MFA)
-- Regular access audits and reviews
+#### Consent Management
 
-**Data Residency**
-- Configurable data residency options
-- Compliance with regional data storage requirements
-- Clear data location transparency
-- Data sovereignty support
+- explicit consent is used for data collection and use where needed
+- detailed consent settings are available for different data types
+- consent revocation mechanisms are provided
+- age-appropriate consent scenarios and parental confirmation are implemented for minors
 
-### Data Retention & Deletion
+---
 
-**Retention Policies**
-- Defined retention periods for different data types
-- Automatic deletion after retention periods
-- Legal hold capabilities for compliance
-- Archive options for historical data
+### Data Storage and Security
 
-**Right to Deletion**
-- User-initiated data deletion
-- Complete data removal capabilities
-- Verification of deletion completion
-- Data export before deletion
+#### Encryption
+
+- data at rest is encrypted using AES-256
+- data in transit is transmitted using TLS 1.3
+- sensitive communication channels are additionally protected when needed
+- encryption keys are stored and managed securely with rotation
+
+#### Access Control
+
+- role-based access control (RBAC) is applied
+- principle of least privilege is used
+- multi-factor authentication (MFA) is supported
+- accesses are regularly reviewed and audited
+
+#### Data Residency and Sovereignty
+
+- data residency settings are available depending on region
+- local storage requirements are supported if needed by the institution
+- data location is transparent to institution administration
+- data remains under institution control according to agreed deployment model
+
+---
+
+### Data Retention and Deletion
+
+#### Retention Policies
+
+- retention periods are defined for different data types
+- automatic deletion after retention periods is provided
+- legal data retention is supported in cases required by law
+- archiving options are available for historical data
+
+#### Right to Deletion
+
+- data deletion mechanisms are implemented at user or institution initiative
+- complete data deletion is supported within regulatory requirements
+- deletion completion confirmation is available
+- data export before deletion is provided upon request
+
+---
 
 ## Ethical AI
 
 ### Bias Mitigation
 
-**Bias Detection**
-- Regular bias audits of AI models
-- Testing across demographic groups
-- Monitoring for disparate impact
-- Bias metrics and reporting
+#### Bias Detection
 
-**Bias Mitigation Strategies**
-- Diverse training data
-- Fairness constraints in model training
-- Regular model retraining with bias corrections
-- Human oversight of AI decisions
+- regular audits of models and recommendation results
+- testing on different groups and usage scenarios
+- tracking of uneven impact of recommendations and automation
+- metrics and reports are formed for bias risk analysis
 
-**Fairness Metrics**
-- Equalized odds across groups
-- Demographic parity monitoring
-- Individual fairness considerations
-- Continuous fairness assessment
+#### Mitigation Strategies
 
-### Transparency & Explainability
+- diverse and balanced training data are used where appropriate
+- techniques that reduce risk of discriminatory outcomes are applied
+- models are regularly updated considering audit results
+- human oversight and intervention capability are ensured
 
-**Explainable AI**
-- Explanations for AI recommendations
-- Transparency in personalization decisions
-- Clear communication of AI capabilities
-- Limitations disclosure
+#### Fairness Metrics
 
-**Model Interpretability**
-- Interpretable model architectures where possible
-- Post-hoc explanation methods
-- Feature importance visualization
-- Decision boundary explanations
+- monitoring equality of opportunity in recommendations
+- demographic parity analysis where legitimate and methodologically justified
+- individual fairness assessment at the level of learning recommendations
+- regular fairness reassessment based on new data and contexts
 
-**User Understanding**
-- Clear communication about AI use
-- Educational materials about AI in learning
-- User control over AI personalization
-- Opt-out options for AI features
+---
 
-### Human Oversight
+### Transparency and Explainability
 
-**Human-in-the-Loop**
-- Human review of critical AI decisions
-- Educator override capabilities
-- Escalation paths for AI issues
-- Regular human validation
+#### Explainable AI
 
-**Accountability**
-- Clear responsibility for AI outcomes
-- Human accountability for AI-assisted decisions
-- Incident response procedures
-- Regular ethics reviews
+- recommendations can be accompanied by explanations of why they are suggested
+- personalization should be understandable for educators and administration
+- AI capabilities and limits of application are described in documentation
+- users receive transparent information about where AI is applied
 
-## Safety Measures
+#### Model Interpretability
 
-### Content Safety
+- interpretable approaches or simplified models are applied where possible
+- post-hoc explanation methods are used for complex models
+- visualizations of factors influencing recommendations are available
+- model accuracy and reliability limits are described
 
-**Content Moderation**
-- Automated content filtering
-- Inappropriate content detection
-- User reporting mechanisms
-- Human review of flagged content
+#### User Control
 
-**Age-Appropriate Content**
-- Age-based content filtering
-- COPPA compliance for children
-- Parental controls and oversight
-- Content rating systems
+- settings for personalization impact on learning experience are available
+- options to opt out of some AI functions are provided if institution scenario allows
+- educators have tools for correction and recommendation override
 
-### User Safety
+---
 
-**Harassment Prevention**
-- Anti-harassment policies and tools
-- Reporting and blocking capabilities
-- Moderation of user interactions
-- Safe space enforcement
+### Human-in-the-Loop and Responsibility
 
-**Mental Health Support**
-- Resources for mental health
-- Crisis intervention protocols
-- Support contact information
-- Stress and anxiety monitoring
+- critical decisions are reviewed or confirmed by humans
+- educators and administration can override recommendations and rules
+- escalation mechanisms for AI work problems exist
+- responsibility for using AI tools remains with decision-making humans
+
+---
+
+## Security Measures
+
+### Content Security
+
+#### Content Moderation
+
+- automatic filtering of potentially unacceptable content
+- complaint mechanisms and content flagging by users
+- human review of flagged materials according to institution policies
+- action logging for moderation transparency
+
+#### Age-Appropriate Content
+
+- content filtering considering age categories
+- parental control scenario support
+- labeling and access restriction systems
+- policy alignment with COPPA requirements for children
+
+---
+
+### User Security
+
+#### Harassment and Abuse Prevention
+
+- policies and tools against harassment
+- complaint, blocking, and interaction restriction capabilities
+- interaction moderation in public spaces per institution rules
+- mechanisms for forming safe environment for minors
+
+#### Wellbeing Support
+
+- reference resources and support contacts that can be configured by institution
+- crisis response protocols within policies and legislation
+- tools for reporting risky situations per defined rules
+
+---
 
 ### Platform Security
 
-**Security Monitoring**
-- 24/7 security monitoring
-- Threat detection and response
-- Intrusion detection systems
-- Security incident response
+#### Security Monitoring
 
-**Vulnerability Management**
-- Regular security assessments
-- Penetration testing
-- Vulnerability disclosure program
-- Rapid patch deployment
+- security event monitoring and alerts
+- detection and response to suspicious activities
+- intrusion detection systems within infrastructure
+- security incident response process
+
+#### Vulnerability Management
+
+- regular security assessments and configuration checks
+- penetration testing per plan or through external experts
+- responsible vulnerability disclosure program
+- rapid deployment of fixes and patches
+
+---
 
 ## Regulatory Compliance
 
-### FERPA (Family Educational Rights and Privacy Act)
+This section describes support for requirements for institutions operating in relevant jurisdictions. Specific compliance model depends on deployment region and platform role (controller or data processor).
 
-**Compliance Requirements**
-- Protection of educational records
-- Parent and student rights
-- Directory information policies
-- Disclosure restrictions
+### FERPA
 
-**Implementation**
-- FERPA-compliant data handling
-- Parent and student access rights
-- Consent management for disclosures
-- Audit trails for record access
+- protection of educational records
+- parent and student access rights
+- restrictions on third-party data disclosure
+- audit of educational record access
 
-### COPPA (Children's Online Privacy Protection Act)
+### COPPA
 
-**Compliance Requirements**
-- Parental consent for children under 13
-- Limited data collection from children
-- Parental access to children's data
-- Deletion of children's data upon request
+- parental consent for children under 13 in relevant jurisdictions
+- restrictions on data collection from children
+- parent access to children's data per rules
+- deletion of children's data upon request, if applicable
 
-**Implementation**
-- Age verification mechanisms
-- Parental consent workflows
-- Child-specific privacy protections
-- COPPA-compliant data practices
+### GDPR
 
-### GDPR (General Data Protection Regulation)
+- lawful basis for processing
+- data subject rights
+- privacy by design and by default
+- data protection impact assessments for risky scenarios
+- DPO role support if needed by institution
 
-**Compliance Requirements**
-- Lawful basis for processing
-- Data subject rights
-- Privacy by design
-- Data protection impact assessments
+### CCPA
 
-**Implementation**
-- GDPR-compliant data processing
-- Data subject request handling
-- Privacy impact assessments
-- Data protection officer (DPO) support
+- transparent disclosure of data collection practices
+- mechanisms for exercising consumer rights within applicability
+- support for opting out of certain forms of processing, if necessary
+- non-discrimination for exercising privacy rights
 
-### CCPA (California Consumer Privacy Act)
+### HIPAA
 
-**Compliance Requirements**
-- Consumer privacy rights
-- Disclosure of data collection
-- Opt-out mechanisms
-- Non-discrimination for opt-outs
+- applies only when platform processes data falling under medical definition in specific jurisdiction
+- additional protection measures and contractual mechanisms are supported if needed
 
-**Implementation**
-- CCPA-compliant privacy practices
-- Consumer request handling
-- Privacy policy updates
-- Opt-out mechanisms
-
-### HIPAA Considerations
-
-**Health Information Protection**
-- Protection of health-related educational data
-- Business associate agreements (BAAs)
-- Health information safeguards
-- Breach notification procedures
+---
 
 ## Accessibility Compliance
 
-### WCAG 2.1 AA Compliance
+### WCAG 2.1 AA
 
-**Accessibility Standards**
-- Perceivable: Information and UI components
-- Operable: Interface components and navigation
-- Understandable: Information and UI operation
-- Robust: Content interpretation by assistive technologies
+- perceivability: content and UI components are accessible for perception
+- operability: navigation and interactions are accessible from keyboard
+- understandability: interfaces are consistent, predictable, and understandable
+- robustness: compatibility with assistive technologies
 
-**Implementation**
-- Regular accessibility audits
-- Screen reader compatibility
-- Keyboard navigation support
-- Color contrast compliance
+Implementation:
 
-### Section 508 Compliance
+- regular accessibility audits
+- testing with screen readers
+- keyboard navigation support
+- contrast requirement compliance
 
-**Federal Accessibility Requirements**
-- Accessible technology standards
-- Assistive technology compatibility
-- Alternative format provision
-- Accessibility testing
+### Section 508
+
+- applies to institutions with corresponding requirements
+- support for accessible technology standards
+- providing alternative content formats
+- accessibility testing within requirements
+
+---
 
 ## Ethical Guidelines
 
 ### Educational Ethics
 
-**Pedagogical Integrity**
-- Evidence-based educational practices
-- Respect for learner autonomy
-- Avoidance of manipulation
-- Transparent educational goals
+#### Pedagogical Integrity
 
-**Educator Support**
-- Tools that enhance, not replace, educators
-- Respect for educator expertise
-- Professional development support
-- Ethical use guidance
+- reliance on evidence-based educational approaches
+- respect for student autonomy
+- avoidance of manipulative practices in gamification and recommendations
+- transparent learning objectives and assessment criteria
+
+#### Educator Support
+
+- tools enhance educator work, not replace it
+- respect for expertise and educator role
+- professional development support
+- recommendations for ethical AI use in learning
 
 ### Research Ethics
 
-**Learner Research**
-- Informed consent for research participation
-- Minimal risk to learners
-- Data anonymization
-- Research ethics board approval
+#### Research Involving Students
 
-**Data Use for Research**
-- Consent for research use
-- Anonymized data use
-- Beneficial research purposes
-- Publication ethics
+- informed consent for research scenarios
+- risk minimization for students
+- data anonymization or pseudonymization when needed
+- ethical approval if required by institution or law
+
+#### Data Use for Research
+
+- research use of data is possible only under agreed conditions
+- preference is given to anonymized data
+- results should be used for beneficial educational purposes
+- publication ethics compliance and prevention of re-identification
+
+---
 
 ## Incident Response
 
 ### Security Incidents
 
-**Response Procedures**
-- Incident detection and classification
-- Containment and mitigation
-- Investigation and analysis
-- Recovery and lessons learned
+Response process:
 
-**Communication**
-- Stakeholder notification
-- Regulatory reporting
-- Public disclosure (when appropriate)
-- Transparent communication
+- incident detection and classification
+- containment and impact mitigation
+- investigation and cause analysis
+- recovery and lesson implementation
+
+Communication:
+
+- notification of stakeholders within policies and requirements
+- regulatory reporting if mandatory
+- transparent communication with institution about scope and consequences
 
 ### Privacy Incidents
 
-**Breach Response**
-- Breach detection and assessment
-- Notification procedures
-- Mitigation measures
-- Prevention improvements
+- breach assessment and impact
+- notification procedures according to regional norms
+- mitigation actions
+- control updates to prevent recurrence
 
-## Compliance Monitoring
+---
+
+## Compliance Monitoring and Training
 
 ### Regular Audits
 
-**Audit Schedule**
-- Annual comprehensive audits
-- Quarterly security assessments
-- Monthly compliance reviews
-- Continuous monitoring
+- annual comprehensive audits
+- quarterly security assessments
+- monthly checks of critical compliance areas
+- continuous monitoring of key risk indicators
 
-**Audit Areas**
-- Data privacy practices
-- Security controls
-- AI ethics and bias
-- Accessibility compliance
-- Regulatory compliance
+Audit areas:
+
+- privacy practices
+- security controls
+- AI ethics and bias risks
+- accessibility
+- regulatory compliance
 
 ### Reporting
 
-**Compliance Reports**
-- Regular compliance status reports
-- Incident reports
-- Audit findings and remediation
-- Transparency reports
+- compliance status reports for institution administration
+- incident and action reports
+- audit results and remediation plan
+- AI application transparency reports, if enabled
 
-## Training & Awareness
+### Training and Awareness
 
-### Staff Training
+Staff training:
 
-**Training Programs**
-- Privacy and security training
-- Ethical AI training
-- Compliance training
-- Incident response training
+- privacy and security
+- ethical AI use
+- regulatory compliance
+- incident response
 
-### User Education
+User education:
 
-**Privacy Education**
-- Privacy best practices
-- Data protection information
-- User rights education
-- Safety resources
+- data protection practices
+- user rights information
+- safe platform work recommendations
+
+---
 
 ## Continuous Improvement
 
 ### Policy Updates
 
-**Regular Review**
-- Annual policy reviews
-- Regulatory change monitoring
-- Best practice updates
-- Stakeholder feedback integration
+- annual policy review
+- monitoring changes in legislation and standards
+- updating practices according to new threats
+- consideration of feedback from institutions and users
 
-### Technology Updates
+### Technological Updates
 
-**Security Enhancements**
-- Latest security technologies
-- Improved encryption methods
-- Enhanced monitoring tools
-- Better access controls
+- implementation of modern protection approaches
+- strengthening cryptographic and access mechanisms
+- development of monitoring and alert systems
+- improvement of access controls and audits
 
-## Commitment
+---
 
-GeniVerse is committed to maintaining the highest standards of safety, ethics, and compliance. We continuously work to improve our practices, respond to emerging threats, and meet evolving regulatory requirements while protecting learner privacy and ensuring ethical AI use.
+## Commitments
 
+GeniVerse maintains high standards of security, ethics, and compliance. The platform continuously improves data and user protection practices, adapts to new threats and regulatory requirements, maintaining transparency and institution control over its data.

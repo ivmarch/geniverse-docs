@@ -1,412 +1,212 @@
-# Modularity & Deployment
+# Modularity and Deployment
 
-GeniVerse is built on a modular architecture that enables flexible deployment options, from cloud-based SaaS to on-premises installations and hybrid configurations. This modularity allows institutions to choose the deployment model that best fits their needs, security requirements, and infrastructure capabilities.
+GeniVerse is built on a modular architecture. This allows deploying the platform differently: as cloud SaaS, as local installation (on-prem), in hybrid configuration, or with edge components for low-latency scenarios.
+
+Modularity gives institutions the ability to:
+- choose a deployment model according to their security and data residency requirements
+- gradually scale functionality without "major migrations"
+- scale individual parts of the system independently
+
+---
 
 ## Architecture Overview
 
-### Modular Design
+### Modular Approach
 
-GeniVerse consists of independent, loosely coupled modules that can be deployed and scaled independently:
+GeniVerse consists of independent modules that can be deployed and scaled separately:
 
-- **Core Services**: Authentication, user management, content delivery
-- **AI Layer**: Personalization, recommendation, analytics engines
-- **XR Engine**: Virtual and augmented reality rendering and interaction
-- **Content Management**: Content creation, storage, and delivery
-- **Assessment Engine**: Quiz, assignment, and evaluation systems
-- **Analytics Platform**: Data collection, processing, and reporting
-- **Integration Layer**: APIs and connectors for external systems
+- Core services: authentication, users, sessions, profiles, access
+- Content management: creation, storage, delivery, versioning
+- Assessment engine: tests, assignments, rubrics, gradebook
+- Analytics platform: event collection, processing, reports, dashboards
+- Integration layer: API, webhooks, connectors to LMS and third-party services
+- AI layer: personalization, recommendations, analytical models, educational artifact generation
+- XR components (optional): WebXR/VR/AR modules, content player, interaction telemetry
 
-### Microservices Architecture
+> XR and AI are modules that can be disabled or deployed separately depending on institution needs
 
-**Service Independence**
-- Each service can be developed, deployed, and scaled independently
-- Service-to-service communication via APIs
-- Independent database per service (where appropriate)
-- Fault isolation between services
+---
 
-**Service Communication**
-- RESTful APIs for synchronous communication
-- Message queues for asynchronous communication
-- Event-driven architecture for real-time updates
-- API gateway for unified access
+## Microservices Model
+
+### Service Independence
+
+- services are developed, updated, and scaled separately
+- interaction occurs through standardized APIs
+- separate database per service is used when needed
+- errors are isolated so failure of one service doesn't crash the platform
+
+### Inter-Service Communication
+
+- synchronous requests: REST API (or gRPC if performance is needed)
+- asynchronous events: message queues and event model (for analytics, notifications, AI processing)
+- unified entry: API gateway (routing, rate limiting, logging, authorization)
+
+---
 
 ## Deployment Models
 
-### Cloud SaaS (Software as a Service)
+### Cloud SaaS
 
-**Fully Managed Cloud Deployment**
+Platform is hosted on GeniVerse infrastructure, updates and maintenance are performed centrally.
 
-**Characteristics:**
-- Hosted on GeniVerse infrastructure
-- Automatic updates and maintenance
-- Scalable infrastructure
-- High availability and redundancy
+Suitable if:
+- rapid implementation is needed
+- institution has limited IT resources
+- data residency requirements don't require local storage
 
-**Benefits:**
-- No infrastructure management
-- Rapid deployment
-- Automatic scaling
-- Reduced IT overhead
+Advantages:
+- minimal IT burden
+- automatic scaling
+- rapid updates and access to new features
 
-**Use Cases:**
-- Small to medium institutions
-- Rapid deployment needs
-- Limited IT resources
-- Standard compliance requirements
+---
 
-### On-Premises Deployment
+### On-Premises Installation
 
-**Self-Hosted Installation**
+Platform is deployed in institution infrastructure with full control over data and network perimeter.
 
-**Characteristics:**
-- Installed on institution's infrastructure
-- Full control over data and infrastructure
-- Customizable configuration
-- Institution-managed updates
+Suitable if:
+- strict data residency requirements apply
+- full autonomy is needed (e.g., closed networks)
+- own team for infrastructure support exists
 
-**Benefits:**
-- Complete data control
-- Custom security configurations
-- Integration with existing systems
-- Compliance with strict data residency requirements
+Advantages:
+- maximum control over data and access
+- flexible configuration of integrations and security policies
+- ability to work in limited external access conditions
 
-**Use Cases:**
-- Large institutions with IT capabilities
-- Strict data residency requirements
-- High security requirements
-- Custom integration needs
+---
 
-### Hybrid Deployment
+### Hybrid Configuration
 
-**Combination of Cloud and On-Premises**
+Some components run in cloud, some locally. For example, learning data or identification are stored locally, while scalable services (content delivery, analytics, recommendations) run in cloud.
 
-**Characteristics:**
-- Some components in cloud, others on-premises
-- Data synchronization between environments
-- Flexible component placement
-- Unified user experience
+Suitable if:
+- balance between control and convenience is needed
+- institution is migrating to cloud gradually
+- some data must be kept locally
 
-**Benefits:**
-- Balance of control and convenience
-- Sensitive data on-premises, scalable services in cloud
-- Gradual migration path
-- Optimized for specific needs
+Advantages:
+- flexible component placement
+- lower migration risks
+- cost and performance optimization for specific scenario
 
-**Use Cases:**
-- Institutions with mixed requirements
-- Gradual cloud migration
-- Sensitive data requirements
-- Regional compliance needs
+---
 
 ### Edge Computing
 
-**Distributed Edge Deployment**
+Individual components are placed closer to users. Useful for XR scenarios and large multimedia where low latency is important.
 
-**Characteristics:**
-- Components deployed closer to users
-- Reduced latency for XR experiences
-- Regional data processing
-- Edge-to-cloud synchronization
+Suitable if:
+- intensive XR scenarios exist
+- learning spaces are geographically distributed
+- limited channel bandwidth
 
-**Benefits:**
-- Lower latency for XR
-- Reduced bandwidth usage
-- Regional data processing
-- Improved performance
+Advantages:
+- lower latency
+- less load on communication channels
+- regional processing of sensitive data (when needed)
 
-**Use Cases:**
-- Global institutions
-- High XR usage
-- Bandwidth constraints
-- Regional data requirements
+---
 
-## Infrastructure Requirements
+## Containerization and Orchestration
 
-### Cloud Deployment
+### Docker
 
-**Minimum Requirements:**
-- Cloud provider account (AWS, Azure, GCP)
-- Network connectivity
-- Domain and SSL certificates
-- Backup storage
+- each service is delivered as a container
+- consistent environments for dev/stage/prod
+- simple updates and scaling
+- isolation between services
 
-**Scaling:**
-- Auto-scaling based on load
-- Load balancing across regions
-- CDN for content delivery
-- Database replication
+### Kubernetes (when needed)
 
-### On-Premises Deployment
+- scaling and high availability management
+- health checks and automatic recovery
+- secret and configuration management
+- Helm charts for reproducible deployment
 
-**Hardware Requirements:**
-- Application servers (CPU, RAM, storage)
-- Database servers
-- File storage systems
-- Network infrastructure
+---
 
-**Software Requirements:**
-- Operating system (Linux recommended)
-- Container runtime (Docker/Kubernetes)
-- Database (PostgreSQL, MongoDB)
-- Reverse proxy (Nginx)
+## Configuration and Feature Management
 
-**Network Requirements:**
-- Internet connectivity
-- Internal network infrastructure
-- Firewall configuration
-- VPN access (if needed)
+### Configuration Sources
 
-## Containerization & Orchestration
-
-### Docker Containers
-
-**Container Architecture**
-- Each service containerized
-- Consistent deployment environments
-- Easy scaling and updates
-- Isolation between services
-
-**Container Images**
-- Official GeniVerse images
-- Custom image building
-- Image versioning
-- Security scanning
-
-### Kubernetes Orchestration
-
-**Kubernetes Deployment**
-- Pod management and scaling
-- Service discovery and load balancing
-- ConfigMap and Secret management
-- Health checks and auto-recovery
-
-**Helm Charts**
-- Pre-configured Helm charts
-- Easy deployment and updates
-- Configuration management
-- Dependency management
-
-## Configuration Management
-
-### Environment Configuration
-
-**Configuration Files**
-- Environment-specific configs
-- Secret management
-- Feature flags
-- Service endpoints
-
-**Configuration Sources**
-- Environment variables
-- Configuration files
-- External configuration services
-- Runtime configuration updates
+- environment variables
+- config files for specific environments
+- secret managers
+- external configuration services (when needed)
 
 ### Feature Flags
 
-**Feature Management**
-- Enable/disable features per deployment
-- A/B testing capabilities
-- Gradual feature rollouts
-- Emergency feature disabling
+- enabling/disabling features at institution level
+- gradual releases (canary)
+- A/B experiments for pedagogical and UI hypotheses
+- emergency disabling of risky features
 
-## Data Management
+---
 
-### Database Options
+## Data and Storage
 
-**Supported Databases**
-- PostgreSQL (relational data)
-- MongoDB (document storage)
-- Redis (caching and sessions)
-- Elasticsearch (search and analytics)
+### Databases (typical)
 
-**Database Deployment**
-- Managed database services
-- Self-hosted databases
-- Database replication
-- Backup and recovery
+- PostgreSQL: core relational data
+- Redis: cache, sessions, rate limiting
+- Elasticsearch or similar: content and metadata search (optional)
+- document stores: when needed for content structures
 
-### Storage Options
+### File Data and Media
 
-**File Storage**
-- Object storage (S3, Azure Blob)
-- Network file systems (NFS)
-- Distributed file systems
-- CDN integration
+- object storage (S3-compatible or similar)
+- CDN for media and educational resource delivery
+- file lifecycle policies (archiving, deletion)
 
-## Security & Compliance
+---
 
-### Security Hardening
+## Monitoring and Observability
 
-**Security Measures**
-- Network segmentation
-- Firewall rules
-- Intrusion detection
-- Security monitoring
+- centralized logs (with retention policies)
+- service and business metrics
+- alerts (errors, latency, degradations)
+- security event and access audit
 
-**Compliance Configuration**
-- Data encryption settings
-- Access control configuration
-- Audit logging setup
-- Compliance reporting
+---
 
-### Network Security
+## Backup and Recovery
 
-**Network Architecture**
-- Private networks
-- VPN access
-- Firewall rules
-- DDoS protection
+- database and storage backups
+- regular recovery verification
+- disaster recovery (DR) plans
 
-## Monitoring & Observability
+Recovery indicators:
+- RPO: maximum allowable data loss in time
+- RTO: maximum allowable service recovery time
 
-### Monitoring Stack
+---
 
-**Monitoring Tools**
-- Application performance monitoring (APM)
-- Infrastructure monitoring
-- Log aggregation
-- Error tracking
+## Scaling and Performance
 
-**Metrics Collection**
-- Service metrics
-- Business metrics
-- User metrics
-- System health metrics
+- horizontal service scaling
+- caching and query optimization
+- CDN for static and media resources
+- separate performance profiles for XR scenarios (low latency)
 
-### Logging
+---
 
-**Log Management**
-- Centralized logging
-- Log retention policies
-- Log analysis tools
-- Security event logging
+## Updates and Migrations
 
-## Backup & Disaster Recovery
+- version compatibility checks
+- backup before updates
+- gradual release
+- rollback mechanisms
 
-### Backup Strategy
+---
 
-**Backup Types**
-- Database backups
-- File storage backups
-- Configuration backups
-- Full system snapshots
+## Recommended Practices
 
-**Backup Schedule**
-- Continuous backups
-- Scheduled full backups
-- Incremental backups
-- Backup verification
-
-### Disaster Recovery
-
-**Recovery Procedures**
-- Recovery time objectives (RTO)
-- Recovery point objectives (RPO)
-- Disaster recovery plans
-- Regular DR testing
-
-## Scaling & Performance
-
-### Horizontal Scaling
-
-**Scaling Strategies**
-- Auto-scaling based on metrics
-- Manual scaling
-- Scheduled scaling
-- Predictive scaling
-
-### Performance Optimization
-
-**Optimization Techniques**
-- Caching strategies
-- Database query optimization
-- CDN usage
-- Resource optimization
-
-## Migration & Upgrades
-
-### Migration Paths
-
-**Migration Options**
-- Cloud to on-premises
-- On-premises to cloud
-- Hybrid configurations
-- Version upgrades
-
-**Migration Tools**
-- Data migration utilities
-- Configuration migration
-- Testing tools
-- Rollback procedures
-
-### Upgrade Procedures
-
-**Upgrade Process**
-- Version compatibility checks
-- Backup before upgrade
-- Staged rollout
-- Rollback capabilities
-
-## Support & Documentation
-
-### Deployment Documentation
-
-**Documentation Provided**
-- Installation guides
-- Configuration references
-- Troubleshooting guides
-- Best practices
-
-### Support Options
-
-**Support Tiers**
-- Community support
-- Standard support
-- Premium support
-- Dedicated support
-
-## Cost Considerations
-
-### Cloud Costs
-
-**Cost Factors**
-- Compute resources
-- Storage costs
-- Network bandwidth
-- Managed services
-
-**Cost Optimization**
-- Right-sizing resources
-- Reserved instances
-- Spot instances
-- Cost monitoring
-
-### On-Premises Costs
-
-**Cost Factors**
-- Hardware costs
-- Software licenses
-- IT staff
-- Maintenance
-
-## Best Practices
-
-### Deployment Best Practices
-
-- Start with cloud SaaS for rapid deployment
-- Use containerization for consistency
-- Implement monitoring from day one
-- Plan for scaling from the beginning
-- Regular security updates
-- Test disaster recovery procedures
-
-### Operational Best Practices
-
-- Automated deployments
-- Infrastructure as code
-- Regular backups
-- Security monitoring
-- Performance monitoring
-- Regular updates
-
+- start with SaaS if there are no strict on-prem requirements
+- use containerization for reproducibility
+- implement monitoring from day one
+- plan scaling at architecture stage
+- regularly update security components
+- periodically test recovery procedures

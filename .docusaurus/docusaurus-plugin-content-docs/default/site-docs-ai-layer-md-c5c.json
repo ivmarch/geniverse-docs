@@ -1,7 +1,7 @@
 {
   "id": "ai-layer",
   "title": "AI Layer",
-  "description": "The AI Layer is the intelligent core of GeniVerse, powering personalization, adaptation, and intelligent assistance throughout the learning experience. Built on modern machine learning and AI technologies, it enables the platform to understand learners, adapt content, and provide intelligent support.",
+  "description": "The AI layer is the intelligent level of GeniVerse that supports learning personalization, content adaptation, and intelligent assistance to students and educators throughout the learning process. It is built on modern machine learning and data processing approaches and operates as a set of specialized services integrated into the platform.",
   "source": "@site/docs/ai-layer.md",
   "sourceDirName": ".",
   "slug": "/ai-layer",

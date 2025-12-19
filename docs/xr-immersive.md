@@ -1,244 +1,276 @@
-# XR & Immersive
+# XR and Immersiveness
 
-GeniVerse leverages Extended Reality (XR) technologies—including Virtual Reality (VR), Augmented Reality (AR), and Mixed Reality (MR)—to create immersive learning experiences that transcend traditional educational boundaries.
+GeniVerse can use extended reality (XR) technologies — virtual reality (VR), augmented reality (AR), and mixed reality (MR) — as an additional tool for visualizing complex topics, practical simulations, and learning through interaction.
+
+*XR is not a mandatory component of the learning process. The platform is designed to fully function without XR, and immersive scenarios are applied where they provide measurable pedagogical benefit.*
+
+---
 
 ## XR Technologies
 
 ### Virtual Reality (VR)
 
-**Fully immersive virtual environments**
+Fully immersive virtual environments for simulations and practice.
 
-- **Head-Mounted Displays**: Support for major VR headsets (Oculus, HTC Vive, Pico, etc.)
-- **Room-Scale VR**: Full body movement and interaction
-- **Hand Tracking**: Natural hand interactions without controllers
-- **Spatial Audio**: 3D audio for realistic soundscapes
+**Supported capabilities:**
 
-**Use Cases:**
-- Virtual field trips to historical sites
-- Scientific simulations and experiments
-- Medical procedure training
-- Architectural and engineering visualization
-- Language immersion environments
+- support for common VR headsets (Oculus/Meta, HTC Vive, Pico, and others)
+- room-scale scenarios for movement and interaction
+- hand tracking for controller-free interaction (when device support is available)
+- spatial audio for orientation and realistic audio accompaniment
+
+**Usage examples:**
+
+- virtual tours to historical locations
+- scientific simulations and experiments
+- medical procedure training
+- architecture and engineering object visualization
+- language immersion environments
+
+---
 
 ### Augmented Reality (AR)
 
-**Overlaying digital content on the real world**
+Overlaying digital content on the real world for "on-site" learning.
 
-- **Mobile AR**: AR experiences on smartphones and tablets
-- **AR Glasses**: Support for AR headset devices
-- **Marker-Based AR**: Using physical markers for content placement
-- **Markerless AR**: Spatial understanding for content placement
+**Supported capabilities:**
 
-**Use Cases:**
-- Anatomy overlays on physical models
-- Interactive textbooks with 3D models
-- Real-world problem solving with digital aids
-- Maintenance and repair training
-- Museum and exhibit enhancements
+- mobile AR scenarios on smartphones and tablets
+- AR device support when corresponding SDKs are available
+- marker-based AR for stable content placement
+- markerless AR with spatial scene understanding
+
+**Usage examples:**
+
+- anatomical overlays on physical models or educational mockups
+- interactive textbooks with 3D models
+- problem-solving in real environments with digital hints
+- equipment service and repair training
+- educational scenarios for museums and exhibitions
+
+---
 
 ### Mixed Reality (MR)
 
-**Seamless blending of real and virtual**
+Combining real and virtual with spatial object anchoring.
 
-- **Spatial Anchoring**: Virtual objects persist in real space
-- **Occlusion**: Virtual objects properly hide behind real objects
-- **Physics Integration**: Virtual objects interact with real-world physics
-- **Collaborative MR**: Multiple users sharing the same MR space
+**Supported capabilities:**
 
-**Use Cases:**
-- Collaborative design and prototyping
-- Remote assistance and guidance
-- Complex assembly training
-- Architectural visualization in real spaces
+- spatial anchoring of virtual objects in real space
+- correct visual layer interaction (occlusion) when device support is available
+- physics integration for object interaction
+- shared MR sessions for multiple users working in one space
+
+**Usage examples:**
+
+- collaborative design and prototyping
+- assembly and installation training
+- architectural solution visualization in real spaces
+
+---
 
 ## XR Content Creation
 
 ### No-Code XR Builder
 
-**Create immersive experiences without programming**
+Tools for creating immersive scenarios without writing code:
 
-- **Visual Editor**: Drag-and-drop interface for scene creation
-- **Asset Library**: Pre-built 3D models, environments, and interactions
-- **Behavior System**: Define interactions without coding
-- **Template Library**: Ready-to-use XR experience templates
+- visual editor for creating scenes through drag-and-drop elements
+- asset library: 3D models, environments, interactions
+- behavior system for configuring interactions
+- templates for typical educational XR scenarios
 
 ### 3D Content Management
 
-- **3D Model Import**: Support for common 3D formats (GLTF, FBX, OBJ)
-- **Model Optimization**: Automatic optimization for performance
-- **Texture Management**: Efficient texture handling and compression
-- **Animation Support**: Import and play 3D animations
+- import of 3D models from common formats (glTF, FBX, OBJ)
+- automatic model optimization for performance
+- texture processing and compression
+- animation support and 3D scene rendering
 
 ### Interaction Design
 
-- **Grab & Manipulate**: Natural object manipulation
-- **Teleportation**: Comfortable movement in VR spaces
-- **UI Elements**: 3D and floating UI components
-- **Gestures**: Hand gesture recognition and responses
+- object capture and manipulation in 3D
+- teleportation and other safe movement methods in VR
+- 3D interface elements and floating panels
+- gestures and interaction events considering device support
 
-## Immersive Learning Experiences
+---
+
+## Immersive Learning Scenarios
 
 ### Virtual Laboratories
 
-**Safe, repeatable experiments**
+Safe and repeatable practical experiments:
 
-- **Physics Simulations**: Realistic physics-based experiments
-- **Chemistry Labs**: Virtual chemical reactions and procedures
-- **Biology Dissections**: Detailed anatomical exploration
-- **Engineering Prototyping**: Test designs in virtual environments
+- physics simulations for demonstrating principles and processes
+- chemistry laboratory scenarios with procedural logic
+- biological models and anatomical studies
+- engineering prototyping and solution testing
 
 ### Historical Reconstructions
 
-**Step into the past**
+Learning through context and interaction:
 
-- **Historical Sites**: Recreated historical locations
-- **Time Periods**: Experience different eras
-- **Cultural Immersion**: Understand historical contexts
-- **Interactive Narratives**: Participate in historical events
+- recreation of historical locations
+- scenarios of different eras and cultures
+- interactive narratives for immersion in events
 
 ### Skill Training
 
-**Hands-on practice in safe environments**
+Practice in conditions where mistakes don't create risk:
 
-- **Medical Procedures**: Practice surgical techniques
-- **Equipment Operation**: Learn to operate complex machinery
-- **Emergency Response**: Train for high-stakes situations
-- **Artistic Skills**: Practice drawing, sculpting, and design
+- medical procedure training
+- learning to work with complex equipment
+- emergency preparedness
+- artistic and design skill practice
 
 ### Social Learning Spaces
 
-**Collaborative XR environments**
+Collaborative work in XR environments:
 
-- **Virtual Classrooms**: Attend classes in immersive spaces
-- **Study Groups**: Collaborate in shared virtual spaces
-- **Presentations**: Present work in immersive environments
-- **Networking**: Connect with learners globally
+- virtual classrooms and learning sessions
+- group classes and team work
+- result presentations in 3D environments
+- international learning exchanges and interaction
 
-## XR Performance & Optimization
+---
 
-### Performance Targets
+## XR Performance and Optimization
 
-- **Frame Rate**: Maintain 90 FPS for VR comfort
-- **Latency**: Sub-20ms motion-to-photon latency
-- **Resolution**: High-resolution rendering for clarity
-- **Battery Life**: Optimized for mobile and standalone devices
+### Performance Benchmarks
+
+- frame rate for comfortable VR work
+- interaction latency minimization
+- maintaining sufficient rendering quality for readability and orientation
+- energy consumption optimization for standalone devices
 
 ### Optimization Techniques
 
-- **Level of Detail (LOD)**: Adjusting detail based on distance
-- **Occlusion Culling**: Not rendering hidden objects
-- **Texture Streaming**: Loading textures as needed
-- **Geometry Instancing**: Efficient rendering of repeated objects
+- levels of detail (LOD) for objects at different distances
+- occlusion culling for hidden scene elements
+- on-demand texture streaming
+- geometry instancing for repeated objects
 
-### Platform Adaptation
+### Device Adaptation
 
-- **Device Detection**: Automatically detect and optimize for device
-- **Quality Settings**: Adaptive quality based on device capabilities
-- **Fallback Modes**: Graceful degradation for lower-end devices
-- **Cross-Platform**: Consistent experiences across devices
+- automatic device capability detection
+- adaptive quality profiles
+- reduced load modes for weaker devices
+- cross-platform scenario consistency
+
+---
 
 ## Accessibility in XR
 
-### Comfort Features
+### Comfort and Safety
 
-- **Comfort Modes**: Reduced motion for motion-sensitive users
-- **Teleportation Options**: Alternative movement methods
-- **Field of View Adjustment**: Customizable FOV settings
-- **Rest Breaks**: Built-in reminders for breaks
+- comfort modes with reduced movement
+- alternative movement methods
+- field of view and comfort parameter settings
+- break reminders
 
 ### Accessibility Options
 
-- **Subtitles & Captions**: Text overlays for audio content
-- **Visual Indicators**: Visual cues for audio information
-- **Simplified Controls**: Alternative input methods
-- **Scale Adjustment**: Adjusting virtual world scale
+- subtitles and text captions for audio content
+- visual indicators for sound events
+- simplified control schemes
+- scale and interaction distance settings
 
 ### Inclusive Design
 
-- **Seated Experiences**: Options for seated VR use
-- **One-Handed Operation**: Support for single-hand use
-- **Voice Commands**: Voice control alternatives
-- **Assistive Technologies**: Integration with assistive devices
+- ability to use while seated
+- one-handed interaction scenarios
+- voice commands as alternative control method (when needed)
+- support for assistive devices within available integrations
+
+---
 
 ## WebXR Support
 
-### Browser-Based XR
+### XR in Browser
 
-**XR experiences accessible through web browsers**
+XR scenarios accessible through web browser:
 
-- **WebXR API**: Standard web API for XR
-- **No Installation**: Access XR without app installation
-- **Cross-Platform**: Works across devices and browsers
-- **Progressive Enhancement**: Graceful fallback for non-XR devices
+- use of WebXR API as standard approach
+- access without installing separate application
+- work on different devices and browsers when support is available
+- progressive enhancement with correct non-XR mode
 
 ### WebXR Features
 
-- **Session Management**: Starting and managing XR sessions
-- **Input Handling**: Controller and hand tracking
-- **Rendering**: Efficient WebGL rendering
-- **Spatial Tracking**: Head and hand position tracking
+- launching and managing XR sessions
+- input handling: controllers and hands (when device support is available)
+- efficient rendering based on WebGL
+- spatial head and hand position tracking
 
-## Analytics & Insights
+---
 
-### XR-Specific Metrics
+## Analytics and Insights
 
-- **Presence Metrics**: Measuring immersion levels
-- **Interaction Analytics**: Tracking XR interactions
-- **Movement Patterns**: Understanding spatial navigation
-- **Engagement Duration**: Time spent in XR experiences
+### XR Metrics
+
+- presence and engagement indicators
+- interaction analytics in scenes
+- navigation and movement patterns
+- activity duration in XR
 
 ### Learning Effectiveness
 
-- **Skill Transfer**: Measuring real-world skill improvement
-- **Retention**: Comparing XR vs. traditional learning retention
-- **Engagement**: Measuring engagement in XR vs. other modalities
-- **Performance**: Learning outcomes from XR experiences
+- assessment of skill transfer to real tasks (per course methodology)
+- comparison of material acquisition between XR and other formats
+- engagement analysis in XR compared to alternative modalities
+- assessment of learning outcomes in XR scenarios
 
-## Integration with Platform
+---
 
-### Seamless Experience
+## Platform Integration
 
-- **Unified Account**: Same account across all platforms
-- **Progress Sync**: Progress tracked across modalities
-- **Content Continuity**: Continue learning across devices
-- **Social Integration**: Connect with learners in any modality
+### Cohesive Experience
+
+- single account for all modalities
+- progress synchronization between devices and formats
+- learning continuity when transitioning between platforms
+- social interaction regardless of modality
 
 ### Cross-Modal Learning
 
-- **Complementary Content**: XR enhances traditional content
-- **Reinforcement**: XR reinforces concepts learned elsewhere
-- **Application**: Apply knowledge in immersive contexts
-- **Synthesis**: Combine learning from multiple modalities
+- using XR as supplement to base content
+- concept reinforcement through practice in simulations
+- knowledge application in contextual scenarios
+- combining learning results from different formats in unified analytics
 
-## Future XR Capabilities
+---
 
-### Emerging Technologies
+## Future XR Development (Optional)
 
-- **Haptic Feedback**: Touch and force feedback
-- **Eye Tracking**: Gaze-based interaction and analytics
-- **Brain-Computer Interfaces**: Future neural interfaces
-- **Full Body Tracking**: Complete body movement capture
+### Technological Directions
 
-### Advanced Features
+- haptic feedback
+- eye tracking for interaction and analytics
+- fuller body tracking when device support is available
+- experimental interaction interfaces (when appropriate and safe)
 
-- **AI-Generated Environments**: Procedurally generated learning spaces
-- **Photorealistic Rendering**: Ultra-realistic visual fidelity
-- **Persistent Worlds**: Long-term persistent virtual spaces
-- **Cross-Reality**: Seamless transitions between AR, VR, and real world
+### Capability Expansion
+
+- AI-generated environments for creating educational scenes
+- improved visual quality considering performance
+- "persistent worlds" for long-term learning scenarios
+- coordinated transitions between AR, VR, MR, and non-XR learning
+
+---
 
 ## Best Practices
 
 ### Design Guidelines
 
-- **Comfort First**: Prioritize user comfort and safety
-- **Clear Objectives**: Make learning goals clear in XR
-- **Progressive Complexity**: Start simple, increase complexity
-- **Feedback Systems**: Provide clear feedback on actions
+- priority on user comfort and safety
+- clear learning objectives for XR scenarios
+- gradual scenario complexity increase
+- clear feedback on user actions
 
 ### Development Practices
 
-- **Performance Testing**: Regular performance profiling
-- **User Testing**: Test with real learners
-- **Accessibility Audits**: Regular accessibility reviews
-- **Documentation**: Comprehensive XR development docs
-
+- regular performance profiling
+- testing with real students and educators
+- regular accessibility checks
+- maintaining current technical documentation for XR components
