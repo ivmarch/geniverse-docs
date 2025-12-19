@@ -133,6 +133,22 @@ h3 {
   font-weight: 500;
 }
 
+/* Make Documentation link white/light when on design-system page */
+html[data-path*="design-system"] .navbar__item[class*="docSidebar"]:not(.navbar__link--active),
+html[data-path*="design-system"] .navbar__item[class*="docSidebar"] .navbar__link:not(.navbar__link--active),
+body[data-path*="design-system"] .navbar__item[class*="docSidebar"]:not(.navbar__link--active),
+body[data-path*="design-system"] .navbar__item[class*="docSidebar"] .navbar__link:not(.navbar__link--active) {
+  color: var(--ifm-font-color-base) !important;
+}
+
+/* Alternative: target Documentation link by href when not active on design-system page */
+html[data-path*="design-system"] .navbar__link[href*="/overview"]:not(.navbar__link--active),
+html[data-path*="design-system"] .navbar__link[href="/"]:not(.navbar__link--active),
+body[data-path*="design-system"] .navbar__link[href*="/overview"]:not(.navbar__link--active),
+body[data-path*="design-system"] .navbar__link[href="/"]:not(.navbar__link--active) {
+  color: var(--ifm-font-color-base) !important;
+}
+
 /* Sidebar */
 .theme-doc-sidebar-container {
   background-color: var(--ifm-background-surface-color);
