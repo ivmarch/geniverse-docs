@@ -1,0 +1,23 @@
+{
+  "id": "design-system",
+  "title": "Система Дизайну",
+  "description": "Система дизайну GeniVerse надає згуртовану візуальну мову та бібліотеку компонентів, яка забезпечує послідовність, доступність та сучасний користувацький досвід на всіх платформах та інтерфейсах.",
+  "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/design-system.md",
+  "sourceDirName": ".",
+  "slug": "/design-system",
+  "permalink": "/uk/design-system",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "XR & Immersive",
+    "permalink": "/uk/xr-immersive"
+  },
+  "next": {
+    "title": "Safety, Ethics & Compliance",
+    "permalink": "/uk/safety-ethics-compliance"
+  }
+}

@@ -5,7 +5,7 @@
   "source": "@site/docs/safety-ethics-compliance.md",
   "sourceDirName": ".",
   "slug": "/safety-ethics-compliance",
-  "permalink": "/uk/safety-ethics-compliance",
+  "permalink": "/safety-ethics-compliance",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Design System",
-    "permalink": "/uk/design-system"
+    "permalink": "/design-system"
   },
   "next": {
     "title": "Modularity & Deployment",
-    "permalink": "/uk/modularity-deployment"
+    "permalink": "/modularity-deployment"
   }
 }

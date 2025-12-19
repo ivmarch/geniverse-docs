@@ -1,0 +1,23 @@
+{
+  "id": "safety-ethics-compliance",
+  "title": "Безпека, Етика та Відповідність",
+  "description": "GeniVerse зобов'язується до найвищих стандартів безпеки, етичного використання ШІ та нормативної відповідності. Цей розділ описує наш комплексний підхід до захисту учнів, забезпечення етичних практик ШІ та відповідності юридичним та нормативним вимогам.",
+  "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/safety-ethics-compliance.md",
+  "sourceDirName": ".",
+  "slug": "/safety-ethics-compliance",
+  "permalink": "/uk/safety-ethics-compliance",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Design System",
+    "permalink": "/uk/design-system"
+  },
+  "next": {
+    "title": "Modularity & Deployment",
+    "permalink": "/uk/modularity-deployment"
+  }
+}

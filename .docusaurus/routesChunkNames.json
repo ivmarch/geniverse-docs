@@ -20,105 +20,61 @@
     },
     "config": "5e9f5e1a"
   },
-  "/uk/-c29": {
+  "/uk/-17e": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/uk/-3c3": {
+  "/uk/-551": {
     "__comp": "a7bd4aaa",
     "__props": "42ad9ff7"
   },
-  "/uk/-918": {
+  "/uk/-60a": {
     "__comp": "a94703ab"
   },
-  "/uk/ai-layer-c52": {
+  "/uk/ai-layer-6de": {
     "__comp": "17896441",
-    "content": "c5c3b02b"
+    "content": "727a4037"
   },
-  "/uk/core-capabilities-f6c": {
+  "/uk/core-capabilities-e5d": {
     "__comp": "17896441",
-    "content": "91408260"
+    "content": "f6674018"
   },
-  "/uk/design-system-1ca": {
+  "/uk/design-system-f12": {
     "__comp": "17896441",
-    "content": "5e18d7e6"
+    "content": "b36d5975"
   },
-  "/uk/modularity-deployment-237": {
+  "/uk/modularity-deployment-c06": {
     "__comp": "17896441",
-    "content": "c5722ad6"
+    "content": "254bd66b"
   },
-  "/uk/overview-390": {
+  "/uk/overview-b28": {
     "__comp": "17896441",
-    "content": "1db64337"
+    "content": "3edfa697"
   },
-  "/uk/pedagogical-framework-9f4": {
+  "/uk/pedagogical-framework-e0d": {
     "__comp": "17896441",
-    "content": "968c109b"
+    "content": "aa6bf427"
   },
-  "/uk/product-principles-a3a": {
+  "/uk/product-principles-63b": {
     "__comp": "17896441",
-    "content": "ff4aebe7"
+    "content": "bb8aa3f5"
   },
-  "/uk/roles-permissions-3e8": {
+  "/uk/roles-permissions-f0d": {
     "__comp": "17896441",
-    "content": "54ee187c"
+    "content": "58db5e8d"
   },
-  "/uk/safety-ethics-compliance-990": {
+  "/uk/safety-ethics-compliance-e4f": {
     "__comp": "17896441",
-    "content": "b4fa2076"
+    "content": "192ca343"
   },
-  "/uk/uk/ai-layer-d0c": {
+  "/uk/vision-purpose-6a0": {
     "__comp": "17896441",
-    "content": "43512436"
+    "content": "3e2401f0"
   },
-  "/uk/uk/core-capabilities-8c1": {
+  "/uk/xr-immersive-a87": {
     "__comp": "17896441",
-    "content": "83cc1404"
-  },
-  "/uk/uk/design-system-483": {
-    "__comp": "17896441",
-    "content": "b8a80c0e"
-  },
-  "/uk/uk/modularity-deployment-ad3": {
-    "__comp": "17896441",
-    "content": "5a23a231"
-  },
-  "/uk/uk/overview-15d": {
-    "__comp": "17896441",
-    "content": "5c3302fc"
-  },
-  "/uk/uk/pedagogical-framework-2e7": {
-    "__comp": "17896441",
-    "content": "8c8c0afc"
-  },
-  "/uk/uk/product-principles-019": {
-    "__comp": "17896441",
-    "content": "69d3ee17"
-  },
-  "/uk/uk/roles-permissions-29a": {
-    "__comp": "17896441",
-    "content": "3b42b297"
-  },
-  "/uk/uk/safety-ethics-compliance-34b": {
-    "__comp": "17896441",
-    "content": "f58e284a"
-  },
-  "/uk/uk/vision-purpose-5c9": {
-    "__comp": "17896441",
-    "content": "2da99a29"
-  },
-  "/uk/uk/xr-immersive-173": {
-    "__comp": "17896441",
-    "content": "0294568b"
-  },
-  "/uk/vision-purpose-e35": {
-    "__comp": "17896441",
-    "content": "03aa4417"
-  },
-  "/uk/xr-immersive-df5": {
-    "__comp": "17896441",
-    "content": "9bd4c11f"
+    "content": "736d638a"
   }
 }

@@ -1,11 +1,11 @@
 {
   "id": "vision-purpose",
-  "title": "Vision & Purpose",
-  "description": "Mission Statement",
-  "source": "@site/docs/vision-purpose.md",
+  "title": "Бачення та Мета",
+  "description": "Місія",
+  "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/vision-purpose.md",
   "sourceDirName": ".",
   "slug": "/vision-purpose",
-  "permalink": "/vision-purpose",
+  "permalink": "/uk/vision-purpose",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Overview",
-    "permalink": "/overview"
+    "permalink": "/uk/overview"
   },
   "next": {
     "title": "Product Principles",
-    "permalink": "/product-principles"
+    "permalink": "/uk/product-principles"
   }
 }

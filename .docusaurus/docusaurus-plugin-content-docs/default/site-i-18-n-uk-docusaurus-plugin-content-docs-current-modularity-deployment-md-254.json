@@ -1,0 +1,19 @@
+{
+  "id": "modularity-deployment",
+  "title": "Модульність та Розгортання",
+  "description": "GeniVerse побудований на модульній архітектурі, яка дозволяє гнучкі варіанти розгортання, від хмарного SaaS до локальних встановлень та гібридних конфігурацій. Ця модульність дозволяє установам вибрати модель розгортання, яка найкраще відповідає їх потребам, вимогам безпеки та можливостям інфраструктури.",
+  "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/modularity-deployment.md",
+  "sourceDirName": ".",
+  "slug": "/modularity-deployment",
+  "permalink": "/uk/modularity-deployment",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Safety, Ethics & Compliance",
+    "permalink": "/uk/safety-ethics-compliance"
+  }
+}

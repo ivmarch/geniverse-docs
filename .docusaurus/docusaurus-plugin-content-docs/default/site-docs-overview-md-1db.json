@@ -5,7 +5,7 @@
   "source": "@site/docs/overview.md",
   "sourceDirName": ".",
   "slug": "/overview",
-  "permalink": "/uk/overview",
+  "permalink": "/overview",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,6 +14,6 @@
   "sidebar": "tutorialSidebar",
   "next": {
     "title": "Vision & Purpose",
-    "permalink": "/uk/vision-purpose"
+    "permalink": "/vision-purpose"
   }
 }

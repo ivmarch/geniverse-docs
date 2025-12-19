@@ -4,7 +4,7 @@
   ],
   "origins": {
     "165": [
-      4801,
+      2076,
       7928,
       8249,
       8731,
@@ -20,8 +20,8 @@
       1000
     ],
     "1169": [
+      2076,
       4616,
-      4801,
       5996,
       7873,
       8142,
@@ -35,6 +35,7 @@
       1741
     ],
     "1746": [
+      2076,
       3815,
       9510,
       1746
@@ -49,6 +50,7 @@
       2279
     ],
     "2291": [
+      2076,
       2291
     ],
     "2325": [
@@ -58,7 +60,7 @@
       2492
     ],
     "2821": [
-      4801,
+      2076,
       8731,
       2821
     ],
@@ -67,6 +69,7 @@
     ],
     "3815": [
       1746,
+      2076,
       3815
     ],
     "4250": [
@@ -74,31 +77,14 @@
     ],
     "4616": [
       1169,
-      4801,
+      2076,
       4802,
       8142,
       9051,
       4616
     ],
-    "4801": [
-      165,
-      1169,
-      2821,
-      4616,
-      5996,
-      6319,
-      6567,
-      6992,
-      7465,
-      7873,
-      8142,
-      8249,
-      8731,
-      9051,
-      9412,
-      4801
-    ],
     "4802": [
+      2076,
       4616,
       4802
     ],
@@ -106,6 +92,7 @@
       4981
     ],
     "5480": [
+      2076,
       5480
     ],
     "5901": [
@@ -116,14 +103,15 @@
     ],
     "5996": [
       1169,
-      4801,
+      2076,
       5996
     ],
     "6241": [
+      2076,
       6241
     ],
     "6319": [
-      4801,
+      2076,
       8731,
       6319
     ],
@@ -131,17 +119,17 @@
       6366
     ],
     "6567": [
-      4801,
+      2076,
       8731,
       6567
     ],
     "6992": [
-      4801,
+      2076,
       8731,
       6992
     ],
     "7465": [
-      4801,
+      2076,
       8731,
       7465
     ],
@@ -150,7 +138,7 @@
     ],
     "7873": [
       1169,
-      4801,
+      2076,
       9051,
       7873
     ],
@@ -160,24 +148,25 @@
     ],
     "8142": [
       1169,
+      2076,
       4616,
-      4801,
       9051,
       8142
     ],
     "8249": [
       165,
-      4801,
+      2076,
       8731,
       8249
     ],
     "8565": [
+      2076,
       8565
     ],
     "8731": [
       165,
+      2076,
       2821,
-      4801,
       6319,
       6567,
       6992,
@@ -187,37 +176,35 @@
       8731
     ],
     "8756": [
+      2076,
       8756
     ],
     "9032": [
+      2076,
       9032
     ],
     "9051": [
       1169,
+      2076,
       4616,
-      4801,
       7873,
       8142,
       9051
     ],
     "9412": [
-      4801,
+      2076,
       8731,
       9412
     ],
     "9510": [
       1746,
+      2076,
       9510
     ],
     "17896441": [
       1869,
+      2076,
       8401
-    ],
-    "43512436": [
-      5179
-    ],
-    "91408260": [
-      4805
     ],
     "main": [
       1869,
@@ -229,38 +216,31 @@
       8792,
       5354
     ],
-    "0294568b": [
-      2849
+    "192ca343": [
+      2076,
+      5251
     ],
-    "03aa4417": [
-      5878
-    ],
-    "1db64337": [
-      8413
-    ],
-    "2da99a29": [
-      7702
+    "254bd66b": [
+      2076,
+      8484
     ],
     "2f5f22f8": [
       7020
     ],
-    "3b42b297": [
-      258
+    "3e2401f0": [
+      2076,
+      410
+    ],
+    "3edfa697": [
+      2076,
+      1392
     ],
     "42ad9ff7": [
       7746
     ],
-    "54ee187c": [
-      3919
-    ],
-    "5a23a231": [
-      6825
-    ],
-    "5c3302fc": [
-      58
-    ],
-    "5e18d7e6": [
-      5924
+    "58db5e8d": [
+      2076,
+      3676
     ],
     "5e95c892": [
       9647
@@ -269,20 +249,13 @@
       1869,
       6831
     ],
-    "69d3ee17": [
-      9037
+    "727a4037": [
+      2076,
+      930
     ],
-    "83cc1404": [
-      6657
-    ],
-    "8c8c0afc": [
-      9367
-    ],
-    "968c109b": [
-      9747
-    ],
-    "9bd4c11f": [
-      4683
+    "736d638a": [
+      2076,
+      387
     ],
     "9fbc6150": [
       1869,
@@ -298,62 +271,84 @@
       1869,
       9048
     ],
+    "aa6bf427": [
+      2076,
+      2990
+    ],
     "aba21aa0": [
       5742
     ],
-    "b4fa2076": [
-      3539
+    "b36d5975": [
+      2076,
+      8210
     ],
-    "b8a80c0e": [
-      5908
+    "bb8aa3f5": [
+      2076,
+      1941
     ],
-    "c5722ad6": [
-      9937
-    ],
-    "c5c3b02b": [
-      9851
-    ],
-    "f58e284a": [
-      9806
-    ],
-    "ff4aebe7": [
-      5275
+    "f6674018": [
+      2076,
+      7781
     ],
     "styles": [
       967,
+      2076,
       5354,
       6831,
       8401,
       8792,
       9048,
       1869
+    ],
+    "common": [
+      165,
+      387,
+      410,
+      930,
+      1169,
+      1392,
+      1746,
+      1869,
+      1941,
+      2291,
+      2821,
+      2990,
+      3676,
+      3815,
+      4616,
+      4802,
+      5251,
+      5480,
+      5996,
+      6241,
+      6319,
+      6567,
+      6992,
+      7465,
+      7781,
+      7873,
+      8142,
+      8210,
+      8249,
+      8401,
+      8484,
+      8565,
+      8731,
+      8756,
+      9032,
+      9051,
+      9412,
+      9510,
+      2076
     ]
   },
   "assets": {
-    "58": {
-      "js": [
-        {
-          "file": "assets/js/5c3302fc.75c73698.js",
-          "hash": "9eb83868bfa4efc5",
-          "publicPath": "/uk/assets/js/5c3302fc.75c73698.js"
-        }
-      ]
-    },
     "165": {
       "js": [
         {
           "file": "assets/js/165.3224df23.js",
           "hash": "9ab95050dfa20ee4",
           "publicPath": "/uk/assets/js/165.3224df23.js"
-        }
-      ]
-    },
-    "258": {
-      "js": [
-        {
-          "file": "assets/js/3b42b297.02b9f1ef.js",
-          "hash": "734eac7c5584d0da",
-          "publicPath": "/uk/assets/js/3b42b297.02b9f1ef.js"
         }
       ]
     },
@@ -366,12 +361,39 @@
         }
       ]
     },
+    "387": {
+      "js": [
+        {
+          "file": "assets/js/736d638a.c1e2aa90.js",
+          "hash": "f9c9d92aec49951b",
+          "publicPath": "/uk/assets/js/736d638a.c1e2aa90.js"
+        }
+      ]
+    },
+    "410": {
+      "js": [
+        {
+          "file": "assets/js/3e2401f0.a04c514d.js",
+          "hash": "e640f11f8c78a12b",
+          "publicPath": "/uk/assets/js/3e2401f0.a04c514d.js"
+        }
+      ]
+    },
     "617": {
       "js": [
         {
           "file": "assets/js/617.e9c7a12e.js",
           "hash": "fc374a36f42c64e5",
           "publicPath": "/uk/assets/js/617.e9c7a12e.js"
+        }
+      ]
+    },
+    "930": {
+      "js": [
+        {
+          "file": "assets/js/727a4037.a2f19492.js",
+          "hash": "3e84c8b878d5a10c",
+          "publicPath": "/uk/assets/js/727a4037.a2f19492.js"
         }
       ]
     },
@@ -420,6 +442,15 @@
         }
       ]
     },
+    "1392": {
+      "js": [
+        {
+          "file": "assets/js/3edfa697.04992b41.js",
+          "hash": "f473c8432384d025",
+          "publicPath": "/uk/assets/js/3edfa697.04992b41.js"
+        }
+      ]
+    },
     "1741": {
       "js": [
         {
@@ -432,9 +463,9 @@
     "1746": {
       "js": [
         {
-          "file": "assets/js/1746.44b102a7.js",
-          "hash": "dc18d6b287a53cb0",
-          "publicPath": "/uk/assets/js/1746.44b102a7.js"
+          "file": "assets/js/1746.95168c0e.js",
+          "hash": "8694d5ac9c187ae6",
+          "publicPath": "/uk/assets/js/1746.95168c0e.js"
         }
       ]
     },
@@ -444,6 +475,24 @@
           "file": "assets/css/styles.85cfb211.css",
           "hash": "c91289c3f87fc756",
           "publicPath": "/uk/assets/css/styles.85cfb211.css"
+        }
+      ]
+    },
+    "1941": {
+      "js": [
+        {
+          "file": "assets/js/bb8aa3f5.be388b3b.js",
+          "hash": "474b017e03f6188c",
+          "publicPath": "/uk/assets/js/bb8aa3f5.be388b3b.js"
+        }
+      ]
+    },
+    "2076": {
+      "js": [
+        {
+          "file": "assets/js/common.b40a20dc.js",
+          "hash": "3632ea508aa6856d",
+          "publicPath": "/uk/assets/js/common.b40a20dc.js"
         }
       ]
     },
@@ -468,18 +517,18 @@
     "2279": {
       "js": [
         {
-          "file": "assets/js/2279.7bdb04a1.js",
-          "hash": "81b721175fb8e2c1",
-          "publicPath": "/uk/assets/js/2279.7bdb04a1.js"
+          "file": "assets/js/2279.eefd02f3.js",
+          "hash": "b5354846471d41f8",
+          "publicPath": "/uk/assets/js/2279.eefd02f3.js"
         }
       ]
     },
     "2291": {
       "js": [
         {
-          "file": "assets/js/2291.d00b2099.js",
-          "hash": "6b18790dad86bb36",
-          "publicPath": "/uk/assets/js/2291.d00b2099.js"
+          "file": "assets/js/2291.357a8ba0.js",
+          "hash": "3eca4542aec49640",
+          "publicPath": "/uk/assets/js/2291.357a8ba0.js"
         }
       ]
     },
@@ -504,18 +553,18 @@
     "2821": {
       "js": [
         {
-          "file": "assets/js/2821.d75e0f0f.js",
-          "hash": "b302e1c7a0d6474f",
-          "publicPath": "/uk/assets/js/2821.d75e0f0f.js"
+          "file": "assets/js/2821.f36e2356.js",
+          "hash": "691c7eb99b880dc6",
+          "publicPath": "/uk/assets/js/2821.f36e2356.js"
         }
       ]
     },
-    "2849": {
+    "2990": {
       "js": [
         {
-          "file": "assets/js/0294568b.51a9b8cc.js",
-          "hash": "50acd6b612fce1c5",
-          "publicPath": "/uk/assets/js/0294568b.51a9b8cc.js"
+          "file": "assets/js/aa6bf427.088a43c9.js",
+          "hash": "0e823b9571e64b64",
+          "publicPath": "/uk/assets/js/aa6bf427.088a43c9.js"
         }
       ]
     },
@@ -528,12 +577,12 @@
         }
       ]
     },
-    "3539": {
+    "3676": {
       "js": [
         {
-          "file": "assets/js/b4fa2076.8ef12361.js",
-          "hash": "38557bd4efd2caa0",
-          "publicPath": "/uk/assets/js/b4fa2076.8ef12361.js"
+          "file": "assets/js/58db5e8d.3418ad7c.js",
+          "hash": "99e52bf7aae18306",
+          "publicPath": "/uk/assets/js/58db5e8d.3418ad7c.js"
         }
       ]
     },
@@ -543,15 +592,6 @@
           "file": "assets/js/3815.f9859a45.js",
           "hash": "b45071664c14263e",
           "publicPath": "/uk/assets/js/3815.f9859a45.js"
-        }
-      ]
-    },
-    "3919": {
-      "js": [
-        {
-          "file": "assets/js/54ee187c.0e3c0890.js",
-          "hash": "eb325b5df39b76e5",
-          "publicPath": "/uk/assets/js/54ee187c.0e3c0890.js"
         }
       ]
     },
@@ -567,27 +607,9 @@
     "4616": {
       "js": [
         {
-          "file": "assets/js/4616.4e273009.js",
-          "hash": "b27f4b4b57f182b8",
-          "publicPath": "/uk/assets/js/4616.4e273009.js"
-        }
-      ]
-    },
-    "4683": {
-      "js": [
-        {
-          "file": "assets/js/9bd4c11f.58f708cb.js",
-          "hash": "2e6e9563aecc6285",
-          "publicPath": "/uk/assets/js/9bd4c11f.58f708cb.js"
-        }
-      ]
-    },
-    "4801": {
-      "js": [
-        {
-          "file": "assets/js/4801.37130f93.js",
-          "hash": "8e86d0a4d5ab3444",
-          "publicPath": "/uk/assets/js/4801.37130f93.js"
+          "file": "assets/js/4616.16e8a04d.js",
+          "hash": "e289af047c57f8a5",
+          "publicPath": "/uk/assets/js/4616.16e8a04d.js"
         }
       ]
     },
@@ -600,15 +622,6 @@
         }
       ]
     },
-    "4805": {
-      "js": [
-        {
-          "file": "assets/js/91408260.692116e6.js",
-          "hash": "a5cab9110c5976aa",
-          "publicPath": "/uk/assets/js/91408260.692116e6.js"
-        }
-      ]
-    },
     "4981": {
       "js": [
         {
@@ -618,39 +631,30 @@
         }
       ]
     },
-    "5179": {
+    "5251": {
       "js": [
         {
-          "file": "assets/js/43512436.bd72275a.js",
-          "hash": "a3448ab53a0cdd05",
-          "publicPath": "/uk/assets/js/43512436.bd72275a.js"
-        }
-      ]
-    },
-    "5275": {
-      "js": [
-        {
-          "file": "assets/js/ff4aebe7.a0e244de.js",
-          "hash": "a5127c820ec0b10d",
-          "publicPath": "/uk/assets/js/ff4aebe7.a0e244de.js"
+          "file": "assets/js/192ca343.118a1d62.js",
+          "hash": "9d51f9ce9538c273",
+          "publicPath": "/uk/assets/js/192ca343.118a1d62.js"
         }
       ]
     },
     "5354": {
       "js": [
         {
-          "file": "assets/js/runtime~main.c4df3f8d.js",
-          "hash": "779d25af6a8c1a1e",
-          "publicPath": "/uk/assets/js/runtime~main.c4df3f8d.js"
+          "file": "assets/js/runtime~main.97f49e45.js",
+          "hash": "c410238cc5c03014",
+          "publicPath": "/uk/assets/js/runtime~main.97f49e45.js"
         }
       ]
     },
     "5480": {
       "js": [
         {
-          "file": "assets/js/5480.7932ee01.js",
-          "hash": "3d560e073edd46f4",
-          "publicPath": "/uk/assets/js/5480.7932ee01.js"
+          "file": "assets/js/5480.b778ff0d.js",
+          "hash": "0c2e498f7a443b99",
+          "publicPath": "/uk/assets/js/5480.b778ff0d.js"
         }
       ]
     },
@@ -663,39 +667,12 @@
         }
       ]
     },
-    "5878": {
-      "js": [
-        {
-          "file": "assets/js/03aa4417.1b4aa3f2.js",
-          "hash": "d4bdbfb582aecf08",
-          "publicPath": "/uk/assets/js/03aa4417.1b4aa3f2.js"
-        }
-      ]
-    },
     "5901": {
       "js": [
         {
           "file": "assets/js/5901.d9d76b5f.js",
           "hash": "2f0c75a08b84df28",
           "publicPath": "/uk/assets/js/5901.d9d76b5f.js"
-        }
-      ]
-    },
-    "5908": {
-      "js": [
-        {
-          "file": "assets/js/b8a80c0e.ecae81d2.js",
-          "hash": "a8ce2fc0044013e0",
-          "publicPath": "/uk/assets/js/b8a80c0e.ecae81d2.js"
-        }
-      ]
-    },
-    "5924": {
-      "js": [
-        {
-          "file": "assets/js/5e18d7e6.d5e7e822.js",
-          "hash": "588c8d7776c4fe2d",
-          "publicPath": "/uk/assets/js/5e18d7e6.d5e7e822.js"
         }
       ]
     },
@@ -711,18 +688,18 @@
     "5996": {
       "js": [
         {
-          "file": "assets/js/5996.9b238ffb.js",
-          "hash": "c8ed18f38a5171b8",
-          "publicPath": "/uk/assets/js/5996.9b238ffb.js"
+          "file": "assets/js/5996.3536a79d.js",
+          "hash": "2b48a51f869f826e",
+          "publicPath": "/uk/assets/js/5996.3536a79d.js"
         }
       ]
     },
     "6241": {
       "js": [
         {
-          "file": "assets/js/6241.9ed9e770.js",
-          "hash": "486a2b8bf88cb67d",
-          "publicPath": "/uk/assets/js/6241.9ed9e770.js"
+          "file": "assets/js/6241.d4e1c7d2.js",
+          "hash": "b352dfeb768f04c7",
+          "publicPath": "/uk/assets/js/6241.d4e1c7d2.js"
         }
       ]
     },
@@ -750,24 +727,6 @@
           "file": "assets/js/6567.15a960a7.js",
           "hash": "5909f254f3ed3c4e",
           "publicPath": "/uk/assets/js/6567.15a960a7.js"
-        }
-      ]
-    },
-    "6657": {
-      "js": [
-        {
-          "file": "assets/js/83cc1404.e217d7db.js",
-          "hash": "861e37295372b55e",
-          "publicPath": "/uk/assets/js/83cc1404.e217d7db.js"
-        }
-      ]
-    },
-    "6825": {
-      "js": [
-        {
-          "file": "assets/js/5a23a231.57a35b46.js",
-          "hash": "f78147cf3ac7d0a6",
-          "publicPath": "/uk/assets/js/5a23a231.57a35b46.js"
         }
       ]
     },
@@ -825,21 +784,21 @@
         }
       ]
     },
-    "7702": {
-      "js": [
-        {
-          "file": "assets/js/2da99a29.382ef097.js",
-          "hash": "eef702fd082bd09d",
-          "publicPath": "/uk/assets/js/2da99a29.382ef097.js"
-        }
-      ]
-    },
     "7746": {
       "js": [
         {
-          "file": "assets/js/42ad9ff7.08d833f0.js",
-          "hash": "ec08524234e31fbb",
-          "publicPath": "/uk/assets/js/42ad9ff7.08d833f0.js"
+          "file": "assets/js/42ad9ff7.843041fa.js",
+          "hash": "0ef0020acea20140",
+          "publicPath": "/uk/assets/js/42ad9ff7.843041fa.js"
+        }
+      ]
+    },
+    "7781": {
+      "js": [
+        {
+          "file": "assets/js/f6674018.43ce7f16.js",
+          "hash": "254de20491396600",
+          "publicPath": "/uk/assets/js/f6674018.43ce7f16.js"
         }
       ]
     },
@@ -870,6 +829,15 @@
         }
       ]
     },
+    "8210": {
+      "js": [
+        {
+          "file": "assets/js/b36d5975.a9abbe42.js",
+          "hash": "5a95fc7280f81c0f",
+          "publicPath": "/uk/assets/js/b36d5975.a9abbe42.js"
+        }
+      ]
+    },
     "8249": {
       "js": [
         {
@@ -882,72 +850,63 @@
     "8401": {
       "js": [
         {
-          "file": "assets/js/17896441.8cd543c2.js",
-          "hash": "d56efa5cc1d494e9",
-          "publicPath": "/uk/assets/js/17896441.8cd543c2.js"
+          "file": "assets/js/17896441.67ddd594.js",
+          "hash": "4794e7acc4b351a2",
+          "publicPath": "/uk/assets/js/17896441.67ddd594.js"
         }
       ]
     },
-    "8413": {
+    "8484": {
       "js": [
         {
-          "file": "assets/js/1db64337.47cf2695.js",
-          "hash": "0f0090147887a0c5",
-          "publicPath": "/uk/assets/js/1db64337.47cf2695.js"
+          "file": "assets/js/254bd66b.29caee8c.js",
+          "hash": "491851e5da36ebaa",
+          "publicPath": "/uk/assets/js/254bd66b.29caee8c.js"
         }
       ]
     },
     "8565": {
       "js": [
         {
-          "file": "assets/js/8565.bb28287f.js",
-          "hash": "a2a5f77911c7863b",
-          "publicPath": "/uk/assets/js/8565.bb28287f.js"
+          "file": "assets/js/8565.22ee5968.js",
+          "hash": "1efec1095673ddd3",
+          "publicPath": "/uk/assets/js/8565.22ee5968.js"
         }
       ]
     },
     "8731": {
       "js": [
         {
-          "file": "assets/js/8731.0d0715b8.js",
-          "hash": "0929846b9756a985",
-          "publicPath": "/uk/assets/js/8731.0d0715b8.js"
+          "file": "assets/js/8731.48337c2b.js",
+          "hash": "a67beaa572ce5201",
+          "publicPath": "/uk/assets/js/8731.48337c2b.js"
         }
       ]
     },
     "8756": {
       "js": [
         {
-          "file": "assets/js/8756.eb5438c2.js",
-          "hash": "fa2b985fe4c42b71",
-          "publicPath": "/uk/assets/js/8756.eb5438c2.js"
+          "file": "assets/js/8756.699c2192.js",
+          "hash": "acbce6f54b689768",
+          "publicPath": "/uk/assets/js/8756.699c2192.js"
         }
       ]
     },
     "8792": {
       "js": [
         {
-          "file": "assets/js/main.bd34fc54.js",
-          "hash": "ff457a5749dd1faa",
-          "publicPath": "/uk/assets/js/main.bd34fc54.js"
+          "file": "assets/js/main.804aba01.js",
+          "hash": "de9eb9ef177edfa0",
+          "publicPath": "/uk/assets/js/main.804aba01.js"
         }
       ]
     },
     "9032": {
       "js": [
         {
-          "file": "assets/js/9032.210567d0.js",
-          "hash": "f256b35cdac2009a",
-          "publicPath": "/uk/assets/js/9032.210567d0.js"
-        }
-      ]
-    },
-    "9037": {
-      "js": [
-        {
-          "file": "assets/js/69d3ee17.012a4031.js",
-          "hash": "6d218bb415e5ecb8",
-          "publicPath": "/uk/assets/js/69d3ee17.012a4031.js"
+          "file": "assets/js/9032.5cb0798c.js",
+          "hash": "bcb1b91c52ab7c32",
+          "publicPath": "/uk/assets/js/9032.5cb0798c.js"
         }
       ]
     },
@@ -963,18 +922,9 @@
     "9051": {
       "js": [
         {
-          "file": "assets/js/9051.ecd90820.js",
-          "hash": "b73972c5fcea6f21",
-          "publicPath": "/uk/assets/js/9051.ecd90820.js"
-        }
-      ]
-    },
-    "9367": {
-      "js": [
-        {
-          "file": "assets/js/8c8c0afc.225d1316.js",
-          "hash": "5627bfcc7d177556",
-          "publicPath": "/uk/assets/js/8c8c0afc.225d1316.js"
+          "file": "assets/js/9051.8eba50cf.js",
+          "hash": "ac3d2cc1446d05bd",
+          "publicPath": "/uk/assets/js/9051.8eba50cf.js"
         }
       ]
     },
@@ -1002,42 +952,6 @@
           "file": "assets/js/5e95c892.4d908064.js",
           "hash": "56c6ddafb212e1f0",
           "publicPath": "/uk/assets/js/5e95c892.4d908064.js"
-        }
-      ]
-    },
-    "9747": {
-      "js": [
-        {
-          "file": "assets/js/968c109b.082a5d37.js",
-          "hash": "1b97ca2edd666c9c",
-          "publicPath": "/uk/assets/js/968c109b.082a5d37.js"
-        }
-      ]
-    },
-    "9806": {
-      "js": [
-        {
-          "file": "assets/js/f58e284a.71729584.js",
-          "hash": "12e3c227b2512a58",
-          "publicPath": "/uk/assets/js/f58e284a.71729584.js"
-        }
-      ]
-    },
-    "9851": {
-      "js": [
-        {
-          "file": "assets/js/c5c3b02b.a3ec01d4.js",
-          "hash": "8e79ed2217e5648a",
-          "publicPath": "/uk/assets/js/c5c3b02b.a3ec01d4.js"
-        }
-      ]
-    },
-    "9937": {
-      "js": [
-        {
-          "file": "assets/js/c5722ad6.e6bf7509.js",
-          "hash": "f1b1e4cb2fc0db02",
-          "publicPath": "/uk/assets/js/c5722ad6.e6bf7509.js"
         }
       ]
     }

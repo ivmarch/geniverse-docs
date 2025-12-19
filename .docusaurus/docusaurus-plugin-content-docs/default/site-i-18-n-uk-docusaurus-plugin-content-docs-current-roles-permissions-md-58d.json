@@ -1,0 +1,23 @@
+{
+  "id": "roles-permissions",
+  "title": "Ролі та Дозволи",
+  "description": "GeniVerse реалізує комплексну систему контролю доступу на основі ролей (RBAC), яка забезпечує відповідні рівні доступу для всіх типів користувачів, одночасно підтримуючи безпеку та вимоги відповідності.",
+  "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/roles-permissions.md",
+  "sourceDirName": ".",
+  "slug": "/roles-permissions",
+  "permalink": "/uk/roles-permissions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Pedagogical Framework",
+    "permalink": "/uk/pedagogical-framework"
+  },
+  "next": {
+    "title": "Core Capabilities",
+    "permalink": "/uk/core-capabilities"
+  }
+}

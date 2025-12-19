@@ -56,50 +56,6 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "uk/ai-layer",
-              "path": "/uk/uk/ai-layer"
-            },
-            {
-              "id": "uk/core-capabilities",
-              "path": "/uk/uk/core-capabilities"
-            },
-            {
-              "id": "uk/design-system",
-              "path": "/uk/uk/design-system"
-            },
-            {
-              "id": "uk/modularity-deployment",
-              "path": "/uk/uk/modularity-deployment"
-            },
-            {
-              "id": "uk/overview",
-              "path": "/uk/uk/overview"
-            },
-            {
-              "id": "uk/pedagogical-framework",
-              "path": "/uk/uk/pedagogical-framework"
-            },
-            {
-              "id": "uk/product-principles",
-              "path": "/uk/uk/product-principles"
-            },
-            {
-              "id": "uk/roles-permissions",
-              "path": "/uk/uk/roles-permissions"
-            },
-            {
-              "id": "uk/safety-ethics-compliance",
-              "path": "/uk/uk/safety-ethics-compliance"
-            },
-            {
-              "id": "uk/vision-purpose",
-              "path": "/uk/uk/vision-purpose"
-            },
-            {
-              "id": "uk/xr-immersive",
-              "path": "/uk/uk/xr-immersive"
-            },
-            {
               "id": "vision-purpose",
               "path": "/uk/vision-purpose",
               "sidebar": "tutorialSidebar"

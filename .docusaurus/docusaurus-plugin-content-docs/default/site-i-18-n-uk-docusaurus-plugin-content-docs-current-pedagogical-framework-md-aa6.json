@@ -1,0 +1,23 @@
+{
+  "id": "pedagogical-framework",
+  "title": "Педагогічна Рамка",
+  "description": "Педагогічна рамка GeniVerse інтегрує множинні теорії навчання та методології для створення ефективних, захоплюючих освітніх досвідів. Рамка керує створенням контенту, персоналізацією ШІ та дизайном навчальних шляхів.",
+  "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/pedagogical-framework.md",
+  "sourceDirName": ".",
+  "slug": "/pedagogical-framework",
+  "permalink": "/uk/pedagogical-framework",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Product Principles",
+    "permalink": "/uk/product-principles"
+  },
+  "next": {
+    "title": "Roles & Permissions",
+    "permalink": "/uk/roles-permissions"
+  }
+}

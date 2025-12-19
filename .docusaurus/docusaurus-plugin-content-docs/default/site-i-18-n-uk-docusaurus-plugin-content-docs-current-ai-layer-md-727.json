@@ -1,0 +1,23 @@
+{
+  "id": "ai-layer",
+  "title": "Шар ШІ",
+  "description": "Шар ШІ є інтелектуальним ядром GeniVerse, що забезпечує персоналізацію, адаптацію та інтелектуальну підтримку протягом усього навчального досвіду. Побудований на сучасних технологіях машинного навчання та ШІ, він дозволяє платформі розуміти учнів, адаптувати контент та надавати інтелектуальну підтримку.",
+  "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/ai-layer.md",
+  "sourceDirName": ".",
+  "slug": "/ai-layer",
+  "permalink": "/uk/ai-layer",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Core Capabilities",
+    "permalink": "/uk/core-capabilities"
+  },
+  "next": {
+    "title": "XR & Immersive",
+    "permalink": "/uk/xr-immersive"
+  }
+}

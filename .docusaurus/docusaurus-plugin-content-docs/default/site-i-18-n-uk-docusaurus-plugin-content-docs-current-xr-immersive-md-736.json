@@ -1,0 +1,23 @@
+{
+  "id": "xr-immersive",
+  "title": "XR та Імерсивність",
+  "description": "GeniVerse використовує технології розширеної реальності (XR) — включаючи віртуальну реальність (VR), доповнену реальність (AR) та змішану реальність (MR) — для створення імерсивних навчальних досвідів, які переступають традиційні освітні межі.",
+  "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/xr-immersive.md",
+  "sourceDirName": ".",
+  "slug": "/xr-immersive",
+  "permalink": "/uk/xr-immersive",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "AI Layer",
+    "permalink": "/uk/ai-layer"
+  },
+  "next": {
+    "title": "Design System",
+    "permalink": "/uk/design-system"
+  }
+}

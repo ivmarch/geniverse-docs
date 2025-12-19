@@ -5,7 +5,7 @@
   "source": "@site/docs/pedagogical-framework.md",
   "sourceDirName": ".",
   "slug": "/pedagogical-framework",
-  "permalink": "/uk/pedagogical-framework",
+  "permalink": "/pedagogical-framework",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Product Principles",
-    "permalink": "/uk/product-principles"
+    "permalink": "/product-principles"
   },
   "next": {
     "title": "Roles & Permissions",
-    "permalink": "/uk/roles-permissions"
+    "permalink": "/roles-permissions"
   }
 }

@@ -1,4 +1,7 @@
-<svg width="200" height="40" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <text x="10" y="28" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="700" fill="#34E1A1">GeniVerse</text>
+<svg width="40" height="40" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="none"/>
+  <rect x="311.9395523014272" y="211.93955230142723" width="88.06044769857277" height="88.06044769857277" fill="#08ba7d"/>
+  <rect x="400" y="300" width="81.3154454611244" height="81.3154454611244" fill="#e8faf0"/>
+  <rect x="-59.93088544192837" y="-59.93088544192837" width="119.86177088385674" height="119.86177088385674" fill="#34e1a0" transform="translate(484.6879465798486, 215.31205342015141) rotate(47.280466595378826)"/>
+  <polygon points="400,300 400,211.93955230142723 481.3154454611244,300" fill="#1b8e6f"/>
 </svg>
-

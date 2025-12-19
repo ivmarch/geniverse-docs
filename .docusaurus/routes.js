@@ -19,134 +19,79 @@ export default [
   },
   {
     path: '/uk/',
-    component: ComponentCreator('/uk/', 'c29'),
+    component: ComponentCreator('/uk/', '17e'),
     routes: [
       {
         path: '/uk/',
-        component: ComponentCreator('/uk/', '3c3'),
+        component: ComponentCreator('/uk/', '551'),
         routes: [
           {
             path: '/uk/',
-            component: ComponentCreator('/uk/', '918'),
+            component: ComponentCreator('/uk/', '60a'),
             routes: [
               {
                 path: '/uk/ai-layer',
-                component: ComponentCreator('/uk/ai-layer', 'c52'),
+                component: ComponentCreator('/uk/ai-layer', '6de'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/uk/core-capabilities',
-                component: ComponentCreator('/uk/core-capabilities', 'f6c'),
+                component: ComponentCreator('/uk/core-capabilities', 'e5d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/uk/design-system',
-                component: ComponentCreator('/uk/design-system', '1ca'),
+                component: ComponentCreator('/uk/design-system', 'f12'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/uk/modularity-deployment',
-                component: ComponentCreator('/uk/modularity-deployment', '237'),
+                component: ComponentCreator('/uk/modularity-deployment', 'c06'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/uk/overview',
-                component: ComponentCreator('/uk/overview', '390'),
+                component: ComponentCreator('/uk/overview', 'b28'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/uk/pedagogical-framework',
-                component: ComponentCreator('/uk/pedagogical-framework', '9f4'),
+                component: ComponentCreator('/uk/pedagogical-framework', 'e0d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/uk/product-principles',
-                component: ComponentCreator('/uk/product-principles', 'a3a'),
+                component: ComponentCreator('/uk/product-principles', '63b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/uk/roles-permissions',
-                component: ComponentCreator('/uk/roles-permissions', '3e8'),
+                component: ComponentCreator('/uk/roles-permissions', 'f0d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/uk/safety-ethics-compliance',
-                component: ComponentCreator('/uk/safety-ethics-compliance', '990'),
+                component: ComponentCreator('/uk/safety-ethics-compliance', 'e4f'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/uk/uk/ai-layer',
-                component: ComponentCreator('/uk/uk/ai-layer', 'd0c'),
-                exact: true
-              },
-              {
-                path: '/uk/uk/core-capabilities',
-                component: ComponentCreator('/uk/uk/core-capabilities', '8c1'),
-                exact: true
-              },
-              {
-                path: '/uk/uk/design-system',
-                component: ComponentCreator('/uk/uk/design-system', '483'),
-                exact: true
-              },
-              {
-                path: '/uk/uk/modularity-deployment',
-                component: ComponentCreator('/uk/uk/modularity-deployment', 'ad3'),
-                exact: true
-              },
-              {
-                path: '/uk/uk/overview',
-                component: ComponentCreator('/uk/uk/overview', '15d'),
-                exact: true
-              },
-              {
-                path: '/uk/uk/pedagogical-framework',
-                component: ComponentCreator('/uk/uk/pedagogical-framework', '2e7'),
-                exact: true
-              },
-              {
-                path: '/uk/uk/product-principles',
-                component: ComponentCreator('/uk/uk/product-principles', '019'),
-                exact: true
-              },
-              {
-                path: '/uk/uk/roles-permissions',
-                component: ComponentCreator('/uk/uk/roles-permissions', '29a'),
-                exact: true
-              },
-              {
-                path: '/uk/uk/safety-ethics-compliance',
-                component: ComponentCreator('/uk/uk/safety-ethics-compliance', '34b'),
-                exact: true
-              },
-              {
-                path: '/uk/uk/vision-purpose',
-                component: ComponentCreator('/uk/uk/vision-purpose', '5c9'),
-                exact: true
-              },
-              {
-                path: '/uk/uk/xr-immersive',
-                component: ComponentCreator('/uk/uk/xr-immersive', '173'),
-                exact: true
-              },
-              {
                 path: '/uk/vision-purpose',
-                component: ComponentCreator('/uk/vision-purpose', 'e35'),
+                component: ComponentCreator('/uk/vision-purpose', '6a0'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/uk/xr-immersive',
-                component: ComponentCreator('/uk/xr-immersive', 'df5'),
+                component: ComponentCreator('/uk/xr-immersive', 'a87'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               }

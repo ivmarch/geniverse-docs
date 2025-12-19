@@ -1,0 +1,23 @@
+{
+  "id": "core-capabilities",
+  "title": "Основні Можливості",
+  "description": "GeniVerse надає комплексний набір можливостей, які дозволяють установам надавати персоналізовані, імерсивні навчальні досвіди в масштабі. Ці можливості працюють разом для створення згуртованої освітньої платформи.",
+  "source": "@site/i18n/uk/docusaurus-plugin-content-docs/current/core-capabilities.md",
+  "sourceDirName": ".",
+  "slug": "/core-capabilities",
+  "permalink": "/uk/core-capabilities",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Roles & Permissions",
+    "permalink": "/uk/roles-permissions"
+  },
+  "next": {
+    "title": "AI Layer",
+    "permalink": "/uk/ai-layer"
+  }
+}
