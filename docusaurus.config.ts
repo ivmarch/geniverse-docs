@@ -74,6 +74,9 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/geniverse-social-card.jpg',
+    mermaid: {
+      theme: {light: 'dark', dark: 'dark'},
+    },
     navbar: {
       title: 'GeniVerse',
       logo: {

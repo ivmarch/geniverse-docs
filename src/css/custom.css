@@ -196,12 +196,86 @@ h3 {
 }
 
 /* Mermaid diagrams */
-.mermaid {
-  background-color: var(--ifm-background-surface-color);
+.mermaid,
+.docusaurus-mermaid-container {
+  background-color: #0B0D0C !important;
   border-radius: 8px;
   padding: 1.5rem;
   margin: 2rem 0;
   border: 1px solid #1F2321;
+}
+
+/* Mermaid SVG styling - dark background and light text */
+.mermaid svg,
+.docusaurus-mermaid-container svg {
+  background-color: #0B0D0C !important;
+}
+
+/* Mermaid text elements - light color */
+.mermaid svg text,
+.mermaid svg .nodeLabel,
+.mermaid svg .edgeLabel,
+.mermaid svg .cluster-label,
+.mermaid svg .label text,
+.mermaid svg .label,
+.docusaurus-mermaid-container svg text,
+.docusaurus-mermaid-container svg .nodeLabel,
+.docusaurus-mermaid-container svg .edgeLabel,
+.docusaurus-mermaid-container svg .cluster-label,
+.docusaurus-mermaid-container svg .label text,
+.docusaurus-mermaid-container svg .label {
+  fill: #E8F9F0 !important;
+  color: #E8F9F0 !important;
+}
+
+/* Mermaid node backgrounds - dark */
+.mermaid svg .node rect,
+.mermaid svg .node circle,
+.mermaid svg .node ellipse,
+.mermaid svg .node polygon,
+.mermaid svg .cluster rect,
+.docusaurus-mermaid-container svg .node rect,
+.docusaurus-mermaid-container svg .node circle,
+.docusaurus-mermaid-container svg .node ellipse,
+.docusaurus-mermaid-container svg .node polygon,
+.docusaurus-mermaid-container svg .cluster rect {
+  fill: #141716 !important;
+  stroke: #58E6B2 !important;
+}
+
+/* Mermaid edges - light green */
+.mermaid svg .edgePath path,
+.mermaid svg .edgePath .path,
+.mermaid svg .arrowheadPath,
+.docusaurus-mermaid-container svg .edgePath path,
+.docusaurus-mermaid-container svg .edgePath .path,
+.docusaurus-mermaid-container svg .arrowheadPath {
+  stroke: #7CECBF !important;
+  fill: #7CECBF !important;
+}
+
+/* Mermaid subgraph/cluster backgrounds */
+.mermaid svg .cluster rect,
+.docusaurus-mermaid-container svg .cluster rect {
+  fill: #141716 !important;
+  stroke: #34E1A1 !important;
+}
+
+.mermaid svg .cluster-label text,
+.docusaurus-mermaid-container svg .cluster-label text {
+  fill: #E8F9F0 !important;
+}
+
+/* Mermaid subgraph labels */
+.mermaid svg .subgraph-label text,
+.docusaurus-mermaid-container svg .subgraph-label text {
+  fill: #E8F9F0 !important;
+}
+
+/* Override any default Mermaid background colors */
+.mermaid svg,
+.docusaurus-mermaid-container svg {
+  background: #0B0D0C !important;
 }
 
 /* Tables */
