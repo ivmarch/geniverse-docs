@@ -270,38 +270,55 @@ h3 {
   stroke: #58E6B2 !important;
 }
 
-/* Mermaid edges - light green, no fill */
+/* Mermaid edges - light green, no fill at all */
 .mermaid svg .edgePath path,
 .mermaid svg .edgePath .path,
 .mermaid svg .flowchart-link,
 .mermaid svg .edge-thickness-normal,
 .mermaid svg path[class*="flowchart"],
 .mermaid svg path[class*="edge"],
+.mermaid svg .edgePath,
+.mermaid svg path[d*="M"],
 .docusaurus-mermaid-container svg .edgePath path,
 .docusaurus-mermaid-container svg .edgePath .path,
 .docusaurus-mermaid-container svg .flowchart-link,
 .docusaurus-mermaid-container svg .edge-thickness-normal,
 .docusaurus-mermaid-container svg path[class*="flowchart"],
-.docusaurus-mermaid-container svg path[class*="edge"] {
+.docusaurus-mermaid-container svg path[class*="edge"],
+.docusaurus-mermaid-container svg .edgePath,
+.docusaurus-mermaid-container svg path[d*="M"] {
   stroke: #7CECBF !important;
   fill: none !important;
+  fill-opacity: 0 !important;
   stroke-width: 2px !important;
 }
 
-/* Mermaid arrowheads - light green fill */
+/* Mermaid arrowheads - also no fill, only stroke */
 .mermaid svg .arrowheadPath,
 .mermaid svg .arrowheadPath path,
 .mermaid svg path[marker-end],
 .mermaid svg marker path,
 .mermaid svg marker polygon,
+.mermaid svg marker,
 .docusaurus-mermaid-container svg .arrowheadPath,
 .docusaurus-mermaid-container svg .arrowheadPath path,
 .docusaurus-mermaid-container svg path[marker-end],
 .docusaurus-mermaid-container svg marker path,
-.docusaurus-mermaid-container svg marker polygon {
+.docusaurus-mermaid-container svg marker polygon,
+.docusaurus-mermaid-container svg marker {
   stroke: #7CECBF !important;
-  fill: #7CECBF !important;
-  stroke-width: 1px !important;
+  fill: none !important;
+  fill-opacity: 0 !important;
+  stroke-width: 2px !important;
+}
+
+/* Force no fill on all path elements that are part of edges */
+.mermaid svg .edgePath *,
+.mermaid svg .flowchart-link *,
+.docusaurus-mermaid-container svg .edgePath *,
+.docusaurus-mermaid-container svg .flowchart-link * {
+  fill: none !important;
+  fill-opacity: 0 !important;
 }
 
 /* Mermaid subgraph/cluster backgrounds */
