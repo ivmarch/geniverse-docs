@@ -203,10 +203,7 @@ const PythagoreanCanvas = () => {
       ctx.fillRect(square1X, square1Y, square1Size, square1Size);
     }
 
-    ctx.strokeStyle =
-      animationMode === 'pulse' ? `${colors.square1}${Math.floor(128 + Math.sin(time * 2) * 127).toString(16)}` : colors.square1;
-    ctx.lineWidth = 3;
-    ctx.strokeRect(square1X, square1Y, square1Size, square1Size);
+    // Stroke прибрано
 
     // Квадрат катета 2 (горизонтальний)
     const square2Size = leg2;
@@ -235,10 +232,7 @@ const PythagoreanCanvas = () => {
       ctx.fillRect(square2X, square2Y, square2Size, square2Size);
     }
 
-    ctx.strokeStyle =
-      animationMode === 'pulse' ? `${colors.square2}${Math.floor(128 + Math.sin(time * 2 + 1) * 127).toString(16)}` : colors.square2;
-    ctx.lineWidth = 3;
-    ctx.strokeRect(square2X, square2Y, square2Size, square2Size);
+    // Stroke прибрано
 
     // Квадрат гіпотенузи (побудований на гіпотенузі як на одній зі сторін)
     const angle = Math.atan2(points.C.y - points.B.y, points.C.x - points.B.x);
@@ -302,10 +296,7 @@ const PythagoreanCanvas = () => {
       ctx.fillRect(-halfSize, -halfSize, square3Size, square3Size);
     }
 
-    ctx.strokeStyle =
-      animationMode === 'pulse' ? `${colors.square3}${Math.floor(128 + Math.sin(time * 2 + 2) * 127).toString(16)}` : colors.square3;
-    ctx.lineWidth = 3;
-    ctx.strokeRect(-halfSize, -halfSize, square3Size, square3Size);
+    // Stroke прибрано
 
     ctx.restore();
   };
@@ -328,49 +319,10 @@ const PythagoreanCanvas = () => {
     ctx.closePath();
     ctx.fill();
 
-    // Обводка трикутника
-    ctx.strokeStyle = colors.triangle;
-    ctx.lineWidth = 4;
-    ctx.stroke();
-
-    // Сторони
-    ctx.strokeStyle = 'white';
-    ctx.lineWidth = 3;
-
-    ctx.beginPath();
-    ctx.moveTo(points.A.x, points.A.y);
-    ctx.lineTo(points.B.x, points.B.y);
-    ctx.lineTo(points.C.x, points.C.y);
-    ctx.closePath();
-    ctx.stroke();
-
-    // Точки (вершини трикутника)
-    drawPoint(ctx, points.A, 'A', '#ff4444');
-    drawPoint(ctx, points.B, 'B', '#44ff44');
-    drawPoint(ctx, points.C, 'C', '#4444ff');
-
-    // Прямий кут
-    const rightAngleSize = 15;
-    ctx.strokeStyle = 'white';
-    ctx.lineWidth = 2;
-    ctx.strokeRect(points.A.x - rightAngleSize, points.A.y - rightAngleSize, rightAngleSize, rightAngleSize);
+    // Stroke та підписи прибрано
   };
 
-  const drawPoint = (ctx: CanvasRenderingContext2D, point: {x: number; y: number}, label: string, color: string) => {
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.arc(point.x, point.y, 8, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.strokeStyle = 'white';
-    ctx.lineWidth = 2;
-    ctx.stroke();
-
-    ctx.fillStyle = 'white';
-    ctx.font = 'bold 12px Arial';
-    ctx.textAlign = 'center';
-    ctx.fillText(label, point.x, point.y - 15);
-  };
+  // drawPoint функція прибрана (не використовується)
 
   // Експорт SVG
   const exportToSVG = () => {
@@ -399,8 +351,6 @@ const PythagoreanCanvas = () => {
     square1.setAttribute('width', square1Size.toString());
     square1.setAttribute('height', square1Size.toString());
     square1.setAttribute('fill', colors.square1);
-    square1.setAttribute('stroke', colors.square1);
-    square1.setAttribute('stroke-width', '3');
     svg.appendChild(square1);
 
     // Квадрат катета 2
@@ -413,8 +363,6 @@ const PythagoreanCanvas = () => {
     square2.setAttribute('width', square2Size.toString());
     square2.setAttribute('height', square2Size.toString());
     square2.setAttribute('fill', colors.square2);
-    square2.setAttribute('stroke', colors.square2);
-    square2.setAttribute('stroke-width', '3');
     svg.appendChild(square2);
 
     // Квадрат гіпотенузи
@@ -450,8 +398,6 @@ const PythagoreanCanvas = () => {
     square3.setAttribute('width', square3Size.toString());
     square3.setAttribute('height', square3Size.toString());
     square3.setAttribute('fill', colors.square3);
-    square3.setAttribute('stroke', colors.square3);
-    square3.setAttribute('stroke-width', '3');
     square3.setAttribute('transform', `translate(${square3Center.x}, ${square3Center.y}) rotate(${(angle * 180) / Math.PI})`);
     svg.appendChild(square3);
 
@@ -459,8 +405,6 @@ const PythagoreanCanvas = () => {
     const triangle = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
     triangle.setAttribute('points', `${points.A.x},${points.A.y} ${points.B.x},${points.B.y} ${points.C.x},${points.C.y}`);
     triangle.setAttribute('fill', colors.triangle);
-    triangle.setAttribute('stroke', colors.triangle);
-    triangle.setAttribute('stroke-width', '4');
     svg.appendChild(triangle);
 
     // Конвертуємо SVG в рядок
