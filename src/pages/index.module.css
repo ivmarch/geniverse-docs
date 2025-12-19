@@ -21,6 +21,7 @@
 
 .heroTitleWrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
@@ -28,8 +29,14 @@
 }
 
 .heroLogo {
-  height: 4rem;
+  height: 5rem;
   width: auto;
+}
+
+.heroBanner .hero__title {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin: 0;
 }
 
 @media screen and (max-width: 996px) {
