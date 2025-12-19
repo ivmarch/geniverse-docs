@@ -171,6 +171,18 @@ h3 {
   color: var(--ifm-color-primary);
 }
 
+.button--outline.button--secondary {
+  background-color: var(--ifm-color-primary);
+  color: #FFFFFF;
+  border: 1px solid var(--ifm-color-primary);
+}
+
+.button--outline.button--secondary:hover {
+  background-color: var(--ifm-color-primary-dark);
+  color: #FFFFFF;
+  border-color: var(--ifm-color-primary-dark);
+}
+
 /* Cards */
 .card {
   background-color: var(--ifm-card-background-color);
