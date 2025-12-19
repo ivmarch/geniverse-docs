@@ -7,25 +7,40 @@ export default function Diagrams(): JSX.Element {
 
   useEffect(() => {
     // Initialize Mermaid diagrams after component mounts
-    if (typeof window !== 'undefined' && (window as any).mermaid) {
-      (window as any).mermaid.initialize({
-        startOnLoad: true,
-        theme: 'dark',
-        themeVariables: {
-          primaryColor: '#34E1A1',
-          primaryTextColor: '#E8F9F0',
-          primaryBorderColor: '#2BC891',
-          lineColor: '#B8D4C5',
-          secondaryColor: '#141716',
-          tertiaryColor: '#0B0D0C',
-          background: '#0B0D0C',
-          mainBkg: '#141716',
-          secondBkg: '#1F2321',
-          textColor: '#E8F9F0',
-        },
-      });
-      (window as any).mermaid.run();
-    }
+    const initMermaid = () => {
+      if (typeof window !== 'undefined') {
+        // Wait for Mermaid to be available
+        const checkMermaid = () => {
+          if ((window as any).mermaid) {
+            (window as any).mermaid.initialize({
+              startOnLoad: true,
+              theme: 'dark',
+              themeVariables: {
+                primaryColor: '#34E1A1',
+                primaryTextColor: '#E8F9F0',
+                primaryBorderColor: '#2BC891',
+                lineColor: '#B8D4C5',
+                secondaryColor: '#141716',
+                tertiaryColor: '#0B0D0C',
+                background: '#0B0D0C',
+                mainBkg: '#141716',
+                secondBkg: '#1F2321',
+                textColor: '#E8F9F0',
+              },
+            });
+            // Run Mermaid on all .mermaid elements
+            (window as any).mermaid.run();
+          } else {
+            // Retry after a short delay if Mermaid is not yet loaded
+            setTimeout(checkMermaid, 100);
+          }
+        };
+        checkMermaid();
+      }
+    };
+
+    // Delay initialization to ensure DOM is ready
+    setTimeout(initMermaid, 100);
   }, []);
 
   const exportDiagram = (event: React.MouseEvent<HTMLButtonElement>, title: string) => {
