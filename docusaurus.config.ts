@@ -95,6 +95,10 @@ const config: Config = {
           label: 'Diagrams',
           position: 'left',
         },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
       ],
     },
     footer: {
