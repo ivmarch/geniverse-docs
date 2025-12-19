@@ -1,73 +1,94 @@
 # Design System
 
-GeniVerse's design system provides a cohesive visual language and component library that ensures consistency, accessibility, and a modern user experience across all platforms and interfaces.
+The GeniVerse design system forms a cohesive visual language and component library that ensures consistency, accessibility, and a modern user experience across all platforms and interfaces.
+
+---
 
 ## Design Tokens
 
+Design tokens are standardized values (colors, typography, spacing, radii, shadows) used across all platform components and products. They ensure UI integrity and simplify theme maintenance.
+
+---
+
 ### Color Palette
 
-**Primary Colors**
-- **Background**: `#0B0D0C` - Deep dark background for reduced eye strain
-- **Surface**: `#141716` - Elevated surfaces and cards
-- **Accent**: `#34E1A1` - Primary accent color for CTAs and highlights
-- **Text Primary**: `#E8F9F0` - Main text color for high contrast
-- **Text Secondary**: `#B8D4C5` - Secondary text for less emphasis
+#### Primary Colors
 
-**Semantic Colors**
-- **Success**: `#34E1A1` - Success states and positive feedback
-- **Warning**: `#FFB84D` - Warnings and cautionary messages
-- **Error**: `#FF6B6B` - Errors and critical alerts
-- **Info**: `#4DABF7` - Informational messages
+- **Background**: `#0B0D0C` — deep dark background for reduced eye strain
+- **Surface**: `#141716` — elevated surfaces and cards
+- **Accent**: `#34E1A1` — primary accent for CTAs and highlights
+- **Text Primary**: `#E8F9F0` — main text color for high contrast
+- **Text Secondary**: `#B8D4C5` — secondary text for less emphasis
 
-**Neutral Colors**
-- **Border**: `#1F2321` - Borders and dividers
-- **Hover**: `rgba(52, 225, 161, 0.1)` - Hover states
-- **Active**: `rgba(52, 225, 161, 0.15)` - Active states
-- **Overlay**: `rgba(11, 13, 12, 0.9)` - Modal and overlay backgrounds
+#### Semantic Colors
+
+- **Success**: `#34E1A1` — success states and positive feedback
+- **Warning**: `#FFB84D` — warnings and risk messages
+- **Error**: `#FF6B6B` — errors and critical alerts
+- **Info**: `#4DABF7` — informational messages
+
+#### Neutral Colors
+
+- **Border**: `#1F2321` — borders and dividers
+- **Hover**: `rgba(52, 225, 161, 0.1)` — hover state
+- **Active**: `rgba(52, 225, 161, 0.15)` — active state
+- **Overlay**: `rgba(11, 13, 12, 0.9)` — modal windows and overlays
+
+---
 
 ### Typography
 
-**Font Families**
-- **Headings**: `'Space Grotesk'` - Modern geometric sans-serif for headings
-- **Body**: `'Inter'` - Clean, readable sans-serif for body text
-- **Monospace**: `'JetBrains Mono'` - Code and technical content
+#### Font Families
 
-**Type Scale**
-- **H1**: `2.5rem` / `3rem` line-height - Page titles
-- **H2**: `2rem` / `2.5rem` line-height - Section headers
-- **H3**: `1.5rem` / `2rem` line-height - Subsection headers
-- **H4**: `1.25rem` / `1.75rem` line-height - Minor headers
-- **Body Large**: `1.125rem` / `1.75rem` line-height - Emphasized body
-- **Body**: `1rem` / `1.5rem` line-height - Standard body text
-- **Body Small**: `0.875rem` / `1.25rem` line-height - Secondary text
-- **Caption**: `0.75rem` / `1rem` line-height - Captions and labels
+- **Headings**: Garet — geometric sans-serif for headings
+- **Body**: Inter — readable sans-serif for body text
+- **Monospace**: JetBrains Mono — code and technical content
 
-**Font Weights**
-- **Light**: `300` - Subtle emphasis
-- **Regular**: `400` - Standard text
-- **Medium**: `500` - Medium emphasis
-- **Semibold**: `600` - Strong emphasis
-- **Bold**: `700` - Maximum emphasis
+#### Size Scale
+
+- **H1**: `2.5rem` / `3rem` line-height — page headings
+- **H2**: `2rem` / `2.5rem` line-height — section headings
+- **H3**: `1.5rem` / `2rem` line-height — subsection headings
+- **H4**: `1.25rem` / `1.75rem` line-height — minor headings
+- **Body Large**: `1.125rem` / `1.75rem` line-height — emphasized body text
+- **Body**: `1rem` / `1.5rem` line-height — standard body text
+- **Body Small**: `0.875rem` / `1.25rem` line-height — secondary text
+- **Caption**: `0.75rem` / `1rem` line-height — captions and labels
+
+#### Font Weights
+
+- **Light**: `300` — thin text
+- **Regular**: `400` — standard text
+- **Medium**: `500` — emphasized text
+- **Semibold**: `600` — semibold text
+- **Bold**: `700` — bold text
+
+---
 
 ### Spacing
 
-**Spacing Scale** (8px base unit)
-- `4px` - XS spacing
-- `8px` - S spacing
-- `16px` - M spacing
-- `24px` - L spacing
-- `32px` - XL spacing
-- `48px` - 2XL spacing
-- `64px` - 3XL spacing
-- `96px` - 4XL spacing
+Base unit: 8px.
 
-### Border Radius
+- `4px` — xs
+- `8px` — s
+- `16px` — m
+- `24px` — l
+- `32px` — xl
+- `48px` — 2xl
+- `64px` — 3xl
+- `96px` — 4xl
 
-- `4px` - Small elements (badges, tags)
-- `6px` - Standard elements (buttons, inputs)
-- `8px` - Cards and containers
-- `12px` - Large containers
-- `16px` - Modals and dialogs
+---
+
+### Border Radii
+
+- `4px` — small elements (icons, tags)
+- `6px` — standard elements (buttons, input fields)
+- `8px` — cards and containers
+- `12px` — large containers
+- `16px` — modal windows and dialogs
+
+---
 
 ### Shadows
 
@@ -76,240 +97,278 @@ GeniVerse's design system provides a cohesive visual language and component libr
 - **Large**: `0 8px 16px rgba(0, 0, 0, 0.2)`
 - **Accent**: `0 4px 12px rgba(52, 225, 161, 0.2)`
 
+---
+
 ## Component Library
+
+The component library implements design tokens as cohesive UI components for web, mobile, and XR interfaces.
+
+---
 
 ### Buttons
 
-**Primary Button**
-- Background: Accent color
-- Text: Dark background color
-- Hover: Darker accent shade
-- Active: Pressed state with shadow
+#### Primary Button
 
-**Secondary Button**
-- Background: Transparent
-- Border: Accent color
-- Text: Accent color
-- Hover: Accent background with low opacity
+- background: accent (#34E1A1)
+- text: background color or very dark contrasting
+- hover: darker shade of accent
+- active state: pressed state with shadow
 
-**Tertiary Button**
-- Background: Transparent
-- Text: Primary text color
-- Hover: Surface background
+#### Secondary Button
+
+- background: transparent
+- border: accent (#34E1A1)
+- text: accent
+- hover: accent background with low opacity
+
+#### Tertiary Button
+
+- background: transparent
+- text: primary text color (#E8F9F0)
+- hover: surface background (#141716)
+
+---
 
 ### Forms
 
-**Input Fields**
-- Background: Surface color
-- Border: Border color
-- Text: Primary text color
-- Focus: Accent border and glow
-- Placeholder: Secondary text color
+#### Input Fields
 
-**Labels**
-- Font: Body small, semibold
-- Color: Primary text color
-- Spacing: 8px below label
+- background: surface (#141716)
+- border: border (#1F2321)
+- text: primary text color (#E8F9F0)
+- focus: accent border (#34E1A1) and light glow
+- placeholder: secondary text color (#B8D4C5)
+- error states: border (#FF6B6B), text (#FF6B6B), background (error with low opacity)
 
-**Error States**
-- Border: Error color
-- Text: Error color
-- Background: Error color with low opacity
+---
 
 ### Cards
 
-**Standard Card**
-- Background: Surface color
-- Border: Border color
-- Border radius: 8px
-- Padding: 24px
-- Shadow: Medium shadow
+#### Standard Card
 
-**Interactive Card**
-- Hover: Accent border
-- Shadow: Accent shadow on hover
-- Transition: Smooth transitions
+- background: surface (#141716)
+- border: border (#1F2321)
+- radius: 8px
+- padding: 24px
+- shadow: medium (0 4px 8px rgba(0, 0, 0, 0.15))
+
+#### Interactive Card
+
+- hover: accent border (#34E1A1)
+- shadow: accent shadow (0 4px 12px rgba(52, 225, 161, 0.2))
+- transition: smooth transitions
+
+---
 
 ### Navigation
 
-**Navbar**
-- Background: Background color with border
-- Height: 64px
-- Border: Bottom border with border color
+#### Top Bar
 
-**Sidebar**
-- Background: Surface color
-- Border: Right border with border color
-- Width: 280px (collapsed: 64px)
+- background: background (#0B0D0C) with bottom border
+- height: 64px
+- border: 1px with border color (#1F2321)
 
-**Menu Items**
-- Padding: 12px 16px
-- Border radius: 6px
-- Hover: Accent background with low opacity
-- Active: Accent background, accent text
+#### Sidebar
 
-### Typography Components
+- background: surface (#141716)
+- border: right border with border color (#1F2321)
+- width: 280px, collapsed state 64px
+- menu items: padding 12px 16px, radius 6px, hover with accent background, active state with accent background and text
 
-**Headings**
-- Font family: Space Grotesk
-- Font weight: Semibold
-- Letter spacing: -0.02em
-- Color: Primary text color
+---
 
-**Body Text**
-- Font family: Inter
-- Font weight: Regular
-- Line height: 1.5
-- Color: Primary text color
+### Typographic Components
 
-**Links**
-- Color: Accent color
-- Hover: Lighter accent shade
-- Underline: On hover (optional)
+#### Headings
+
+- font: Garet
+- weight: semibold (600)
+- letter-spacing: -0.02em
+- color: primary text color (#E8F9F0)
+
+#### Body Text
+
+- font: Inter
+- weight: regular (400)
+- line-height: 1.5
+- color: primary text color (#E8F9F0)
+
+#### Links
+
+- color: accent (#34E1A1)
+- hover: lighter shade of accent (#58E6B2)
+- underline: on hover, when needed
+
+---
 
 ### Code Blocks
 
-**Syntax Highlighting**
-- Background: Surface color
-- Border: Border color
-- Font: Monospace font
-- Theme: Dark theme with accent highlights
+```javascript
+function example() {
+  return "Code example";
+}
+```
+
+- background: surface (#141716)
+- border: border (#1F2321)
+- font: JetBrains Mono
+- theme: dark with accent highlights
+
+---
 
 ### Tables
 
-**Table Structure**
-- Header: Surface background
-- Rows: Alternating surface background
-- Border: Border color
-- Hover: Accent background with low opacity
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1    | Data     | Value    |
+| Row 2    | Data     | Value    |
+| Row 3    | Data     | Value    |
+
+- header: surface background (#141716)
+- rows: alternating surface background
+- borders: border color (#1F2321)
+- hover: accent background with low opacity
+
+---
 
 ## Layout Patterns
 
 ### Grid System
 
-**12-Column Grid**
-- Max width: 1280px
-- Gutter: 24px
-- Breakpoints:
-  - Mobile: < 768px
-  - Tablet: 768px - 1024px
-  - Desktop: > 1024px
+12-column grid:
+
+- maximum width: 1280px
+- gap: 24px
+- breakpoints:
+  - mobile: < 768px
+  - tablet: 768px–1024px
+  - desktop: > 1024px
 
 ### Container Sizes
 
-- **Small**: 640px max width
-- **Medium**: 960px max width
-- **Large**: 1280px max width
-- **Full**: 100% width
+- small: up to 640px
+- medium: up to 960px
+- large: up to 1280px
+- full: 100%
 
 ### Spacing Patterns
 
-- **Section Spacing**: 64px vertical
-- **Component Spacing**: 32px vertical
-- **Element Spacing**: 16px vertical
-- **Inline Spacing**: 8px horizontal
+- section spacing: 64px vertically
+- component spacing: 32px vertically
+- element spacing: 16px vertically
+- internal spacing: 8px horizontally
+
+---
 
 ## Accessibility
 
 ### Color Contrast
 
-- **Text on Background**: Minimum 4.5:1 ratio (WCAG AA)
-- **Large Text**: Minimum 3:1 ratio
-- **Interactive Elements**: Minimum 3:1 ratio
+- text on background: minimum ratio 4.5:1
+- large text: minimum ratio 3:1
+- interactive elements: minimum ratio 3:1
 
 ### Focus States
 
-- **Focus Ring**: 2px solid accent color
-- **Focus Offset**: 2px outline offset
-- **Keyboard Navigation**: All interactive elements accessible
+- focus ring: 2px solid accent color (#34E1A1)
+- focus offset: 2px
+- keyboard navigation: all interactive elements accessible
 
-### Screen Readers
+### Screen Reader Support
 
-- **Semantic HTML**: Proper HTML elements
-- **ARIA Labels**: Descriptive labels for complex components
-- **Alt Text**: All images have descriptive alt text
-- **Landmarks**: Proper landmark usage
+- semantic HTML for basic components
+- aria attributes for complex components
+- alternative text for images
+- correct landmarks and page structures
+
+---
 
 ## Responsive Design
 
+### Mobile-First Approach
+
+Design is projected from mobile screens and scales to larger ones.
+
 ### Breakpoints
 
-- **Mobile**: 0px - 767px
-- **Tablet**: 768px - 1023px
-- **Desktop**: 1024px - 1279px
-- **Large Desktop**: 1280px+
+- mobile: up to 768px
+- tablet: 768px–1024px
+- desktop: over 1024px
 
-### Mobile Considerations
+### Responsive Components
 
-- **Touch Targets**: Minimum 44x44px
-- **Spacing**: Increased spacing for touch
-- **Typography**: Slightly larger on mobile
-- **Navigation**: Collapsible navigation
+- navigation transitions to hamburger menu on mobile
+- tables become scrollable or displayed in card format
+- forms optimized for mobile devices
 
-## Animation & Transitions
+---
 
-### Timing Functions
+## Dark Theme
 
-- **Ease In**: `cubic-bezier(0.4, 0, 1, 1)`
-- **Ease Out**: `cubic-bezier(0, 0, 0.2, 1)`
-- **Ease In Out**: `cubic-bezier(0.4, 0, 0.2, 1)`
+All components support dark theme with correct contrasts and states.
 
-### Durations
+**Theme Switching:**
 
-- **Fast**: 150ms - Micro-interactions
-- **Standard**: 250ms - Standard transitions
-- **Slow**: 350ms - Complex animations
+- automatic detection of system settings
+- manual switching by user
+- saving user choice
 
-### Common Animations
+---
 
-- **Fade In**: Opacity 0 to 1
-- **Slide In**: Transform translate
-- **Scale**: Transform scale
-- **Hover**: Subtle scale or shadow increase
+## Animations and Transitions
 
-## XR Design Considerations
+### Animation Principles
 
-### 3D UI Elements
+- duration: 200–300 ms
+- easing: natural smoothing curves
+- purpose: animations enhance UX and don't distract from learning
 
-- **Depth**: Proper Z-ordering for 3D interfaces
-- **Scale**: Appropriate sizing for VR/AR
-- **Contrast**: High contrast for readability
-- **Comfort**: Comfortable viewing angles
+### Animation Types
 
-### Interaction Patterns
+- transitions between component states
+- loading indicators and skeletons
+- user action feedback
+- micro-interactions for interaction confirmation
 
-- **Gaze**: Gaze-based selection
-- **Point**: Point and click interactions
-- **Grab**: Natural grab interactions
-- **Gesture**: Hand gesture recognition
+---
+
+## XR Interaction Patterns
+
+- gaze as selection method in XR scenarios
+- pointing and action confirmation
+- object capture and manipulation
+- gestures as separate input type when device support is available
+
+---
 
 ## Implementation
 
 ### CSS Variables
 
-All design tokens are available as CSS variables for easy theming and customization.
+Design tokens are available as CSS variables for theming and configuration.
 
 ### Component Library
 
-React components implementing the design system are available for use across the platform.
+React components implement the design system and are used in the platform web interface.
 
 ### Design Tools
 
-Figma design files and component libraries are maintained for design consistency.
+Figma files and component libraries are maintained for solution consistency and rapid development.
+
+---
 
 ## Usage Guidelines
 
-### When to Use Components
+- use standard components for consistency
+- customize components only when needed
+- always consider accessibility
+- follow spacing and typography scales
 
-- Use standard components for consistency
-- Customize only when necessary
-- Maintain accessibility standards
-- Follow spacing and typography guidelines
+---
 
-### Best Practices
+## Best Practices
 
-- **Consistency**: Use design system components
-- **Accessibility**: Always consider accessibility
-- **Performance**: Optimize for performance
-- **Responsive**: Design for all screen sizes
-
+- consistency: use design system components
+- accessibility: check contrast, focus, and keyboard navigation
+- performance: optimize components and animations
+- responsiveness: test all critical scenarios on different screens

@@ -17,7 +17,7 @@ function HomepageHeader() {
             GeniVerse
           </Heading>
         </div>
-        <p className="hero__subtitle">AI-Powered Immersive Learning Platform</p>
+        <p className="hero__subtitle" style={{ color: '#FFFFFF' }}>AI-Powered Immersive Learning Platform</p>
       </div>
     </header>
   );

@@ -1,7 +1,7 @@
 {
   "id": "design-system",
   "title": "Design System",
-  "description": "GeniVerse's design system provides a cohesive visual language and component library that ensures consistency, accessibility, and a modern user experience across all platforms and interfaces.",
+  "description": "The GeniVerse design system forms a cohesive visual language and component library that ensures consistency, accessibility, and a modern user experience across all platforms and interfaces.",
   "source": "@site/docs/design-system.md",
   "sourceDirName": ".",
   "slug": "/design-system",

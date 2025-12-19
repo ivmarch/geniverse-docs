@@ -17,6 +17,12 @@
 
 .heroBanner .hero__subtitle {
   color: #FFFFFF !important;
+  opacity: 1 !important;
+}
+
+.heroBanner :global(.hero__subtitle) {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
 }
 
 .heroTitleWrapper {
