@@ -16,12 +16,13 @@ const config: Config = {
   organizationName: 'geniverse',
   projectName: 'geniverse-docs',
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-
   // Enable Mermaid diagrams
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenLinks: 'throw',
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
 
   themes: ['@docusaurus/theme-mermaid'],
@@ -33,7 +34,6 @@ const config: Config = {
         hashed: true,
         language: ['en'],
         highlightSearchTermsOnTargetPage: true,
-        explicitSearchResultPath: true,
       },
     ],
   ],
