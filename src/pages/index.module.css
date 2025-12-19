@@ -11,6 +11,14 @@
   background: linear-gradient(135deg, #0B0D0C 0%, #141716 100%);
 }
 
+.heroBanner .hero__title {
+  color: #FFFFFF !important;
+}
+
+.heroBanner .hero__subtitle {
+  color: #FFFFFF !important;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;

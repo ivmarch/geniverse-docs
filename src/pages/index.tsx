@@ -8,26 +8,13 @@ import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+          GeniVerse
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--primary button--lg"
-            to="/overview">
-            Get Started
-          </Link>
-          <Link
-            className="button button--outline button--secondary button--lg"
-            to="/diagrams">
-            View Diagrams
-          </Link>
-        </div>
+        <p className="hero__subtitle">Платформа для навчання з підтримкою ШІ та імерсивних технологій</p>
       </div>
     </header>
   );
@@ -72,11 +59,10 @@ function HomepageFeatures(): JSX.Element {
 }
 
 export default function Home(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title}`}
-      description="AI-Powered Immersive Learning Platform">
+      title="GeniVerse"
+      description="Платформа для навчання з підтримкою ШІ та імерсивних технологій">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
@@ -103,22 +89,6 @@ export default function Home(): JSX.Element {
                         </p>
                         <Link to="/overview" className="button button--primary">
                           Read Overview
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col col--6 margin-bottom--md">
-                    <div className="card">
-                      <div className="card__header">
-                        <Heading as="h3">Visual Guides</Heading>
-                      </div>
-                      <div className="card__body">
-                        <p>
-                          Explore system diagrams, learning loops, and architecture maps
-                          in our diagrams section.
-                        </p>
-                        <Link to="/diagrams" className="button button--primary">
-                          View Diagrams
                         </Link>
                       </div>
                     </div>
