@@ -194,8 +194,8 @@ h3 {
 .docusaurus-mermaid-container {
   background-color: #0B0D0C !important;
   border-radius: 8px;
-  padding: 2rem;
-  margin: 2rem auto;
+  padding: 2.5rem;
+  margin: 2.5rem auto;
   border: 1px solid #1F2321;
   max-width: 100%;
   display: flex;
@@ -203,11 +203,22 @@ h3 {
   align-items: center;
 }
 
+/* Center Mermaid SVG */
+.mermaid svg,
+.docusaurus-mermaid-container svg {
+  margin: 0 auto;
+  display: block;
+}
+
 /* Mermaid SVG styling - dark background and light text */
 .mermaid svg,
 .docusaurus-mermaid-container svg {
   background-color: #0B0D0C !important;
   background: #0B0D0C !important;
+  margin: 0 auto !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
 }
 
 /* Mermaid text elements - light color - override all text */
@@ -232,12 +243,22 @@ h3 {
   fill: #E8F9F0 !important;
   color: #E8F9F0 !important;
   stroke: none !important;
-  font-size: 14px !important;
+  font-size: 16px !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
   font-weight: 500 !important;
+  dominant-baseline: central !important;
+  text-anchor: middle !important;
 }
 
-/* Mermaid node backgrounds - dark - override inline styles */
+/* Adjust text position slightly lower in nodes */
+.mermaid svg .nodeLabel,
+.mermaid svg .label text,
+.docusaurus-mermaid-container svg .nodeLabel,
+.docusaurus-mermaid-container svg .label text {
+  transform: translateY(2px) !important;
+}
+
+/* Mermaid node backgrounds - dark - override inline styles with rounded corners */
 .mermaid svg .node rect,
 .mermaid svg .node circle,
 .mermaid svg .node ellipse,
@@ -254,6 +275,8 @@ h3 {
 .docusaurus-mermaid-container svg .cluster path {
   fill: #141716 !important;
   stroke: #58E6B2 !important;
+  rx: 8px !important;
+  ry: 8px !important;
 }
 
 /* Override specific node styles that might have inline colors */
