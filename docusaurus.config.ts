@@ -33,7 +33,6 @@ const config: Config = {
       {
         hashed: true,
         language: ['en'],
-        highlightSearchTermsOnTargetPage: true,
       },
     ],
   ],
