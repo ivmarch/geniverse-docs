@@ -15,10 +15,6 @@ graph TD
     G[Батько/Опікун] --> E
     H[Гість] --> E
     
-    style A fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style B fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style E fill:#A0A0A0,stroke:#808080,stroke-width:2px
 ```
 
 ## Основні Ролі

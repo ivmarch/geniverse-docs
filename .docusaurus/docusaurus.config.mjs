@@ -70,10 +70,32 @@ export default {
     "image": "img/geniverse-social-card.jpg",
     "mermaid": {
       "theme": {
-        "light": "dark",
-        "dark": "dark"
+        "light": "base",
+        "dark": "base"
       },
-      "options": {}
+      "options": {
+        "themeVariables": {
+          "primaryColor": "#1a1a1a",
+          "primaryTextColor": "#ffffff",
+          "primaryBorderColor": "#7CECBF",
+          "lineColor": "#7CECBF",
+          "secondaryColor": "#2d2d2d",
+          "tertiaryColor": "#3a3a3a",
+          "background": "#0B0D0C",
+          "mainBkg": "#1a1a1a",
+          "secondBkg": "#2d2d2d",
+          "mainContrastColor": "#ffffff",
+          "darkMode": true,
+          "textColor": "#ffffff",
+          "nodeBorder": "#7CECBF",
+          "clusterBkg": "#2d2d2d",
+          "clusterBorder": "#7CECBF",
+          "defaultLinkColor": "#7CECBF",
+          "titleColor": "#ffffff",
+          "edgeLabelBackground": "#1a1a1a",
+          "nodeTextColor": "#ffffff"
+        }
+      }
     },
     "navbar": {
       "title": "GeniVerse",

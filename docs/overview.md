@@ -18,28 +18,38 @@ GeniVerse reimagines education by combining cutting-edge AI with immersive techn
 
 ```mermaid
 graph TB
-    subgraph "GeniVerse Platform"
-        AI[AI Layer]
-        XR[XR Engine]
-        Core[Core Services]
-        Auth[Auth & RBAC]
-        Data[Data Layer]
-    end
+    User[Users]
     
-    subgraph "User Interfaces"
+    subgraph UI[" "]
+        direction LR
         Web[Web Client]
         Mobile[Mobile App]
         VR[VR Headset]
         AR[AR Device]
     end
     
-    subgraph "External Services"
+    subgraph Platform[" "]
+        direction TB
+        Core[Core Services]
+        
+        subgraph PlatformServices[" "]
+            direction LR
+            AI[AI Layer]
+            Auth[Auth & RBAC]
+            Data[Data Layer]
+        end
+        
+        XR[XR Engine]
+    end
+    
+    subgraph External[" "]
+        direction LR
         LMS[LMS Integration]
         Cloud[Cloud Services]
         Edge[Edge Computing]
     end
     
-    User[Users] --> Web
+    User --> Web
     User --> Mobile
     User --> VR
     User --> AR
@@ -57,7 +67,45 @@ graph TB
     Core --> LMS
     Core --> Cloud
     Core --> Edge
+    
+    classDef userClass fill:#141716,stroke:#58E6B2,stroke-width:2px
+    classDef uiClass fill:#141716,stroke:#58E6B2,stroke-width:2px
+    classDef coreClass fill:#141716,stroke:#7CECBF,stroke-width:2px
+    classDef platformClass fill:#141716,stroke:#58E6B2,stroke-width:2px
+    classDef externalClass fill:#141716,stroke:#58E6B2,stroke-width:2px
+    
+    class User userClass
+    class Web,Mobile,VR,AR uiClass
+    class Core coreClass
+    class AI,Auth,Data,XR platformClass
+    class LMS,Cloud,Edge externalClass
 ```
+
+### Architecture Components
+
+**Users**  
+End users of the platform: learners, students, educators, administrators, and other participants in the educational process.
+
+**User Interfaces**  
+Various client applications for accessing the platform: web browsers, mobile apps, virtual and augmented reality devices.
+
+**Core Services**  
+The central component of the platform that coordinates interaction between all systems and provides core business logic.
+
+**AI Layer**  
+Artificial intelligence component for data analysis, recommendation generation, and adaptive learning path formation.
+
+**Auth & RBAC**  
+Access management and user role system that ensures security and access control to resources.
+
+**Data Layer**  
+Data storage and management system, including learning materials, user profiles, and analytics.
+
+**XR Engine**  
+Specialized component for processing and rendering virtual and augmented reality experiences.
+
+**External Services**  
+Integrations with external systems: LMS, cloud services, and edge computing for distributed load handling.
 
 ## Getting Started
 

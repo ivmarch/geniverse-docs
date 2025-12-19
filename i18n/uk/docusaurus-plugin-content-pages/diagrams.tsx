@@ -92,11 +92,7 @@ export default function Diagrams(): JSX.Element {
 
     Core --> LMS
     Core --> Cloud
-    Core --> Edge
-
-    style AI fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style XR fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style Core fill:#A0A0A0,stroke:#808080,stroke-width:2px`} />
+    Core --> Edge`} />
               </div>
             </div>
           </div>
@@ -119,13 +115,7 @@ export default function Diagrams(): JSX.Element {
     B --> C[Доставити]
     C --> D[Залучити]
     D --> E[Виміряти]
-    E --> A
-
-    style A fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style B fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style D fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style E fill:#7CECBF,stroke:#58E6B2,stroke-width:2px`} />
+    E --> A`} />
               </div>
             </div>
           </div>
@@ -151,12 +141,7 @@ export default function Diagrams(): JSX.Element {
     C --> F[Асистент Викладача]
     D --> E
     G[Батько/Опікун] --> E
-    H[Гість] --> E
-
-    style A fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style B fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
-    style E fill:#A0A0A0,stroke:#808080,stroke-width:2px`} />
+    H[Гість] --> E`} />
               </div>
             </div>
           </div>
@@ -181,9 +166,7 @@ export default function Diagrams(): JSX.Element {
 
     E[Дані Про Продуктивність] --> C
     F[Навчальні Цілі] --> C
-    G[Контекст] --> C
-
-    style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px`} />
+    G[Контекст] --> C`} />
               </div>
             </div>
           </div>
