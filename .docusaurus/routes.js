@@ -4,32 +4,17 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 export default [
   {
     path: '/uk/diagrams',
-    component: ComponentCreator('/uk/diagrams', 'da1'),
+    component: ComponentCreator('/uk/diagrams', '20c'),
     exact: true
   },
   {
     path: '/uk/pythagorean',
-    component: ComponentCreator('/uk/pythagorean', 'e21'),
-    exact: true
-  },
-  {
-    path: '/uk/uk/',
-    component: ComponentCreator('/uk/uk/', '0dc'),
-    exact: true
-  },
-  {
-    path: '/uk/uk/diagrams',
-    component: ComponentCreator('/uk/uk/diagrams', '734'),
-    exact: true
-  },
-  {
-    path: '/uk/uk/pythagorean',
-    component: ComponentCreator('/uk/uk/pythagorean', 'bdc'),
+    component: ComponentCreator('/uk/pythagorean', '893'),
     exact: true
   },
   {
     path: '/uk/',
-    component: ComponentCreator('/uk/', '69b'),
+    component: ComponentCreator('/uk/', '737'),
     exact: true
   },
   {

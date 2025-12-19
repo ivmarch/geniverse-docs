@@ -9,6 +9,8 @@ const PythagoreanCanvas = () => {
   const [fillMode, setFillMode] = useState<'solid' | 'gradient' | 'pattern'>('gradient');
   const [animationMode, setAnimationMode] = useState<'none' | 'pulse' | 'rotate' | 'wave'>('none');
   const [showTrail, setShowTrail] = useState(false);
+  const [sizeAnimation, setSizeAnimation] = useState(false);
+  const [noiseIntensity, setNoiseIntensity] = useState(50); // Інтенсивність noise (0-100)
 
   // Кольори для квадратів та трикутника
   const [colors, setColors] = useState({
@@ -39,6 +41,17 @@ const PythagoreanCanvas = () => {
   }>>([]);
   const animationFrameRef = useRef<number | undefined>(undefined);
   const timeRef = useRef(0);
+  const baseLeg1Size = useRef(200);
+  const baseLeg2Size = useRef(200);
+
+  // Проста noise функція (комбінація синусів для плавного noise)
+  const noise = (t: number, offset: number = 0): number => {
+    return (
+      Math.sin(t * 0.5 + offset) * 0.5 +
+      Math.sin(t * 1.3 + offset * 1.7) * 0.3 +
+      Math.sin(t * 2.1 + offset * 2.3) * 0.2
+    );
+  };
 
   // Оновлення точок при зміні розмірів катетів
   useEffect(() => {
@@ -48,6 +61,32 @@ const PythagoreanCanvas = () => {
       C: {x: 200 + leg2Size, y: 400},
     });
   }, [leg1Size, leg2Size]);
+
+  // Анімація розмірів на основі noise
+  useEffect(() => {
+    if (!sizeAnimation) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      const time = timeRef.current;
+      const intensity = noiseIntensity / 100;
+      
+      // Генеруємо noise значення для кожного катета
+      const noise1 = noise(time, 0);
+      const noise2 = noise(time, Math.PI);
+
+      // Оновлюємо розміри на основі noise від базових значень
+      const newLeg1 = baseLeg1Size.current + noise1 * intensity * 100;
+      const newLeg2 = baseLeg2Size.current + noise2 * intensity * 100;
+
+      // Обмежуємо розміри в межах 50-300
+      setLeg1Size(Math.max(50, Math.min(300, newLeg1)));
+      setLeg2Size(Math.max(50, Math.min(300, newLeg2)));
+    }, 16); // ~60 FPS
+
+    return () => clearInterval(interval);
+  }, [sizeAnimation, noiseIntensity]);
 
   // Обчислення довжин сторін
   const calcDistance = (p1: {x: number; y: number}, p2: {x: number; y: number}) => {
@@ -484,8 +523,11 @@ const PythagoreanCanvas = () => {
   };
 
   const resetTriangle = () => {
-    setLeg1Size(200);
-    setLeg2Size(200);
+    const resetSize = 200;
+    setLeg1Size(resetSize);
+    setLeg2Size(resetSize);
+    baseLeg1Size.current = resetSize;
+    baseLeg2Size.current = resetSize;
   };
 
   return (
@@ -621,6 +663,36 @@ const PythagoreanCanvas = () => {
               />
               <span>Слід</span>
             </label>
+            <label style={{display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem'}}>
+              <input
+                type="checkbox"
+                checked={sizeAnimation}
+                onChange={(e) => {
+                  setSizeAnimation(e.target.checked);
+                  if (e.target.checked) {
+                    baseLeg1Size.current = leg1Size;
+                    baseLeg2Size.current = leg2Size;
+                  }
+                }}
+                style={{width: '1rem', height: '1rem'}}
+              />
+              <span>Анімація розмірів</span>
+            </label>
+            {sizeAnimation && (
+              <label style={{display: 'block', marginTop: '0.5rem'}}>
+                <span style={{display: 'block', marginBottom: '0.25rem', fontSize: '0.875rem'}}>
+                  Інтенсивність: {noiseIntensity}%
+                </span>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={noiseIntensity}
+                  onChange={(e) => setNoiseIntensity(Number(e.target.value))}
+                  style={{width: '100%'}}
+                />
+              </label>
+            )}
           </div>
 
           <div style={{backgroundColor: '#141716', borderRadius: '8px', padding: '1rem'}}>
