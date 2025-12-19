@@ -1,72 +1,183 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
-import styles from '@site/src/pages/design-system.module.css';
+import styles from './design-system.module.css';
 
-// Design tokens
-const tokens = {
-  colors: {
-    bg: '#0B0D0C',
-    surface: '#141716',
-    accent: '#34E1A1',
-    text: '#E8F9F0',
-    textSecondary: '#B8D4C5',
-    success: '#34E1A1',
-    warning: '#FFB84D',
-    error: '#FF6B6B',
-    info: '#4DABF7',
-    border: '#1F2321',
-    hover: 'rgba(52, 225, 161, 0.1)',
-    active: 'rgba(52, 225, 161, 0.15)',
-    overlay: 'rgba(11, 13, 12, 0.9)',
-  },
-  typography: {
-    headings: 'Garet',
-    body: 'Inter',
-    mono: 'JetBrains Mono',
-    scale: {
-      h1: { size: '2.5rem', lineHeight: '3rem' },
-      h2: { size: '2rem', lineHeight: '2.5rem' },
-      h3: { size: '1.5rem', lineHeight: '2rem' },
-      h4: { size: '1.25rem', lineHeight: '1.75rem' },
-      bodyLg: { size: '1.125rem', lineHeight: '1.75rem' },
-      body: { size: '1rem', lineHeight: '1.5rem' },
-      bodySm: { size: '0.875rem', lineHeight: '1.25rem' },
-      caption: { size: '0.75rem', lineHeight: '1rem' },
+// Theme presets
+const themes = {
+  Core: {
+    colors: {
+      bg: '#0B0D0C',
+      surface: '#141716',
+      accent: '#34E1A1',
+      text: '#E8F9F0',
+      textSecondary: '#B8D4C5',
+      border: '#1F2321',
+      success: '#34E1A1',
+      warning: '#FFB84D',
+      error: '#FF6B6B',
+      info: '#4DABF7',
+      hover: 'rgba(52, 225, 161, 0.1)',
+      active: 'rgba(52, 225, 161, 0.15)',
+      overlay: 'rgba(11, 13, 12, 0.9)',
     },
-    weights: [300, 400, 500, 600, 700],
+    radius: 12,
+    shadow: '0 4px 8px rgba(0, 0, 0, 0.15)',
+    spacingMultiplier: 1,
+    fontScale: 1,
+    motion: true,
+    density: 'default',
   },
-  spacing: [4, 8, 16, 24, 32, 48, 64, 96],
-  radii: [4, 6, 8, 12, 16],
-  shadows: {
-    sm: '0 1px 2px rgba(0, 0, 0, 0.1)',
-    md: '0 4px 8px rgba(0, 0, 0, 0.15)',
-    lg: '0 8px 16px rgba(0, 0, 0, 0.2)',
-    accent: '0 4px 12px rgba(52, 225, 161, 0.2)',
+  Kids: {
+    colors: {
+      bg: '#1A1F2E',
+      surface: '#252B3D',
+      accent: '#FF6B9D',
+      text: '#FFFFFF',
+      textSecondary: '#C8D0E8',
+      border: '#2F3547',
+      success: '#4ECDC4',
+      warning: '#FFE66D',
+      error: '#FF6B6B',
+      info: '#95E1D3',
+      hover: 'rgba(255, 107, 157, 0.15)',
+      active: 'rgba(255, 107, 157, 0.25)',
+      overlay: 'rgba(26, 31, 46, 0.95)',
+    },
+    radius: 16,
+    shadow: '0 6px 12px rgba(0, 0, 0, 0.2)',
+    spacingMultiplier: 1.2,
+    fontScale: 1.1,
+    motion: true,
+    density: 'roomy',
+  },
+  Teens: {
+    colors: {
+      bg: '#0F1419',
+      surface: '#1A1F26',
+      accent: '#00D9FF',
+      text: '#E8F0F5',
+      textSecondary: '#A8B8C8',
+      border: '#252A33',
+      success: '#00FF88',
+      warning: '#FFB84D',
+      error: '#FF4757',
+      info: '#5B8DEF',
+      hover: 'rgba(0, 217, 255, 0.1)',
+      active: 'rgba(0, 217, 255, 0.2)',
+      overlay: 'rgba(15, 20, 25, 0.95)',
+    },
+    radius: 10,
+    shadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+    spacingMultiplier: 1,
+    fontScale: 1,
+    motion: true,
+    density: 'default',
+  },
+  Exam: {
+    colors: {
+      bg: '#FFFFFF',
+      surface: '#F5F5F5',
+      accent: '#0066CC',
+      text: '#1A1A1A',
+      textSecondary: '#666666',
+      border: '#E0E0E0',
+      success: '#00AA44',
+      warning: '#FF8800',
+      error: '#CC0000',
+      info: '#0066CC',
+      hover: 'rgba(0, 102, 204, 0.1)',
+      active: 'rgba(0, 102, 204, 0.15)',
+      overlay: 'rgba(255, 255, 255, 0.95)',
+    },
+    radius: 8,
+    shadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+    spacingMultiplier: 1,
+    fontScale: 1,
+    motion: false,
+    density: 'compact',
+  },
+  HighContrast: {
+    colors: {
+      bg: '#000000',
+      surface: '#1A1A1A',
+      accent: '#00FF00',
+      text: '#FFFFFF',
+      textSecondary: '#CCCCCC',
+      border: '#FFFFFF',
+      success: '#00FF00',
+      warning: '#FFFF00',
+      error: '#FF0000',
+      info: '#00FFFF',
+      hover: 'rgba(0, 255, 0, 0.2)',
+      active: 'rgba(0, 255, 0, 0.3)',
+      overlay: 'rgba(0, 0, 0, 0.95)',
+    },
+    radius: 4,
+    shadow: 'none',
+    spacingMultiplier: 1.1,
+    fontScale: 1.1,
+    motion: false,
+    density: 'default',
+  },
+  Projector: {
+    colors: {
+      bg: '#0A0A0A',
+      surface: '#1A1A1A',
+      accent: '#FFD700',
+      text: '#FFFFFF',
+      textSecondary: '#CCCCCC',
+      border: '#333333',
+      success: '#00FF00',
+      warning: '#FFAA00',
+      error: '#FF4444',
+      info: '#00AAFF',
+      hover: 'rgba(255, 215, 0, 0.2)',
+      active: 'rgba(255, 215, 0, 0.3)',
+      overlay: 'rgba(10, 10, 10, 0.95)',
+    },
+    radius: 8,
+    shadow: '0 8px 16px rgba(0, 0, 0, 0.5)',
+    spacingMultiplier: 1.15,
+    fontScale: 1.15,
+    motion: false,
+    density: 'roomy',
   },
 };
 
+type ThemePreset = keyof typeof themes;
+type Mode = 'light' | 'dark';
+type Density = 'roomy' | 'default' | 'compact';
+type TokenFormat = 'hex' | 'css';
+
 // Helper function to copy to clipboard
 const copyToClipboard = (text: string) => {
-  navigator.clipboard.writeText(text).then(() => {
-    // Visual feedback could be added here
-  });
+  navigator.clipboard.writeText(text);
 };
 
 // Color Swatch Component
 const ColorSwatch: React.FC<{
   name: string;
   value: string;
-  description?: string;
-  format: 'hex' | 'css';
-}> = ({ name, value, description, format }) => {
+  format: TokenFormat;
+  theme: typeof themes.Core;
+}> = ({ name, value, format, theme }) => {
   const [copied, setCopied] = useState(false);
-  const displayValue = format === 'hex' ? value : `var(--color-${name.toLowerCase()})`;
-
+  const displayValue = format === 'hex' ? value : `var(--color-${name.toLowerCase().replace(/\s+/g, '-')})`;
+  
   const handleCopy = () => {
     copyToClipboard(format === 'hex' ? value : displayValue);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  // Calculate contrast (simplified)
+  const getContrast = (color: string, bg: string) => {
+    // Simplified contrast check
+    if (name.toLowerCase().includes('text') && color === theme.colors.text) {
+      return 'OK';
+    }
+    return '';
   };
 
   return (
@@ -75,8 +186,8 @@ const ColorSwatch: React.FC<{
         className={styles.colorSwatchPreview}
         style={{
           backgroundColor: value,
-          border: value === tokens.colors.bg || value === tokens.colors.surface || value === tokens.colors.border
-            ? `1px solid ${tokens.colors.border}`
+          border: value === theme.colors.bg || value === theme.colors.surface || value === theme.colors.border
+            ? `1px solid ${theme.colors.border}`
             : 'none',
         }}
       />
@@ -89,42 +200,10 @@ const ColorSwatch: React.FC<{
         >
           {copied ? '✓' : displayValue}
         </button>
-        {description && (
-          <div className={styles.colorSwatchDescription}>{description}</div>
+        {getContrast(value, theme.colors.bg) && (
+          <div className={styles.contrastBadge}>{getContrast(value, theme.colors.bg)}</div>
         )}
       </div>
-    </div>
-  );
-};
-
-// Token Display Component
-const TokenDisplay: React.FC<{
-  label: string;
-  value: string;
-  format: 'hex' | 'css';
-  type?: 'color' | 'spacing' | 'radius' | 'shadow' | 'typography';
-}> = ({ label, value, format, type = 'spacing' }) => {
-  const [copied, setCopied] = useState(false);
-  const displayValue = format === 'hex' || type === 'spacing' || type === 'radius'
-    ? value
-    : `var(--${type}-${label.toLowerCase().replace(/\s+/g, '-')})`;
-
-  const handleCopy = () => {
-    copyToClipboard(displayValue);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  return (
-    <div className={styles.tokenDisplay}>
-      <div className={styles.tokenLabel}>{label}</div>
-      <button
-        className={styles.copyButton}
-        onClick={handleCopy}
-        title="Копіювати"
-      >
-        {copied ? '✓' : displayValue}
-      </button>
     </div>
   );
 };
@@ -144,28 +223,46 @@ const Section: React.FC<{
 };
 
 export default function DesignSystem(): React.JSX.Element {
-  const [format, setFormat] = useState<'hex' | 'css'>('hex');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [themePreset, setThemePreset] = useState<ThemePreset>('Core');
+  const [mode, setMode] = useState<Mode>('dark');
+  const [density, setDensity] = useState<Density>('default');
+  const [motion, setMotion] = useState(true);
+  const [fontScale, setFontScale] = useState(100);
+  const [tokenFormat, setTokenFormat] = useState<TokenFormat>('hex');
   const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
 
+  const currentTheme = themes[themePreset];
+  const effectiveFontScale = (fontScale / 100) * currentTheme.fontScale;
+
+  // Apply theme via CSS variables
+  const themeVars = {
+    '--ds-bg': currentTheme.colors.bg,
+    '--ds-surface': currentTheme.colors.surface,
+    '--ds-accent': currentTheme.colors.accent,
+    '--ds-text': currentTheme.colors.text,
+    '--ds-text-secondary': currentTheme.colors.textSecondary,
+    '--ds-border': currentTheme.colors.border,
+    '--ds-success': currentTheme.colors.success,
+    '--ds-warning': currentTheme.colors.warning,
+    '--ds-error': currentTheme.colors.error,
+    '--ds-info': currentTheme.colors.info,
+    '--ds-hover': currentTheme.colors.hover,
+    '--ds-active': currentTheme.colors.active,
+    '--ds-overlay': currentTheme.colors.overlay,
+    '--ds-radius': `${currentTheme.radius}px`,
+    '--ds-shadow': currentTheme.shadow,
+    '--ds-spacing': currentTheme.spacingMultiplier,
+    '--ds-font-scale': effectiveFontScale,
+    '--ds-motion': motion ? 'all 0.2s ease' : 'none',
+  } as React.CSSProperties;
+
   const sections = [
-    { id: 'colors', title: 'Кольори' },
+    { id: 'architecture', title: 'Архітектура' },
+    { id: 'tokens', title: 'Токени' },
     { id: 'typography', title: 'Типографіка' },
-    { id: 'spacing', title: 'Відступи' },
-    { id: 'radii', title: 'Радіуси меж' },
-    { id: 'shadows', title: 'Тіні' },
-    { id: 'buttons', title: 'Кнопки' },
-    { id: 'inputs', title: 'Поля введення' },
-    { id: 'cards', title: 'Картки' },
-    { id: 'navigation', title: 'Навігація' },
-    { id: 'code', title: 'Блоки коду' },
-    { id: 'tables', title: 'Таблиці' },
+    { id: 'components', title: 'Компоненти' },
     { id: 'accessibility', title: 'Доступність' },
   ];
-
-  const filteredSections = sections.filter(section =>
-    section.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
 
   useEffect(() => {
     sections.forEach(section => {
@@ -184,386 +281,302 @@ export default function DesignSystem(): React.JSX.Element {
   };
 
   return (
-    <Layout title="Система дизайну" description="Дизайн-система GeniVerse з візуальними прикладами">
-      <div className={styles.designSystem}>
-        <div className={styles.header}>
-          <h1 className={styles.pageTitle}>Система дизайну</h1>
-          <p className={styles.pageDescription}>
-            Візуальна мова та бібліотека компонентів GeniVerse
-          </p>
-          
-          <div className={styles.controls}>
-            <div className={styles.searchBox}>
-              <input
-                type="text"
-                placeholder="Пошук секцій..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className={styles.searchInput}
-              />
-            </div>
-            <div className={styles.formatToggle}>
-              <button
-                className={clsx(styles.toggleButton, format === 'hex' && styles.toggleButtonActive)}
-                onClick={() => setFormat('hex')}
-              >
-                HEX
-              </button>
-              <button
-                className={clsx(styles.toggleButton, format === 'css' && styles.toggleButtonActive)}
-                onClick={() => setFormat('css')}
-              >
-                CSS Vars
-              </button>
-            </div>
+    <Layout title="Система дизайну" description="Інтерактивна дизайн-система GeniVerse">
+      <div className={styles.designSystem} style={themeVars}>
+        {/* Hero Section */}
+        <div className={styles.hero}>
+          <div className={styles.heroContent}>
+            <h1 className={styles.heroTitle}>Система дизайну GeniVerse</h1>
+            <p className={styles.heroDescription}>
+              Адаптивна дизайн-система, створена для освітніх платформ K–12. 
+              Система підтримує різні вікові групи через спеціалізовані теми та режими, 
+              забезпечує доступність та відповідає нормативним вимогам. 
+              Всі компоненти побудовані на основі токенів дизайну, що дозволяє швидко 
+              адаптувати інтерфейс під конкретні потреби установи та учнів.
+            </p>
           </div>
         </div>
 
-        <div className={styles.container}>
-          <aside className={styles.sidebar}>
-            <nav className={styles.toc}>
-              <div className={styles.tocTitle}>Зміст</div>
-              {filteredSections.map((section) => (
-                <button
-                  key={section.id}
-                  className={styles.tocItem}
-                  onClick={() => scrollToSection(section.id)}
+        {/* TOC Navigation */}
+        <div className={styles.tocNav}>
+          {sections.map((section) => (
+            <button
+              key={section.id}
+              className={styles.tocNavItem}
+              onClick={() => scrollToSection(section.id)}
+            >
+              {section.title}
+            </button>
+          ))}
+        </div>
+
+        <div className={styles.contentWrapper}>
+          {/* Playground Controls Sidebar */}
+          <aside className={styles.playgroundSidebar}>
+            <div className={styles.playgroundPanel}>
+              <h3 className={styles.playgroundTitle}>Playground</h3>
+              
+              <div className={styles.controlGroup}>
+                <label className={styles.controlLabel}>Theme Preset</label>
+                <select
+                  className={styles.controlSelect}
+                  value={themePreset}
+                  onChange={(e) => setThemePreset(e.target.value as ThemePreset)}
                 >
-                  {section.title}
-                </button>
-              ))}
-            </nav>
+                  {Object.keys(themes).map((preset) => (
+                    <option key={preset} value={preset}>{preset}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className={styles.controlGroup}>
+                <label className={styles.controlLabel}>Mode</label>
+                <div className={styles.controlToggle}>
+                  <button
+                    className={clsx(styles.toggleButton, mode === 'light' && styles.toggleButtonActive)}
+                    onClick={() => setMode('light')}
+                  >
+                    Light
+                  </button>
+                  <button
+                    className={clsx(styles.toggleButton, mode === 'dark' && styles.toggleButtonActive)}
+                    onClick={() => setMode('dark')}
+                  >
+                    Dark
+                  </button>
+                </div>
+              </div>
+
+              <div className={styles.controlGroup}>
+                <label className={styles.controlLabel}>Density</label>
+                <div className={styles.controlToggle}>
+                  <button
+                    className={clsx(styles.toggleButton, density === 'roomy' && styles.toggleButtonActive)}
+                    onClick={() => setDensity('roomy')}
+                  >
+                    Roomy
+                  </button>
+                  <button
+                    className={clsx(styles.toggleButton, density === 'default' && styles.toggleButtonActive)}
+                    onClick={() => setDensity('default')}
+                  >
+                    Default
+                  </button>
+                  <button
+                    className={clsx(styles.toggleButton, density === 'compact' && styles.toggleButtonActive)}
+                    onClick={() => setDensity('compact')}
+                  >
+                    Compact
+                  </button>
+                </div>
+              </div>
+
+              <div className={styles.controlGroup}>
+                <label className={styles.controlLabel}>Motion</label>
+                <div className={styles.controlToggle}>
+                  <button
+                    className={clsx(styles.toggleButton, motion && styles.toggleButtonActive)}
+                    onClick={() => setMotion(true)}
+                  >
+                    Full
+                  </button>
+                  <button
+                    className={clsx(styles.toggleButton, !motion && styles.toggleButtonActive)}
+                    onClick={() => setMotion(false)}
+                  >
+                    Reduced
+                  </button>
+                </div>
+              </div>
+
+              <div className={styles.controlGroup}>
+                <label className={styles.controlLabel}>Font Scale</label>
+                <div className={styles.controlRange}>
+                  <input
+                    type="range"
+                    min="100"
+                    max="125"
+                    step="5"
+                    value={fontScale}
+                    onChange={(e) => setFontScale(Number(e.target.value))}
+                    className={styles.rangeInput}
+                  />
+                  <span className={styles.rangeValue}>{fontScale}%</span>
+                </div>
+              </div>
+
+              <div className={styles.controlGroup}>
+                <label className={styles.controlLabel}>Show tokens as</label>
+                <div className={styles.controlToggle}>
+                  <button
+                    className={clsx(styles.toggleButton, tokenFormat === 'hex' && styles.toggleButtonActive)}
+                    onClick={() => setTokenFormat('hex')}
+                  >
+                    HEX
+                  </button>
+                  <button
+                    className={clsx(styles.toggleButton, tokenFormat === 'css' && styles.toggleButtonActive)}
+                    onClick={() => setTokenFormat('css')}
+                  >
+                    CSS Vars
+                  </button>
+                </div>
+              </div>
+            </div>
           </aside>
 
-          <main className={styles.main}>
-            <Section id="colors" title="Кольори">
-              <div className={styles.subsection}>
-                <h3 className={styles.subsectionTitle}>Основні кольори</h3>
-                <div className={styles.colorGrid}>
-                  <ColorSwatch name="Фон" value={tokens.colors.bg} description="Глибокий темний фон" format={format} />
-                  <ColorSwatch name="Поверхня" value={tokens.colors.surface} description="Підняті поверхні та картки" format={format} />
-                  <ColorSwatch name="Акцент" value={tokens.colors.accent} description="CTA та виділення" format={format} />
-                  <ColorSwatch name="Текст" value={tokens.colors.text} description="Основний текст" format={format} />
-                  <ColorSwatch name="Текст вторинний" value={tokens.colors.textSecondary} description="Вторинний текст" format={format} />
-                </div>
-              </div>
-
-              <div className={styles.subsection}>
-                <h3 className={styles.subsectionTitle}>Семантичні кольори</h3>
-                <div className={styles.colorGrid}>
-                  <ColorSwatch name="Успіх" value={tokens.colors.success} format={format} />
-                  <ColorSwatch name="Попередження" value={tokens.colors.warning} format={format} />
-                  <ColorSwatch name="Помилка" value={tokens.colors.error} format={format} />
-                  <ColorSwatch name="Інформація" value={tokens.colors.info} format={format} />
-                </div>
-              </div>
-
-              <div className={styles.subsection}>
-                <h3 className={styles.subsectionTitle}>Нейтральні кольори</h3>
-                <div className={styles.colorGrid}>
-                  <ColorSwatch name="Межа" value={tokens.colors.border} format={format} />
-                  <ColorSwatch name="Наведення" value={tokens.colors.hover} format={format} />
-                  <ColorSwatch name="Активний" value={tokens.colors.active} format={format} />
-                  <ColorSwatch name="Накладання" value={tokens.colors.overlay} format={format} />
+          {/* Main Content */}
+          <main className={styles.mainContent}>
+            {/* Architecture Section */}
+            <Section id="architecture" title="Архітектура дизайн-системи">
+              <div className={styles.architectureDiagram}>
+                <div className={styles.archFlow}>
+                  <div className={clsx(styles.archNode, styles.archNodeActive)}>
+                    <div className={styles.archNodeLabel}>Tokens</div>
+                    <div className={styles.archNodeDesc}>Кольори, типографіка, відступи</div>
+                  </div>
+                  <div className={styles.archArrow}>→</div>
+                  <div className={clsx(styles.archNode, themePreset !== 'Core' && styles.archNodeActive)}>
+                    <div className={styles.archNodeLabel}>Themes</div>
+                    <div className={styles.archNodeDesc}>{themePreset}</div>
+                  </div>
+                  <div className={styles.archArrow}>→</div>
+                  <div className={styles.archNode}>
+                    <div className={styles.archNodeLabel}>Components</div>
+                    <div className={styles.archNodeDesc}>Кнопки, форми, картки</div>
+                  </div>
+                  <div className={styles.archArrow}>→</div>
+                  <div className={styles.archNode}>
+                    <div className={styles.archNodeLabel}>Modes</div>
+                    <div className={styles.archNodeDesc}>{mode === 'dark' ? 'Dark' : 'Light'}</div>
+                  </div>
+                  <div className={styles.archArrow}>→</div>
+                  <div className={styles.archNode}>
+                    <div className={styles.archNodeLabel}>UI</div>
+                    <div className={styles.archNodeDesc}>Інтерфейс платформи</div>
+                  </div>
                 </div>
               </div>
             </Section>
 
+            {/* Tokens Section */}
+            <Section id="tokens" title="Токени дизайну">
+              <div className={styles.subsection}>
+                <h3 className={styles.subsectionTitle}>Кольорова палітра</h3>
+                <div className={styles.colorGrid}>
+                  <ColorSwatch name="Фон" value={currentTheme.colors.bg} format={tokenFormat} theme={currentTheme} />
+                  <ColorSwatch name="Поверхня" value={currentTheme.colors.surface} format={tokenFormat} theme={currentTheme} />
+                  <ColorSwatch name="Акцент" value={currentTheme.colors.accent} format={tokenFormat} theme={currentTheme} />
+                  <ColorSwatch name="Текст" value={currentTheme.colors.text} format={tokenFormat} theme={currentTheme} />
+                  <ColorSwatch name="Текст вторинний" value={currentTheme.colors.textSecondary} format={tokenFormat} theme={currentTheme} />
+                  <ColorSwatch name="Межа" value={currentTheme.colors.border} format={tokenFormat} theme={currentTheme} />
+                  <ColorSwatch name="Успіх" value={currentTheme.colors.success} format={tokenFormat} theme={currentTheme} />
+                  <ColorSwatch name="Попередження" value={currentTheme.colors.warning} format={tokenFormat} theme={currentTheme} />
+                  <ColorSwatch name="Помилка" value={currentTheme.colors.error} format={tokenFormat} theme={currentTheme} />
+                  <ColorSwatch name="Інформація" value={currentTheme.colors.info} format={tokenFormat} theme={currentTheme} />
+                </div>
+              </div>
+            </Section>
+
+            {/* Typography Section */}
             <Section id="typography" title="Типографіка">
               <div className={styles.subsection}>
-                <h3 className={styles.subsectionTitle}>Сімейства шрифтів</h3>
-                <div className={styles.tokenGrid}>
-                  <TokenDisplay label="Заголовки" value={tokens.typography.headings} format={format} type="typography" />
-                  <TokenDisplay label="Основний текст" value={tokens.typography.body} format={format} type="typography" />
-                  <TokenDisplay label="Моноширинний" value={tokens.typography.mono} format={format} type="typography" />
-                </div>
-              </div>
-
-              <div className={styles.subsection}>
-                <h3 className={styles.subsectionTitle}>Шкала розмірів</h3>
                 <div className={styles.typographyPreview}>
-                  {Object.entries(tokens.typography.scale).map(([key, value]) => {
-                    const isHeading = key.startsWith('h');
-                    const fontFamily = isHeading ? tokens.typography.headings : tokens.typography.body;
-                    return (
-                      <div key={key} className={styles.typographyItem}>
-                        <div
-                          className={styles.typographySample}
-                          style={{
-                            fontFamily: `'${fontFamily}', sans-serif`,
-                            fontSize: value.size,
-                            lineHeight: value.lineHeight,
-                            fontWeight: isHeading ? 600 : 400,
-                          }}
-                        >
-                          {key === 'h1' && 'H1 Заголовок сторінки'}
-                          {key === 'h2' && 'H2 Заголовок розділу'}
-                          {key === 'h3' && 'H3 Заголовок підрозділу'}
-                          {key === 'h4' && 'H4 Менший заголовок'}
-                          {key === 'bodyLg' && 'Основний великий текст'}
-                          {key === 'body' && 'Основний текст'}
-                          {key === 'bodySm' && 'Основний малий текст'}
-                          {key === 'caption' && 'Підпис'}
-                        </div>
-                        <div className={styles.typographyMeta}>
-                          <span className={styles.typographyLabel}>{key}</span>
-                          <button
-                            className={styles.copyButton}
-                            onClick={() => copyToClipboard(`${value.size} / ${value.lineHeight}`)}
-                          >
-                            {value.size} / {value.lineHeight}
-                          </button>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <div className={styles.subsection}>
-                <h3 className={styles.subsectionTitle}>Ваги шрифту</h3>
-                <div className={styles.typographyPreview}>
-                  {tokens.typography.weights.map((weight) => (
-                    <div key={weight} className={styles.typographyItem}>
-                      <div
-                        className={styles.typographySample}
-                        style={{
-                          fontFamily: `'${tokens.typography.body}', sans-serif`,
-                          fontWeight: weight,
-                        }}
-                      >
-                        Вага {weight} — приклад тексту
-                      </div>
-                      <button
-                        className={styles.copyButton}
-                        onClick={() => copyToClipboard(`${weight}`)}
-                      >
-                        {weight}
-                      </button>
+                  <div className={styles.typographyItem}>
+                    <div
+                      className={styles.typographySample}
+                      style={{
+                        fontFamily: "'Garet', sans-serif",
+                        fontSize: `calc(2.5rem * var(--ds-font-scale))`,
+                        lineHeight: `calc(3rem * var(--ds-font-scale))`,
+                        fontWeight: 600,
+                      }}
+                    >
+                      H1 Заголовок сторінки
                     </div>
-                  ))}
+                  </div>
+                  <div className={styles.typographyItem}>
+                    <div
+                      className={styles.typographySample}
+                      style={{
+                        fontFamily: "'Garet', sans-serif",
+                        fontSize: `calc(2rem * var(--ds-font-scale))`,
+                        lineHeight: `calc(2.5rem * var(--ds-font-scale))`,
+                        fontWeight: 600,
+                      }}
+                    >
+                      H2 Заголовок розділу
+                    </div>
+                  </div>
+                  <div className={styles.typographyItem}>
+                    <div
+                      className={styles.typographySample}
+                      style={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontSize: `calc(1rem * var(--ds-font-scale))`,
+                        lineHeight: `calc(1.5rem * var(--ds-font-scale))`,
+                      }}
+                    >
+                      Основний текст. GeniVerse використовує шрифт Inter для основного тексту, 
+                      що забезпечує відмінну читабельність на всіх пристроях. Шрифт оптимізований 
+                      для екранів та підтримує широкий діапазон розмірів.
+                    </div>
+                  </div>
                 </div>
               </div>
             </Section>
 
-            <Section id="spacing" title="Відступи">
+            {/* Components Section */}
+            <Section id="components" title="Компоненти">
               <div className={styles.subsection}>
-                <p className={styles.sectionNote}>Базова одиниця: 8px</p>
-                <div className={styles.spacingGrid}>
-                  {tokens.spacing.map((size) => (
-                    <div key={size} className={styles.spacingItem}>
-                      <div
-                        className={styles.spacingVisual}
-                        style={{
-                          width: `${size}px`,
-                          height: `${size}px`,
-                          backgroundColor: tokens.colors.accent,
-                        }}
-                      />
-                      <TokenDisplay label={`${size}px`} value={`${size}px`} format={format} type="spacing" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Section>
-
-            <Section id="radii" title="Радіуси меж">
-              <div className={styles.subsection}>
-                <div className={styles.radiiGrid}>
-                  {tokens.radii.map((radius) => (
-                    <div key={radius} className={styles.radiiItem}>
-                      <div
-                        className={styles.radiiVisual}
-                        style={{
-                          borderRadius: `${radius}px`,
-                          backgroundColor: tokens.colors.accent,
-                        }}
-                      />
-                      <TokenDisplay label={`${radius}px`} value={`${radius}px`} format={format} type="radius" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Section>
-
-            <Section id="shadows" title="Тіні">
-              <div className={styles.subsection}>
-                <div className={styles.shadowGrid}>
-                  {Object.entries(tokens.shadows).map(([key, value]) => (
-                    <div key={key} className={styles.shadowItem}>
-                      <div
-                        className={styles.shadowVisual}
-                        style={{
-                          boxShadow: value,
-                        }}
-                      />
-                      <div className={styles.shadowInfo}>
-                        <div className={styles.shadowLabel}>{key}</div>
-                        <button
-                          className={styles.copyButton}
-                          onClick={() => copyToClipboard(value)}
-                        >
-                          {value}
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Section>
-
-            <Section id="buttons" title="Кнопки">
-              <div className={styles.subsection}>
-                <h3 className={styles.subsectionTitle}>Основна кнопка</h3>
+                <h3 className={styles.subsectionTitle}>Кнопки</h3>
                 <div className={styles.componentPreview}>
-                  <button
-                    className={clsx(styles.button, styles.buttonPrimary)}
-                    onMouseEnter={(e) => e.currentTarget.style.opacity = '0.9'}
-                    onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
-                  >
-                    Основна кнопка
-                  </button>
-                  <button
-                    className={clsx(styles.button, styles.buttonPrimary)}
-                    style={{ opacity: 0.8 }}
-                  >
-                    Наведення
-                  </button>
-                  <button
-                    className={clsx(styles.button, styles.buttonPrimary)}
-                    style={{ opacity: 0.6, boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.2)' }}
-                  >
-                    Активний
-                  </button>
+                  <button className={clsx(styles.button, styles.buttonPrimary)}>Primary</button>
+                  <button className={clsx(styles.button, styles.buttonPrimary, styles.buttonHover)}>Hover</button>
+                  <button className={clsx(styles.button, styles.buttonPrimary, styles.buttonActive)}>Active</button>
+                  <button className={clsx(styles.button, styles.buttonPrimary, styles.buttonFocus)}>Focus</button>
+                  <button className={clsx(styles.button, styles.buttonPrimary, styles.buttonDisabled)} disabled>Disabled</button>
+                  <button className={clsx(styles.button, styles.buttonPrimary, styles.buttonLoading)}>Loading...</button>
                 </div>
-              </div>
-
-              <div className={styles.subsection}>
-                <h3 className={styles.subsectionTitle}>Вторинна кнопка</h3>
                 <div className={styles.componentPreview}>
-                  <button className={clsx(styles.button, styles.buttonSecondary)}>
-                    Вторинна кнопка
-                  </button>
-                  <button
-                    className={clsx(styles.button, styles.buttonSecondary)}
-                    style={{ backgroundColor: tokens.colors.hover }}
-                  >
-                    Наведення
-                  </button>
+                  <button className={clsx(styles.button, styles.buttonSecondary)}>Secondary</button>
+                  <button className={clsx(styles.button, styles.buttonTertiary)}>Tertiary</button>
                 </div>
               </div>
 
               <div className={styles.subsection}>
-                <h3 className={styles.subsectionTitle}>Третинна кнопка</h3>
-                <div className={styles.componentPreview}>
-                  <button className={clsx(styles.button, styles.buttonTertiary)}>
-                    Третинна кнопка
-                  </button>
-                  <button
-                    className={clsx(styles.button, styles.buttonTertiary)}
-                    style={{ backgroundColor: tokens.colors.surface }}
-                  >
-                    Наведення
-                  </button>
-                </div>
-              </div>
-            </Section>
-
-            <Section id="inputs" title="Поля введення">
-              <div className={styles.subsection}>
+                <h3 className={styles.subsectionTitle}>Поля введення</h3>
                 <div className={styles.inputGroup}>
                   <label className={styles.inputLabel}>Мітка поля</label>
-                  <input
-                    type="text"
-                    placeholder="Плейсхолдер тексту"
-                    className={styles.input}
-                  />
+                  <input type="text" placeholder="Плейсхолдер" className={styles.input} />
                 </div>
-
                 <div className={styles.inputGroup}>
                   <label className={styles.inputLabel}>Поле у фокусі</label>
-                  <input
-                    type="text"
-                    value="Текст у полі"
-                    className={clsx(styles.input, styles.inputFocused)}
-                  />
+                  <input type="text" value="Текст у полі" className={clsx(styles.input, styles.inputFocused)} />
                 </div>
-
                 <div className={styles.inputGroup}>
                   <label className={styles.inputLabel}>Помилка</label>
-                  <input
-                    type="text"
-                    value="Невірне значення"
-                    className={clsx(styles.input, styles.inputError)}
-                  />
+                  <input type="text" value="Невірне значення" className={clsx(styles.input, styles.inputError)} />
                   <div className={styles.inputHelper}>Повідомлення про помилку</div>
                 </div>
               </div>
-            </Section>
-
-            <Section id="cards" title="Картки">
-              <div className={styles.subsection}>
-                <h3 className={styles.subsectionTitle}>Стандартна картка</h3>
-                <div className={clsx(styles.card, styles.cardStandard)}>
-                  <h3 className={styles.cardTitle}>Заголовок картки</h3>
-                  <p className={styles.cardText}>
-                    Це приклад стандартної картки з тінню та відступами.
-                  </p>
-                </div>
-              </div>
 
               <div className={styles.subsection}>
-                <h3 className={styles.subsectionTitle}>Інтерактивна картка</h3>
-                <div className={clsx(styles.card, styles.cardInteractive)}>
-                  <h3 className={styles.cardTitle}>Інтерактивна картка</h3>
-                  <p className={styles.cardText}>
-                    Ця картка реагує на наведення з акцентною межею та тінню.
-                  </p>
-                </div>
-              </div>
-            </Section>
-
-            <Section id="navigation" title="Навігація">
-              <div className={styles.subsection}>
-                <h3 className={styles.subsectionTitle}>Верхня панель</h3>
-                <div className={styles.navbarPreview}>
-                  <div className={styles.navbarBrand}>GeniVerse</div>
-                  <div className={styles.navbarMenu}>
-                    <a href="#" className={styles.navbarItem}>Пункт меню</a>
-                    <a href="#" className={clsx(styles.navbarItem, styles.navbarItemActive)}>
-                      Активний
-                    </a>
+                <h3 className={styles.subsectionTitle}>Картки</h3>
+                <div className={styles.cardGrid}>
+                  <div className={clsx(styles.card, styles.cardStandard)}>
+                    <h4 className={styles.cardTitle}>Стандартна картка</h4>
+                    <p className={styles.cardText}>Приклад стандартної картки з тінню та відступами.</p>
+                  </div>
+                  <div className={clsx(styles.card, styles.cardInteractive)}>
+                    <h4 className={styles.cardTitle}>Інтерактивна картка</h4>
+                    <p className={styles.cardText}>Картка з hover-ефектом та акцентною межею.</p>
                   </div>
                 </div>
               </div>
 
               <div className={styles.subsection}>
-                <h3 className={styles.subsectionTitle}>Бічна панель</h3>
-                <div className={styles.sidebarPreview}>
-                  <div className={styles.sidebarHeader}>Меню</div>
-                  <div className={styles.sidebarItem}>Пункт меню</div>
-                  <div className={clsx(styles.sidebarItem, styles.sidebarItemActive)}>
-                    Активний пункт
-                  </div>
-                  <div className={clsx(styles.sidebarItem, styles.sidebarItemSecondary)}>
-                    Інший пункт
-                  </div>
-                </div>
-              </div>
-            </Section>
-
-            <Section id="code" title="Блоки коду">
-              <div className={styles.subsection}>
-                <pre className={styles.codeBlock}>
-                  <code>{`function example() {
-  return "Приклад коду";
-}`}</code>
-                </pre>
-              </div>
-            </Section>
-
-            <Section id="tables" title="Таблиці">
-              <div className={styles.subsection}>
+                <h3 className={styles.subsectionTitle}>Таблиця</h3>
                 <table className={styles.table}>
                   <thead>
                     <tr>
@@ -583,37 +596,48 @@ export default function DesignSystem(): React.JSX.Element {
                       <td>Дані</td>
                       <td>Значення</td>
                     </tr>
-                    <tr>
-                      <td>Рядок 3</td>
-                      <td>Дані</td>
-                      <td>Значення</td>
-                    </tr>
                   </tbody>
                 </table>
               </div>
+
+              <div className={styles.subsection}>
+                <h3 className={styles.subsectionTitle}>Блок коду</h3>
+                <pre className={styles.codeBlock}>
+                  <code>{`function example() {
+  return "Приклад коду";
+}`}</code>
+                </pre>
+              </div>
+
+              <div className={styles.subsection}>
+                <h3 className={styles.subsectionTitle}>Навігація</h3>
+                <div className={styles.navbarPreview}>
+                  <div className={styles.navbarBrand}>GeniVerse</div>
+                  <div className={styles.navbarMenu}>
+                    <a href="#" className={styles.navbarItem}>Пункт меню</a>
+                    <a href="#" className={clsx(styles.navbarItem, styles.navbarItemActive)}>Активний</a>
+                  </div>
+                </div>
+                <div className={styles.sidebarPreview}>
+                  <div className={styles.sidebarHeader}>Меню</div>
+                  <div className={styles.sidebarItem}>Пункт меню</div>
+                  <div className={clsx(styles.sidebarItem, styles.sidebarItemActive)}>Активний пункт</div>
+                </div>
+              </div>
             </Section>
 
-            <Section id="accessibility" title="Доступність">
+            {/* Accessibility Section */}
+            <Section id="accessibility" title="Доступність та K–12">
               <div className={styles.subsection}>
-                <h3 className={styles.subsectionTitle}>Контраст кольорів</h3>
                 <ul className={styles.accessibilityList}>
-                  <li>Текст на фоні: мінімальне співвідношення 4.5:1</li>
-                  <li>Великий текст: мінімальне співвідношення 3:1</li>
-                  <li>Інтерактивні елементи: мінімальне співвідношення 3:1</li>
+                  <li>Контраст тексту відповідає WCAG 2.1 AA (мінімум 4.5:1 для основного тексту)</li>
+                  <li>Всі інтерактивні елементи доступні з клавіатури з видимим фокусом (2px accent ring)</li>
+                  <li>Підтримка екранних читачів через семантичний HTML та ARIA-атрибути</li>
+                  <li>Тема Kids збільшує розміри та відступи для молодших учнів</li>
+                  <li>Тема HighContrast забезпечує максимальний контраст для користувачів з порушенням зору</li>
+                  <li>Режим Reduced Motion відключає анімації для користувачів з чутливістю до руху</li>
+                  <li>Масштабування шрифтів від 100% до 125% для адаптації під індивідуальні потреби</li>
                 </ul>
-
-                <h3 className={styles.subsectionTitle}>Стани фокусу</h3>
-                <ul className={styles.accessibilityList}>
-                  <li>Кільце фокусу: 2px суцільний акцентний колір (#34E1A1)</li>
-                  <li>Зміщення фокусу: 2px</li>
-                  <li>Навігація з клавіатури: всі інтерактивні елементи доступні</li>
-                </ul>
-
-                <div className={styles.focusExample}>
-                  <button className={clsx(styles.button, styles.buttonPrimary, styles.focusRing)}>
-                    Приклад фокусу
-                  </button>
-                </div>
               </div>
             </Section>
           </main>
@@ -622,4 +646,3 @@ export default function DesignSystem(): React.JSX.Element {
     </Layout>
   );
 }
-
