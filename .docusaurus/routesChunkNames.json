@@ -70,17 +70,17 @@
     },
     "config": "config---diagrams-5-e-9-d89"
   },
-  "/-595": {
+  "/-1fa": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---aba-d70"
     }
   },
-  "/-cfd": {
+  "/-3cc": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---22-d-307"
   },
-  "/-19c": {
+  "/-7f2": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/ai-layer-a93": {
@@ -122,6 +122,14 @@
   "/uk/overview-af2": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---uk-overview-5-c-3-9d6"
+  },
+  "/uk/pedagogical-framework-434": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---uk-pedagogical-framework-8-c-8-a6d"
+  },
+  "/uk/product-principles-be8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---uk-product-principles-69-d-852"
   },
   "/uk/vision-purpose-3b2": {
     "__comp": "__comp---theme-doc-item-178-a40",

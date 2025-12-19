@@ -1,0 +1,14 @@
+{
+  "id": "uk/product-principles",
+  "title": "Принципи Продукту",
+  "description": "GeniVerse побудований на основі основних принципів, які керують кожним рішенням дизайну, розробкою функцій та взаємодією з користувачами. Ці принципи забезпечують послідовність, якість та відповідність нашій освітній місії.",
+  "source": "@site/docs/uk/product-principles.md",
+  "sourceDirName": "uk",
+  "slug": "/uk/product-principles",
+  "permalink": "/uk/product-principles",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

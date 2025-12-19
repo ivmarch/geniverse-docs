@@ -59,15 +59,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '595'),
+    component: ComponentCreator('/', '1fa'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', 'cfd'),
+        component: ComponentCreator('/', '3cc'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '19c'),
+            component: ComponentCreator('/', '7f2'),
             routes: [
               {
                 path: '/ai-layer',
@@ -126,6 +126,16 @@ export default [
               {
                 path: '/uk/overview',
                 component: ComponentCreator('/uk/overview', 'af2'),
+                exact: true
+              },
+              {
+                path: '/uk/pedagogical-framework',
+                component: ComponentCreator('/uk/pedagogical-framework', '434'),
+                exact: true
+              },
+              {
+                path: '/uk/product-principles',
+                component: ComponentCreator('/uk/product-principles', 'be8'),
                 exact: true
               },
               {

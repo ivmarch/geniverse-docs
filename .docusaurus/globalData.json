@@ -60,6 +60,14 @@
               "path": "/uk/overview"
             },
             {
+              "id": "uk/pedagogical-framework",
+              "path": "/uk/pedagogical-framework"
+            },
+            {
+              "id": "uk/product-principles",
+              "path": "/uk/product-principles"
+            },
+            {
               "id": "uk/vision-purpose",
               "path": "/uk/vision-purpose"
             },
