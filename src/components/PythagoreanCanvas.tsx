@@ -450,18 +450,31 @@ const PythagoreanCanvas = () => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    setPoints((prev) => ({
-      ...prev,
-      [dragPoint]: {x, y},
-    }));
-
-    // Оновлюємо розміри катетів при перетягуванні
+    // Обмежуємо рух катетів: B тільки по Y, C тільки по X
     if (dragPoint === 'B') {
-      const newLeg1 = Math.abs(y - points.A.y);
+      // Точка B рухається тільки по Y (x залишається як у точки A)
+      const newY = Math.max(50, Math.min(550, y));
+      const newLeg1 = Math.abs(newY - points.A.y);
       setLeg1Size(Math.max(50, Math.min(300, newLeg1)));
+      setPoints((prev) => ({
+        ...prev,
+        B: {x: prev.A.x, y: newY},
+      }));
     } else if (dragPoint === 'C') {
-      const newLeg2 = Math.abs(x - points.A.x);
+      // Точка C рухається тільки по X (y залишається як у точки A)
+      const newX = Math.max(250, Math.min(750, x));
+      const newLeg2 = Math.abs(newX - points.A.x);
       setLeg2Size(Math.max(50, Math.min(300, newLeg2)));
+      setPoints((prev) => ({
+        ...prev,
+        C: {x: newX, y: prev.A.y},
+      }));
+    } else if (dragPoint === 'A') {
+      // Точка A може рухатися вільно
+      setPoints((prev) => ({
+        ...prev,
+        A: {x, y},
+      }));
     }
   };
 
