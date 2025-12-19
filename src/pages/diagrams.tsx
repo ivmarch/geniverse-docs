@@ -135,9 +135,9 @@ export default function Diagrams(): JSX.Element {
     Core --> Cloud
     Core --> Edge
     
-    style AI fill:#34E1A1,stroke:#2BC891,stroke-width:2px
-    style XR fill:#34E1A1,stroke:#2BC891,stroke-width:2px
-    style Core fill:#141716,stroke:#1F2321,stroke-width:2px`}
+    style AI fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
+    style XR fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
+    style Core fill:#A0A0A0,stroke:#808080,stroke-width:2px`}
                 </div>
               </div>
             </div>
@@ -164,11 +164,11 @@ export default function Diagrams(): JSX.Element {
     D --> E[Measure]
     E --> A
     
-    style A fill:#34E1A1,stroke:#2BC891,stroke-width:2px
-    style B fill:#34E1A1,stroke:#2BC891,stroke-width:2px
-    style C fill:#34E1A1,stroke:#2BC891,stroke-width:2px
-    style D fill:#34E1A1,stroke:#2BC891,stroke-width:2px
-    style E fill:#34E1A1,stroke:#2BC891,stroke-width:2px`}
+    style A fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
+    style B fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
+    style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
+    style D fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
+    style E fill:#7CECBF,stroke:#58E6B2,stroke-width:2px`}
                 </div>
               </div>
             </div>
@@ -198,10 +198,10 @@ export default function Diagrams(): JSX.Element {
     G[Parent/Guardian] --> E
     H[Guest] --> E
     
-    style A fill:#34E1A1,stroke:#2BC891,stroke-width:2px
-    style B fill:#34E1A1,stroke:#2BC891,stroke-width:2px
-    style C fill:#34E1A1,stroke:#2BC891,stroke-width:2px
-    style E fill:#141716,stroke:#1F2321,stroke-width:2px`}
+    style A fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
+    style B fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
+    style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
+    style E fill:#A0A0A0,stroke:#808080,stroke-width:2px`}
                 </div>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function Diagrams(): JSX.Element {
     F[Learning Goals] --> C
     G[Context] --> C
     
-    style C fill:#34E1A1,stroke:#2BC891,stroke-width:2px`}
+    style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px`}
                 </div>
               </div>
             </div>

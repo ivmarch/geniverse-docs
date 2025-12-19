@@ -58,9 +58,9 @@ graph TB
     Core --> Cloud
     Core --> Edge
     
-    style AI fill:#34E1A1,stroke:#2BC891,stroke-width:2px
-    style XR fill:#34E1A1,stroke:#2BC891,stroke-width:2px
-    style Core fill:#141716,stroke:#1F2321,stroke-width:2px
+    style AI fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
+    style XR fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
+    style Core fill:#A0A0A0,stroke:#808080,stroke-width:2px
 ```
 
 ## Getting Started

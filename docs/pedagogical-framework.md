@@ -50,11 +50,11 @@ graph LR
     D --> E[Measure]
     E --> A
     
-    style A fill:#34E1A1,stroke:#2BC891,stroke-width:2px
-    style B fill:#34E1A1,stroke:#2BC891,stroke-width:2px
-    style C fill:#34E1A1,stroke:#2BC891,stroke-width:2px
-    style D fill:#34E1A1,stroke:#2BC891,stroke-width:2px
-    style E fill:#34E1A1,stroke:#2BC891,stroke-width:2px
+    style A fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
+    style B fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
+    style C fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
+    style D fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
+    style E fill:#7CECBF,stroke:#58E6B2,stroke-width:2px
 ```
 
 ### 1. Assess
