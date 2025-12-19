@@ -5,7 +5,7 @@
   "source": "@site/docs/product-principles.md",
   "sourceDirName": ".",
   "slug": "/product-principles",
-  "permalink": "/product-principles",
+  "permalink": "/uk/product-principles",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Vision & Purpose",
-    "permalink": "/vision-purpose"
+    "permalink": "/uk/vision-purpose"
   },
   "next": {
     "title": "Pedagogical Framework",
-    "permalink": "/pedagogical-framework"
+    "permalink": "/uk/pedagogical-framework"
   }
 }

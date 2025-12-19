@@ -8,7 +8,7 @@ export default {
   "tagline": "AI-Powered Immersive Learning Platform",
   "favicon": "img/favicon.ico",
   "url": "https://geniverse.ai",
-  "baseUrl": "/",
+  "baseUrl": "/uk/",
   "organizationName": "geniverse",
   "projectName": "geniverse-docs",
   "onBrokenLinks": "throw",
@@ -71,7 +71,7 @@ export default {
     "navbar": {
       "title": "GeniVerse",
       "logo": {
-        "alt": "GeniVerse Logo",
+        "alt": "Логотип GeniVerse",
         "src": "img/logo.svg"
       },
       "items": [
@@ -79,11 +79,11 @@ export default {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "position": "left",
-          "label": "Documentation"
+          "label": "Документація"
         },
         {
           "to": "/diagrams",
-          "label": "Diagrams",
+          "label": "Діаграми",
           "position": "left"
         },
         {
@@ -97,7 +97,7 @@ export default {
     },
     "footer": {
       "style": "dark",
-      "copyright": "Copyright © 2025 FuturumXR. Built with Docusaurus.",
+      "copyright": "Авторське право © 2024 FuturumXR. Створено з Docusaurus.",
       "links": []
     },
     "prism": {

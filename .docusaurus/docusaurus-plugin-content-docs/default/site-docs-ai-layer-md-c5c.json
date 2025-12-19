@@ -5,7 +5,7 @@
   "source": "@site/docs/ai-layer.md",
   "sourceDirName": ".",
   "slug": "/ai-layer",
-  "permalink": "/ai-layer",
+  "permalink": "/uk/ai-layer",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -14,10 +14,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Core Capabilities",
-    "permalink": "/core-capabilities"
+    "permalink": "/uk/core-capabilities"
   },
   "next": {
     "title": "XR & Immersive",
-    "permalink": "/xr-immersive"
+    "permalink": "/uk/xr-immersive"
   }
 }

@@ -1,112 +1,112 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/",
+      "path": "/uk/",
       "versions": [
         {
           "name": "current",
-          "label": "Next",
+          "label": "Поточна",
           "isLast": true,
-          "path": "/",
+          "path": "/uk/",
           "mainDocId": "overview",
           "docs": [
             {
               "id": "ai-layer",
-              "path": "/ai-layer",
+              "path": "/uk/ai-layer",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "core-capabilities",
-              "path": "/core-capabilities",
+              "path": "/uk/core-capabilities",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "design-system",
-              "path": "/design-system",
+              "path": "/uk/design-system",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "modularity-deployment",
-              "path": "/modularity-deployment",
+              "path": "/uk/modularity-deployment",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "overview",
-              "path": "/overview",
+              "path": "/uk/overview",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "pedagogical-framework",
-              "path": "/pedagogical-framework",
+              "path": "/uk/pedagogical-framework",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "product-principles",
-              "path": "/product-principles",
+              "path": "/uk/product-principles",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "roles-permissions",
-              "path": "/roles-permissions",
+              "path": "/uk/roles-permissions",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "safety-ethics-compliance",
-              "path": "/safety-ethics-compliance",
+              "path": "/uk/safety-ethics-compliance",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "uk/ai-layer",
-              "path": "/uk/ai-layer"
+              "path": "/uk/uk/ai-layer"
             },
             {
               "id": "uk/core-capabilities",
-              "path": "/uk/core-capabilities"
+              "path": "/uk/uk/core-capabilities"
             },
             {
               "id": "uk/design-system",
-              "path": "/uk/design-system"
+              "path": "/uk/uk/design-system"
             },
             {
               "id": "uk/modularity-deployment",
-              "path": "/uk/modularity-deployment"
+              "path": "/uk/uk/modularity-deployment"
             },
             {
               "id": "uk/overview",
-              "path": "/uk/overview"
+              "path": "/uk/uk/overview"
             },
             {
               "id": "uk/pedagogical-framework",
-              "path": "/uk/pedagogical-framework"
+              "path": "/uk/uk/pedagogical-framework"
             },
             {
               "id": "uk/product-principles",
-              "path": "/uk/product-principles"
+              "path": "/uk/uk/product-principles"
             },
             {
               "id": "uk/roles-permissions",
-              "path": "/uk/roles-permissions"
+              "path": "/uk/uk/roles-permissions"
             },
             {
               "id": "uk/safety-ethics-compliance",
-              "path": "/uk/safety-ethics-compliance"
+              "path": "/uk/uk/safety-ethics-compliance"
             },
             {
               "id": "uk/vision-purpose",
-              "path": "/uk/vision-purpose"
+              "path": "/uk/uk/vision-purpose"
             },
             {
               "id": "uk/xr-immersive",
-              "path": "/uk/xr-immersive"
+              "path": "/uk/uk/xr-immersive"
             },
             {
               "id": "vision-purpose",
-              "path": "/vision-purpose",
+              "path": "/uk/vision-purpose",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "xr-immersive",
-              "path": "/xr-immersive",
+              "path": "/uk/xr-immersive",
               "sidebar": "tutorialSidebar"
             }
           ],
@@ -114,8 +114,8 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/overview",
-                "label": "Overview"
+                "path": "/uk/overview",
+                "label": "Огляд"
               }
             }
           }
