@@ -151,6 +151,59 @@ type Mode = 'light' | 'dark';
 type Density = 'roomy' | 'default' | 'compact';
 type TokenFormat = 'hex' | 'css';
 
+// Light mode color mappings for each theme
+const lightModeColors: Record<ThemePreset, Partial<typeof themes.Core.colors>> = {
+  Core: {
+    bg: '#FFFFFF',
+    surface: '#F5F5F5',
+    text: '#1A1A1A',
+    textSecondary: '#666666',
+    border: '#E0E0E0',
+    overlay: 'rgba(255, 255, 255, 0.95)',
+  },
+  Kids: {
+    bg: '#F5F7FA',
+    surface: '#FFFFFF',
+    text: '#1A1F2E',
+    textSecondary: '#5A6C7D',
+    border: '#E0E4E8',
+    overlay: 'rgba(245, 247, 250, 0.95)',
+  },
+  Teens: {
+    bg: '#F8F9FA',
+    surface: '#FFFFFF',
+    text: '#0F1419',
+    textSecondary: '#5A6C7D',
+    border: '#E0E4E8',
+    overlay: 'rgba(248, 249, 250, 0.95)',
+  },
+  Exam: {
+    // Exam theme is already light, return as-is
+    bg: '#FFFFFF',
+    surface: '#F5F5F5',
+    text: '#1A1A1A',
+    textSecondary: '#666666',
+    border: '#E0E0E0',
+    overlay: 'rgba(255, 255, 255, 0.95)',
+  },
+  HighContrast: {
+    bg: '#FFFFFF',
+    surface: '#F0F0F0',
+    text: '#000000',
+    textSecondary: '#333333',
+    border: '#000000',
+    overlay: 'rgba(255, 255, 255, 0.95)',
+  },
+  Projector: {
+    bg: '#FFFFFF',
+    surface: '#F5F5F5',
+    text: '#1A1A1A',
+    textSecondary: '#666666',
+    border: '#CCCCCC',
+    overlay: 'rgba(255, 255, 255, 0.95)',
+  },
+};
+
 // Helper function to copy to clipboard
 const copyToClipboard = (text: string) => {
   navigator.clipboard.writeText(text);
@@ -262,21 +315,32 @@ export default function DesignSystem(): React.JSX.Element {
   const densityMultiplier = density === 'roomy' ? 1.2 : density === 'compact' ? 0.8 : 1;
   const effectiveSpacing = currentTheme.spacingMultiplier * densityMultiplier;
   
-  // Apply mode adjustments (for light mode, adjust colors if theme supports it)
-  const modeAdjustedColors = mode === 'light' && themePreset === 'Core'
+  // Helper to convert hex to rgba
+  const hexToRgba = (hex: string, alpha: number): string => {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  };
+
+  // Apply mode adjustments (for light mode, adjust colors for all themes)
+  const modeAdjustedColors = mode === 'light'
     ? {
-        bg: '#FFFFFF',
-        surface: '#F5F5F5',
-        text: '#1A1A1A',
-        textSecondary: '#666666',
-        border: '#E0E0E0',
+        ...currentTheme.colors,
+        ...lightModeColors[themePreset],
+        // Keep accent colors and semantic colors from original theme
+        accent: currentTheme.colors.accent,
         success: currentTheme.colors.success,
         warning: currentTheme.colors.warning,
         error: currentTheme.colors.error,
         info: currentTheme.colors.info,
-        hover: currentTheme.colors.hover,
-        active: currentTheme.colors.active,
-        overlay: currentTheme.colors.overlay,
+        // Adjust hover and active for light mode using accent color
+        hover: currentTheme.colors.accent.startsWith('#') 
+          ? hexToRgba(currentTheme.colors.accent, 0.1)
+          : currentTheme.colors.hover,
+        active: currentTheme.colors.accent.startsWith('#')
+          ? hexToRgba(currentTheme.colors.accent, 0.15)
+          : currentTheme.colors.active,
       }
     : currentTheme.colors;
 
