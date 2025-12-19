@@ -104,6 +104,8 @@
   box-sizing: border-box;
   /* Prevent content from changing panel size */
   contain: layout style;
+  /* Ensure panel doesn't grow beyond viewport */
+  max-height: calc(100vh - 48px);
 }
 
 .playgroundTitleWrapper {
@@ -179,6 +181,7 @@
   cursor: pointer;
   transition: none !important;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .controlSelect:focus {
@@ -201,6 +204,7 @@
   height: 52px;
   max-height: 52px;
   width: 100%;
+  flex-shrink: 0;
 }
 
 /* 2-column grid for Mode, Motion, Show tokens as */
